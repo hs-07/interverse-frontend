@@ -151,7 +151,7 @@ const LeaderBoards = () => {
                       <img
                         className="click-icon"
                         alt="plus-icon"
-                        src="/vector 1433.svg"
+                        src="/vector-1433.svg"
                       />
                     ) : (
                       <img
