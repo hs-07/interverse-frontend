@@ -459,7 +459,7 @@ function Profiles() {
                       height: "21.5px",
                     }}
                     alt=""
-                    src="/vector 1433.svg"
+                    src="/vector-1433.svg"
                   />
                 ) : (
                   <img

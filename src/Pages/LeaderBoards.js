@@ -147,7 +147,7 @@ const LeaderBoards = () => {
                     }}
                     style={{ backgroundColor: "#282828" }}
                   >
-                    {val?.Active ? (
+                    {val.Active ? (
                       <img
                         className="click-icon"
                         alt="plus-icon"

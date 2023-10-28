@@ -437,7 +437,7 @@ function Summaries() {
                       height: "21.5px",
                     }}
                     alt=""
-                    src="/vector 1433.svg"
+                    src="/vector-1433.svg"
                   />
                 ) : (
                   <img
@@ -484,7 +484,7 @@ function Summaries() {
                       height: "21.5px",
                     }}
                     alt=""
-                    src="/vector 1433.svg"
+                    src="/vector-1433.svg"
                   />
                 ) : (
                   <img
@@ -533,7 +533,7 @@ function Summaries() {
                       height: "21.5px",
                     }}
                     alt=""
-                    src="/vector 1433.svg"
+                    src="/vector-1433.svg"
                   />
                 ) : (
                   <img
@@ -582,7 +582,7 @@ function Summaries() {
                       height: "21.5px",
                     }}
                     alt=""
-                    src="/vector 1433.svg"
+                    src="/vector-1433.svg"
                   />
                 ) : (
                   <img
@@ -991,7 +991,7 @@ function Summaries() {
                                   height: "21.5px",
                                 }}
                                 alt=""
-                                src="/vector 1433.svg"
+                                src="/vector-1433.svg"
                               />
                             ) : (
                               <img
@@ -1170,7 +1170,7 @@ function Summaries() {
                                     height: "21.5px",
                                   }}
                                   alt=""
-                                  src="/vector 1433.svg"
+                                  src="/vector-1433.svg"
                                 />
                               ) : (
                                 <img
