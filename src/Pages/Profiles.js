@@ -895,7 +895,7 @@ function Profiles() {
                         >
                           <Doughnut
                             data={{
-                              labels: [subjectData[0]?.source_types[0].source],
+                              labels: subjectData[0]?.source_types.map(st => st.source),
                               datasets: [
                                 {
                                   label: "Source %",
