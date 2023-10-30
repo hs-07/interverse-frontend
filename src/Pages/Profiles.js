@@ -588,7 +588,7 @@ function Profiles() {
                                   display: "none",
                                 }}
                               > */}
-                                <div
+                                {/* <div
                                   style={{
                                     position: "absolute",
                                     height: "80%",
@@ -687,7 +687,7 @@ function Profiles() {
                               Pending
                             </Button>
                           </div>
-                        </div>
+                        </div> */}
                         {/* Lower Bar CHart Starts */}
                         <div
                           style={{
