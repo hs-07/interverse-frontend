@@ -899,12 +899,13 @@ function Profiles() {
                               datasets: [
                                 {
                                   label: "# of Votes",
-                                  data: [
-                                    parseFloat(
-                                      subjectData[0]?.source_types[0].percentage
-                                    ) / 100,
-                                  ],
+                                  data: subjectData[0]?.source_types.map(st => parseFloat(st.percentage) / 100), // Extract all percentages
                                   backgroundColor: [
+                                      "#E72E2E",   // For YouTube (example)
+                                      "#BAFF2A",   // For Twitter (example)
+                                      "#333FFF",   // For Spotify (example)
+                                      // ... Add more colors if there are more sources
+                                  ],                                  backgroundColor: [
                                     "#E72E2E",
                                     "#BAFF2A",
                                     "#333FFF",
