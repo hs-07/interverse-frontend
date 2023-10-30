@@ -30,15 +30,15 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
-      display: false,
-    },
-  },
-};
+// export const options = {
+//   responsive: true,
+//   plugins: {
+//     legend: {
+//       position: "top",
+//       display: false,
+//     },
+//   },
+// };
 
 // export const options1 = {
 //   labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
