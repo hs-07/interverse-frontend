@@ -573,7 +573,7 @@ function Profiles() {
                                     fontFamily: "inter",
                                   }}
                                 >
-                                  Sort by
+                                  {/* Sort by
                                 </div>
                               </div>
                               <div
@@ -587,7 +587,7 @@ function Profiles() {
                                   flexShrink: "0",
                                   display: "none",
                                 }}
-                              >
+                              > */}
                                 <div
                                   style={{
                                     position: "absolute",
@@ -846,7 +846,7 @@ function Profiles() {
                                   ),
                                   backgroundColor: [
                                     "#BAFF2A",
-                                    "9467DC",
+                                    "#9467DC",
                                     "#4172D0",
                                     "#3D42C3",
                                     "#316DE3",
