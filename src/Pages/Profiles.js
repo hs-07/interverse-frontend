@@ -573,7 +573,7 @@ function Profiles() {
                                     fontFamily: "inter",
                                   }}
                                 >
-                                  {/* Sort by
+                                  Sort by
                                 </div>
                               </div>
                               <div
@@ -587,8 +587,8 @@ function Profiles() {
                                   flexShrink: "0",
                                   display: "none",
                                 }}
-                              > */}
-                                {/* <div
+                              >
+                                <div
                                   style={{
                                     position: "absolute",
                                     height: "80%",
@@ -687,7 +687,7 @@ function Profiles() {
                               Pending
                             </Button>
                           </div>
-                        </div> */}
+                        </div>
                         {/* Lower Bar CHart Starts */}
                         <div
                           style={{
