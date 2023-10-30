@@ -898,18 +898,14 @@ function Profiles() {
                               labels: subjectData[0]?.source_types.map(st => st.source),
                               datasets: [
                                 {
-                                  label: "Source %",
+                                  label: "Source Types",
                                   data: subjectData[0]?.source_types.map(st => parseFloat(st.percentage) / 100), // Extract all percentages
                                   backgroundColor: [
                                       "#E72E2E",   // For YouTube (example)
                                       "#BAFF2A",   // For Twitter (example)
                                       "#333FFF",   // For Spotify (example)
                                       // ... Add more colors if there are more sources
-                                  ],                                  backgroundColor: [
-                                    "#E72E2E",
-                                    "#BAFF2A",
-                                    "#333FFF",
-                                  ],
+                                  ], 
                                   borderColor: [
                                     "rgba(255, 99, 132, 1)",
                                     "rgba(54, 162, 235, 1)",
@@ -919,6 +915,16 @@ function Profiles() {
                                 },
                               ],
                             }}
+                            options={{
+                              legend: {
+                                  position: 'bottom', // Position the legend at the bottom
+                                  align: 'start',     // Align the legend to the start (left for LTR languages)
+                                  labels: {
+                                      boxWidth: 12,    // You can adjust this value to change the box size next to the legend text
+                                      padding: 10      // Adjust the padding between legend items
+                                  }
+                              }
+                          }}
                           />
                         </div>
                       </div>
