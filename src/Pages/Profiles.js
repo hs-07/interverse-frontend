@@ -40,54 +40,54 @@ export const options = {
   },
 };
 
-export const options1 = {
-  labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
-  datasets: [
-    {
-      label: "",
-      backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(75,192,192,0.4)",
-      hoverBorderColor: "rgba(75,192,192,1)",
-      data: [10, 20, 15, 25], // Y-axis values
-      barPercentage: 0.5, // Adjust this value to control bar width
-      categoryPercentage: 1, // Adjust this value to control the gap between bars
-    },
-  ],
-};
-export const data1 = {
-  labels: ["Economy", "Social", "Politics", "Sports", "Science", "Arts"],
-  datasets: [
-    {
-      // label: "Data",
-      data: [6, 2, 3, 9, 5, 20],
-      backgroundColor: ["#BAFF2A", "9467DC", "#4172D0", "#3D42C3", "#316DE3"],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
-export const data = {
-  labels: [],
-  datasets: [
-    {
-      label: "# of Votes",
-      data: [12, 19, 10],
-      backgroundColor: ["#E72E2E", "#BAFF2A", "#333FFF"],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
+// export const options1 = {
+//   labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
+//   datasets: [
+//     {
+//       label: "",
+//       backgroundColor: "rgba(75,192,192,0.2)",
+//       borderColor: "rgba(75,192,192,1)",
+//       borderWidth: 1,
+//       hoverBackgroundColor: "rgba(75,192,192,0.4)",
+//       hoverBorderColor: "rgba(75,192,192,1)",
+//       data: [10, 20, 15, 25], // Y-axis values
+//       barPercentage: 0.5, // Adjust this value to control bar width
+//       categoryPercentage: 1, // Adjust this value to control the gap between bars
+//     },
+//   ],
+// };
+// export const data1 = {
+//   labels: ["Economy", "Social", "Politics", "Sports", "Science", "Arts"],
+//   datasets: [
+//     {
+//       // label: "Data",
+//       data: [6, 2, 3, 9, 5, 20],
+//       backgroundColor: ["#BAFF2A", "9467DC", "#4172D0", "#3D42C3", "#316DE3"],
+//       borderColor: [
+//         "rgba(255, 99, 132, 1)",
+//         "rgba(54, 162, 235, 1)",
+//         "rgba(255, 206, 86, 1)",
+//       ],
+//       borderWidth: 1,
+//     },
+//   ],
+// };
+// export const data = {
+//   labels: [],
+//   datasets: [
+//     {
+//       label: "# of Votes",
+//       data: [12, 19, 10],
+//       backgroundColor: ["#E72E2E", "#BAFF2A", "#333FFF"],
+//       borderColor: [
+//         "rgba(255, 99, 132, 1)",
+//         "rgba(54, 162, 235, 1)",
+//         "rgba(255, 206, 86, 1)",
+//       ],
+//       borderWidth: 1,
+//     },
+//   ],
+// };
 
 function Profiles() {
   const location = useLocation();
@@ -789,11 +789,11 @@ function Profiles() {
                             style={{ width: "100%" }}
                             plugins={[ChartDataLabels]} // Use the datalabels plugin
                             options={{
-                              maintainAspectRatio: false,
                               legend: { display: false },
+                              maintainAspectRatio: false,
                               scales: {
                                 x: {
-                                  barThickness: 5, // Adjust this value to control the bar width
+                                  barThickness: 3, // Adjust this value to control the bar width
                                   categoryPercentage: 1,
                                   ticks: {
                                     color: "#fff", // Y-axis values label color
@@ -900,6 +900,7 @@ function Profiles() {
                                       "#333FFF",   // For Spotify (example)
                                       // ... Add more colors if there are more sources
                                   ], 
+                                  borderColor: 'transparent'
                                 }
                               ],
                             }}
