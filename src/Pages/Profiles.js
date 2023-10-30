@@ -898,7 +898,7 @@ function Profiles() {
                               labels: [subjectData[0]?.source_types[0].source],
                               datasets: [
                                 {
-                                  label: "# of Votes",
+                                  label: "Source %",
                                   data: subjectData[0]?.source_types.map(st => parseFloat(st.percentage) / 100), // Extract all percentages
                                   backgroundColor: [
                                       "#E72E2E",   // For YouTube (example)
