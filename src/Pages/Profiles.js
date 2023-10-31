@@ -790,6 +790,7 @@ function Profiles() {
                             plugins={[ChartDataLabels]} // Use the datalabels plugin
                             options={{
                               legend: { display: false },
+                              
                               maintainAspectRatio: false,
                               scales: {
                                 x: {
@@ -857,13 +858,13 @@ function Profiles() {
                           />
                         </div>
                         {/* Lower Bar Chart Starts */}
-                      </div>
+                      {/* </div> */}
                       {/* Bar Graph Section Starts */}
                       {/* Donught Graph Starts */}
                       <div
                         style={{
                           backgroundColor: "#282828",
-                          width: "380px",
+                          width: "100%",
                           height: "341px",
                           overflow: "hidden",
                           display: "flex",
