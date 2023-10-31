@@ -768,7 +768,7 @@ function Profiles() {
                                           (i) => i.count
                                       ),
                                       backgroundColor: [
-                                          "#BAFF2A",
+                                          "#FFB085",
                                           "#9467DC",
                                           "#4172D0",
                                           "#3D42C3",
