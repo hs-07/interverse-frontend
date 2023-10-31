@@ -19,7 +19,7 @@ root.render(
   // LOCAL TEST:
   // <GoogleOAuthProvider clientId="236997775250-64mn182rafcedf2fe9ine01grk6bq5hu.apps.googleusercontent.com">
 
-  <GoogleOAuthProvider clientId="236997775250-2lipl7fsptu8d0p1tsjlg2v8i86pnc1u.apps.googleusercontent.com">
+  <GoogleOAuthProvider clientId="236997775250-2lipl7fsptu8d0p1tsjlg2v8i86pnc1u.apps.googleusercontent.com"> 
     <BrowserRouter>
       <App />
     </BrowserRouter>

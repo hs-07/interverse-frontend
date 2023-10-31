@@ -1077,10 +1077,10 @@ function Summaries() {
                       objectFit: "cover",
                   }}
                   alt=""
-                  src={`https://youtube.com/embed/${predictionData[index]?.youtube_id}?start=${predictionData[index]?.youtube_start_time}`}
+                  src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
               />
-              {console.log("Video ID:", predictionData[index]?.youtube_id)}
-              {console.log("Start time:", predictionData[index]?.youtube_start_time)}
+              {console.log("Video ID:", predictionData[subSectionIndex]?.youtube_id)}
+              {console.log("Start time:", predictionData[subSectionIndex]?.youtube_start_time)}
               </div>
               </div>
             ) : null}
@@ -1227,9 +1227,10 @@ function Summaries() {
                     alt=""
                     src={`https://youtube.com/embed/${
                       summariesData[index]?.url?.split("/")[3]
-                    }?t=900`}
+                    }`}
                   />{" "}
                   {console.log("url::::", val?.source_url?.split("/")[3])}
+                  
                 </div>
               </div>
             ) : null}
