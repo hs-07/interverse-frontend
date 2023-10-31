@@ -790,7 +790,6 @@ function Profiles() {
                             plugins={[ChartDataLabels]} // Use the datalabels plugin
                             options={{
                               legend: { display: false },
-                              
                               maintainAspectRatio: false,
                               scales: {
                                 x: {
@@ -851,23 +850,20 @@ function Profiles() {
                                     "#4172D0",
                                     "#3D42C3",
                                     "#316DE3",
-                                    "#FF6B7C",
-                                    "#2AE6CC"
-
                                   ]
                                 },
                               ],
                             }}
                           />
-                        {/* </div> */}
+                        </div>
                         {/* Lower Bar Chart Starts */}
-                      {/* </div> */}
+                      </div>
                       {/* Bar Graph Section Starts */}
                       {/* Donught Graph Starts */}
-                      {/* <div
+                      <div
                         style={{
                           backgroundColor: "#282828",
-                          width: "100%",
+                          width: "380px",
                           height: "341px",
                           overflow: "hidden",
                           display: "flex",
@@ -879,7 +875,7 @@ function Profiles() {
                           gap: "16px",
                           fontSize: "18px",
                         }}
-                      > */}
+                      >
                         <p style={{ color: "#fff" }}>Prediction by Plaform</p>
                         <div
                           style={{
