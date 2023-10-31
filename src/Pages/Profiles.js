@@ -864,7 +864,7 @@ function Profiles() {
                       {/* </div> */}
                       {/* Bar Graph Section Starts */}
                       {/* Donught Graph Starts */}
-                      <div
+                      {/* <div
                         style={{
                           backgroundColor: "#282828",
                           width: "100%",
@@ -879,7 +879,7 @@ function Profiles() {
                           gap: "16px",
                           fontSize: "18px",
                         }}
-                      >
+                      > */}
                         <p style={{ color: "#fff" }}>Prediction by Plaform</p>
                         <div
                           style={{
