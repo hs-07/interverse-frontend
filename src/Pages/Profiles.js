@@ -494,7 +494,7 @@ function Profiles() {
                           display: "flex",
                           // flex: 1,
                           backgroundColor: "#282828",
-                          width: "960px",
+                          width: "calc(100% - 382px)",
                           flexDirection: "column",
                           color: "#fff",
                         }}
@@ -691,7 +691,7 @@ function Profiles() {
                         {/* Lower Bar CHart Starts */}
                         <div
                           style={{
-                            width: "100%",
+                            width: "auto",
                             height: "275px",
                             // overflow: "hidden",
                             // flexShrink: "0",
@@ -708,153 +708,78 @@ function Profiles() {
                           }}
                         >
                           {/* <div
-              style={{
-                width: "72px",
-                height: "212px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                padding: "4px 2px 24px",
-                boxSizing: "border-box",
-                gap: "20px",
-                textAlign: "left",
-              }}
-            >
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  width: "61px",
-                  height: "16px",
-                  flexShrink: "0",
-                }}
-              >
-                100
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  width: "61px",
-                  height: "16px",
-                  flexShrink: "0",
-                }}
-              >
-                75
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  width: "61px",
-                  height: "16px",
-                  flexShrink: "0",
-                }}
-              >
-                50
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  width: "61px",
-                  height: "16px",
-                  flexShrink: "0",
-                }}
-              >
-                25
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  width: "61px",
-                  height: "16px",
-                  flexShrink: "0",
-                }}
-              >
-                0
-              </div>
-            </div> */}
-
+                          {/* // here */}
                           <Bar
-                            style={{ width: "100%" }}
-                            plugins={[ChartDataLabels]} // Use the datalabels plugin
-                            options={{
-                              legend: { display: false },
+                          style={{ width: "100%" }}
+                          plugins={[ChartDataLabels]} // Use the datalabels plugin
+                          options={{
+                              plugins: {
+                                  legend: {
+                                      display: false
+                                  },
+                                  datalabels: {
+                                      font: {
+                                          display: false,
+                                          size: 10, 
+                                          weight: "bold",
+                                      },
+                                      formatter: function (value, context) {
+                                          return value;
+                                      },
+                                  }
+                              },
                               maintainAspectRatio: false,
                               scales: {
-                                x: {
-                                  barThickness: 3, // Adjust this value to control the bar width
-                                  categoryPercentage: 1,
-                                  ticks: {
-                                    color: "#fff", // Y-axis values label color
+                                  x: {
+                                      barThickness: 3,
+                                      categoryPercentage: 1,
+                                      ticks: {
+                                          color: "#fff",
+                                      },
+                                      grid: {
+                                          display: false,
+                                      },
                                   },
-                                  grid: {
-                                    display: false, // Remove vertical grid lines
+                                  y: {
+                                      beginAtZero: true,
+                                      ticks: {
+                                          color: "#fff",
+                                      },
+                                      grid: {
+                                          display: false,
+                                      },
                                   },
-                                  // display: false,
-                                },
-                                y: {
-                                  beginAtZero: true,
-
-                                  // display: false,
-                                  ticks: {
-                                    color: "#fff", // Y-axis values label color
-                                  },
-                                  grid: {
-                                    display: false, // Remove vertical grid lines
-                                  },
-                                },
                               },
-                              plugins: {
-                                elements: {
+                              elements: {
                                   bar: {
-                                    barThickness: 1,
-                                    barPercentage: 0.1,
+                                      barThickness: 1,
+                                      barPercentage: 0.1,
                                   },
-                                },
-                                datalabels: {
-                                  // color: "black", // Label color
-                                  font: {
-                                    size: 10, // Label font size
-                                    weight: "bold",
-                                  },
-                                  formatter: function (value, context) {
-                                    return value;
-                                  },
-                                },
-                              },
-                            }}
-                            data={{
+                              }
+                          }}
+                          data={{
                               labels: subjectData[0]?.categories?.map(
-                                (i) => i.Category
+                                  (i) => i.Category
                               ),
                               datasets: [
-                                {
-                                  label: "",
-                                  data: subjectData[0]?.categories?.map(
-                                    (i) => i.count
-                                  ),
-                                  backgroundColor: [
-                                    "#BAFF2A",
-                                    "#9467DC",
-                                    "#4172D0",
-                                    "#3D42C3",
-                                    "#316DE3",
-                                  ]
-                                },
+                                  {
+                                      label: "",
+                                      data: subjectData[0]?.categories?.map(
+                                          (i) => i.count
+                                      ),
+                                      backgroundColor: [
+                                          "#BAFF2A",
+                                          "#9467DC",
+                                          "#4172D0",
+                                          "#3D42C3",
+                                          "#316DE3",
+                                          "#FF6B7C",
+                                          "#2AE6CC"
+                                      ]
+                                  },
                               ],
-                            }}
-                          />
+                          }}
+                      />
                         </div>
                         {/* Lower Bar Chart Starts */}
                       </div>
@@ -880,8 +805,8 @@ function Profiles() {
                         <div
                           style={{
                             display: "flex",
-                            height: "200px",
-                            width: "100%",
+                            height: "260px",
+                            width: "70%",
                             // backgroundColor: "red",
                             justifyContent: "center",
                             alignItems: "center",
@@ -905,15 +830,17 @@ function Profiles() {
                               ],
                             }}
                             options={{
-                              legend: {
-                                  display: true, // Ensure the legend is displayed
-                                  position: 'bottom', // Position the legend at the bottom
-                                  align: 'start',     // Align the legend to the start (left for LTR languages)
-                                  labels: {
-                                      boxWidth: 12,    // You can adjust this value to change the box size next to the legend text
-                                      padding: 10      // Adjust the padding between legend items
+                              plugins: {
+                                legend: {
+                                    display: true, // Ensure the legend is displayed
+                                    position: 'bottom', // Position the legend at the bottom
+                                    align: 'start',     // Align the legend to the start (left for LTR languages)
+                                    labels: {
+                                        boxWidth: 15,    // You can adjust this value to change the box size next to the legend text
+                                        padding: 10      // Adjust the padding between legend items
                                   }
                               }
+                            }
                           }}
                           />
                         </div>
