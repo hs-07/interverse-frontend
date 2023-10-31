@@ -851,6 +851,9 @@ function Profiles() {
                                     "#4172D0",
                                     "#3D42C3",
                                     "#316DE3",
+                                    "#FF6B7C",
+                                    "#2AE6CC"
+
                                   ]
                                 },
                               ],
