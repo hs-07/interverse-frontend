@@ -859,7 +859,7 @@ function Profiles() {
                               ],
                             }}
                           />
-                        </div>
+                        {/* </div> */}
                         {/* Lower Bar Chart Starts */}
                       {/* </div> */}
                       {/* Bar Graph Section Starts */}
