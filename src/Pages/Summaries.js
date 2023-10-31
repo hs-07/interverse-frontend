@@ -1225,11 +1225,10 @@ function Summaries() {
                       objectFit: "cover",
                     }}
                     alt=""
-                    src={`https://youtube.com/embed/${
-                      summariesData[index]?.url?.split("/")[3]
-                    }`}
-                  />{" "}
-                  {console.log("url::::", val?.source_url?.split("/")[3])}
+                    src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
+                    />
+                    {console.log("Video ID:", summariesData[subSectionIndex]?.youtube_id)}
+                    {console.log("Start time:", summariesData[subSectionIndex]?.youtube_start_time)}
                   
                 </div>
               </div>
