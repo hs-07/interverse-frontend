@@ -852,21 +852,24 @@ const Predictions = () => {
                     src="/image-140@2x.png"
                   />
                   <div>
-                    <iframe
-                      style={{
-                        position: "absolute",
-                        top: "0px",
-                        left: "0px",
-                        width: "493px",
-                        height: "262px",
-                        objectFit: "cover",
-                      }}
-                      alt=""
-                      src={`https://youtube.com/embed/${
-                        val?.url?.split("/")[3]
-                      }?t=900`}
-                    />
-                  </div>
+    {console.log("YouTube ID:", val?.youtube_id)}
+    {console.log("Start Time:", val?.youtube_start_time)}
+    <iframe
+        style={{
+            position: "absolute",
+            top: "0px",
+            left: "0px",
+            width: "493px",
+            height: "262px",
+            objectFit: "cover",
+        }}
+        alt=""
+        src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
+    />
+</div>
+
+              
+
                 </div>
               </div>
             ) : null}

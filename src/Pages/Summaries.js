@@ -1066,22 +1066,22 @@ function Summaries() {
                     flexShrink: "0",
                   }}
                 >
+                  
                   <iframe
-                    style={{
+                  style={{
                       position: "absolute",
                       top: "0px",
                       left: "0px",
                       width: "493px",
                       height: "262px",
                       objectFit: "cover",
-                    }}
-                    alt=""
-                    src={`https://youtube.com/embed/${
-                      predictionData[index]?.source_url?.split("/")[3]
-                    }?t=900`}
-                  />{" "}
-                  {console.log("url::::", val?.source_url?.split("/")[3])}
-                </div>
+                  }}
+                  alt=""
+                  src={`https://youtube.com/embed/${predictionData[index]?.youtube_id}?start=${predictionData[index]?.youtube_start_time}`}
+              />
+              {console.log("Video ID:", predictionData[index]?.youtube_id)}
+              {console.log("Start time:", predictionData[index]?.youtube_start_time)}
+              </div>
               </div>
             ) : null}
             {!loading && val?.summariesActive ? (
