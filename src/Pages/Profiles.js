@@ -30,64 +30,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-// export const options = {
-//   responsive: true,
-//   plugins: {
-//     legend: {
-//       position: "top",
-//       display: false,
-//     },
-//   },
-// };
-
-// export const options1 = {
-//   labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
-//   datasets: [
-//     {
-//       label: "",
-//       backgroundColor: "rgba(75,192,192,0.2)",
-//       borderColor: "rgba(75,192,192,1)",
-//       borderWidth: 1,
-//       hoverBackgroundColor: "rgba(75,192,192,0.4)",
-//       hoverBorderColor: "rgba(75,192,192,1)",
-//       data: [10, 20, 15, 25], // Y-axis values
-//       barPercentage: 0.5, // Adjust this value to control bar width
-//       categoryPercentage: 1, // Adjust this value to control the gap between bars
-//     },
-//   ],
-// };
-// export const data1 = {
-//   labels: ["Economy", "Social", "Politics", "Sports", "Science", "Arts"],
-//   datasets: [
-//     {
-//       // label: "Data",
-//       data: [6, 2, 3, 9, 5, 20],
-//       backgroundColor: ["#BAFF2A", "9467DC", "#4172D0", "#3D42C3", "#316DE3"],
-//       borderColor: [
-//         "rgba(255, 99, 132, 1)",
-//         "rgba(54, 162, 235, 1)",
-//         "rgba(255, 206, 86, 1)",
-//       ],
-//       borderWidth: 1,
-//     },
-//   ],
-// };
-// export const data = {
-//   labels: [],
-//   datasets: [
-//     {
-//       label: "# of Votes",
-//       data: [12, 19, 10],
-//       backgroundColor: ["#E72E2E", "#BAFF2A", "#333FFF"],
-//       borderColor: [
-//         "rgba(255, 99, 132, 1)",
-//         "rgba(54, 162, 235, 1)",
-//         "rgba(255, 206, 86, 1)",
-//       ],
-//       borderWidth: 1,
-//     },
-//   ],
-// };
 
 function Profiles() {
   const location = useLocation();
@@ -502,47 +444,53 @@ function Profiles() {
                         <div
                           style={{
                             borderRadius: "30px",
-                            // width: "824px",
+                            width: "100%",
                             height: "40px",
                             display: "flex",
                             flexDirection: "row",
                             alignItems: "center",
                             justifyContent: "center",
-                            padding: "10px 0px",
+                            padding: "5px 5px",
                             boxSizing: "border-box",
-                            gap: "10px",
+                            marginBottom: "25px",
+                            // gap: "150px",
                             // backgroundColor: "pink",
                           }}
                         >
                           <div
                             style={{
                               position: "relative",
-                              fontWeight: "600",
+                              // justifyContent: "flex-start",
+                              fontWeight: "400",
                               display: "flex",
                               alignItems: "center",
-                              width: "427px",
+                              width: "50%",
                               height: "24px",
                               flexShrink: "0",
+                              paddingLeft: "35px",
+                              
                             }}
                           >
-                            Accuracy by Subject
+                            Predictions by Category
                           </div>
                           <div
                             style={{
                               borderRadius: "4px",
-                              backdropFilter: "blur(30px)",
-                              width: "380px",
+                              // backdropFilter: "blur(30px)",
+                              width: "50%",
                               height: "28px",
                               overflow: "hidden",
                               flexShrink: "0",
                               display: "flex",
                               flexDirection: "row",
                               alignItems: "center",
-                              justifyContent: "flex-end",
+                              justifyContent: "center",
                               gap: "11px",
                               textAlign: "center",
                               fontSize: "12px",
                               paddingTop: "10px",
+                              // paddingRight: "55px",
+
                             }}
                           >
                             <div
@@ -571,6 +519,7 @@ function Profiles() {
                                     lineHeight: "24px",
                                     color: "#AEAEAE",
                                     fontFamily: "inter",
+                      
                                   }}
                                 >
                                   Sort by
@@ -752,7 +701,8 @@ function Profiles() {
                               },
                               elements: {
                                   bar: {
-                                      barThickness: 1,
+                                      borderRadius: 7,
+                                      barThickness: 5,
                                       barPercentage: 0.1,
                                   },
                               }
@@ -798,10 +748,19 @@ function Profiles() {
                           padding: "16px 36px",
                           boxSizing: "border-box",
                           gap: "16px",
-                          fontSize: "18px",
+                          fontWeight: "400",
                         }}
-                      >
-                        <p style={{ color: "#fff" }}>Prediction by Plaform</p>
+                      ><div
+                      style={{
+                        position: "relative",
+                        top: -25,
+                        left: -65,
+                      }}
+                    >
+                      <p style={{ color: "#fff", textAlign: "start" }}>
+                        Predictions by Plaform
+                      </p>
+                    </div>
                         <div
                           style={{
                             display: "flex",
@@ -809,7 +768,7 @@ function Profiles() {
                             width: "70%",
                             // backgroundColor: "red",
                             justifyContent: "center",
-                            alignItems: "center",
+                            // alignItems: "center",
                           }}
                         >
                           <Doughnut
@@ -830,6 +789,7 @@ function Profiles() {
                               ],
                             }}
                             options={{
+                              
                               plugins: {
                                 legend: {
                                     display: true, // Ensure the legend is displayed
@@ -837,10 +797,14 @@ function Profiles() {
                                     align: 'start',     // Align the legend to the start (left for LTR languages)
                                     labels: {
                                         boxWidth: 15,    // You can adjust this value to change the box size next to the legend text
-                                        padding: 10      // Adjust the padding between legend items
-                                  }
+                                        padding: 10,      // Adjust the padding between legend items
+                                        usePointStyle: true, // Use rounded points instead of boxes
+                                  },
+                                  
+                                  
                               }
-                            }
+                            },
+                            
                           }}
                           />
                         </div>
@@ -873,8 +837,8 @@ function Profiles() {
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center",
-                      padding: "10px 38px",
+                      justifyContent: "flex-start",
+                      padding: "10px 25px",
                       boxSizing: "border-box",
                       gap: "36px",
                       fontSize: "24px",
@@ -890,6 +854,8 @@ function Profiles() {
                         width: "745px",
                         height: "43px",
                         flexShrink: "0",
+                        // left: -25,
+                        
                       }}
                     >
                       Predictions
@@ -1164,7 +1130,7 @@ function Profiles() {
                                 ? "#D29D15"
                                 : val?.prediction_validation ===
                                   "PARTIALLY TRUE"
-                                ? "#2DD22A"
+                                ? "#339933"
                                 : "#E72E2E",
                             width: "130px",
                             height: "84px",
