@@ -1148,13 +1148,15 @@ function Summaries() {
                                 width: "664px",
                                 height: "30px",
                                 flexShrink: "0",
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 fontFamily: "inter",
                               }}
                             >
-                              {`[`}
-                              {val?.time}
-                              {`]`} {val?.summary_title.slice(0, 40)}...
+                              <span style={{ color: '#6495ED' }}>
+                                  {'['}{val?.time}{']'}&nbsp;
+                              </span>
+                              {val?.summary_title.slice(0, 60)}...
+
                             </div>
                             <div
                               onClick={() => {
