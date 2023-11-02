@@ -350,7 +350,7 @@ function Summaries() {
                       flexShrink: "0",
                     }}
                   >
-                    No of Predictions
+                    # of Predictions
                   </div>
                   <div
                     style={{
