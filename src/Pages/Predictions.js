@@ -260,6 +260,7 @@ const Predictions = () => {
                 cursor: "pointer",
                 color: "#fff",
               }}
+              onClick={() => onClickDescription(index)}
             >
               <div
                 style={{
@@ -452,7 +453,7 @@ const Predictions = () => {
                   alt=""
                   src="/marketgraph.svg"
                 />
-                <div onClick={() => onClickDescription(index)}>
+                <div >
                   {val?.predictionActive ? (
                     <img
                       style={{

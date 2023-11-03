@@ -669,7 +669,7 @@ function Profiles() {
                                   datalabels: {
                                       font: {
                                           display: false,
-                                          size: 10, 
+                                          size: 0, 
                                           weight: "bold",
                                       },
                                       formatter: function (value, context) {
@@ -790,22 +790,25 @@ function Profiles() {
                             }}
                             options={{
                               
+                              layout: {
+                                padding: {
+                                  top: 0 // Adjust this value to create more or less space between the chart and the legend
+                                }
+                              },
                               plugins: {
                                 legend: {
-                                    display: true, // Ensure the legend is displayed
-                                    position: 'bottom', // Position the legend at the bottom
-                                    align: 'start',     // Align the legend to the start (left for LTR languages)
-                                    labels: {
-                                        boxWidth: 15,    // You can adjust this value to change the box size next to the legend text
-                                        padding: 10,      // Adjust the padding between legend items
-                                        usePointStyle: true, // Use rounded points instead of boxes
-                                  },
-                                  
-                                  
+                                  display: true,
+                                  position: 'bottom',
+                                  align: 'bottom',
+                                  labels: {
+                                    boxWidth: 15,
+                                    padding: 20,
+                                    usePointStyle: true,
+                                  }
+                                }
                               }
-                            },
-                            
-                          }}
+                            }}
+
                           />
                         </div>
                       </div>

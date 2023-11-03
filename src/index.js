@@ -9,13 +9,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <Auth0Provider
-  //   domain="dev-2pyvlh18eh8s0pe1.jp.auth0.com"
-  //   clientId="n1vm3a2Uu4Jy88r4QzKlDILvuFU9KiGi"
-  //   authorizationParams={{
-  //     redirect_uri: window.location.origin,
-  //   }}
-  // >
+
   // LOCAL AUTH:
   // <GoogleOAuthProvider clientId="236997775250-64mn182rafcedf2fe9ine01grk6bq5hu.apps.googleusercontent.com">
 
