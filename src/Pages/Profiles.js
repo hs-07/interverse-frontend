@@ -215,7 +215,7 @@ function Profiles() {
                         flexShrink: "0",
                       }}
                     >
-                      Score
+                      Accuracy
                     </div>
                   </div>
                   <div
@@ -253,7 +253,7 @@ function Profiles() {
                         flexShrink: "0",
                       }}
                     >
-                      Prediction
+                      Predictions
                     </div>
                   </div>
                   <div
