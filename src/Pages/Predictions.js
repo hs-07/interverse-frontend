@@ -271,7 +271,7 @@ const Predictions = () => {
                       : val?.prediction_validation === "UNDETERMINED"
                       ? "#D29D15"
                       : val?.prediction_validation === "PARTIALLY TRUE"
-                      ? "#339933"
+                      ? "#388E3C"
                       : "#E72E2E",
                   width: "130px",
                   height: "84px",
@@ -282,7 +282,7 @@ const Predictions = () => {
                   textAlign: "center",
                   color:
                     val?.prediction_validation === "PARTIALLY TRUE"
-                      ? "#181818"
+                      ? "#FFFFFF"
                       : "#fff",
                 }}
               >
