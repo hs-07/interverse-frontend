@@ -54,8 +54,9 @@ function Summaries() {
     let m = minutes % 60;
     h = h < 10 ? "0" + h : h;
     m = m < 10 ? "0" + m : m;
-    return h + ":" + m;
+    return `${h}:${m}:00`;  // Assumes no seconds part, so it's always '00'
   };
+  
   const onClickPrediction = (index) => {
     const arr = [...data];
     arr[index].predictionActive = !arr[index].predictionActive;

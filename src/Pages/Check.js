@@ -1,381 +1,32 @@
 import { useCallback } from "react";
 
-const MacBookPro1467 = () => {
+const MacBookPro1440 = () => {
   const onTabsContainer1Click = useCallback(() => {
-    // Please sync "MacBook Pro 14" - 40" to the project
+    // Please sync "MacBook Pro 14" - 9" to the project
   }, []);
 
   const onTabsContainer2Click = useCallback(() => {
-    // Please sync "MacBook Pro 14" - 44" to the project
+    // Please sync "MacBook Pro 14" - 10" to the project
   }, []);
 
-  const onTabsContainer3Click = useCallback(() => {
-    // Please sync "MacBook Pro 14" - 61" to the project
+  const onTabsContainer4Click = useCallback(() => {
+    // Please sync "MacBook Pro 14" - 13" to the project
   }, []);
 
   const onTabsContainer5Click = useCallback(() => {
-    // Please sync "MacBook Pro 14" - 65" to the project
+    // Please sync "MacBook Pro 14" - 12" to the project
   }, []);
 
-  const onEllipseImage2Click = useCallback(() => {
-    // Please sync "MacBook Pro 14" - 65" to the project
-  }, []);
-  <div className="main-section">
-    {/* User Info Row Starts */}
-    {marketData.map((val, index) => {
-      return (
-        <div style={{ padding: "20px" }} className="user-info-row">
-          <div className="image-section">
-            <img
-              className="user-image"
-              alt="user-image"
-              src="/image-141@2x.png"
-            />
-          </div>
-          <div className="title-section">
-            <b className="title-section-text">
-              {val?.metadata.event_title.slice(0, 35)}...
-            </b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  {val?.metadata.category}
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  <span style={{ lineBreak: "anywhere", width: "100%" }}>
-                    <span>{`6.49 %  `}</span>
-                    <span style={{ color: "#fff" }}>
-                      {val?.metadata.category}
-                    </span>
-                  </span>
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  {val?.metadata.settled_date}
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/image-141@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/image-141@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
-            }}
-          >
-            <img
-              style={{
-                position: "relative",
-                width: "21.5px",
-                height: "1.5px",
-              }}
-              alt=""
-              src={val?.image_url}
-            />
-          </div>
-        </div>
-      );
-    })}
-    {/* User Info Row Ends */}
-    {/* Graph Section Starts */}
-    {false ? (
-      <div
-        style={{
-          backgroundColor: "#181818",
-          width: "100%",
-          height: "486px",
-          overflow: "hidden",
-          flexShrink: "0",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          gap: "37px",
-          fontSize: "18px",
-          color: "#baff2a",
-        }}
-      >
-        <Line
-          style={{ width: "100%" }}
-          plugins={[ChartDataLabels]}
-          data={data}
-          options={{
-            maintainAspectRatio: false,
-            // legend: { display: false },
-
-            scales: {
-              x: {
-                type: "category",
-                time: {
-                  parser: "YYYY-MM-DD",
-                  unit: "day",
-                  displayFormats: {
-                    day: "MMM D",
-                  },
-                },
-                // barThickness: 10, // Adjust this value to control the bar width
-                // categoryPercentage: 1,
-                ticks: {
-                  color: "#fff", // Y-axis values label color
-                },
-                grid: {
-                  display: false, // Remove vertical grid lines
-                },
-                displayFormats: {
-                  day: "MMM D",
-                },
-                // display: false,
-              },
-              y: {
-                // beginAtZero: true,
-                // max: 30,
-                // display: false,
-                ticks: {
-                  color: "#fff", // Y-axis values label color
-                },
-                displayFormats: {
-                  day: "MMM D",
-                },
-                grid: {
-                  display: false, // Remove vertical grid lines
-                },
-              },
-            },
-            plugins: {
-              elements: {
-                bar: {
-                  barThickness: 1,
-                  barPercentage: 0.1,
-                },
-              },
-              datalabels: {
-                color: "transparent", // Label color
-                font: {
-                  size: 10, // Label font size
-                  weight: "bold",
-                },
-                formatter: function (value, context) {
-                  return value;
-                },
-              },
-            },
-          }}
-        />
-      </div>
-    ) : null}
-    {/* Graph Section Ends */}
-  </div>;
   return (
     <div
       style={{
         position: "relative",
         backgroundColor: "#181818",
         width: "100%",
-        height: "1301px",
+        height: "1092px",
         overflow: "hidden",
         textAlign: "left",
-        fontSize: "24px",
+        fontSize: "16px",
         color: "#fff",
         fontFamily: "Inter",
       }}
@@ -387,7 +38,7 @@ const MacBookPro1467 = () => {
           left: "0px",
           backgroundColor: "#282828",
           width: "235px",
-          height: "1301px",
+          height: "1092px",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -396,7 +47,6 @@ const MacBookPro1467 = () => {
           padding: "18px 19px",
           boxSizing: "border-box",
           gap: "10px",
-          fontSize: "16px",
         }}
       >
         <div
@@ -521,9 +171,7 @@ const MacBookPro1467 = () => {
             padding: "2px 0px",
             boxSizing: "border-box",
             gap: "18px",
-            cursor: "pointer",
           }}
-          onClick={onTabsContainer3Click}
         >
           <img
             style={{ position: "relative", width: "24px", height: "24px" }}
@@ -546,7 +194,6 @@ const MacBookPro1467 = () => {
         </div>
         <div
           style={{
-            backgroundColor: "#baff2a",
             width: "235px",
             height: "46px",
             overflow: "hidden",
@@ -558,8 +205,9 @@ const MacBookPro1467 = () => {
             padding: "2px 0px",
             boxSizing: "border-box",
             gap: "18px",
-            color: "#181818",
+            cursor: "pointer",
           }}
+          onClick={onTabsContainer4Click}
         >
           <img
             style={{ position: "relative", width: "24px", height: "24px" }}
@@ -618,6 +266,7 @@ const MacBookPro1467 = () => {
         </div>
         <div
           style={{
+            backgroundColor: "#baff2a",
             width: "235px",
             height: "46px",
             overflow: "hidden",
@@ -629,6 +278,7 @@ const MacBookPro1467 = () => {
             padding: "2px 0px",
             boxSizing: "border-box",
             gap: "18px",
+            color: "#282828",
           }}
         >
           <img
@@ -704,6 +354,7 @@ const MacBookPro1467 = () => {
           padding: "10px 22px",
           boxSizing: "border-box",
           gap: "40px",
+          fontSize: "24px",
         }}
       >
         <b
@@ -712,120 +363,13 @@ const MacBookPro1467 = () => {
             lineHeight: "80px",
             display: "flex",
             alignItems: "center",
-            width: "208px",
+            width: "472px",
             height: "43px",
             flexShrink: "0",
           }}
         >
-          Markets
+          My Channels
         </b>
-        <div
-          style={{
-            borderRadius: "4px",
-            backdropFilter: "blur(30px)",
-            width: "229px",
-            height: "28px",
-            overflow: "hidden",
-            flexShrink: "0",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            gap: "11px",
-            textAlign: "center",
-            fontSize: "12px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              gap: "8px",
-              textAlign: "left",
-              fontSize: "16px",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "flex-start",
-                justifyContent: "flex-start",
-              }}
-            >
-              <div style={{ position: "relative", lineHeight: "24px" }}>
-                Sort by
-              </div>
-            </div>
-            <div
-              style={{
-                position: "relative",
-                borderRadius: "9999px",
-                backgroundColor: "#e5fa78",
-                width: "34px",
-                height: "20px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "none",
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  height: "80%",
-                  width: "47.06%",
-                  top: "10%",
-                  right: "5.88%",
-                  bottom: "10%",
-                  left: "47.06%",
-                  borderRadius: "9999px",
-                  backgroundColor: "#1f1f21",
-                  overflow: "hidden",
-                }}
-              />
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "30px",
-              backgroundColor: "#baff2a",
-              width: "60px",
-              height: "28px",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "8px",
-              boxSizing: "border-box",
-              color: "#181818",
-            }}
-          >
-            <div style={{ position: "relative", letterSpacing: "0.08em" }}>
-              All
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "30px",
-              backgroundColor: "#181818",
-              width: "80px",
-              height: "28px",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "8px",
-              boxSizing: "border-box",
-            }}
-          >
-            <div style={{ position: "relative", letterSpacing: "0.08em" }}>
-              Pending
-            </div>
-          </div>
-        </div>
         <div
           style={{
             borderRadius: "25px",
@@ -914,15 +458,12 @@ const MacBookPro1467 = () => {
           top: "76px",
           left: "237px",
           backgroundColor: "#6b7465",
-          width: "1275px",
-          height: "1225px",
+          height: "1016px",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "flex-start",
-          padding: "0px 22px",
-          boxSizing: "border-box",
           gap: "2px",
         }}
       >
@@ -930,918 +471,1425 @@ const MacBookPro1467 = () => {
           style={{
             backgroundColor: "#282828",
             width: "1275px",
-            height: "130px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px 22px",
-            boxSizing: "border-box",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              width: "104px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-            }}
-          >
-            <img
-              style={{
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                width: "104px",
-                height: "108px",
-                objectFit: "cover",
-              }}
-              alt=""
-              src="/image-141@2x.png"
-            />
-          </div>
-          <div
-            style={{
-              width: "748px",
-              height: "108px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <b
-              style={{
-                position: "relative",
-                lineHeight: "80px",
-                display: "flex",
-                alignItems: "center",
-                width: "763px",
-                height: "43px",
-                flexShrink: "0",
-              }}
-            >
-              US Annual Inflation 2022
-            </b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Economy
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  <span style={{ lineBreak: "anywhere", width: "100%" }}>
-                    <span>{`6.49 %  `}</span>
-                    <span style={{ color: "#fff" }}>Resolved</span>
-                  </span>
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Jan 11, 2023
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-401@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/ellipse-402@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
-            }}
-          >
-            <img
-              style={{ position: "relative", width: "21.5px", height: "1.5px" }}
-              alt=""
-              src="/vector-1432.svg"
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: "#181818",
-            width: "1275px",
-            height: "486px",
+            height: "103px",
             overflow: "hidden",
             flexShrink: "0",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "flex-start",
-            gap: "37px",
-            fontSize: "18px",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+            fontSize: "20px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "40px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "20px",
+                flexShrink: "0",
+              }}
+            >
+              Add Channel
+            </div>
+          </div>
+          <div
+            style={{
+              borderRadius: "10px",
+              backgroundColor: "#181818",
+              backdropFilter: "blur(40px)",
+              border: "1px solid rgba(174, 174, 174, 0.5)",
+              boxSizing: "border-box",
+              width: "834px",
+              height: "60px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              padding: "2px 7px 2px 20px",
+              gap: "32px",
+              fontFamily: "Lato",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                lineHeight: "40px",
+                display: "flex",
+                alignItems: "center",
+                width: "607px",
+                height: "38px",
+                flexShrink: "0",
+                opacity: "0.5",
+              }}
+            >
+              Enter channel URL
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#282828",
+                width: "170px",
+                height: "50px",
+                overflow: "hidden",
+                flexShrink: "0",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "28px 25px",
+                boxSizing: "border-box",
+                position: "relative",
+                textAlign: "center",
+                color: "#baff2a",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  margin: "0",
+                  height: "42%",
+                  width: "47.06%",
+                  top: "29%",
+                  left: "26.47%",
+                  lineHeight: "40px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex: "0",
+                }}
+              >
+                ADD
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#fff",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "20px",
             color: "#baff2a",
           }}
         >
           <div
             style={{
-              position: "relative",
-              backgroundColor: "#181818",
-              width: "1124px",
-              height: "470px",
+              backgroundColor: "#282828",
+              width: "1275px",
+              height: "54px",
               overflow: "hidden",
               flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              padding: "7px 22px",
+              boxSizing: "border-box",
+              gap: "26px",
             }}
           >
             <div
               style={{
-                position: "absolute",
-                top: "22px",
-                left: "0px",
-                width: "600px",
-                height: "48px",
+                width: "354px",
+                height: "40px",
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "flex-start",
-                padding: "0px 22px",
-                boxSizing: "border-box",
               }}
             >
               <div
                 style={{
-                  width: "171px",
-                  height: "48px",
+                  position: "relative",
+                  fontWeight: "600",
                   display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "200px",
+                  height: "20px",
+                  flexShrink: "0",
                 }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  <span style={{ lineBreak: "anywhere", width: "100%" }}>
-                    <span>{`6.49 %  `}</span>
-                    <span style={{ color: "#fff" }}>Resolved</span>
-                  </span>
-                </div>
+                Channel Name
               </div>
             </div>
+            <div
+              style={{
+                width: "200px",
+                height: "40px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "200px",
+                  height: "39px",
+                  flexShrink: "0",
+                }}
+              >
+                Summaries
+              </div>
+            </div>
+            <div
+              style={{
+                width: "201px",
+                height: "40px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "117px",
+                  height: "20px",
+                  flexShrink: "0",
+                }}
+              >
+                Predictions
+              </div>
+            </div>
+            <div
+              style={{
+                width: "212px",
+                height: "40px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "212px",
+                  height: "20px",
+                  flexShrink: "0",
+                }}
+              >
+                Prediction Accuracy
+              </div>
+            </div>
+            <div
+              style={{
+                width: "152px",
+                height: "40px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-end",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "125px",
+                  height: "39px",
+                  flexShrink: "0",
+                }}
+              >
+                View More
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "71px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "54px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "20px",
+              color: "#baff2a",
+            }}
+          >
             <img
               style={{
-                position: "absolute",
-                top: "85.19px",
-                left: "0px",
-                width: "1125px",
-                height: "313.31px",
+                position: "relative",
+                borderRadius: "50%",
+                width: "48px",
+                height: "48px",
+                objectFit: "cover",
               }}
               alt=""
-              src="/vector-1437.svg"
+              src="/ellipse-369@2x.png"
             />
             <div
               style={{
-                position: "absolute",
-                top: "414px",
-                left: "0px",
-                width: "1124px",
-                height: "42px",
+                position: "relative",
+                fontWeight: "600",
                 display: "flex",
-                flexDirection: "row",
                 alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "0px 22px",
-                boxSizing: "border-box",
-                gap: "206px",
-                fontSize: "16px",
-                color: "#aeaeae",
+                width: "290px",
+                height: "27px",
+                flexShrink: "0",
               }}
             >
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  width: "54px",
-                  height: "20px",
-                  flexShrink: "0",
-                }}
-              >
-                May 11
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  width: "54px",
-                  height: "20px",
-                  flexShrink: "0",
-                }}
-              >
-                July 11
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  width: "54px",
-                  height: "20px",
-                  flexShrink: "0",
-                }}
-              >
-                Sep 10
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  width: "54px",
-                  height: "20px",
-                  flexShrink: "0",
-                }}
-              >
-                Nov 11
-              </div>
-              <div
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  width: "54px",
-                  height: "20px",
-                  flexShrink: "0",
-                }}
-              >
-                Jan 11
-              </div>
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                top: "89px",
-                left: "383px",
-                borderRadius: "40px",
-                width: "70px",
-                height: "70px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "5px 10px 6px",
-                boxSizing: "border-box",
-                gap: "4px",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "68px",
-                  height: "68px",
-                  objectFit: "cover",
-                  cursor: "pointer",
-                }}
-                alt=""
-                src="/ellipse-4011@2x.png"
-                onClick={onEllipseImage2Click}
-              />
-              <img
-                style={{ position: "relative", width: "34px", height: "29px" }}
-                alt=""
-                src="/polygon-1.svg"
-              />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                top: "129px",
-                left: "110px",
-                borderRadius: "40px",
-                width: "70px",
-                height: "70px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "5px 10px 6px",
-                boxSizing: "border-box",
-                gap: "4px",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "68px",
-                  height: "68px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4012@2x.png"
-              />
-              <img
-                style={{ position: "relative", width: "34px", height: "29px" }}
-                alt=""
-                src="/polygon-11.svg"
-              />
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                top: "235px",
-                left: "104px",
-                borderRadius: "40px",
-                width: "81px",
-                height: "105px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "5px 10px 6px",
-                boxSizing: "border-box",
-                gap: "10px",
-              }}
-            >
-              <img
-                style={{ position: "relative", width: "34px", height: "29px" }}
-                alt=""
-                src="/polygon-12.svg"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "68px",
-                  height: "68px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4013@2x.png"
-              />
+              All In Podcast
             </div>
           </div>
           <div
             style={{
-              width: "105px",
-              height: "470px",
+              width: "200px",
+              height: "68px",
               display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "0px 22px",
-              boxSizing: "border-box",
-              gap: "41px",
-              fontSize: "16px",
-              color: "#aeaeae",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
             }}
           >
             <div
               style={{
                 position: "relative",
+                fontWeight: "600",
                 display: "flex",
                 alignItems: "center",
-                width: "54px",
-                height: "20px",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              45
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              190
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              53
+            </div>
+          </div>
+          <div
+            style={{
+              width: "152px",
+              height: "58px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "21px 1px",
+              boxSizing: "border-box",
+            }}
+          >
+            <img
+              style={{ position: "relative", width: "21.5px", height: "1.5px" }}
+              alt=""
+              src="/vector-1433.svg"
+            />
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "482px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "17px",
+            fontSize: "24px",
+            color: "#baff2a",
+          }}
+        >
+          <div
+            style={{
+              width: "1215px",
+              height: "170px",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "16px",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontSize: "24px",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "68px",
+                flexShrink: "0",
+              }}
+            >
+              People
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                border: "1px solid #baff2a",
+                boxSizing: "border-box",
+                width: "247px",
+                height: "68px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                padding: "10px",
+                gap: "17px",
+              }}
+            >
+              <img
+                style={{
+                  position: "relative",
+                  borderRadius: "50%",
+                  width: "48px",
+                  height: "48px",
+                  objectFit: "cover",
+                }}
+                alt=""
+                src="/ellipse-368@2x.png"
+              />
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "160px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                Chamath Palihapitiya
+              </div>
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                border: "1px solid #baff2a",
+                boxSizing: "border-box",
+                width: "218px",
+                height: "68px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                padding: "10px",
+                gap: "17px",
+              }}
+            >
+              <img
+                style={{
+                  position: "relative",
+                  borderRadius: "50%",
+                  width: "48px",
+                  height: "48px",
+                  objectFit: "cover",
+                }}
+                alt=""
+                src="/ellipse-3681@2x.png"
+              />
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "133px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                Jason Calacanis
+              </div>
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                border: "1px solid #baff2a",
+                boxSizing: "border-box",
+                width: "186px",
+                height: "68px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                padding: "10px",
+                gap: "17px",
+              }}
+            >
+              <img
+                style={{
+                  position: "relative",
+                  borderRadius: "50%",
+                  width: "48px",
+                  height: "48px",
+                  objectFit: "cover",
+                }}
+                alt=""
+                src="/ellipse-3682@2x.png"
+              />
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "102px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                David Sacks
+              </div>
+            </div>
+            <div
+              style={{ borderRadius: "10px", width: "290px", height: "68px" }}
+            />
+            <div
+              style={{
+                borderRadius: "10px",
+                border: "1px solid #baff2a",
+                boxSizing: "border-box",
+                width: "213px",
+                height: "68px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                padding: "10px",
+                gap: "17px",
+              }}
+            >
+              <img
+                style={{
+                  position: "relative",
+                  borderRadius: "50%",
+                  width: "48px",
+                  height: "48px",
+                  objectFit: "cover",
+                }}
+                alt=""
+                src="/ellipse-3683@2x.png"
+              />
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "127px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                David Friedberg
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "880px",
+              height: "56px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "28px",
+                flexShrink: "0",
+              }}
+            >
+              Topics
+            </div>
+            <div
+              style={{
+                position: "relative",
+                fontSize: "20px",
+                color: "#aeaeae",
+                display: "flex",
+                alignItems: "center",
+                width: "305px",
+                height: "28px",
+                flexShrink: "0",
+              }}
+            >
+              Economics, Tech, Poker, Politics
+            </div>
+          </div>
+          <div
+            style={{
+              width: "1215px",
+              height: "72px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+            }}
+          >
+            <div
+              style={{
+                borderRadius: "10px",
+                width: "290px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "235px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                Pending Predictions
+              </div>
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                width: "242px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                color: "#fff",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "235px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                43
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "1215px",
+              height: "72px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+            }}
+          >
+            <div
+              style={{
+                borderRadius: "10px",
+                width: "290px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "160px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                Platforms
+              </div>
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                width: "720px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                gap: "25px",
+              }}
+            >
+              <img
+                style={{ position: "relative", width: "32px", height: "32px" }}
+                alt=""
+                src="/icons-here.svg"
+              />
+              <img
+                style={{ position: "relative", width: "36px", height: "36px" }}
+                alt=""
+                src="/vuesaxboldapple.svg"
+              />
+              <img
+                style={{
+                  position: "relative",
+                  width: "32px",
+                  height: "32px",
+                  overflow: "hidden",
+                  flexShrink: "0",
+                }}
+                alt=""
+                src="/icons-here1.svg"
+              />
+              <img
+                style={{
+                  position: "relative",
+                  width: "25.07px",
+                  height: "23.5px",
+                }}
+                alt=""
+                src="/vector-1470.svg"
+              />
+            </div>
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "#2d2d2d",
+                border: "1px solid #e72e2e",
+                boxSizing: "border-box",
+                width: "172px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "10px",
+                fontSize: "16px",
+                color: "#e72e2e",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "131px",
+                  height: "28px",
+                  flexShrink: "0",
+                }}
+              >
+                Remove Channel
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "71px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "51px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "20px",
+              color: "#baff2a",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                borderRadius: "50%",
+                width: "48px",
+                height: "48px",
+                objectFit: "cover",
+              }}
+              alt=""
+              src="/ellipse-370@2x.png"
+            />
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "27px",
+                flexShrink: "0",
+              }}
+            >
+              Arch Invest
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              21
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              72
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              55
+            </div>
+          </div>
+          <div
+            style={{
+              width: "152px",
+              height: "58px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "21px 1px",
+              boxSizing: "border-box",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                width: "21.5px",
+                height: "21.5px",
+              }}
+              alt=""
+              src="/vector-277.svg"
+            />
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "71px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "40px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "20px",
+              color: "#baff2a",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                borderRadius: "50%",
+                width: "48px",
+                height: "48px",
+                objectFit: "cover",
+              }}
+              alt=""
+              src="/ellipse-371@2x.png"
+            />
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "27px",
+                flexShrink: "0",
+              }}
+            >
+              Epsilon Theory
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              88
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              291
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              57
+            </div>
+          </div>
+          <div
+            style={{
+              width: "152px",
+              height: "58px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "21px 1px",
+              boxSizing: "border-box",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                width: "21.5px",
+                height: "21.5px",
+              }}
+              alt=""
+              src="/vector-2771.svg"
+            />
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "71px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "40px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "20px",
+              color: "#baff2a",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                borderRadius: "50%",
+                width: "48px",
+                height: "48px",
+                objectFit: "cover",
+              }}
+              alt=""
+              src="/ellipse-372@2x.png"
+            />
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "27px",
+                flexShrink: "0",
+              }}
+            >
+              Full Send Podcast
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              93
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              314
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              42
+            </div>
+          </div>
+          <div
+            style={{
+              width: "152px",
+              height: "58px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "21px 1px",
+              boxSizing: "border-box",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                width: "21.5px",
+                height: "21.5px",
+              }}
+              alt=""
+              src="/vector-2772.svg"
+            />
+          </div>
+        </div>
+        <div
+          style={{
+            backgroundColor: "#282828",
+            width: "1275px",
+            height: "71px",
+            overflow: "hidden",
+            flexShrink: "0",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "7px 22px",
+            boxSizing: "border-box",
+            gap: "26px",
+          }}
+        >
+          <div
+            style={{
+              width: "354px",
+              height: "40px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "16px",
+              fontSize: "20px",
+              color: "#baff2a",
+            }}
+          >
+            <img
+              style={{
+                position: "relative",
+                borderRadius: "50%",
+                width: "48px",
+                height: "48px",
+                objectFit: "cover",
+              }}
+              alt=""
+              src="/ellipse-373@2x.png"
+            />
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "290px",
+                height: "27px",
+                flexShrink: "0",
+              }}
+            >
+              Joe Rogan Experience
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              1
+            </div>
+          </div>
+          <div
+            style={{
+              width: "200px",
+              height: "68px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
                 flexShrink: "0",
               }}
             >
               8
             </div>
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                width: "54px",
-                height: "20px",
-                flexShrink: "0",
-              }}
-            >
-              7.5
-            </div>
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                width: "54px",
-                height: "20px",
-                flexShrink: "0",
-              }}
-            >
-              7
-            </div>
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                width: "54px",
-                height: "20px",
-                flexShrink: "0",
-              }}
-            >
-              6.5
-            </div>
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                width: "54px",
-                height: "20px",
-                flexShrink: "0",
-              }}
-            >
-              6
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: "#282828",
-            width: "1275px",
-            height: "130px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px 22px",
-            boxSizing: "border-box",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              width: "104px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-            }}
-          >
-            <img
-              style={{
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                width: "104px",
-                height: "108px",
-                objectFit: "cover",
-              }}
-              alt=""
-              src="/image-142@2x.png"
-            />
           </div>
           <div
             style={{
-              width: "748px",
-              height: "108px",
+              width: "200px",
+              height: "68px",
               display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <b
-              style={{
-                position: "relative",
-                lineHeight: "80px",
-                display: "flex",
-                alignItems: "center",
-                width: "763px",
-                height: "43px",
-                flexShrink: "0",
-              }}
-            >
-              US Annual Inflation 2023
-            </b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Economy
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >{`3.44 % `}</div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Jan 13, 2024
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4014@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/ellipse-4021@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              height: "70px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
+              flexDirection: "row",
               alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
+              justifyContent: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                fontWeight: "600",
+                display: "flex",
+                alignItems: "center",
+                width: "200px",
+                height: "39px",
+                flexShrink: "0",
+              }}
+            >
+              63
+            </div>
+          </div>
+          <div
+            style={{
+              width: "152px",
+              height: "58px",
+              overflow: "hidden",
+              flexShrink: "0",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "21px 1px",
               boxSizing: "border-box",
             }}
           >
@@ -1852,902 +1900,7 @@ const MacBookPro1467 = () => {
                 height: "21.5px",
               }}
               alt=""
-              src="/vector-276.svg"
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: "#282828",
-            width: "1275px",
-            height: "130px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px 22px",
-            boxSizing: "border-box",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              width: "104px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-            }}
-          >
-            <img
-              style={{
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                width: "104px",
-                height: "108px",
-                objectFit: "cover",
-              }}
-              alt=""
-              src="/image-1411@2x.png"
-            />
-          </div>
-          <div
-            style={{
-              width: "748px",
-              height: "108px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <b
-              style={{
-                position: "relative",
-                lineHeight: "80px",
-                display: "flex",
-                alignItems: "center",
-                width: "763px",
-                height: "43px",
-                flexShrink: "0",
-              }}
-            >
-              Recession 2023
-            </b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Economy
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  3 %
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Jan 25, 2024
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4015@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/ellipse-4022@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              height: "70px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
-              boxSizing: "border-box",
-            }}
-          >
-            <img
-              style={{
-                position: "relative",
-                width: "21.5px",
-                height: "21.5px",
-              }}
-              alt=""
-              src="/vector-2761.svg"
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: "#282828",
-            width: "1275px",
-            height: "130px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px 22px",
-            boxSizing: "border-box",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              width: "104px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-            }}
-          >
-            <img
-              style={{
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                width: "104px",
-                height: "108px",
-                objectFit: "cover",
-              }}
-              alt=""
-              src="/image-1412@2x.png"
-            />
-          </div>
-          <div
-            style={{
-              width: "748px",
-              height: "108px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <b
-              style={{
-                position: "relative",
-                lineHeight: "80px",
-                display: "flex",
-                alignItems: "center",
-                width: "763px",
-                height: "43px",
-                flexShrink: "0",
-              }}
-            >
-              Recession 2022
-            </b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Economy
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  <span style={{ lineBreak: "anywhere", width: "100%" }}>
-                    <span>{`Yes `}</span>
-                    <span style={{ color: "#fff" }}>Resolved</span>
-                  </span>
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Jul 28, 2022
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4016@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/ellipse-4023@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              height: "70px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
-              boxSizing: "border-box",
-            }}
-          >
-            <img
-              style={{
-                position: "relative",
-                width: "21.5px",
-                height: "21.5px",
-              }}
-              alt=""
-              src="/vector-2762.svg"
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            backgroundColor: "#282828",
-            width: "1275px",
-            height: "130px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "10px 22px",
-            boxSizing: "border-box",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              borderRadius: "8px",
-              width: "104px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-            }}
-          >
-            <img
-              style={{
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                width: "104px",
-                height: "108px",
-                objectFit: "cover",
-              }}
-              alt=""
-              src="/image-1413@2x.png"
-            />
-          </div>
-          <div
-            style={{
-              width: "748px",
-              height: "108px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              gap: "10px",
-            }}
-          >
-            <b
-              style={{
-                position: "relative",
-                lineHeight: "80px",
-                display: "flex",
-                alignItems: "center",
-                width: "763px",
-                height: "43px",
-                flexShrink: "0",
-              }}
-            >{`S&P 500 Yearly Close 2022`}</b>
-            <div
-              style={{
-                width: "660px",
-                height: "48px",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "10px",
-                fontSize: "18px",
-                color: "#baff2a",
-              }}
-            >
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Economy
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Topic
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "171px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  <span style={{ lineBreak: "anywhere", width: "100%" }}>
-                    <span>{`3839.50 `}</span>
-                    <span style={{ color: "#fff" }}>Resolved</span>
-                  </span>
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "171px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Market Prediction
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    fontWeight: "500",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Dec 30, 2022
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    fontSize: "16px",
-                    color: "#aeaeae",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "160px",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Close Date
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: "234px",
-              height: "108px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-              color: "#26272c",
-              fontFamily: "Poppins",
-            }}
-          >
-            <div
-              style={{
-                width: "182px",
-                height: "72px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "2px 0px",
-                boxSizing: "border-box",
-              }}
-            >
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                }}
-                alt=""
-                src="/ellipse-4017@2x.png"
-              />
-              <img
-                style={{
-                  position: "relative",
-                  borderRadius: "50%",
-                  width: "70px",
-                  height: "70px",
-                  objectFit: "cover",
-                  marginLeft: "-14px",
-                }}
-                alt=""
-                src="/ellipse-4024@2x.png"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  borderRadius: "35px",
-                  backgroundColor: "#baff2a",
-                  width: "70px",
-                  height: "70px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  marginLeft: "-14px",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "23px",
-                    left: "19px",
-                    letterSpacing: "0.3px",
-                    lineHeight: "150%",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "32px",
-                    height: "24px",
-                  }}
-                >
-                  5+
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderRadius: "8px",
-              height: "70px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "35px 25px",
-              boxSizing: "border-box",
-            }}
-          >
-            <img
-              style={{
-                position: "relative",
-                width: "21.5px",
-                height: "21.5px",
-              }}
-              alt=""
-              src="/vector-2763.svg"
+              src="/vector-2773.svg"
             />
           </div>
         </div>
@@ -2756,344 +1909,4 @@ const MacBookPro1467 = () => {
   );
 };
 
-export default MacBookPro1467;
-<div
-  style={{
-    backgroundColor: "#181818",
-    width: "1275px",
-    height: "486px",
-    overflow: "hidden",
-    flexShrink: "0",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    gap: "37px",
-    fontSize: "18px",
-    color: "#baff2a",
-  }}
->
-  <div
-    style={{
-      position: "relative",
-      backgroundColor: "#181818",
-      width: "1124px",
-      height: "470px",
-      overflow: "hidden",
-      flexShrink: "0",
-    }}
-  >
-    <div
-      style={{
-        position: "absolute",
-        top: "22px",
-        left: "0px",
-        width: "600px",
-        height: "48px",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "0px 22px",
-        boxSizing: "border-box",
-      }}
-    >
-      <div
-        style={{
-          width: "171px",
-          height: "48px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          style={{
-            position: "relative",
-            fontWeight: "500",
-            display: "flex",
-            alignItems: "center",
-            width: "171px",
-            height: "20px",
-            flexShrink: "0",
-          }}
-        >
-          <span style={{ lineBreak: "anywhere", width: "100%" }}>
-            <span>{`6.49 %  `}</span>
-            <span style={{ color: "#fff" }}>Resolved</span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <img
-      style={{
-        position: "absolute",
-        top: "85.19px",
-        left: "0px",
-        width: "1125px",
-        height: "313.31px",
-      }}
-      alt=""
-      src="/vector-1437.svg"
-    />
-    <div
-      style={{
-        position: "absolute",
-        top: "414px",
-        left: "0px",
-        width: "1124px",
-        height: "42px",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "0px 22px",
-        boxSizing: "border-box",
-        gap: "206px",
-        fontSize: "16px",
-        color: "#aeaeae",
-      }}
-    >
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          width: "54px",
-          height: "20px",
-          flexShrink: "0",
-        }}
-      >
-        May 11
-      </div>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          width: "54px",
-          height: "20px",
-          flexShrink: "0",
-        }}
-      >
-        July 11
-      </div>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          width: "54px",
-          height: "20px",
-          flexShrink: "0",
-        }}
-      >
-        Sep 10
-      </div>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          width: "54px",
-          height: "20px",
-          flexShrink: "0",
-        }}
-      >
-        Nov 11
-      </div>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          width: "54px",
-          height: "20px",
-          flexShrink: "0",
-        }}
-      >
-        Jan 11
-      </div>
-    </div>
-    <div
-      style={{
-        position: "absolute",
-        top: "89px",
-        left: "383px",
-        borderRadius: "40px",
-        width: "70px",
-        height: "70px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "5px 10px 6px",
-        boxSizing: "border-box",
-        gap: "4px",
-      }}
-    >
-      <img
-        style={{
-          position: "relative",
-          borderRadius: "50%",
-          width: "68px",
-          height: "68px",
-          objectFit: "cover",
-          cursor: "pointer",
-        }}
-        alt=""
-        src="/ellipse-4011@2x.png"
-      />
-      <img
-        style={{ position: "relative", width: "34px", height: "29px" }}
-        alt=""
-        src="/polygon-1.svg"
-      />
-    </div>
-    <div
-      style={{
-        position: "absolute",
-        top: "129px",
-        left: "110px",
-        borderRadius: "40px",
-        width: "70px",
-        height: "70px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "5px 10px 6px",
-        boxSizing: "border-box",
-        gap: "4px",
-      }}
-    >
-      <img
-        style={{
-          position: "relative",
-          borderRadius: "50%",
-          width: "68px",
-          height: "68px",
-          objectFit: "cover",
-        }}
-        alt=""
-        src="/ellipse-4012@2x.png"
-      />
-      <img
-        style={{ position: "relative", width: "34px", height: "29px" }}
-        alt=""
-        src="/polygon-11.svg"
-      />
-    </div>
-    <div
-      style={{
-        position: "absolute",
-        top: "235px",
-        left: "104px",
-        borderRadius: "40px",
-        width: "81px",
-        height: "105px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        padding: "5px 10px 6px",
-        boxSizing: "border-box",
-        gap: "10px",
-      }}
-    >
-      <img
-        style={{ position: "relative", width: "34px", height: "29px" }}
-        alt=""
-        src="/polygon-12.svg"
-      />
-      <img
-        style={{
-          position: "relative",
-          borderRadius: "50%",
-          width: "68px",
-          height: "68px",
-          objectFit: "cover",
-        }}
-        alt=""
-        src="/ellipse-4013@2x.png"
-      />
-    </div>
-  </div>
-  <div
-    style={{
-      width: "105px",
-      height: "470px",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      justifyContent: "center",
-      padding: "0px 22px",
-      boxSizing: "border-box",
-      gap: "41px",
-      fontSize: "16px",
-      color: "#aeaeae",
-    }}
-  >
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        width: "54px",
-        height: "20px",
-        flexShrink: "0",
-      }}
-    >
-      8
-    </div>
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        width: "54px",
-        height: "20px",
-        flexShrink: "0",
-      }}
-    >
-      7.5
-    </div>
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        width: "54px",
-        height: "20px",
-        flexShrink: "0",
-      }}
-    >
-      7
-    </div>
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        width: "54px",
-        height: "20px",
-        flexShrink: "0",
-      }}
-    >
-      6.5
-    </div>
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        width: "54px",
-        height: "20px",
-        flexShrink: "0",
-      }}
-    >
-      6
-    </div>
-  </div>
-</div>;
+export default MacBookPro1440;

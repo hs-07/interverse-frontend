@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../styles/header.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { googleLogout } from "@react-oauth/google";
 
 function Header() {
   const { pathname } = useLocation();
   const [userData, setUserData] = useState();
+  const navigate = useNavigate();
+  const handleRedirect = () => {
+    // window.location.href = "http://localhost:3000";
+    window.location.href = "https://www.luckyorgenius.com/";
+  };
   useEffect(() => {
     let data = localStorage.getItem("userdata");
     console.log("data:::::::", JSON.parse(data));
@@ -15,11 +20,7 @@ function Header() {
   return (
     <div>
       <div className="header">
-        <b className="page-name">
-          {pathname == "/"
-            ? "Leaderboards"
-            : pathname.slice(1).toLocaleUpperCase()}
-        </b>
+        <b className="page-name">{pathname.slice(1).toLocaleUpperCase()}</b>
         {/* SearchBar Starts */}
         <div>
           <input className="search-bar " placeholder="Search" />
@@ -39,6 +40,7 @@ function Header() {
               googleLogout();
               window.location.reload();
               console.log("clear");
+              handleRedirect();
             }}
             className="notification-icon"
             alt=""

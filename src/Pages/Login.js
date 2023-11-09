@@ -3,8 +3,10 @@ import { Button } from "@mui/material";
 import { useGoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import "../styles/login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       console.log(tokenResponse); // This will log the token information

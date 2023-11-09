@@ -15,11 +15,11 @@ function Sidenav() {
         {/* Head Text in sideNav Ends */}
 
         <NavLink
-          to="/"
+          to="/LeaderBoards"
           className={({ isActive }) => (isActive ? "active-link" : "link")}
         >
           <img alt="" src="/vuesaxtwotonepeople.svg" />
-          <p> Leaderboards</p>
+          <p style={{ marginTop: "10px" }}> Leaderboards</p>
         </NavLink>
 
         <NavLink
@@ -27,7 +27,7 @@ function Sidenav() {
           className={({ isActive }) => (isActive ? "active-link" : "link")}
         >
           <img alt="" src="/vuesaxtwotonefirstline.svg" />
-          <p>Summaries</p>
+          <p style={{ marginTop: "13px" }}>Summaries</p>
         </NavLink>
         <NavLink
           to="/Predictions"
@@ -35,7 +35,7 @@ function Sidenav() {
         >
           <img alt="" src="/vuesaxboldarrow3.svg" />
 
-          <p>Predictions</p>
+          <p style={{ marginTop: "13px" }}>Predictions</p>
         </NavLink>
         <NavLink
           to="/Markets"
@@ -43,14 +43,14 @@ function Sidenav() {
         >
           <img alt="" src="/vuesaxtwotoneactivity.svg" />
 
-          <p>Markets</p>
+          <p style={{ marginTop: "13px" }}>Markets</p>
         </NavLink>
         <NavLink
           to="/Profiles"
           className={({ isActive }) => (isActive ? "active-link" : "link")}
         >
           <img alt="" src="/vuesaxtwotoneprofile.svg" />
-          <p>Profiles</p>
+          <p style={{ marginTop: "13px" }}>Profiles</p>
         </NavLink>
         <NavLink
           to="/MyChannels"
@@ -58,7 +58,7 @@ function Sidenav() {
         >
           <img alt="" src="/vuesaxtwotonenotificationcircle.svg" />
 
-          <p> My Channels</p>
+          <p style={{ marginTop: "13px" }}> My Channels</p>
         </NavLink>
         <div className="divider-div" />
         <div className="setting-div">
@@ -67,7 +67,9 @@ function Sidenav() {
             alt=""
             src="/vuesaxtwotonesetting2.svg"
           />
-          <p className="setting-text">Settings</p>
+          <p style={{ marginTop: "13px" }} className="setting-text">
+            Settings
+          </p>
         </div>
       </div>
     </div>

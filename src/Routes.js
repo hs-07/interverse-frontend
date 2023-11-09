@@ -10,7 +10,8 @@ import MyChannels from "./Pages/MyChannels";
 const RouterData = () => {
   return (
     <Routes>
-      <Route path="/" element={<LeaderBoards />} />
+      <Route path="/Login" element={<Navigate to="/LeaderBoards" />} />
+      <Route path="/LeaderBoards" element={<LeaderBoards />} />
       <Route path="/Summaries" element={<Summaries />} />
       <Route path="/Predictions" element={<Predictions />} />
       <Route path="/Markets" element={<Markets />} />

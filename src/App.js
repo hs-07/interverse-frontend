@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import LandingPage from "./Pages/LandingPage";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 function App() {
   const [token, setToken] = useState("");
@@ -14,7 +16,10 @@ function App() {
   if (tok == null) {
     return (
       <div>
-        <Login />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Login" element={<Login />} />
+        </Routes>
       </div>
     );
   }

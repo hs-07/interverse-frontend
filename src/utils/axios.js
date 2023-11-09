@@ -4,9 +4,9 @@ const instance = axios.create({
   baseURL: "https://fierce-plateau-07706-389d9b27b69c.herokuapp.com/",
 });
 
-instance.defaults.headers.common["Content-Type"] = "application/json";
-instance.defaults.headers.common["Content-Type"] = "multipart/form-data";
-instance.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+// instance.defaults.headers.common["Content-Type"] = "application/json";
+// instance.defaults.headers.common["Content-Type"] = "multipart/form-data";
+// instance.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 instance.interceptors.request.use(
   (request) => {
