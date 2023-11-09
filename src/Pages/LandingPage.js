@@ -104,7 +104,7 @@ const LandingPage = () => {
       <div
         style={{
           position: "absolute",
-          top: "445px",
+          top: "375px",
           left: "0px",
           width: "85%",
           height: "85%",
@@ -294,7 +294,7 @@ const LandingPage = () => {
       <div
         style={{
           position: "absolute",
-          top: "1314px",
+          top: "1100px",
           left: "4px",
           width: "1511px",
           height: "321px",
@@ -325,6 +325,7 @@ const LandingPage = () => {
               letterSpacing: "0.3px",
               lineHeight: "150%",
               fontWeight: "600",
+              color: "#fff",
             }}
           >
             Analyzing content across these major platforms
@@ -1497,13 +1498,14 @@ const LandingPage = () => {
           width: "1372px",
           height: "218px",
           color: "#baff2a",
+          fontSize: "35px",
         }}
       >
         <span style={{ lineBreak: "anywhere", width: "100%" }}>
           <p>
             <span style={{ lineHeight: "0px" }}>
               <span style={{ fontWeight: "600" }}>
-                Track and summarize content across any major platform.
+              Casual Predictions Captured: Ensuring Accountability for Every Forecast.
               </span>
             </span>
           </p>
@@ -1511,14 +1513,15 @@ const LandingPage = () => {
             <span style={{ fontWeight: "500" }}>
               <span>{` `}</span>
               <span
-                style={{ lineHeight: "50px" }}
-              >{`Get the summaries within minutes of content publishing. `}</span>
+                style={{ lineHeight: "50px",
+              fontSize: "25px", }}
+              >{`Track Predictions Across Platforms, Summarize Insights, Assign Credibility Scores.`}</span>
             </span>
           </p>
           <p>
             <span style={{ fontWeight: "500" }}>
               <span style={{ color: "#fff", fontSize: "32px" }}>
-                Compare content creators’ accuracy at a glance.
+                
               </span>
             </span>
           </p>
