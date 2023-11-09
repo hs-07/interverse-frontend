@@ -96,9 +96,10 @@ function Login() {
             }}
           >
             <span style={{ lineBreak: "anywhere", width: "100%" }}>
-              <span>{`LUCKY `}</span>
-              <span style={{ color: "#fff" }}>{`OR `}</span>
-              <span>GENIUS</span>
+              <span style={{ fontFamily: "Inter" }}>{`LUCKY `}</span>
+              <span style={{ color: "#fff", fontFamily: "Inter" }}>{`OR `}</span>
+              <span style={{ fontFamily: "Inter" }}>GENIUS</span>
+              
             </span>
           </div>
         </div>
