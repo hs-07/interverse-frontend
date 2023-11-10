@@ -292,12 +292,12 @@ const Predictions = () => {
                     position: "relative",
                     // fontWeight: "",
                     display: "flex",
-                    alignItems: "center",
+                    // alignItems: "center",
                     justifyContent: "center",
                     width: "130px",
                     height: "25px",
                     // flexShrink: "0",
-                    fontSize: "13px",
+                    fontSize: "16px",
                     fontWeight: "500",
                   }}
                 >
@@ -481,7 +481,7 @@ const Predictions = () => {
             {val?.predictionActive ? (
               <div
                 style={{
-                  backgroundColor: "#181818",
+                  backgroundColor: "",
                   width: "1275px",
                   height: "302px",
                   overflow: "hidden",
@@ -868,7 +868,10 @@ const Predictions = () => {
                         src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
                     />
                 </div>
+                
                 </div>
+                
+                
               </div>
             ) : null}
           </>
@@ -876,6 +879,7 @@ const Predictions = () => {
       })}
       {/* Array Data Ends */}
     </div>
+    
   );
 };
 
