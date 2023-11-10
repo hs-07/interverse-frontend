@@ -1505,7 +1505,7 @@ const LandingPage = () => {
           <p>
             <span style={{ lineHeight: "0px" }}>
               <span style={{ fontWeight: "600" }}>
-              Casual Predictions Captured: Ensuring Accountability for Every Forecast.
+              Track, Verify, Score – The Future of Prediction Accountability Across Platforms.
               </span>
             </span>
           </p>

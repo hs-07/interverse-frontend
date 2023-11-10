@@ -4,6 +4,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import "../styles/login.css";
 import { useNavigate } from "react-router-dom";
+import logo1 from '../assests/logo1.png';
 
 function Login() {
   const navigate = useNavigate();
@@ -95,12 +96,11 @@ function Login() {
               flexShrink: "0",
             }}
           >
-            <span style={{ lineBreak: "anywhere", width: "100%" }}>
-              <span style={{ fontFamily: "Inter" }}>{`LUCKY `}</span>
-              <span style={{ color: "#fff", fontFamily: "Inter" }}>{`OR `}</span>
-              <span style={{ fontFamily: "Inter" }}>GENIUS</span>
-              
-            </span>
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+    <img src={logo1} alt="Logo" style={{ maxWidth: '100%', maxHeight: '100%' }} /> {/* Adjust maxWidth and maxHeight as needed */}
+</div>
+
+
           </div>
         </div>
         <div
