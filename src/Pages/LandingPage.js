@@ -7,6 +7,8 @@ import React, { useEffect, useState } from "react";
 import "../styles/carousel.css";
 import landing from "../assests/landing.svg";
 import { getEmail } from "../services/LandingPage.service";
+import landingPageSVG from '../assests/landing_page.svg'; // Adjust the path if necessary
+
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -38,17 +40,32 @@ const LandingPage = () => {
   };
 
   return (
+    <div style={{
+      width: "100%", /* Use viewport width to cover the full width */
+      height: "100%", /* Use viewport height to cover the full height */
+      backgroundColor: "#181818",
+      backgroundImage: `url(${landingPageSVG})`,
+      // backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'fixed',
+      display: "flex",
+      justifyContent: "center",
+
+    }}>
+
     <div
       style={{
         position: "relative",
         backgroundColor: "#181818",
-        width: "100%",
+        width: "1550px",
         height: "5318px",
         overflow: "hidden",
         textAlign: "left",
         fontSize: "48px",
         color: "#fff",
         fontFamily: "Inter",
+        // backgroundImage: `url(${landingPageSVG}) no-repeat center center fixed`,
+
         // background: `url("data:image/svg+xml,${encodeURIComponent(landing)}")`,
       }}
     >
@@ -73,6 +90,8 @@ const LandingPage = () => {
           background:
             "radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))",
           width: "1493px",
+                backgroundImage: `url(${landingPageSVG}) no-repeat center center fixed`,
+
           height: "1473px",
         }}
       />
@@ -123,13 +142,13 @@ const LandingPage = () => {
             width: "1066px",
             height: "600px",
             fontSize: "16px",
-            color: "#181818",
-            backdropFilter: "blur(40px)",
-            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.8)",
+            // color: "#181818",
+            // backdropFilter: "blur(40px)",
+            // boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.8)",
           }}
           width="560"
           height="315px"
-          src="https://www.youtube.com/embed/n5UMs35iCkg?autoplay=1&loop=1&playlist=n5UMs35iCkg&controls=0&showinfo=0&mute=1"
+          src="https://www.youtube.com/embed/LfdW_I4gJA4?autoplay=1&loop=1&playlist=LfdW_I4gJA4&controls=0&showinfo=0&mute=1"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
@@ -140,8 +159,8 @@ const LandingPage = () => {
             position: "absolute",
             top: "0px",
             left: "150px",
-            background:
-              "radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.4) 45.63%, rgba(0, 0, 0, 0))",
+            // background:
+            //   "radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.4) 45.63%, rgba(0, 0, 0, 0))",
             boxShadow: "0px 0px 0px #000",
             width: "100%",
             height: "600px",
@@ -154,7 +173,7 @@ const LandingPage = () => {
             boxSizing: "border-box",
             fontSize: "32px",
             color: "#fff",
-            // backgroundColor: "red",
+            // backgroundColor: "red", 
           }}
         >
           <div
@@ -167,11 +186,12 @@ const LandingPage = () => {
               display: "flex",
               alignItems: "center",
               width: "290px",
+              
             }}
           >
-            Skip the intro
+            {/* Skip the intro */}
           </div>
-          <div
+          {/* <div
             style={{
               position: "relative",
               letterSpacing: "3.8px",
@@ -183,12 +203,12 @@ const LandingPage = () => {
               alignItems: "center",
               width: "290px",
             }}
-          >{`Get the info `}</div>
+          >{`Get the info `}</div> */}
         </div>
         <div
           style={{
             position: "absolute",
-            top: "400px",
+            top: "575px",
             left: "10%",
             width: "100%",
             height: "160px",
@@ -243,18 +263,18 @@ const LandingPage = () => {
           height: "1308px",
         }}
       />
-      <img
+      {/* <img
         style={{
           position: "absolute",
           top: "4748.13px",
           left: "0px",
-          borderRadius: "200px",
-          width: "1625px",
+          borderRadius: "0px",
+          width: "1200px",
           height: "671px",
         }}
         alt=""
         src="/vector-1479.svg"
-      />
+      /> */}
       <div
         style={{
           position: "absolute",
@@ -324,8 +344,8 @@ const LandingPage = () => {
               position: "relative",
               letterSpacing: "0.3px",
               lineHeight: "150%",
-              fontWeight: "600",
-              color: "#fff",
+              fontWeight: "400",
+              color: "#baff2a",
             }}
           >
             Analyzing content across these major platforms
@@ -346,7 +366,7 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "20px",
-                backgroundColor: "#baff2a",
+                backgroundColor: "white",
                 width: "90px",
                 height: "90px",
                 overflow: "hidden",
@@ -372,8 +392,8 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "20px",
-                backgroundColor: "#baff2a",
-                border: "1px solid #baff2a",
+                backgroundColor: "white",
+                // border: "1px solid #baff2a",
                 boxSizing: "border-box",
                 width: "90px",
                 overflow: "hidden",
@@ -400,8 +420,8 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "20px",
-                backgroundColor: "#baff2a",
-                border: "1px solid #baff2a",
+                backgroundColor: "white",
+                // border: "1px solid #baff2a",
                 boxSizing: "border-box",
                 width: "90px",
                 overflow: "hidden",
@@ -428,8 +448,8 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "20px",
-                backgroundColor: "#baff2a",
-                border: "1px solid #baff2a",
+                backgroundColor: "white",
+                // border: "1px solid #baff2a",
                 boxSizing: "border-box",
                 width: "90px",
                 overflow: "hidden",
@@ -456,8 +476,8 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "20px",
-                backgroundColor: "#baff2a",
-                border: "1px solid #baff2a",
+                backgroundColor: "white",
+                // border: "1px solid #baff2a",
                 boxSizing: "border-box",
                 width: "90px",
                 overflow: "hidden",
@@ -535,7 +555,7 @@ const LandingPage = () => {
       >
         <span style={{ lineBreak: "anywhere", width: "100%" }}>
           <span>Lucky or Genius</span>
-          <span style={{ color: "#fff" }}> Use-Cases</span>
+          <span style={{ color: "#fff" }}> Use-Case</span>
         </span>
       </div>
       <div
@@ -1514,7 +1534,7 @@ const LandingPage = () => {
               <span>{` `}</span>
               <span
                 style={{ lineHeight: "50px",
-              fontSize: "25px", }}
+              fontSize: "25px", paddingLeft: "60px" }}
               >{`Track Predictions Across Platforms, Summarize Insights, Assign Credibility Scores.`}</span>
             </span>
           </p>
@@ -3310,6 +3330,7 @@ const LandingPage = () => {
           }}
         >{`Coming Soon `}</div>
       </div>
+    </div>
     </div>
   );
 };
