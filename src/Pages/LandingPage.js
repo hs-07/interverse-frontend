@@ -148,7 +148,7 @@ const LandingPage = () => {
           }}
           width="560"
           height="315px"
-          src="https://www.youtube.com/embed/LfdW_I4gJA4?autoplay=1&loop=1&playlist=LfdW_I4gJA4&controls=0&showinfo=0&mute=1"
+          src="https://www.youtube.com/embed/LfdW_I4gJA4?autoplay=1&loop=1&playlist=LfdW_I4gJA4&controls=0&showinfo=0&mute=1&vq=highres"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
