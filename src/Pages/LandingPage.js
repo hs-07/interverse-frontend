@@ -5,7 +5,7 @@ import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import "../styles/carousel.css";
-import landing from "../assests/landing.svg";
+import landing from "../assests/landing2.svg";
 import { getEmail } from "../services/LandingPage.service";
 import landingPageSVG from '../assests/landing_page.svg'; // Adjust the path if necessary
 
@@ -1485,7 +1485,7 @@ const LandingPage = () => {
           <Button
             style={{
               borderRadius: "8px",
-              backgroundColor: "#e69e22",
+              backgroundColor: "#baff2a",
               width: "138px",
               height: "46px",
               overflow: "hidden",
