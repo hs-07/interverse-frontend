@@ -16,6 +16,9 @@ const Predictions = () => {
   console.log("arr:::", a);
   const [data, setData] = useState([]);
   const [userid, setUserId] = useState(location?.state?.id);
+  const [summariesRead, setSummariesRead] = useState("6");
+  const [justificationRead, setJustificationRead] = useState("4");
+
   useEffect(() => {
     console.log("userId::::::::", userid);
     console.log("userId::::::::", typeof userid);
@@ -57,6 +60,22 @@ const Predictions = () => {
     const arr = [...data];
     arr[index].predictionActive = !arr[index].predictionActive;
     setData([...arr]);
+  };
+
+  const handleSummaries = () => {
+    if (summariesRead == "6") {
+      setSummariesRead("1000");
+    } else {
+      setSummariesRead("6");
+    }
+  };
+
+  const handleJustifications = () => {
+    if (justificationRead == "4") {
+      setJustificationRead("1000");
+    } else {
+      setJustificationRead("4");
+    }
   };
   return (
     <div
@@ -453,7 +472,7 @@ const Predictions = () => {
                   alt=""
                   src="/marketgraph.svg"
                 />
-                <div >
+                <div>
                   {val?.predictionActive ? (
                     <img
                       style={{
@@ -483,7 +502,7 @@ const Predictions = () => {
                 style={{
                   backgroundColor: "",
                   width: "1275px",
-                  height: "302px",
+                  height: "auto",
                   overflow: "hidden",
                   flexShrink: "0",
                   display: "flex",
@@ -499,263 +518,738 @@ const Predictions = () => {
               >
                 <div
                   style={{
-                    borderRadius: "10px",
-                    width: "357px",
-                    height: "262px",
+                    backgroundColor: "#181818",
+                    width: "1275px",
+                    height: "auto",
                     overflow: "hidden",
                     flexShrink: "0",
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
+                    flexWrap: "wrap",
                     alignItems: "flex-start",
-                    justifyContent: "center",
-                    padding: "7px 22px",
+                    justifyContent: "flex-start",
+                    padding: "30px 22px 20px 151px",
                     boxSizing: "border-box",
-                    gap: "11px",
+                    gap: "77px",
+                    color: "#baff2a",
                   }}
                 >
                   <div
                     style={{
-                      width: "322px",
-                      height: "40px",
+                      borderRadius: "10px",
+                      width: "465px",
+                      height: "auto",
+                      overflow: "hidden",
+                      flexShrink: "0",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "flex-start",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: "relative",
-                        display: "flex",
-                        alignItems: "center",
-                        width: "160px",
-                        height: "20px",
-                        flexShrink: "0",
-                      }}
-                    >
-                      Title
-                    </div>
-                    <div
-                      style={{
-                        position: "relative",
-                        color: "#fff",
-                        display: "flex",
-                        alignItems: "center",
-                        width: "323px",
-                        height: "20px",
-                        flexShrink: "0",
-                      }}
-                    >
-                      {val?.source_title.slice(0, 30)}...
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      width: "335px",
-                      height: "47px",
-                      overflow: "hidden",
-                      flexShrink: "0",
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
                       justifyContent: "flex-start",
-                      padding: "12px 0px",
+                      padding: "0px 18px 0px 0px",
                       boxSizing: "border-box",
-                      gap: "55px",
-                      textAlign: "center",
-                      fontSize: "12px",
-                      color: "#baff2a",
+                      gap: "19px",
+                      color: "#aeaeae",
                     }}
                   >
                     <div
                       style={{
                         borderRadius: "8px",
                         backgroundColor: "#282828",
-                        width: "141px",
-                        height: "43px",
+                        width: "465px",
+                        height: "auto",
+                        overflow: "hidden",
+                        flexShrink: "0",
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        padding: "22px",
+                        boxSizing: "border-box",
+                        gap: "20px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "182px",
+                          height: "59px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "105px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Made on:
+                        </div>
+                        <div
+                          style={{
+                            position: "relative",
+                            fontSize: "20px",
+                            fontWeight: "600",
+                            color: "#baff2a",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "182px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          {val?.publish_date}
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          width: "189px",
+                          height: "59px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "105px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Resolves on
+                        </div>
+                        <div
+                          style={{
+                            position: "relative",
+                            fontSize: "20px",
+                            fontWeight: "600",
+                            color: "#baff2a",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "182px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          {val?.fixed_date}
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          width: "182px",
+                          height: "59px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "182px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Prediction accuracy
+                        </div>
+                        <div
+                          style={{
+                            position: "relative",
+                            fontSize: "20px",
+                            fontWeight: "600",
+                            color: "#baff2a",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "182px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          {val?.prediction_accuracy}%
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          width: "189px",
+                          height: "59px",
+                          display: "flex",
+                          flexDirection: "row",
+                          flexWrap: "wrap",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
+                          gap: "0px",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "50px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Status
+                        </div>
+                        <div
+                          style={{
+                            position: "relative",
+                            borderRadius: "50%",
+                            backgroundColor: "#50d200",
+                            width: "12px",
+                            height: "12px",
+                          }}
+                        />
+                        <div
+                          style={{
+                            position: "relative",
+                            fontSize: "21px",
+                            fontWeight: "800",
+                            color:
+                              val?.prediction_validation == "TRUE"
+                                ? "#10d200"
+                                : val?.prediction_validation ===
+                                  "PARTIALLY TRUE"
+                                ? "#388E3C"
+                                : val?.prediction_validation === "PENDING"
+                                ? "#374C98"
+                                : "#f70000",
+                            display: "flex",
+                            alignItems: "center",
+                            width: "182px",
+                            height: "20px",
+                            flexShrink: "0",
+                          }}
+                          // "#10d200" : "#b32a2a"
+                        >
+                          {val?.prediction_validation}
+                        </div>
+                      </div>
+                    </div>
+                    {/* Below Part starts */}
+                    <div
+                      style={{
+                        width: "465px",
+                        height: "126px",
                         overflow: "hidden",
                         flexShrink: "0",
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
-                        justifyContent: "center",
+                        justifyContent: "flex-start",
+                        padding: "12px 0px",
                         boxSizing: "border-box",
-                      }}
-                    >
-                      <Button
-                        style={{
-                          borderRadius: "8px",
-                          width: "140px",
-                          height: "40px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          textAlign: "center",
-                          fontSize: "11px",
-                          color: "#baff2a",
-                        }}
-                        onClick={() =>
-                          navigate("/Summaries", {
-                            state: { id: val?.user_id },
-                          })
-                        }
-                      >
-                        Summary
-                      </Button>
-                    </div>
-                    <div
-                      style={{
-                        width: "143px",
-                        height: "40px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                        textAlign: "left",
+                        gap: "15px",
+                        textAlign: "center",
                         fontSize: "14px",
-                        color: "#aeaeae",
                       }}
                     >
                       <div
                         style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "160px",
-                          height: "20px",
+                          borderRadius: "8px",
+                          backgroundColor: "#282828",
+                          width: "105px",
+                          height: "126px",
+                          overflow: "hidden",
                           flexShrink: "0",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
                         }}
                       >
-                        Made on:
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "105px",
+                            height: "53px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Points
+                        </div>
+                        <div
+                          style={{
+                            backgroundColor:
+                              val?.score < 0 ? "#b32a2a" : "#10d200",
+                            width: "105px",
+                            height: "73px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "4px 3px",
+                            boxSizing: "border-box",
+                            textAlign: "left",
+                            fontSize: "16px",
+                            color: "#fff",
+                          }}
+                        >
+                          <div
+                            style={{ position: "relative", fontWeight: "600" }}
+                          >
+                            {val?.score && Number(val?.score).toFixed(1)}
+                          </div>
+                        </div>
                       </div>
                       <div
                         style={{
-                          position: "relative",
-                          color: "#baff2a",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "160px",
-                          height: "20px",
+                          borderRadius: "8px",
+                          backgroundColor: "#282828",
+                          width: "105px",
+                          height: "126px",
+                          overflow: "hidden",
                           flexShrink: "0",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
                         }}
                       >
-                        {val?.publish_date}
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "105px",
+                            height: "53px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Days since
+                        </div>
+                        <div
+                          style={{
+                            backgroundColor:
+                              val?.days_since > 30 ? "#10d200" : "#b32a2a",
+                            width: "105px",
+                            height: "73px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "4px 3px",
+                            boxSizing: "border-box",
+                            textAlign: "left",
+                            fontSize: "16px",
+                            color: "#fff",
+                          }}
+                        >
+                          <div
+                            style={{ position: "relative", fontWeight: "600" }}
+                          >
+                            {val?.days_since} Days
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          borderRadius: "8px",
+                          backgroundColor: "#282828",
+                          width: "105px",
+                          height: "126px",
+                          overflow: "hidden",
+                          flexShrink: "0",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "105px",
+                            height: "53px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Error %
+                        </div>
+                        <div
+                          style={{
+                            backgroundColor: "#fff",
+                            width: "105px",
+                            height: "73px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "4px 3px",
+                            boxSizing: "border-box",
+                            textAlign: "left",
+                            fontSize: "16px",
+                            color: "#333",
+                          }}
+                        >
+                          <div
+                            style={{ position: "relative", fontWeight: "600" }}
+                          >
+                            {val?.error}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          borderRadius: "8px",
+                          border: "1px solid #373737",
+                          boxSizing: "border-box",
+                          width: "105px",
+                          height: "126px",
+                          overflow: "hidden",
+                          flexShrink: "0",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "105px",
+                            height: "53px",
+                            flexShrink: "0",
+                          }}
+                        >
+                          Prediction
+                          <br /> Type
+                        </div>
+                        <div
+                          style={{
+                            backgroundColor: "#9d43bd",
+                            width: "104px",
+                            height: "73px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "4px 3px",
+                            boxSizing: "border-box",
+                            textAlign: "left",
+                            fontSize: "16px",
+                            color: "#fff",
+                          }}
+                        >
+                          <div
+                            style={{ position: "relative", fontWeight: "600" }}
+                          >
+                            {val?.prediction_type}
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    {/* Below Part Ends */}
                   </div>
+                  {/* Youtube Video Starts */}
                   <div
                     style={{
-                      height: "47px",
+                      position: "relative",
+                      borderRadius: "14px",
+                      backgroundColor: "#141c23",
+                      width: "540px",
+                      height: "330px",
                       overflow: "hidden",
                       flexShrink: "0",
+                    }}
+                  >
+                    <img
+                      style={{
+                        position: "absolute",
+                        top: "0px",
+                        left: "0px",
+                        width: "540px",
+                        height: "330px",
+                        objectFit: "cover",
+                      }}
+                      alt=""
+                      src="/image-140@2x.png"
+                    />
+                    <div>
+                      <iframe
+                        style={{
+                          position: "absolute",
+                          top: "0px",
+                          left: "0px",
+                          width: "540px",
+                          height: "330px",
+                          // objectFit: "cover",
+                        }}
+                        alt=""
+                        src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
+                      />
+                    </div>
+                  </div>
+                  {/* YouTube Video Ends */}
+                  <div
+                    style={{
+                      borderRadius: "8px",
+                      backgroundColor: "#282828",
+                      width: "1083px",
+                      height: "auto",
                       display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
                       justifyContent: "flex-start",
-                      padding: "12px 0px",
+                      padding: "22px",
                       boxSizing: "border-box",
-                      gap: "28px",
+                      gap: "16px",
+                      fontSize: "20px",
+                      // move the whole box up:
+                      marginTop: "-50px",
                     }}
                   >
                     <div
                       style={{
-                        width: "168px",
-                        height: "40px",
+                        position: "relative",
+                        fontWeight: "600",
                         display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "457px",
+                        height: "23px",
+                        flexShrink: "0",
                       }}
                     >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "160px",
-                          height: "20px",
-                          flexShrink: "0",
-                        }}
-                      >
-                        Prediction Accuracy
-                      </div>
-                      <div
-                        style={{
-                          position: "relative",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          color: "#baff2a",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "160px",
-                          height: "20px",
-                          flexShrink: "0",
-                        }}
-                      >
-                        {Math.floor(val?.prediction_accuracy)}%
-                      </div>
+                      Justification
                     </div>
                     <div
                       style={{
-                        width: "126px",
-                        height: "40px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
+                        position: "relative",
+                        fontSize: "inherit",
+                        fontFamily: "inherit",
+                        color: "#fff",
+                        display: "-webkit-inline-box",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        webkitLineClamp: justificationRead,
+                        webkitBoxOrient: "vertical",
+                        width: "1043px",
                       }}
                     >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "126px",
-                          height: "20px",
-                          flexShrink: "0",
-                        }}
-                      >
-                        Resolves on:
-                      </div>
-                      <div
-                        style={{
-                          position: "relative",
-                          color: "#baff2a",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "126px",
-                          height: "20px",
-                          flexShrink: "0",
-                        }}
-                      >
-                        {val?.fixed_date}
-                      </div>
+                      <ul style={{ margin: "0", paddingLeft: "21px" }}>
+                        <li style={{ marginBottom: "0px" }}>
+                          {val?.justification}
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "16px",
+                        textAlign: "right",
+                        display: "flex",
+                        alignItems: "center",
+                        width: "1043px",
+                        height: "20px",
+                        flexShrink: "0",
+                        justifyContent: "flex-end",
+                      }}
+                      onClick={handleJustifications}
+                    >
+                      {justificationRead == "4" ? "Read more" : "Read Less"}
                     </div>
                   </div>
                   <div
                     style={{
-                      width: "335px",
-                      height: "58px",
+                      borderRadius: "8px",
+                      border: "1.2px solid #282828",
+                      boxSizing: "border-box",
+                      width: "1083px",
+                      height: "auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "flex-start",
+                      padding: "22px",
+                      gap: "16px",
+                      fontSize: "20px",
+                      // backgroundColor: "red",
+                      marginTop: "-50px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        fontWeight: "600",
+                        display: "flex",
+                        alignItems: "center",
+                        width: "457px",
+                        height: "23px",
+                        flexShrink: "0",
+                        
+                      }}
+                    >
+                      Summaries
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "inherit",
+                        fontFamily: "inherit",
+                        color: "#fff",
+                        display: "-webkit-inline-box",
+                        alignItems: "center",
+                        overflow: "hidden",
+                        textOverflow: "inherit",
+                        webkitLineClamp: summariesRead,
+                        webkitBoxOrient: "vertical",
+                        width: "1043px",
+                        
+                      }}
+                    >
+                      <ul style={{ margin: "0", paddingLeft: "21px" }}>
+                        <li style={{ marginBottom: "0px" }}>
+                          {val?.summaries}
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "16px",
+                        textAlign: "right",
+                        display: "flex",
+                        alignItems: "center",
+                        width: "1043px",
+                        height: "20px",
+                        flexShrink: "0",
+                        justifyContent: "flex-end",
+                      }}
+                      onClick={handleSummaries}
+                    >
+                      {summariesRead == "6" ? "Read more" : "Read Less"}
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      width: "1083px",
+                      height: "auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "flex-start",
+                      gap: "8px",
+                      fontSize: "14px",
+                      color: "#1664da",
+                      
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "20px",
+                        fontWeight: "600",
+                        color: "#baff2a",
+                        display: "flex",
+                        alignItems: "center",
+                        width: "1083px",
+                        height: "23px",
+                        flexShrink: "0",
+                        marginTop: "-50px",
+                        
+                      }}
+                    >
+                      Sources
+                    </div>
+
+                    {val?.sources.map((val, index) => {
+                      return (
+                        <div
+                          style={{
+                            borderRadius: "8px",
+                            width: "1083px",
+                            height: "19px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "flex-start",
+                            padding: "17px 34px 17px 0px",
+                            boxSizing: "border-box",
+                          }}
+                        >
+                          <div
+                            style={{
+                              position: "relative",
+                              display: "flex",
+                              alignItems: "center",
+                              width: "896px",
+                              height: "36px",
+                              flexShrink: "0",
+                            }}
+                          >
+                            {val}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div
+                    style={{
+                      borderRadius: "8px",
+                      backgroundColor: "#282828",
+                      width: "1083px",
+                      height: "60px",
                       overflow: "hidden",
                       flexShrink: "0",
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
                       justifyContent: "flex-start",
-                      padding: "10px 10px 10px 0px",
+                      padding: "10px 10px 10px 22px",
                       boxSizing: "border-box",
-                      gap: "53px",
+                      gap: "352px",
                       textAlign: "center",
-                      fontSize: "12px",
-                      color: "#baff2a",
+                      color: "#fff",
+                      marginTop: "-40px",
                     }}
                   >
-                    <div
+                    <div style={{ position: "relative" }}>
+                      Did we get it wrong? Add context and evidence if you think you see an error.
+                    </div>
+                    <Button
                       style={{
                         borderRadius: "8px",
-                        backgroundColor: "#282828",
-                        width: "141px",
+                        backgroundColor: "#baff2a",
+                        width: "122px",
                         height: "43px",
                         overflow: "hidden",
                         flexShrink: "0",
@@ -763,73 +1257,19 @@ const Predictions = () => {
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "center",
-                        // padding: "17px 34px",
+                        padding: "17px 34px",
                         boxSizing: "border-box",
+                        fontSize: "14px",
+                        color: "#282828",
+                        // move to the right:
+                        marginLeft: "65px",
                       }}
                     >
-                      <Button
-                        style={{
-                          borderRadius: "8px",
-                          width: "140px",
-                          height: "40px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          textAlign: "center",
-                          fontSize: "11px",
-                          color: "#baff2a",
-                        }}
-                        onClick={() =>
-                          navigate("/Profiles", {
-                            state: { id: val?.user_id },
-                          })
-                        }
-                      >
-                        View Profile
-                      </Button>
-                    </div>
-                    <div
-                      style={{
-                        borderRadius: "8px",
-                        backgroundColor: "#282828",
-                        width: "141px",
-                        height: "43px",
-                        overflow: "hidden",
-                        flexShrink: "0",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        // padding: "17px 34px",
-                        boxSizing: "border-box",
-                      }}
-                    >
-                      <Button
-                        style={{
-                          borderRadius: "8px",
-                          width: "140px",
-                          height: "40px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          textAlign: "center",
-                          fontSize: "11px",
-                          color: "#baff2a",
-                        }}
-                        onClick={() =>
-                          navigate("/Markets", {
-                            state: { id: val?.user_id },
-                          })
-                        }
-                      >
-                        View Market
-                      </Button>
-                    </div>
+                      Feedback
+                    </Button>
                   </div>
                 </div>
-                <div
+                {/* <div
                   style={{
                     position: "relative",
                     borderRadius: "14px",
@@ -853,25 +1293,20 @@ const Predictions = () => {
                     src="/image-140@2x.png"
                   />
                   <div>
-                    {console.log("YouTube ID:", val?.youtube_id)}
-                    {console.log("Start Time:", val?.youtube_start_time)}
                     <iframe
-                        style={{
-                            position: "absolute",
-                            top: "0px",
-                            left: "0px",
-                            width: "493px",
-                            height: "262px",
-                            objectFit: "cover",
-                        }}
-                        alt=""
-                        src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
+                      style={{
+                        position: "absolute",
+                        top: "0px",
+                        left: "0px",
+                        width: "493px",
+                        height: "262px",
+                        objectFit: "cover",
+                      }}
+                      alt=""
+                      src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
                     />
-                </div>
-                
-                </div>
-                
-                
+                  </div>
+                </div> */}
               </div>
             ) : null}
           </>
@@ -879,7 +1314,6 @@ const Predictions = () => {
       })}
       {/* Array Data Ends */}
     </div>
-    
   );
 };
 
