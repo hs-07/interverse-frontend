@@ -860,7 +860,7 @@ const Predictions = () => {
                           <div
                             style={{ position: "relative", fontWeight: "600" }}
                           >
-                            {val?.score && Number(val?.score).toFixed(1)}
+                            {val?.score && Number(val?.score).toFixed(1)}<span style={{ fontSize: "16px", fontWeight: "500" }}> Pts</span>
                           </div>
                         </div>
                       </div>
