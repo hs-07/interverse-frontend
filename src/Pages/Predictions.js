@@ -337,7 +337,7 @@ const Predictions = () => {
                     // alignItems: "center",
                     justifyContent: "center",
                     width: "130px",
-                    height: "25px",
+                    height: "11px",
                     // flexShrink: "0",
                     fontSize: "16px",
                     fontWeight: "500",
@@ -1069,8 +1069,9 @@ const Predictions = () => {
                       position: "relative",
                       borderRadius: "14px",
                       backgroundColor: "#141c23",
-                      width: "540px",
+                      width: "560px",
                       height: "330px",
+                      left: "-20px",
                       overflow: "hidden",
                       flexShrink: "0",
                     }}
@@ -1080,7 +1081,7 @@ const Predictions = () => {
                         position: "absolute",
                         top: "0px",
                         left: "0px",
-                        width: "540px",
+                        width: "560px",
                         height: "330px",
                         objectFit: "cover",
                       }}
@@ -1093,7 +1094,7 @@ const Predictions = () => {
                           position: "absolute",
                           top: "0px",
                           left: "0px",
-                          width: "540px",
+                          width: "570px",
                           height: "330px",
                           // objectFit: "cover",
                         }}
@@ -1216,7 +1217,7 @@ const Predictions = () => {
                       <img
                         src={infoIcon}
                         alt="Info"
-                        title="Evidential summary of all the most relevant paragraphs from all the most relevant sources that were ranked highest by our AI."
+                        title="Evidential summary of the most relevant articles from the best ranked sources, determined by our AI."
                         style={{
                           marginLeft: "5px",
                           width: '16px', // Adjust as needed

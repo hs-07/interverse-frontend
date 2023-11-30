@@ -478,7 +478,7 @@ function Profiles() {
                               borderRadius: "4px",
                               // backdropFilter: "blur(30px)",
                               width: "50%",
-                              height: "28px",
+                              height: "38px",
                               overflow: "hidden",
                               flexShrink: "0",
                               display: "flex",
@@ -753,7 +753,7 @@ function Profiles() {
                       ><div
                       style={{
                         position: "relative",
-                        top: -25,
+                        top: -10,
                         left: -65,
                       }}
                     >
@@ -764,11 +764,12 @@ function Profiles() {
                         <div
                           style={{
                             display: "flex",
-                            height: "260px",
-                            width: "70%",
+                            height: "250px",
+                            width: "100%",
                             // backgroundColor: "red",
                             justifyContent: "center",
                             // alignItems: "center",
+                      
                           }}
                         >
                           <Doughnut
