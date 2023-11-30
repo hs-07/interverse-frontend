@@ -138,7 +138,7 @@ const LeaderBoards = () => {
                     
                     </div>
                     
-                    <div className="bankroll-section-value" style={{ color: val.total_user_score * 10 < 0 ? '#e87d7d' : '#baff2a' }}>
+                    <div className="bankroll-section-value" style={{ color: val.total_user_score < 0 ? '#e87d7d' : '#baff2a' }}>
                       {/* ${Math.floor(val.bankroll)} */}
                       {/* {new Intl.NumberFormat("en-IN", {
                         style: "currency",
@@ -148,7 +148,7 @@ const LeaderBoards = () => {
                       {new Intl.NumberFormat("en-IN", {
                           maximumFractionDigits: 0,
                           minimumFractionDigits: 0
-                      }).format(val.total_user_score * 10)}
+                      }).format(val.total_user_score)}
 
                     </div>
                   </div>

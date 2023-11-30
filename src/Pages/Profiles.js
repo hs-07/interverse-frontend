@@ -314,10 +314,10 @@ function Profiles() {
                         width: "116px",
                         height: "20px",
                         flexShrink: "0",
-                        color: val?.total_user_score * 10 < 0 ? '#e87d7d' : 'inherit'
+                        color: val?.total_user_score  < 0 ? '#e87d7d' : 'inherit'
                       }}
                     >
-                      {Math.floor(val?.total_user_score*10)}
+                      {Math.floor(val?.total_user_score)}
                     </div>
                     <div
                       style={{
