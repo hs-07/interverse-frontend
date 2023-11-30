@@ -1317,12 +1317,13 @@ function Summaries() {
                               position: "relative",
                               display: "flex",
                               alignItems: "center",
-                              width: "150px",
-                              height: "20px",
+                              width: "190px",
+                              height: "40px",
                               // flexShrink: "0",
                               justifyContent: "center",
                               overflow: "hidden",
                               wordBreak: "break-word",
+                              paddingTop  : "15px",
                             }}
                           >
                             <p style={{ wordWrap: "break-word" }}>

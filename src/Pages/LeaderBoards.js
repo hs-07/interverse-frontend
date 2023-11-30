@@ -109,14 +109,19 @@ const LeaderBoards = () => {
                     </div>
                   </div>
                   <div className="bankroll-section ">
-                    <div className="bankroll-section-title">Bankroll</div>
-                    <div className="bankroll-section-value ">
+                    <div className="bankroll-section-title">Points</div>
+                    <div className="bankroll-section-value" style={{ color: val.total_user_score * 10 < 0 ? '#e87d7d' : '#baff2a' }}>
                       {/* ${Math.floor(val.bankroll)} */}
-                      {new Intl.NumberFormat("en-IN", {
+                      {/* {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "USD",
                         maximumFractionDigits: 0,
-                      }).format(val.bankroll)}
+                      }).format(val.total_user_score*10)} */}
+                      {new Intl.NumberFormat("en-IN", {
+                          maximumFractionDigits: 0,
+                          minimumFractionDigits: 0
+                      }).format(val.total_user_score * 10)}
+
                     </div>
                   </div>
                   <Button

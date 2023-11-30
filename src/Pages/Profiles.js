@@ -314,9 +314,10 @@ function Profiles() {
                         width: "116px",
                         height: "20px",
                         flexShrink: "0",
+                        color: val?.total_user_score * 10 < 0 ? '#e87d7d' : 'inherit'
                       }}
                     >
-                      ${Math.floor(val?.bankroll)}
+                      {Math.floor(val?.total_user_score*10)}
                     </div>
                     <div
                       style={{
@@ -330,7 +331,7 @@ function Profiles() {
                         flexShrink: "0",
                       }}
                     >
-                      Bankroll
+                      Points
                     </div>
                   </div>
                   <div
