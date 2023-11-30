@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import infoIcon from '../assests/hover_info.png'; // Replace with the actual path to your icon
+import infoIcon from '../assests/hover_info3.png'; // Replace with the actual path to your icon
 
 const Predictions = () => {
   const navigate = useNavigate();

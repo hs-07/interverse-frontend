@@ -4,7 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
-import infoIcon from '../assests/hover_info.png'; // Replace with the actual path to your icon
+import infoIcon from '../assests/hover_info3.png'; // Replace with the actual path to your icon
 
 
 const LeaderBoards = () => {
