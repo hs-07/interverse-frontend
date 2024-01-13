@@ -402,7 +402,7 @@ function Summaries() {
                     flexShrink: "0",
                   }}
                 >
-                  Date: {val.publication_date.toString().slice(0, 10)}
+                  {val.publication_date.toString().slice(0, 10)}
                 </div>
               </div>
               <div
