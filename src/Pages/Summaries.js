@@ -302,7 +302,7 @@ function Summaries() {
                       flexShrink: "0",
                     }}
                   >
-                    {val.source_title.slice(0, 34)}...
+                    {val.source_title.slice(0, 30)}..
                   </div>
                   <div
                     style={{
@@ -1242,20 +1242,19 @@ function Summaries() {
                   return (
                     <div
                       style={{
-                        backgroundColor: index % 2 == 0 ? "#282828" : "#202020",
+                        backgroundColor: index % 2 === 0 ? "#282828" : "#202020",
                         width: "100%",
-                        // height: "54px",
-                        overflow: "hidden",
+                        // Removed overflow: "hidden" to allow the container to grow with the content
                         flexShrink: "0",
                         display: "flex",
                         flexDirection: "row",
-                        alignItems: "center",
+                        alignItems: "center", // This will vertically center the items in the container
                         justifyContent: "flex-start",
-                        padding: "7px 22px",
-                        boxSizing: "border-box",
+                        padding: "15px 15px", // Adjust the top and bottom padding as needed for buffer
+                        boxSizing: "border-box", // Makes sure the padding is included in the width
                         gap: "26px",
                         color: "#baff2a",
-                      }}
+                                            }}
                     >
                       <div
                         style={{
@@ -1301,38 +1300,34 @@ function Summaries() {
                       >
                         <div
                           style={{
-                            position: "absolute",
-                            top: "0px",
-                            left: "0px",
-                            width: "131px",
-                            height: "40px",
+                            width: "90%",
                             display: "flex",
                             flexDirection: "column",
-                            alignItems: "flex-start",
+                            alignItems: "center",
                             justifyContent: "center",
+                            fontSize: "16px",
+                            color: "#fff",
                           }}
                         >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "190px",
-                              height: "40px",
-                              // flexShrink: "0",
-                              justifyContent: "center",
-                              overflow: "hidden",
-                              wordBreak: "break-word",
-                              paddingTop  : "15px",
-                            }}
-                          >
-                            <p style={{ wordWrap: "break-word" }}>
-                              {val?.user_name.startsWith("Unknown")
-                                ? "--"
-                                : val?.user_name}
-                            </p>
-                          </div>
+                          {/* Profile Image with hover-over username */}
+                          {val?.image_url ? (
+                            <img
+                              src={val.image_url}
+                              alt={val.user_name}
+                              title={val.user_name.startsWith("Unknown") ? "" : val.user_name} // Tooltip on hover
+                              style={{
+                                width: "50px", // Smaller size
+                                height: "50px", // Ensure width and height are the same for a circle
+                                borderRadius: "50%", // Makes the image circular
+                                border: "2px solid #fff", // Thin white border, adjust color and width as needed
+                                objectFit: "cover", // Ensures the image covers the area without stretching
+                                marginBottom: "10px", // Space below the image
+                                cursor: "pointer", // Changes cursor to indicate hover effect
+                              }}
+                            />
+                          ) : null}
                         </div>
+
                       </div>
                       <div
                         style={{
@@ -1340,7 +1335,7 @@ function Summaries() {
                           // height: "40px",
                           display: "flex",
                           flexDirection: "column",
-                          alignItems: "center",
+                          alignItems: "left",
                           justifyContent: "center",
                           fontSize: "16px",
                           color: "#fff",
@@ -1357,7 +1352,7 @@ function Summaries() {
                             flexWrap: "wrap",
                           }}
                         >
-                          {val?.labelled_segments}...
+                          {val?.labelled_segments}
                         </div>
                       </div>
                     </div>
