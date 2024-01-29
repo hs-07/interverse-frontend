@@ -1,0 +1,38 @@
+Terms of Service User Agreement for Lucky or Genius
+
+Effective Date: January 29, 2024
+
+1. Introduction
+Welcome to Lucky or Genius. These terms and conditions outline the rules and regulations for the use of Lucky or Genius's Website and Services.
+
+2. Acceptance of Terms
+By accessing this website and using our services, we assume you accept these terms and conditions in full. Do not continue to use Lucky or Genius's website or services if you do not accept all of the terms and conditions stated on this page.
+
+3. Changes to Terms
+We reserve the right to modify these terms at any time. We will notify you of any changes by posting the new Terms of Service on this page.
+
+4. Service Description
+Lucky or Genius provides an AI-enabled forecast accuracy tracker that processes and evaluates content from various platforms. The service includes features such as prediction validation, forecaster scoring, and content summarization.
+
+5. User Registration
+To access certain features of our service, you may be required to register an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
+
+6. User Responsibilities
+
+    Content Use: The user agrees not to use the service for any unlawful purpose or in any way that interrupts, damages, or impairs the service.
+    Account Security: You are responsible for safeguarding the password you use to access the service and for any activities or actions under your password.
+
+7. Intellectual Property Rights
+All intellectual property rights for the content and software on the website and within the service are owned by or licensed to Lucky or Genius. The content may not be copied, reproduced, distributed, republished, downloaded, displayed, posted, or transmitted in any form without our express written consent.
+
+8. Limitation of Liability
+Lucky or Genius shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.
+
+9. Termination
+We may terminate or suspend access to our service immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach the Terms.
+
+10. Governing Law
+These Terms shall be governed and construed in accordance with the laws of Delaware, without regard to its conflict of law provisions.
+
+11. Contact Information
+For any questions about these Terms, please contact us at alek@luckyorgenius.com
