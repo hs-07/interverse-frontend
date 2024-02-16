@@ -15,6 +15,13 @@ function Sidenav() {
         {/* Head Text in sideNav Ends */}
 
         <NavLink
+          to="/Feed"
+          className={({ isActive }) => (isActive ? "active-link" : "link")}
+        >
+          <img alt="" src="/discovery.svg" />
+          <p style={{ marginTop: "10px" }}> Feed</p>
+        </NavLink>
+        <NavLink
           to="/LeaderBoards"
           className={({ isActive }) => (isActive ? "active-link" : "link")}
         >
