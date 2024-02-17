@@ -64,7 +64,7 @@ const Feed = () => {
               height: "100%",
             }}
           >
-            <label>Top Predictors</label>
+            <label>Recent Predictions</label>
             <a href="">View All</a>
           </div>
           {cards.map((card, index) => (
@@ -183,7 +183,7 @@ const Feed = () => {
                 padding: "10px",
               }}
             >
-              <label>Recent predictions</label>
+              <label>Top predictors</label>
               <a href="">View All</a>
             </div>
             <div
@@ -209,7 +209,19 @@ const Feed = () => {
               <label>Trending predictions</label>
               <a href="">View All</a>
             </div>
-            <div className="trending-cards">
+            <div
+              className="trending-cards"
+              style={{
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+                flexDirection: "column",
+              }}
+            >
+              <TrendingPredictionCard />
+              <TrendingPredictionCard />
+              <TrendingPredictionCard />
+              <TrendingPredictionCard />
               <TrendingPredictionCard />
             </div>
           </div>
