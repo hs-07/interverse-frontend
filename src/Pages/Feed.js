@@ -5,6 +5,7 @@ import { IoChatbubbleEllipses } from "react-icons/io5";
 import { RiSendPlaneFill } from "react-icons/ri";
 
 import TopPredictorsCard from "../components/top-predictors-card";
+import TrendingPredictionCard from "../components/trending-prediction-card";
 
 import "../styles/feed.css";
 
@@ -185,8 +186,32 @@ const Feed = () => {
               <label>Recent predictions</label>
               <a href="">View All</a>
             </div>
-
-            <TopPredictorsCard />
+            <div
+              className="tp-cards"
+              style={{
+                display: "flex",
+                gap: "12px",
+              }}
+            >
+              <TopPredictorsCard />
+              <TopPredictorsCard />
+            </div>
+          </div>
+          <div className="trending-predictions">
+            <div
+              className=""
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "10px",
+              }}
+            >
+              <label>Trending predictions</label>
+              <a href="">View All</a>
+            </div>
+            <div className="trending-cards">
+              <TrendingPredictionCard />
+            </div>
           </div>
         </div>
         <div

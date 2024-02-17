@@ -1,0 +1,35 @@
+.tp-card {
+  padding: 16px;
+  background-color: black;
+  border-radius: 10px;
+}
+.tp-card-header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+.tp-card-header h4 {
+  line-height: 1.2rem;
+}
+.tp-card-header h6 {
+  color: #aeaeae;
+  line-height: 1.2rem;
+}
+.tp-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tp-card-footer p {
+  color: #aeaeae;
+  font-size: 14px;
+}
+.tp-card-footer span {
+  color: #fff;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
