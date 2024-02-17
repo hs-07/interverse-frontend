@@ -69,7 +69,7 @@ a {
 .card-footer {
   margin-top: 24px;
   display: flex;
-  width: 50%;
+  width: 40%;
   justify-content: space-between;
 }
 .dislikes,

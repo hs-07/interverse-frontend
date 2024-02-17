@@ -4,8 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
-import infoIcon from '../assests/hover_info6.png'; // Replace with the actual path to your icon
-
+import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
@@ -106,39 +105,43 @@ const LeaderBoards = () => {
                     >
                       Prediction Accuracy
                       <img
-                              src={infoIcon}
-                              alt="Info"
-                              title="Overall prediction accuracy for the forecaster across all predictions."
-                              style={{
-                                marginLeft: "5px",
-                                width: '16px', // Adjust as needed
-                                height: '16px', // Adjust as needed
-                                cursor: "pointer",
-                              }}
-                            />
-
+                        src={infoIcon}
+                        alt="Info"
+                        title="Overall prediction accuracy for the forecaster across all predictions."
+                        style={{
+                          marginLeft: "5px",
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
+                          cursor: "pointer",
+                        }}
+                      />
                     </div>
                     <div className="prediction-accuracy-title">
                       {Math.floor(val.prediction_accuracy)}%
                     </div>
                   </div>
                   <div className="bankroll-section ">
-                    <div className="bankroll-section-title">Points
-                    <img
-                            src={infoIcon}
-                            alt="Info"
-                            title="Point based on prediction accuracy & timeline (max gain +100 per predictiom | max loss of -100 per prediction) "
-                            style={{
-                              marginLeft: "5px",
-                              width: '16px', // Adjust as needed
-                              height: '16px', // Adjust as needed
-                              cursor: "pointer",
-                            }}
-                          />
-                    
+                    <div className="bankroll-section-title">
+                      Points
+                      <img
+                        src={infoIcon}
+                        alt="Info"
+                        title="Point based on prediction accuracy & timeline (max gain +100 per predictiom | max loss of -100 per prediction) "
+                        style={{
+                          marginLeft: "5px",
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
+                          cursor: "pointer",
+                        }}
+                      />
                     </div>
-                    
-                    <div className="bankroll-section-value" style={{ color: val.total_user_score < 0 ? '#e87d7d' : '#baff2a' }}>
+
+                    <div
+                      className="bankroll-section-value"
+                      style={{
+                        color: val.total_user_score < 0 ? "#e87d7d" : "#baff2a",
+                      }}
+                    >
                       {/* ${Math.floor(val.bankroll)} */}
                       {/* {new Intl.NumberFormat("en-IN", {
                         style: "currency",
@@ -146,10 +149,9 @@ const LeaderBoards = () => {
                         maximumFractionDigits: 0,
                       }).format(val.total_user_score*10)} */}
                       {new Intl.NumberFormat("en-IN", {
-                          maximumFractionDigits: 0,
-                          minimumFractionDigits: 0
+                        maximumFractionDigits: 0,
+                        minimumFractionDigits: 0,
                       }).format(val.total_user_score)}
-
                     </div>
                   </div>
                   <Button
