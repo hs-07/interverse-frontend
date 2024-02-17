@@ -1,0 +1,84 @@
+p {
+  margin-bottom: 0px !important;
+}
+a {
+  text-decoration: none !important;
+}
+.feed-card {
+  padding: 22px;
+  border-radius: 10px;
+  background: black;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-name span {
+  font-size: 14px;
+  color: #aeaeae;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-status {
+  font-size: 14px;
+  display: flex;
+  padding-top: 12px;
+  align-items: center;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-status p {
+  margin-left: 6px;
+  color: #aeaeae;
+  font-size: 14px;
+}
+.card-status span {
+  color: #c2964b;
+}
+.card-dates {
+  display: flex;
+  padding-top: 12px;
+  gap: 15px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-dates span {
+  color: #aeaeae;
+}
+.card-description {
+  color: #aeaeae;
+  padding-top: 12px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.card-image {
+  padding-top: 12px;
+}
+.card-footer {
+  margin-top: 24px;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.dislikes,
+.likes {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.dislikes span,
+.likes span {
+  font-size: 14px;
+}
