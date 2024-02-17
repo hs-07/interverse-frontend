@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import { ImArrowUp, ImArrowDown } from "react-icons/im";
 import { IoChatbubbleEllipses } from "react-icons/io5";
@@ -7,10 +7,12 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import TopPredictorsCard from "../components/top-predictors-card";
 import TrendingPredictionCard from "../components/trending-prediction-card";
 import FeedRightSection from "../components/feed-right-section";
+import ShareModal from "../components/shareModal";
 
 import "../styles/feed.css";
 
 const Feed = () => {
+  const [openShare, setOpenShare] = useState(false);
   const cards = [
     { name: "Ray Dailo", src: "/elon_musk.svg" },
     { name: "Ray Dailo", src: "/elon_musk.svg" },
@@ -175,6 +177,7 @@ const Feed = () => {
                         style={{
                           cursor: "pointer",
                         }}
+                        onClick={() => setOpenShare(true)}
                       />
                     </div>
                   </div>
@@ -246,6 +249,7 @@ const Feed = () => {
           <FeedRightSection />
         </div>
       </div>
+      <ShareModal showModal={openShare} setShowModal={setOpenShare} />
     </div>
   );
 };

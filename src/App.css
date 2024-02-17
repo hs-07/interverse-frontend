@@ -115,3 +115,37 @@
   text-align: end;
 }
 /* SideNav Styles Ends */
+
+/* Ant design Modal Styles Starts*/
+.ant-modal .ant-modal-content {
+  background-color: #262626;
+  padding: 50px;
+}
+.ant-modal .ant-modal-header {
+  background: #262626;
+}
+.ant-modal .ant-modal-title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.ant-modal .ant-modal-footer {
+  display: none;
+}
+.ant-modal .ant-modal-close {
+  top: 48px;
+  right: 50px;
+}
+.anticon {
+  padding: 4px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+.anticon svg {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+}
