@@ -6,6 +6,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 import TopPredictorsCard from "../components/top-predictors-card";
 import TrendingPredictionCard from "../components/trending-prediction-card";
+import FeedRightSection from "../components/feed-right-section";
 
 import "../styles/feed.css";
 
@@ -237,13 +238,12 @@ const Feed = () => {
           className=""
           style={{
             width: "30%",
-            backgroundColor: "blue",
             overflowY: "auto",
-            padding: "0px 12px",
+            padding: "50px 22px 0px 10px",
             height: "100%",
           }}
         >
-          column2
+          <FeedRightSection />
         </div>
       </div>
     </div>
