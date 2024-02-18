@@ -27,7 +27,7 @@
   box-sizing: border-box;
   text-align: center;
   font-size: 24px;
-  color: #baff2a;
+  color: #4b6cc2;
   font-family: "Odibee Sans";
 }
 .vuesaxtwotonepeople-icon {
@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 .tabs2 {
-  background-color: #baff2a;
+  background-color: #4b6cc2;
   color: #181818;
 }
 .tabs2,
@@ -207,7 +207,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  color: #baff2a;
+  color: #4b6cc2;
 }
 .ammount4,
 .ammount5 {
@@ -219,7 +219,7 @@
   flex-shrink: 0;
 }
 .ammount5 {
-  color: #baff2a;
+  color: #4b6cc2;
 }
 .ammount-group {
   position: absolute;
@@ -248,7 +248,7 @@
   flex-shrink: 0;
 }
 .ammount7 {
-  color: #baff2a;
+  color: #4b6cc2;
 }
 .ammount-container {
   width: 153px;
@@ -352,7 +352,7 @@
 }
 .ammount27 {
   position: relative;
-  color: #baff2a;
+  color: #4b6cc2;
   width: 153px;
   height: 20px;
   flex-shrink: 0;

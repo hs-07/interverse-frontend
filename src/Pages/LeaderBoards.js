@@ -71,7 +71,7 @@ const LeaderBoards = () => {
                             ? "2px solid #A7A7A7"
                             : index == 2
                             ? "2px solid #846836"
-                            : "1px solid #baff2a",
+                            : "1px solid #4B6CC2",
                       }}
                       alt=""
                       src={val?.image_url}
@@ -139,7 +139,7 @@ const LeaderBoards = () => {
                     <div
                       className="bankroll-section-value"
                       style={{
-                        color: val.total_user_score < 0 ? "#e87d7d" : "#baff2a",
+                        color: val.total_user_score < 0 ? "#e87d7d" : "#4B6CC2",
                       }}
                     >
                       {/* ${Math.floor(val.bankroll)} */}
@@ -157,7 +157,7 @@ const LeaderBoards = () => {
                   <Button
                     style={{
                       borderRadius: "8px",
-                      backgroundColor: "#181818",
+                      backgroundColor: "#141414",
                       width: "140px",
                       height: "40px",
                       display: "flex",
@@ -166,7 +166,7 @@ const LeaderBoards = () => {
                       justifyContent: "center",
                       textAlign: "center",
                       fontSize: "12px",
-                      color: "#baff2a",
+                      color: "#4B6CC2",
                     }}
                     onClick={() =>
                       navigate("/Profiles", {

@@ -54,7 +54,7 @@ function Markets() {
   ];
   // fill: linear-gradient(180deg, rgba(186, 255, 42, 0.13) 0%, rgba(186, 255, 42, 0.00) 100%);
   // stroke-width: 1px;
-  // stroke: #BAFF2A;
+  // stroke: #4B6CC2;
   useEffect(() => {
     getMarket()
       .then((res) => {
@@ -86,7 +86,7 @@ function Markets() {
         fill: true,
         lineTension: 0.1,
         backgroundColor: backgroundColor, // Use the custom function
-        borderColor: "#BAFF2A",
+        borderColor: "#4B6CC2",
         borderWidth: 1,
         data: currentGraph?.values,
         pointRadius: 0,
@@ -142,7 +142,7 @@ function Markets() {
         justifyContent: "flex-start",
         gap: "2px",
         fontSize: "20px",
-        color: "#baff2a",
+        color: "#4B6CC2",
         minWidth: "calc(100% - 240px)",
         marginBottom: "80px",
         overflowStyle: "none",
@@ -174,7 +174,7 @@ function Markets() {
                     justifyContent: "flex-start",
                     gap: "10px",
                     fontSize: "18px",
-                    color: "#baff2a",
+                    color: "#4B6CC2",
                   }}
                 >
                   <div
@@ -352,7 +352,7 @@ function Markets() {
                     style={{
                       position: "relative",
                       borderRadius: "35px",
-                      backgroundColor: "#baff2a",
+                      backgroundColor: "#4B6CC2",
                       width: "70px",
                       height: "70px",
                       overflow: "hidden",
@@ -429,7 +429,7 @@ function Markets() {
                   justifyContent: "flex-start",
                   gap: "37px",
                   fontSize: "18px",
-                  color: "#baff2a",
+                  color: "#4B6CC2",
                 }}
               >
                 <Line

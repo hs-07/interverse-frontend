@@ -314,7 +314,8 @@ function Profiles() {
                         width: "116px",
                         height: "20px",
                         flexShrink: "0",
-                        color: val?.total_user_score  < 0 ? '#e87d7d' : 'inherit'
+                        color:
+                          val?.total_user_score < 0 ? "#e87d7d" : "inherit",
                       }}
                     >
                       {Math.floor(val?.total_user_score)}
@@ -469,7 +470,6 @@ function Profiles() {
                               height: "24px",
                               flexShrink: "0",
                               paddingLeft: "35px",
-                              
                             }}
                           >
                             Predictions by Category
@@ -491,7 +491,6 @@ function Profiles() {
                               fontSize: "12px",
                               paddingTop: "10px",
                               // paddingRight: "55px",
-
                             }}
                           >
                             <div
@@ -520,7 +519,6 @@ function Profiles() {
                                     lineHeight: "24px",
                                     color: "#AEAEAE",
                                     fontFamily: "inter",
-                      
                                   }}
                                 >
                                   Sort by
@@ -558,7 +556,7 @@ function Profiles() {
                             <Button
                               style={{
                                 borderRadius: "30px",
-                                backgroundColor: "#baff2a",
+                                backgroundColor: "#4B6CC2",
                                 width: "60px",
                                 height: "28px",
                                 display: "flex",
@@ -660,77 +658,77 @@ function Profiles() {
                           {/* <div
                           {/* // here */}
                           <Bar
-                          style={{ width: "100%" }}
-                          plugins={[ChartDataLabels]} // Use the datalabels plugin
-                          options={{
+                            style={{ width: "100%" }}
+                            plugins={[ChartDataLabels]} // Use the datalabels plugin
+                            options={{
                               plugins: {
-                                  legend: {
-                                      display: false
+                                legend: {
+                                  display: false,
+                                },
+                                datalabels: {
+                                  font: {
+                                    display: false,
+                                    size: 0,
+                                    weight: "bold",
                                   },
-                                  datalabels: {
-                                      font: {
-                                          display: false,
-                                          size: 0, 
-                                          weight: "bold",
-                                      },
-                                      formatter: function (value, context) {
-                                          return value;
-                                      },
-                                  }
+                                  formatter: function (value, context) {
+                                    return value;
+                                  },
+                                },
                               },
                               maintainAspectRatio: false,
                               scales: {
-                                  x: {
-                                      barThickness: 3,
-                                      categoryPercentage: 1,
-                                      ticks: {
-                                          color: "#fff",
-                                      },
-                                      grid: {
-                                          display: false,
-                                      },
+                                x: {
+                                  barThickness: 3,
+                                  categoryPercentage: 1,
+                                  ticks: {
+                                    color: "#fff",
                                   },
-                                  y: {
-                                      beginAtZero: true,
-                                      ticks: {
-                                          color: "#fff",
-                                      },
-                                      grid: {
-                                          display: false,
-                                      },
+                                  grid: {
+                                    display: false,
                                   },
+                                },
+                                y: {
+                                  beginAtZero: true,
+                                  ticks: {
+                                    color: "#fff",
+                                  },
+                                  grid: {
+                                    display: false,
+                                  },
+                                },
                               },
                               elements: {
-                                  bar: {
-                                      borderRadius: 7,
-                                      barThickness: 5,
-                                      barPercentage: 0.1,
-                                  },
-                              }
-                          }}
-                          data={{
+                                bar: {
+                                  borderRadius: 7,
+                                  barThickness: 5,
+                                  barPercentage: 0.1,
+                                },
+                              },
+                            }}
+                            data={{
                               labels: subjectData[0]?.categories?.map(
-                                  (i) => i.Category
+                                (i) => i.Category
                               ),
                               datasets: [
-                                  {
-                                      label: "",
-                                      data: subjectData[0]?.categories?.map(
-                                          (i) => i.count
-                                      ),
-                                      backgroundColor: [
-                                          "#FFB085",
-                                          "#9467DC",
-                                          "#4172D0",
-                                          "#3D42C3",
-                                          "#316DE3",
-                                          "#FF6B7C",
-                                          "#2AE6CC"
-                                      ]
-                                  },
+                                {
+                                  label: "",
+                                  data: subjectData[0]?.categories?.map(
+                                    (i) => i.count
+                                  ),
+                                  backgroundColor: [
+                                    "#FFB085",
+                                    "#9467DC",
+                                    "#4172D0",
+                                    "#3D42C3",
+                                    "#316DE3",
+                                    "#FF6B7C",
+                                    "#2AE6CC",
+                                  ],
+                                },
                               ],
-                          }}
-                      />
+                            }}
+                          />
                         </div>
                         {/* Lower Bar Chart Starts */}
                       </div>
@@ -751,17 +749,18 @@ function Profiles() {
                           gap: "16px",
                           fontWeight: "400",
                         }}
-                      ><div
-                      style={{
-                        position: "relative",
-                        top: -10,
-                        left: -65,
-                      }}
-                    >
-                      <p style={{ color: "#fff", textAlign: "start" }}>
-                        Predictions by Plaform
-                      </p>
-                    </div>
+                      >
+                        <div
+                          style={{
+                            position: "relative",
+                            top: -10,
+                            left: -65,
+                          }}
+                        >
+                          <p style={{ color: "#fff", textAlign: "start" }}>
+                            Predictions by Plaform
+                          </p>
+                        </div>
                         <div
                           style={{
                             display: "flex",
@@ -770,47 +769,48 @@ function Profiles() {
                             // backgroundColor: "red",
                             justifyContent: "center",
                             // alignItems: "center",
-                      
                           }}
                         >
                           <Doughnut
                             data={{
-                              labels: subjectData[0]?.source_types.map(st => st.source),
+                              labels: subjectData[0]?.source_types.map(
+                                (st) => st.source
+                              ),
                               datasets: [
                                 {
                                   label: "Source Types",
-                                  data: subjectData[0]?.source_types.map(st => parseFloat(st.percentage) / 100), // Extract all percentages
+                                  data: subjectData[0]?.source_types.map(
+                                    (st) => parseFloat(st.percentage) / 100
+                                  ), // Extract all percentages
                                   backgroundColor: [
-                                      "#E72E2E",   // For YouTube (example)
-                                      "#BAFF2A",   // For Twitter (example)
-                                      "#333FFF",   // For Spotify (example)
-                                      // ... Add more colors if there are more sources
-                                  ], 
-                                  borderColor: 'transparent'
-                                }
+                                    "#E72E2E", // For YouTube (example)
+                                    "#4B6CC2", // For Twitter (example)
+                                    "#333FFF", // For Spotify (example)
+                                    // ... Add more colors if there are more sources
+                                  ],
+                                  borderColor: "transparent",
+                                },
                               ],
                             }}
                             options={{
-                              
                               layout: {
                                 padding: {
-                                  top: 0 // Adjust this value to create more or less space between the chart and the legend
-                                }
+                                  top: 0, // Adjust this value to create more or less space between the chart and the legend
+                                },
                               },
                               plugins: {
                                 legend: {
                                   display: true,
-                                  position: 'bottom',
-                                  align: 'bottom',
+                                  position: "bottom",
+                                  align: "bottom",
                                   labels: {
                                     boxWidth: 15,
                                     padding: 20,
                                     usePointStyle: true,
-                                  }
-                                }
-                              }
+                                  },
+                                },
+                              },
                             }}
-
                           />
                         </div>
                       </div>
@@ -829,7 +829,7 @@ function Profiles() {
                     alignItems: "flex-start",
                     justifyContent: "flex-start",
                     gap: "2px",
-                    color: "#baff2a",
+                    color: "#4B6CC2",
                   }}
                 >
                   <div
@@ -860,7 +860,6 @@ function Profiles() {
                         height: "43px",
                         flexShrink: "0",
                         // left: -25,
-                        
                       }}
                     >
                       Predictions
@@ -942,7 +941,7 @@ function Profiles() {
                           height: "25px",
                           flexShrink: "0",
                           fontSize: "15px",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "22px",
@@ -970,7 +969,7 @@ function Profiles() {
                           flexDirection: "column",
                           alignItems: "flex-start",
                           justifyContent: "center",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "34px",
@@ -1012,7 +1011,7 @@ function Profiles() {
                           height: "39px",
                           flexShrink: "0",
                           fontSize: "18px",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "22px",
@@ -1040,7 +1039,7 @@ function Profiles() {
                           width: "360px",
                           height: "84px",
                           flexShrink: "0",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "22px",
@@ -1068,7 +1067,7 @@ function Profiles() {
                           width: "240px",
                           height: "20px",
                           flexShrink: "0",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "22px",
@@ -1095,7 +1094,7 @@ function Profiles() {
                           width: "120px",
                           height: "20px",
                           flexShrink: "0",
-                          color: "#BAFF2A",
+                          color: "#4B6CC2",
                           fontFamily: "inter",
                           fontWeight: "500",
                           fontSize: "22px",
@@ -1130,7 +1129,7 @@ function Profiles() {
                               val?.prediction_validation === "PENDING"
                                 ? "#374C98"
                                 : val?.prediction_validation === "TRUE"
-                                ? "green"
+                                ? "#23B678"
                                 : val?.prediction_validation === "UNDETERMINED"
                                 ? "#D29D15"
                                 : val?.prediction_validation ===

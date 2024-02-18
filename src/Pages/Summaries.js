@@ -54,9 +54,9 @@ function Summaries() {
     let m = minutes % 60;
     h = h < 10 ? "0" + h : h;
     m = m < 10 ? "0" + m : m;
-    return `${h}:${m}:00`;  // Assumes no seconds part, so it's always '00'
+    return `${h}:${m}:00`; // Assumes no seconds part, so it's always '00'
   };
-  
+
   const onClickPrediction = (index) => {
     const arr = [...data];
     arr[index].predictionActive = !arr[index].predictionActive;
@@ -268,7 +268,7 @@ function Summaries() {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
-                  color: "#baff2a",
+                  color: "#4B6CC2",
                 }}
               >
                 <img
@@ -356,7 +356,7 @@ function Summaries() {
                   <div
                     style={{
                       position: "relative",
-                      color: "#baff2a",
+                      color: "#4B6CC2",
                       display: "flex",
                       alignItems: "center",
                       width: "131px",
@@ -394,7 +394,7 @@ function Summaries() {
                 <div
                   style={{
                     position: "relative",
-                    color: "#baff2a",
+                    color: "#4B6CC2",
                     display: "flex",
                     alignItems: "center",
                     width: "120px",
@@ -617,7 +617,7 @@ function Summaries() {
                         boxSizing: "border-box",
                         gap: "16px",
                         fontSize: "24px",
-                        color: "#baff2a",
+                        color: "#4B6CC2",
                       }}
                     >
                       <div
@@ -899,7 +899,7 @@ function Summaries() {
                             justifyContent: "center",
                             width: "125px",
                             flexShrink: "0",
-                            color: "#baff2a",
+                            color: "#4B6CC2",
                             backgroundColor: "#282828",
                           }}
                           onClick={() =>
@@ -1018,7 +1018,7 @@ function Summaries() {
                             }}
                           >
                             {val?.prediction}
-                            <p style={{ color: "#BAFF2A" }}>
+                            <p style={{ color: "#4B6CC2" }}>
                               Status :
                               <span
                                 style={{
@@ -1041,7 +1041,7 @@ function Summaries() {
                                 {val?.prediction_validation}
                               </span>
                             </p>
-                            <p style={{ color: "#BAFF2A" }}>
+                            <p style={{ color: "#4B6CC2" }}>
                               Settled Date :{" "}
                               <span
                                 style={{ fontSize: "14px", color: "#AEAEAE" }}
@@ -1067,22 +1067,27 @@ function Summaries() {
                     flexShrink: "0",
                   }}
                 >
-                  
                   <iframe
-                  style={{
+                    style={{
                       position: "absolute",
                       top: "0px",
                       left: "0px",
                       width: "493px",
                       height: "262px",
                       objectFit: "cover",
-                  }}
-                  alt=""
-                  src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
-              />
-              {console.log("Video ID:", predictionData[subSectionIndex]?.youtube_id)}
-              {console.log("Start time:", predictionData[subSectionIndex]?.youtube_start_time)}
-              </div>
+                    }}
+                    alt=""
+                    src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
+                  />
+                  {console.log(
+                    "Video ID:",
+                    predictionData[subSectionIndex]?.youtube_id
+                  )}
+                  {console.log(
+                    "Start time:",
+                    predictionData[subSectionIndex]?.youtube_start_time
+                  )}
+                </div>
               </div>
             ) : null}
             {!loading && val?.summariesActive ? (
@@ -1153,11 +1158,12 @@ function Summaries() {
                                 fontFamily: "inter",
                               }}
                             >
-                              <span style={{ color: '#6495ED' }}>
-                                  {'['}{val?.time}{']'}&nbsp;
+                              <span style={{ color: "#6495ED" }}>
+                                {"["}
+                                {val?.time}
+                                {"]"}&nbsp;
                               </span>
                               {val?.summary_title.slice(0, 60)}...
-
                             </div>
                             <div
                               onClick={() => {
@@ -1229,10 +1235,15 @@ function Summaries() {
                     }}
                     alt=""
                     src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
-                    />
-                    {console.log("Video ID:", summariesData[subSectionIndex]?.youtube_id)}
-                    {console.log("Start time:", summariesData[subSectionIndex]?.youtube_start_time)}
-                  
+                  />
+                  {console.log(
+                    "Video ID:",
+                    summariesData[subSectionIndex]?.youtube_id
+                  )}
+                  {console.log(
+                    "Start time:",
+                    summariesData[subSectionIndex]?.youtube_start_time
+                  )}
                 </div>
               </div>
             ) : null}
@@ -1242,7 +1253,8 @@ function Summaries() {
                   return (
                     <div
                       style={{
-                        backgroundColor: index % 2 === 0 ? "#282828" : "#202020",
+                        backgroundColor:
+                          index % 2 === 0 ? "#282828" : "#202020",
                         width: "100%",
                         // Removed overflow: "hidden" to allow the container to grow with the content
                         flexShrink: "0",
@@ -1253,8 +1265,8 @@ function Summaries() {
                         padding: "15px 15px", // Adjust the top and bottom padding as needed for buffer
                         boxSizing: "border-box", // Makes sure the padding is included in the width
                         gap: "26px",
-                        color: "#baff2a",
-                                            }}
+                        color: "#4B6CC2",
+                      }}
                     >
                       <div
                         style={{
@@ -1314,7 +1326,11 @@ function Summaries() {
                             <img
                               src={val.image_url}
                               alt={val.user_name}
-                              title={val.user_name.startsWith("Unknown") ? "" : val.user_name} // Tooltip on hover
+                              title={
+                                val.user_name.startsWith("Unknown")
+                                  ? ""
+                                  : val.user_name
+                              } // Tooltip on hover
                               style={{
                                 width: "50px", // Smaller size
                                 height: "50px", // Ensure width and height are the same for a circle
@@ -1327,7 +1343,6 @@ function Summaries() {
                             />
                           ) : null}
                         </div>
-
                       </div>
                       <div
                         style={{

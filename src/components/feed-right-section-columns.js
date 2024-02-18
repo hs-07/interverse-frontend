@@ -40,7 +40,7 @@ const feedRightSectionColumns = () => {
           Accuracy{" "}
           <span
             style={{
-              color: "#23B678",
+              color: "#388E3C",
             }}
           >
             78%

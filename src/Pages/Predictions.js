@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import infoIcon from '../assests/hover_info6.png'; // Replace with the actual path to your icon
+import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
 
 const Predictions = () => {
   const navigate = useNavigate();
@@ -83,23 +83,31 @@ const Predictions = () => {
     const proportion = Math.abs(score) / 100;
     const startRGB = parseInt(startColor.substring(1), 16);
     const endRGB = parseInt(endColor.substring(1), 16);
-  
-    const r = Math.round(((startRGB >> 16) + proportion * ((endRGB >> 16) - (startRGB >> 16))));
-    const g = Math.round(((startRGB >> 8 & 0x00FF) + proportion * ((endRGB >> 8 & 0x00FF) - (startRGB >> 8 & 0x00FF))));
-    const b = Math.round(((startRGB & 0x0000FF) + proportion * ((endRGB & 0x0000FF) - (startRGB & 0x0000FF))));
-  
+
+    const r = Math.round(
+      (startRGB >> 16) + proportion * ((endRGB >> 16) - (startRGB >> 16))
+    );
+    const g = Math.round(
+      ((startRGB >> 8) & 0x00ff) +
+        proportion * (((endRGB >> 8) & 0x00ff) - ((startRGB >> 8) & 0x00ff))
+    );
+    const b = Math.round(
+      (startRGB & 0x0000ff) +
+        proportion * ((endRGB & 0x0000ff) - (startRGB & 0x0000ff))
+    );
+
     return `rgb(${r}, ${g}, ${b})`;
   };
-  
+
   const calculateBackgroundColor = (score) => {
-    const neutralColor = '#808080'; // Grey color for neutral score
+    const neutralColor = "#808080"; // Grey color for neutral score
     if (score >= 0) {
-      return interpolateColor(score, neutralColor, '#50D200'); // Interpolate between grey and green
+      return interpolateColor(score, neutralColor, "#50D200"); // Interpolate between grey and green
     } else {
-      return interpolateColor(score, neutralColor, '#B32A2A'); // Interpolate between grey and red
+      return interpolateColor(score, neutralColor, "#B32A2A"); // Interpolate between grey and red
     }
   };
-  
+
   return (
     <div
       style={{
@@ -114,7 +122,7 @@ const Predictions = () => {
         justifyContent: "flex-start",
         gap: "2px",
         fontSize: "20px",
-        color: "#baff2a",
+        color: "#4B6CC2",
         minWidth: "calc(100% - 240px)",
         marginBottom: "80px",
         overflowStyle: "none",
@@ -310,7 +318,7 @@ const Predictions = () => {
                     val?.prediction_validation === "PENDING"
                       ? "#374C98"
                       : val?.prediction_validation === "TRUE"
-                      ? "green"
+                      ? "#23B678"
                       : val?.prediction_validation === "UNDETERMINED"
                       ? "#D29D15"
                       : val?.prediction_validation === "PARTIALLY TRUE"
@@ -362,7 +370,7 @@ const Predictions = () => {
                   style={{
                     position: "relative",
                     borderRadius: "25px",
-                    border: "1px solid #baff2a",
+                    border: "1px solid #4B6CC2",
                     boxSizing: "border-box",
                     width: "40px",
                     height: "40px",
@@ -378,7 +386,7 @@ const Predictions = () => {
                     height: "56px",
                     overflow: "hidden",
                     flexShrink: "0",
-                    border: "1px solid #baff2a",
+                    border: "1px solid #4B6CC2",
                     // position: "absolute",
                     // top: "3px",
                     // left: "3px",
@@ -554,7 +562,7 @@ const Predictions = () => {
                     padding: "30px 22px 20px 151px",
                     boxSizing: "border-box",
                     gap: "77px",
-                    color: "#baff2a",
+                    color: "#4B6CC2",
                   }}
                 >
                   <div
@@ -620,7 +628,7 @@ const Predictions = () => {
                             position: "relative",
                             fontSize: "20px",
                             fontWeight: "600",
-                            color: "#baff2a",
+                            color: "#4B6CC2",
                             display: "flex",
                             alignItems: "center",
                             width: "182px",
@@ -651,8 +659,6 @@ const Predictions = () => {
                             height: "20px",
                             flexShrink: "0",
                             // move to the right:
-                            
-                            
                           }}
                         >
                           Resolves on
@@ -662,7 +668,7 @@ const Predictions = () => {
                             position: "relative",
                             fontSize: "20px",
                             fontWeight: "600",
-                            color: "#baff2a",
+                            color: "#4B6CC2",
                             display: "flex",
                             alignItems: "center",
                             width: "182px",
@@ -696,23 +702,23 @@ const Predictions = () => {
                         >
                           Past performance
                           <img
-                              src={infoIcon}
-                              alt="Info"
-                              title="Overall prediction accuracy for the forecaster across all predictions."
-                              style={{
-                                marginLeft: "5px",
-                                width: '16px', // Adjust as needed
-                                height: '16px', // Adjust as needed
-                                cursor: "pointer",
-                              }}
-                            />
+                            src={infoIcon}
+                            alt="Info"
+                            title="Overall prediction accuracy for the forecaster across all predictions."
+                            style={{
+                              marginLeft: "5px",
+                              width: "16px", // Adjust as needed
+                              height: "16px", // Adjust as needed
+                              cursor: "pointer",
+                            }}
+                          />
                         </div>
                         <div
                           style={{
                             position: "relative",
                             fontSize: "20px",
                             fontWeight: "600",
-                            color: "#baff2a",
+                            color: "#4B6CC2",
                             display: "flex",
                             alignItems: "center",
                             width: "182px",
@@ -832,8 +838,8 @@ const Predictions = () => {
                             title="Point based on prediction accuracy & timeline (max gain +100 | max loss of -100) "
                             style={{
                               marginLeft: "5px",
-                              width: '16px', // Adjust as needed
-                              height: '16px', // Adjust as needed
+                              width: "16px", // Adjust as needed
+                              height: "16px", // Adjust as needed
                               cursor: "pointer",
                             }}
                           />
@@ -860,7 +866,13 @@ const Predictions = () => {
                           <div
                             style={{ position: "relative", fontWeight: "600" }}
                           >
-                            {val?.score && Number(val?.score).toFixed(1)}<span style={{ fontSize: "16px", fontWeight: "500" }}> Pts</span>
+                            {val?.score && Number(val?.score).toFixed(1)}
+                            <span
+                              style={{ fontSize: "16px", fontWeight: "500" }}
+                            >
+                              {" "}
+                              Pts
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -891,16 +903,16 @@ const Predictions = () => {
                         >
                           Timeline
                           <img
-                          src={infoIcon}
-                          alt="Info"
-                          title="The ammount of days in the future the prediction is made for"
-                          style={{
-                            marginLeft: "5px",
-                            width: '16px', // Adjust as needed
-                            height: '16px', // Adjust as needed
-                            cursor: "pointer",
-                          }}
-                        />
+                            src={infoIcon}
+                            alt="Info"
+                            title="The ammount of days in the future the prediction is made for"
+                            style={{
+                              marginLeft: "5px",
+                              width: "16px", // Adjust as needed
+                              height: "16px", // Adjust as needed
+                              cursor: "pointer",
+                            }}
+                          />
                         </div>
                         <div
                           style={{
@@ -924,7 +936,12 @@ const Predictions = () => {
                           <div
                             style={{ position: "relative", fontWeight: "600" }}
                           >
-                            {val?.days_since} <span style={{ fontSize: "16px", fontWeight: "500" }}>Days</span>
+                            {val?.days_since}{" "}
+                            <span
+                              style={{ fontSize: "16px", fontWeight: "500" }}
+                            >
+                              Days
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -955,16 +972,16 @@ const Predictions = () => {
                         >
                           Error %
                           <img
-                          src={infoIcon}
-                          alt="Info"
-                          title="The error rate of the prediction compared to ground truth (only for continuous predictions)."
-                          style={{
-                            marginLeft: "5px",
-                            width: '16px', // Adjust as needed
-                            height: '16px', // Adjust as needed
-                            cursor: "pointer",
-                          }}
-                        />
+                            src={infoIcon}
+                            alt="Info"
+                            title="The error rate of the prediction compared to ground truth (only for continuous predictions)."
+                            style={{
+                              marginLeft: "5px",
+                              width: "16px", // Adjust as needed
+                              height: "16px", // Adjust as needed
+                              cursor: "pointer",
+                            }}
+                          />
                         </div>
                         <div
                           style={{
@@ -987,11 +1004,9 @@ const Predictions = () => {
                           <div
                             style={{ position: "relative", fontWeight: "600" }}
                           >
-                          
-                          {
-                            val?.prediction_type === 'BINARY' ? 'N/A' : val?.error
-                          }
-
+                            {val?.prediction_type === "BINARY"
+                              ? "N/A"
+                              : val?.error}
                           </div>
                         </div>
                       </div>
@@ -1028,8 +1043,8 @@ const Predictions = () => {
                             title="Binary predictions are TRUE or FALSE statements. Continuous predictions are numerical, eg stock prices."
                             style={{
                               marginLeft: "5px",
-                              width: '16px', // Adjust as needed
-                              height: '16px', // Adjust as needed
+                              width: "16px", // Adjust as needed
+                              height: "16px", // Adjust as needed
                               cursor: "pointer",
                             }}
                           />
@@ -1048,7 +1063,10 @@ const Predictions = () => {
                             padding: "4px 3px",
                             boxSizing: "border-box",
                             textAlign: "left",
-                            fontSize: val?.prediction_type !== 'BINARY' ? '13px' : '18px', // Conditional font size
+                            fontSize:
+                              val?.prediction_type !== "BINARY"
+                                ? "13px"
+                                : "18px", // Conditional font size
                             color: "#fff",
                           }}
                         >
@@ -1058,7 +1076,6 @@ const Predictions = () => {
                             {val?.prediction_type}
                           </div>
                         </div>
-
                       </div>
                     </div>
                     {/* Below Part Ends */}
@@ -1140,8 +1157,8 @@ const Predictions = () => {
                         title="The reasoning behind what kind of prediction is made, as well as justification for the prediction result."
                         style={{
                           marginLeft: "5px",
-                          width: '16px', // Adjust as needed
-                          height: '16px', // Adjust as needed
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
                           cursor: "pointer",
                         }}
                       />
@@ -1210,7 +1227,6 @@ const Predictions = () => {
                         width: "457px",
                         height: "23px",
                         flexShrink: "0",
-                        
                       }}
                     >
                       Summaries
@@ -1220,8 +1236,8 @@ const Predictions = () => {
                         title="Evidential summary of the most relevant articles from the best ranked sources, determined by our AI."
                         style={{
                           marginLeft: "5px",
-                          width: '16px', // Adjust as needed
-                          height: '16px', // Adjust as needed
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
                           cursor: "pointer",
                         }}
                       />
@@ -1239,7 +1255,6 @@ const Predictions = () => {
                         webkitLineClamp: summariesRead,
                         webkitBoxOrient: "vertical",
                         width: "1043px",
-                        
                       }}
                     >
                       <ul style={{ margin: "0", paddingLeft: "21px" }}>
@@ -1276,7 +1291,6 @@ const Predictions = () => {
                       gap: "8px",
                       fontSize: "14px",
                       color: "#1664da",
-                      
                     }}
                   >
                     <div
@@ -1284,14 +1298,13 @@ const Predictions = () => {
                         position: "relative",
                         fontSize: "20px",
                         fontWeight: "600",
-                        color: "#baff2a",
+                        color: "#4B6CC2",
                         display: "flex",
                         alignItems: "center",
                         width: "1083px",
                         height: "23px",
                         flexShrink: "0",
                         marginTop: "-50px",
-                        
                       }}
                     >
                       Sources
@@ -1351,12 +1364,13 @@ const Predictions = () => {
                     }}
                   >
                     <div style={{ position: "relative" }}>
-                      Did we get it wrong? Add context and evidence if you think you see an error.
+                      Did we get it wrong? Add context and evidence if you think
+                      you see an error.
                     </div>
                     <Button
                       style={{
                         borderRadius: "8px",
-                        backgroundColor: "#baff2a",
+                        backgroundColor: "#4B6CC2",
                         width: "122px",
                         height: "43px",
                         overflow: "hidden",

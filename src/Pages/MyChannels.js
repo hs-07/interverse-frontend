@@ -39,7 +39,7 @@ function MyChannels() {
         justifyContent: "flex-start",
         gap: "2px",
         fontSize: "20px",
-        color: "#baff2a",
+        color: "#4B6CC2",
         minWidth: "calc(100% - 240px)",
         marginBottom: "80px",
         overflowStyle: "none",
@@ -137,7 +137,7 @@ function MyChannels() {
               boxSizing: "border-box",
               position: "relative",
               textAlign: "center",
-              color: "#baff2a",
+              color: "#4B6CC2",
               // margin: "2px",
             }}
             onClick={() => alert("In Progress...")}
@@ -155,7 +155,7 @@ function MyChannels() {
           alignItems: "center",
           justifyContent: "center",
           fontSize: "20px",
-          color: "#baff2a",
+          color: "#4B6CC2",
           width: "100%",
         }}
       >
@@ -330,7 +330,7 @@ function MyChannels() {
                   justifyContent: "flex-start",
                   gap: "16px",
                   fontSize: "20px",
-                  color: "#baff2a",
+                  color: "#4B6CC2",
                 }}
               >
                 <img
@@ -489,7 +489,7 @@ function MyChannels() {
                   boxSizing: "border-box",
                   gap: "17px",
                   fontSize: "24px",
-                  color: "#baff2a",
+                  color: "white",
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "row" }}>
@@ -530,7 +530,7 @@ function MyChannels() {
                           <div
                             style={{
                               borderRadius: "10px",
-                              border: "1px solid #baff2a",
+                              border: "1px solid white",
                               boxSizing: "border-box",
                               width: "247px",
                               height: "68px",
