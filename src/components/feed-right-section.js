@@ -9,7 +9,7 @@ const feedrightSection = () => {
       style={{
         width: "30%",
         overflowY: "auto",
-        backgroundColor: "black",
+        backgroundColor: "#262626",
         padding: "0px 16px 16px 16px",
         height: "100%",
         width: "100%",
@@ -22,7 +22,7 @@ const feedrightSection = () => {
         className="right-heading"
         style={{
           position: "sticky",
-          backgroundColor: "black",
+          backgroundColor: "#262626",
           padding: "16px 0px 0px 0px",
           top: "0",
         }}

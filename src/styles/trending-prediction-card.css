@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 16px;
   gap: 6px;
-  background-color: black;
+  background-color: #262626;
 }
 .trending-card .trending-card-header {
   display: flex;
