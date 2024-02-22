@@ -38,7 +38,7 @@ const LeaderBoards = () => {
         <>
           {data?.map((val, index) => {
             return (
-              <>
+              <div className="">
                 <div className="row-section ">
                   <div className="row-section-inner1">
                     <div className="row-section-inner2">
@@ -244,7 +244,7 @@ const LeaderBoards = () => {
                 ) : null}
 
                 {/* clickable section ends */}
-              </>
+              </div>
             );
           })}
         </>

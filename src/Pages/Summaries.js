@@ -226,11 +226,8 @@ function Summaries() {
   return (
     <div
       style={{
-        position: "fixed",
-        top: "76px",
-        left: "237px",
+        position: "relative",
         height: "90vh",
-        minWidth: "calc(100% - 240px)",
         overflowY: "scroll",
         display: "flex",
         flexDirection: "column",
@@ -251,7 +248,8 @@ function Summaries() {
                 height: "54px",
                 overflow: "hidden",
                 flexShrink: "0",
-                display: "flex",
+                display: "grid",
+                gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr 1fr 1fr",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "flex-start",

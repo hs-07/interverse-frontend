@@ -1,9 +1,9 @@
 .container-div {
-  position: fixed;
+  position: relative;
   top: 0;
-  left: 0;
+  /* left: 0; */
   background-color: #282828;
-  width: 235px;
+  /* width: 235px; */
   height: 100vh;
   overflow-x: hidden;
   display: flex;

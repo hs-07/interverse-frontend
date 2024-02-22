@@ -111,9 +111,7 @@ const Predictions = () => {
   return (
     <div
       style={{
-        position: "fixed",
-        top: "76px",
-        left: "237px",
+        position: "relative",
         height: "90vh",
         overflowY: "scroll",
         display: "flex",
@@ -123,7 +121,6 @@ const Predictions = () => {
         gap: "2px",
         fontSize: "20px",
         color: "#4B6CC2",
-        minWidth: "calc(100% - 240px)",
         marginBottom: "80px",
         overflowStyle: "none",
       }}

@@ -1,9 +1,8 @@
 .custom-container {
-  position: fixed;
-  top: 76px;
-  left: 237px;
+  width: 100%;
+  position: relative;
   height: 90vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,7 +10,6 @@
   gap: 2px;
   font-size: 20px;
   color: #4b6cc2;
-  min-width: calc(100% - 240px);
   margin-bottom: 80px;
   overscroll-behavior: none; /* CSS property to replace "overflowStyle" */
 }
@@ -21,18 +19,18 @@
   height: 86px;
   /* overflow-y: hidden; */ /* You can remove this line or keep it as a comment if needed */
   flex-shrink: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 7px 22px;
+  gap: 64px;
   box-sizing: border-box;
-  gap: 36px;
   cursor: pointer;
 }
 
 .row-section-inner1 {
-  width: 452px;
   height: 56px;
   display: flex;
   flex-direction: row;
@@ -41,7 +39,6 @@
   gap: 16px;
 }
 .row-section-inner2 {
-  width: 100px;
   height: 40px;
   overflow: hidden;
   flex-shrink: 0;
@@ -58,7 +55,8 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  width: 100px;
+  justify-content: center;
+  width: 36px;
   height: 28px;
   flex-shrink: 0;
 }
@@ -71,7 +69,7 @@
   flex-shrink: 0;
 }
 .user-name-section {
-  width: 162px;
+  width: auto;
   height: 56px;
   display: flex;
   flex-direction: column;
@@ -84,7 +82,7 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  width: 264px;
+  width: auto;
   height: 28px;
   /* flex-shrink: 0; */
 }
@@ -94,12 +92,12 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 264px;
+  width: auto;
   height: 28px;
   /* flex-shrink: 0; */
 }
 .prediction-accuracy {
-  width: 264px;
+  width: max-content;
   height: 56px;
   display: flex;
   flex-direction: column;
@@ -108,23 +106,15 @@
 }
 .prediction-accuracy-title {
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 264px;
-  height: 28px;
-  flex-shrink: 0;
-}
-.prediction-accuracy-title {
-  position: relative;
   font-weight: 500;
   display: flex;
   align-items: center;
-  width: 264px;
+  width: auto;
   height: 28px;
   flex-shrink: 0;
 }
 .bankroll-section {
-  width: 186px;
+  width: auto;
   height: 56px;
   display: flex;
   flex-direction: column;
@@ -136,7 +126,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 264px;
+  /* width: 264px; */
   height: 28px;
   flex-shrink: 0;
 }
@@ -146,7 +136,7 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 264px;
+  /* width: 264px; */
   height: 28px;
   flex-shrink: 0;
 }
@@ -170,7 +160,7 @@
 }
 
 .collapsable-section {
-  width: 435px;
+  width: 35.5%;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -180,7 +170,7 @@
 
 .clickable-section {
   background-color: #181818;
-  width: 1275px;
+  width: 100%;
   height: 103px;
   overflow: hidden;
   flex-shrink: 0;
@@ -195,7 +185,6 @@
   color: #aeaeae;
 }
 .clickable-section-inner1 {
-  width: 272px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -206,7 +195,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 298px;
   height: 20px;
   flex-shrink: 0;
   font-size: 15px;
@@ -218,13 +206,11 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 298px;
   height: 20px;
   flex-shrink: 0;
   font-size: 16px;
 }
 .pending-Predictions-section {
-  width: 160px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -245,13 +231,11 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 141px;
   height: 20px;
   flex-shrink: 0;
   font-size: 16px;
 }
 .settle-section {
-  width: 162px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -272,13 +256,11 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 141px;
   height: 20px;
   flex-shrink: 0;
   font-size: 16px;
 }
 .markets-section {
-  width: 140px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -289,7 +271,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 180px;
   height: 20px;
   flex-shrink: 0;
   font-size: 15px;
@@ -299,13 +280,11 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 133px;
   height: 20px;
   flex-shrink: 0;
   font-size: 16px;
 }
 .streak-section {
-  width: 140px;
   height: 40px;
   display: flex;
   flex-direction: column;
@@ -316,7 +295,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 133px;
   height: 20px;
   flex-shrink: 0;
   font-size: 15px;
@@ -326,20 +304,14 @@
   color: #4b6cc2;
   display: flex;
   align-items: center;
-  width: 133px;
   height: 20px;
   flex-shrink: 0;
   font-size: 16px;
 }
 .loader {
   display: flex;
-  /* backgroundColor: #181818; */
-  /* flex: 1; */
-  min-width: 70%;
-  min-height: 800px;
-  /* flex-shrink: 0; */
-  /* flex-grow: 1; */
+  width: 100%;
+  height: 90vh;
   justify-content: center;
   align-items: center;
-  /* backgroundColor: red; */
 }

@@ -22,11 +22,8 @@ const Feed = () => {
   ];
   return (
     <div
-      className="custom-customer font-white"
       style={{
-        position: "fixed",
-        top: "76px",
-        left: "237px",
+        position: "relative",
         height: "90vh",
         overflowY: "hidden",
         display: "flex",
@@ -35,7 +32,6 @@ const Feed = () => {
         justifyContent: "flex-start",
         gap: "2px",
         fontSize: "20px",
-        minWidth: "calc(100% - 240px)",
       }}
     >
       <div

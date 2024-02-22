@@ -4,7 +4,7 @@
   background-color: #141414;
   width: 100%;
   height: 100vh;
-  text-align: left;
+  overflow-y: hidden;
   font-size: 24px;
   color: #fff;
   font-family: "Inter";
