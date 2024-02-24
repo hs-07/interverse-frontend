@@ -605,7 +605,7 @@ function Summaries() {
                     <div
                       style={{
                         backgroundColor: "#181818",
-                        width: "1275px",
+                        width: "100%",
                         height: "112px",
                         display: "flex",
                         flexDirection: "row",
