@@ -196,7 +196,7 @@ const LandingPage = () => {
               lineHeight: "150%",
               textTransform: "uppercase",
               fontWeight: "600",
-              color: "#4B6CC2",
+              color: "#baff2a",
               display: "flex",
               alignItems: "center",
               width: "290px",
@@ -223,7 +223,7 @@ const LandingPage = () => {
             <Button
               style={{
                 borderRadius: "8px",
-                backgroundColor: "#4B6CC2",
+                backgroundColor: "#baff2a",
                 width: "211px",
                 height: "46px",
                 overflow: "hidden",
@@ -322,7 +322,7 @@ const LandingPage = () => {
             alignItems: "center",
             justifyContent: "center",
             fontSize: "32px",
-            color: "#4B6CC2",
+            color: "#baff2a",
           }}
         >
           <div
@@ -344,7 +344,7 @@ const LandingPage = () => {
                 letterSpacing: "0.3px",
                 lineHeight: "150%",
                 fontWeight: "400",
-                color: "#4B6CC2",
+                color: "#baff2a",
               }}
             >
               Analyzing content across these major platforms
@@ -392,7 +392,7 @@ const LandingPage = () => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  // border: "1px solid #4B6CC2",
+                  // border: "1px solid #baff2a",
                   boxSizing: "border-box",
                   width: "90px",
                   overflow: "hidden",
@@ -420,7 +420,7 @@ const LandingPage = () => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  // border: "1px solid #4B6CC2",
+                  // border: "1px solid #baff2a",
                   boxSizing: "border-box",
                   width: "90px",
                   overflow: "hidden",
@@ -448,7 +448,7 @@ const LandingPage = () => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  // border: "1px solid #4B6CC2",
+                  // border: "1px solid #baff2a",
                   boxSizing: "border-box",
                   width: "90px",
                   overflow: "hidden",
@@ -476,7 +476,7 @@ const LandingPage = () => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  // border: "1px solid #4B6CC2",
+                  // border: "1px solid #baff2a",
                   boxSizing: "border-box",
                   width: "90px",
                   overflow: "hidden",
@@ -513,7 +513,7 @@ const LandingPage = () => {
           }}
         >
           <span style={{ fontWeight: "500" }}>What can</span>
-          <span style={{ color: "#4B6CC2" }}>
+          <span style={{ color: "#baff2a" }}>
             <span style={{ fontFamily: "Inter" }}>{` `}</span>
             <span style={{ fontWeight: "600" }}>Lucky or Genius</span>
             <span style={{ fontFamily: "Inter" }}>{` `}</span>
@@ -530,7 +530,7 @@ const LandingPage = () => {
           }}
         >
           <span style={{ fontWeight: "500" }}>What can</span>
-          <span style={{ color: "#4B6CC2" }}>
+          <span style={{ color: "#baff2a" }}>
             <span style={{ fontFamily: "Inter" }}>{` `}</span>
             <span style={{ fontWeight: "600" }}>Lucky or Genius</span>
             <span style={{ fontFamily: "Inter" }}>{` `}</span>
@@ -549,7 +549,7 @@ const LandingPage = () => {
             alignItems: "center",
             width: "643px",
             height: "77px",
-            color: "#4B6CC2",
+            color: "#baff2a",
           }}
         >
           <span style={{ lineBreak: "anywhere", width: "100%" }}>
@@ -1297,7 +1297,7 @@ const LandingPage = () => {
             gap: "28px",
             textAlign: "center",
             fontSize: "40px",
-            color: "#4B6CC2",
+            color: "#baff2a",
           }}
         >
           <div
@@ -1345,7 +1345,7 @@ const LandingPage = () => {
               top: "64.3%",
               left: "56.57%",
               lineHeight: "40px",
-              color: "#4B6CC2",
+              color: "#baff2a",
               display: "flex",
               alignItems: "center",
               backgroundColor: "#282828",
@@ -1424,7 +1424,7 @@ const LandingPage = () => {
             <div
               style={{
                 position: "relative",
-                color: "#4B6CC2",
+                color: "#baff2a",
                 display: "flex",
                 alignItems: "center",
                 width: "58px",
@@ -1484,7 +1484,7 @@ const LandingPage = () => {
             <Button
               style={{
                 borderRadius: "8px",
-                backgroundColor: "#4B6CC2",
+                backgroundColor: "#baff2a",
                 width: "138px",
                 height: "46px",
                 overflow: "hidden",
@@ -1516,7 +1516,7 @@ const LandingPage = () => {
             alignItems: "center",
             width: "1372px",
             height: "218px",
-            color: "#4B6CC2",
+            color: "#baff2a",
             fontSize: "35px",
           }}
         >
@@ -1623,7 +1623,7 @@ const LandingPage = () => {
             gap: "10px",
             textAlign: "center",
             fontSize: "20px",
-            color: "#4B6CC2",
+            color: "#baff2a",
           }}
         >
           <div
@@ -2519,7 +2519,7 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "10px",
-                backgroundColor: "#4B6CC2",
+                backgroundColor: "#baff2a",
                 width: "282px",
                 height: "54px",
                 overflow: "hidden",
@@ -2906,7 +2906,7 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "10px",
-                backgroundColor: "#4B6CC2",
+                backgroundColor: "#baff2a",
                 width: "282px",
                 height: "54px",
                 overflow: "hidden",
@@ -3293,7 +3293,7 @@ const LandingPage = () => {
             <div
               style={{
                 borderRadius: "10px",
-                backgroundColor: "#4B6CC2",
+                backgroundColor: "#baff2a",
                 width: "282px",
                 height: "54px",
                 overflow: "hidden",
@@ -3327,7 +3327,7 @@ const LandingPage = () => {
               fontSize: "48px",
               lineHeight: "80px",
               fontWeight: "600",
-              color: "#4B6CC2",
+              color: "#baff2a",
               textAlign: "center",
               display: "flex",
               alignItems: "center",
