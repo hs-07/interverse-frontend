@@ -70,17 +70,6 @@ function Sidenav() {
             <p style={{ marginTop: "13px" }}> My Channels</p>
           </NavLink>
         </div>
-        {/* <div className="divider-div" /> */}
-        {/* <div className="setting-div">
-          <img
-            className="setting-photo"
-            alt=""
-            src="/vuesaxtwotonesetting2.svg"
-          />
-          <p style={{ marginTop: "13px" }} className="setting-text">
-            Settings
-          </p>
-        </div> */}
       </div>
     </div>
   );

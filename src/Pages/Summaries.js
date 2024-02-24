@@ -229,6 +229,7 @@ function Summaries() {
         position: "relative",
         height: "90vh",
         overflowY: "scroll",
+        overflowX: "auto",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
@@ -244,8 +245,7 @@ function Summaries() {
             <div
               style={{
                 backgroundColor: "#282828",
-                width: "100%",
-                height: "54px",
+                height: "max-content",
                 overflow: "hidden",
                 flexShrink: "0",
                 display: "grid",
@@ -255,13 +255,11 @@ function Summaries() {
                 justifyContent: "flex-start",
                 padding: "7px 22px",
                 boxSizing: "border-box",
-                gap: "26px",
+                width: "100%",
               }}
             >
               <div
                 style={{
-                  width: "315px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
@@ -282,8 +280,6 @@ function Summaries() {
                 />
                 <div
                   style={{
-                    width: "259px",
-                    height: "40px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
@@ -295,8 +291,6 @@ function Summaries() {
                       position: "relative",
                       display: "flex",
                       alignItems: "center",
-                      width: "259px",
-                      height: "20px",
                       flexShrink: "0",
                     }}
                   >
@@ -308,8 +302,6 @@ function Summaries() {
                       color: "#aeaeae",
                       display: "flex",
                       alignItems: "center",
-                      width: "259px",
-                      height: "20px",
                       flexShrink: "0",
                     }}
                   >
@@ -321,17 +313,11 @@ function Summaries() {
               <div
                 style={{
                   position: "relative",
-                  width: "131px",
-                  height: "40px",
                   color: "#aeaeae",
                 }}
               >
                 <div
                   style={{
-                    position: "absolute",
-                    top: "0px",
-                    left: "0px",
-                    width: "131px",
                     height: "40px",
                     display: "flex",
                     flexDirection: "column",
@@ -344,8 +330,6 @@ function Summaries() {
                       position: "relative",
                       display: "flex",
                       alignItems: "center",
-                      width: "131px",
-                      height: "20px",
                       flexShrink: "0",
                     }}
                   >
@@ -357,8 +341,6 @@ function Summaries() {
                       color: "#4B6CC2",
                       display: "flex",
                       alignItems: "center",
-                      width: "131px",
-                      height: "20px",
                       flexShrink: "0",
                     }}
                   >
@@ -368,8 +350,6 @@ function Summaries() {
               </div>
               <div
                 style={{
-                  width: "153px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "flex-start",
@@ -382,8 +362,6 @@ function Summaries() {
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
-                    width: "120px",
-                    height: "20px",
                     flexShrink: "0",
                   }}
                 >
@@ -395,8 +373,6 @@ function Summaries() {
                     color: "#4B6CC2",
                     display: "flex",
                     alignItems: "center",
-                    width: "120px",
-                    height: "20px",
                     flexShrink: "0",
                   }}
                 >
@@ -405,14 +381,13 @@ function Summaries() {
               </div>
               <div
                 style={{
-                  width: "124px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
                   gap: "9px",
                   cursor: "pointer",
+                  padding: "6px",
                 }}
                 onClick={() => onClickSummaries(index)}
               >
@@ -421,8 +396,6 @@ function Summaries() {
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
-                    width: "86px",
-                    height: "20px",
                     flexShrink: "0",
                   }}
                 >
@@ -452,13 +425,12 @@ function Summaries() {
               </div>
               <div
                 style={{
-                  width: "109px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
                   gap: "9px",
+                  padding: "6px",
                   cursor: "pointer",
                 }}
                 onClick={() => onClickPrediction(index)}
@@ -468,8 +440,6 @@ function Summaries() {
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
-                    width: "79px",
-                    height: "20px",
                     flexShrink: "0",
                   }}
                 >
@@ -499,13 +469,12 @@ function Summaries() {
               </div>
               <div
                 style={{
-                  width: "109px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
                   gap: "9px",
+                  padding: "6px",
                   cursor: "pointer",
                 }}
                 onClick={() => {
@@ -517,8 +486,6 @@ function Summaries() {
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
-                    width: "79px",
-                    height: "20px",
                     flexShrink: "0",
                   }}
                 >
@@ -548,12 +515,11 @@ function Summaries() {
               </div>
               <div
                 style={{
-                  width: "123px",
-                  height: "40px",
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "flex-start",
+                  padding: "6px",
                   gap: "9px",
                   cursor: "pointer",
                 }}
@@ -566,7 +532,6 @@ function Summaries() {
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
-                    width: "94px",
                     height: "20px",
                     flexShrink: "0",
                   }}
@@ -1378,9 +1343,6 @@ function Summaries() {
               <div
                 style={{
                   display: "flex",
-
-                  // alignContent: "center",
-                  // backgroundColor: "red",
                   width: "100%",
                   justifyContent: "center",
                 }}

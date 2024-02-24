@@ -94,7 +94,7 @@ const LeaderBoards = () => {
                         className="prediction-section "
                       >
                         {val.total_predictions} Predictions{" "}
-                        <img src="/Moreviewicon.svg" />
+                        <img src="/Moreviewicon.svg" width={30} height={30} />
                       </div>
                     </div>
                   </div>
