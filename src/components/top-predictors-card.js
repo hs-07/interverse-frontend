@@ -28,7 +28,7 @@ const topPredictorsCard = () => {
             border: "none",
             borderRadius: "25px",
             fontSize: "12px",
-            padding: "10px 24px",
+            padding: "1rem 2rem",
             color: "#fff",
           }}
         >

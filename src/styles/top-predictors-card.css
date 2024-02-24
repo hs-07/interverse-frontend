@@ -15,10 +15,18 @@
   color: #aeaeae;
   line-height: 1.2rem;
 }
+.tp-card-image {
+  width: 100%;
+  margin: 0 auto;
+}
+.tp-card-image > img {
+  width: 100%;
+}
 .tp-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 .tp-card-footer p {
   color: #aeaeae;

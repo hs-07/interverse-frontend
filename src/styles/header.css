@@ -27,7 +27,7 @@
   border: 1px solid #6b7465;
   box-sizing: border-box;
   width: 70%;
-  height: 42px;
+  /* height: 42px; */
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
@@ -48,12 +48,12 @@
 
 .search-icon {
   position: relative;
+  cursor: pointer;
   width: 18.85px;
   height: 18.85px;
 }
 
 .profile-info {
-  /* width: 219px; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,7 +66,6 @@
 .notification-icon {
   position: relative;
   width: 24px;
-  height: 24px;
   cursor: pointer;
 }
 
@@ -75,14 +74,14 @@
   display: flex;
   align-items: center;
   width: 101px;
-  height: 24px;
+  /* height: 24px; */
   flex-shrink: 0;
 }
 .user-photo {
   position: relative;
   border-radius: 25px;
   width: 50px;
-  height: 50px;
+  /* height: 50px; */
   overflow: hidden;
   flex-shrink: 0;
 }
