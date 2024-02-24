@@ -1,16 +1,16 @@
 import React from "react";
 import "../styles/sidenav.css";
 import { NavLink } from "react-router-dom";
-import logo from "../assests/logo2.svg";
+import logoIcon from "../assests/logo-icon.svg";
+import logoText from "../assests/logo-text.svg";
 function Sidenav() {
   return (
     <div>
       <div className="container-div">
         {/* Head Text in sideNav Starts */}
         <div className="app-logo-div">
-          <div className="app-logo-inner-div">
-            <img className="fixed-image" alt="" src={logo} />
-          </div>
+          <img className="logo-icon" alt="" src={logoIcon} />
+          <img className="logo-text" alt="" src={logoText} />
         </div>
         {/* Head Text in sideNav Ends */}
         <div className="navlinks">
