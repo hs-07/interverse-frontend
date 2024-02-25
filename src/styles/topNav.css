@@ -54,6 +54,11 @@
   color: #fff;
 }
 @media (min-width: 765px) {
+  .topNav-header > .topNav-logo-div {
+    display: flex;
+    justify-content: center;
+    width: calc(70% - 200px);
+  }
   .topNav-links > .navlink {
     padding: 12px 28px;
     font-size: 18px;
