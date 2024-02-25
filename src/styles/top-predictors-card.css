@@ -41,3 +41,34 @@
   font-weight: 600;
   line-height: normal;
 }
+.tp-card-footer-btn {
+  background-color: #4b6cc2;
+  border: none;
+  border-radius: 25px;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .tp-card {
+    width: 90%;
+  }
+  .tp-card {
+    padding: 12px;
+  }
+  .tp-card-header h4 {
+    font-size: 16px;
+    line-height: 0.6rem;
+  }
+  .tp-card-header h6 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .tp-card-footer-btn {
+    border-radius: 25px;
+    width: 8rem;
+    font-size: 12px;
+    padding: 10px 6px;
+    color: #fff;
+  }
+}

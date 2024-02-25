@@ -22,18 +22,7 @@ const topPredictorsCard = () => {
         <p>
           <span>#1</span> Ranked
         </p>
-        <button
-          style={{
-            backgroundColor: "#4B6CC2",
-            border: "none",
-            borderRadius: "25px",
-            fontSize: "12px",
-            padding: "1rem 2rem",
-            color: "#fff",
-          }}
-        >
-          View Profile
-        </button>
+        <button className="tp-card-footer-btn">View Profile</button>
       </div>
     </div>
   );
