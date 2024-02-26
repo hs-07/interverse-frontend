@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import { leaderBoardData } from "../services/Leaderboards.service";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
+import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
 import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
-  const [isMouseOver, setIsMouseOver] = useState(false);
   const [data, setData] = useState([]);
-  const [expanded, setExpanded] = useState("panel1");
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     leaderBoardData()
       .then((res) => {
-        console.log("res:::::::::", res.data);
+        // console.log("res:::::::::", res.data);
         setLoader(true);
         setData([...res.data].map((obj) => ({ ...obj, Active: false })));
       })
@@ -38,8 +37,8 @@ const LeaderBoards = () => {
         <>
           {data?.map((val, index) => {
             return (
-              <div className="">
-                <div className="row-section ">
+              <div className="" style={{ width: "100%" }}>
+                <div className="desktop-row-section ">
                   <div className="row-section-inner1">
                     <div className="row-section-inner2">
                       <div className="row-section-inner3">
@@ -154,20 +153,8 @@ const LeaderBoards = () => {
                       }).format(val.total_user_score)}
                     </div>
                   </div>
-                  <Button
-                    style={{
-                      borderRadius: "8px",
-                      backgroundColor: "#141414",
-                      width: "140px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      textAlign: "center",
-                      fontSize: "12px",
-                      color: "#4B6CC2",
-                    }}
+                  <button
+                    className="view-profile-btn"
                     onClick={() =>
                       navigate("/Profiles", {
                         state: { id: val?.user_id },
@@ -175,12 +162,12 @@ const LeaderBoards = () => {
                     }
                   >
                     View Profile
-                  </Button>
+                  </button>
                   <div
                     onClick={() => {
                       onClickDetails(index);
                     }}
-                    style={{ backgroundColor: "#282828" }}
+                    style={{ backgroundColor: "#282828", textAlign: "center" }}
                   >
                     {val.Active ? (
                       <img
@@ -195,6 +182,74 @@ const LeaderBoards = () => {
                         src="/vector-278.svg"
                       />
                     )}
+                  </div>
+                </div>
+                <div className="mobile-row-section">
+                  <div className="mob-row-section-1">
+                    <div className="row-img">
+                      <Image
+                        alt=""
+                        src={val?.image_url}
+                        onClick={() =>
+                          navigate("/Profiles", {
+                            state: { id: val?.user_id },
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="row-header">
+                      <div className="row-heading">
+                        <span className="ranking" style={{ color: "#AEAEAE" }}>
+                          #{index + 1}
+                        </span>
+                        <div className="user_name">
+                          {val?.first_name} {val?.last_name}
+                        </div>
+                      </div>
+                      <div className="row-sub-heading">
+                        <label
+                          style={{
+                            color: "#aeaeae",
+                            fontSize: "12px",
+                          }}
+                        >
+                          Accuracy{" "}
+                          <span
+                            style={{
+                              color:
+                                val.prediction_accuracy > 70
+                                  ? "#23B678"
+                                  : val.prediction_accuracy > 50
+                                  ? "#FDBC4B"
+                                  : "#FF0000",
+                            }}
+                          >
+                            {Math.floor(val.prediction_accuracy)}%
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mob-row-section-2">
+                    <div
+                      onClick={() => {
+                        onClickDetails(index);
+                      }}
+                    >
+                      {val.Active ? (
+                        <img
+                          className="click-icon"
+                          alt="plus-icon"
+                          src="/vector-1433.svg"
+                        />
+                      ) : (
+                        <img
+                          className="click-icon"
+                          alt="minus-icon"
+                          src="/vector-278.svg"
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
                 {/* clickable section start */}

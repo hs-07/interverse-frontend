@@ -1,3 +1,4 @@
+/* DESKTOP CSS STARTS */
 .custom-container {
   width: 100%;
   position: relative;
@@ -11,9 +12,10 @@
   font-size: 20px;
   color: #4b6cc2;
   margin-bottom: 80px;
+  padding-top: 3px;
   overscroll-behavior: none; /* CSS property to replace "overflowStyle" */
 }
-.row-section {
+.desktop-row-section {
   background-color: #282828;
   width: 100%;
   /* height: 100%; */
@@ -25,7 +27,7 @@
   align-items: center;
   justify-content: center;
   padding: 7px 22px;
-  gap: 64px;
+  gap: 16px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -132,16 +134,19 @@
   align-items: center;
   flex-shrink: 0;
 }
-.view-profile {
+.view-profile-btn {
   border-radius: 8px;
-  background-color: #181818;
+  border: none;
+  background-color: rgb(20, 20, 20);
+  width: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 12px;
-  color: #4b6cc2;
+  color: rgb(75, 108, 194);
+  padding: 10px 20px;
 }
 .click-icon {
   position: relative;
@@ -150,7 +155,7 @@
 }
 
 .collapsable-section {
-  width: 35.5%;
+  width: 38%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -289,4 +294,50 @@
   height: 90vh;
   justify-content: center;
   align-items: center;
+}
+.mobile-row-section {
+  display: none;
+}
+/* DESKTOP CSS ENDS */
+/* MOBILE CSS START */
+@media (max-width: 768px) {
+  .desktop-row-section {
+    display: none;
+  }
+  .mobile-row-section {
+    display: flex;
+    background-color: #262626;
+    padding: 16px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .mobile-row-section > .mob-row-section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+  .mobile-row-section > .mob-row-section-1 > .row-img > img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border: 1px solid #4b6cc2;
+    padding: 4px;
+  }
+  .mobile-row-section > .mob-row-section-1 > .row-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .mob-row-section-1 > .row-header > .row-heading {
+    display: flex;
+    gap: 4px;
+    color: #fff;
+    font-weight: 600;
+  }
 }
