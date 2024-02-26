@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { leaderBoardData } from "../services/Leaderboards.service";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Button } from "@mui/material";
+import { LuCalendarDays } from "react-icons/lu";
 import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
@@ -254,48 +254,110 @@ const LeaderBoards = () => {
                 </div>
                 {/* clickable section start */}
                 {val.Active ? (
-                  <div className="clickable-section">
-                    <div className="collapsable-section">
-                      <div className="clickable-section-inner1">
-                        <div className="clickable-section-inner2">
-                          Area of Accuracy
+                  <>
+                    <div className="desktop-clickable-section">
+                      <div className="collapsable-section">
+                        <div className="clickable-section-inner1">
+                          <div className="clickable-section-inner2">
+                            Area of Accuracy
+                          </div>
+                          <div className="category-value">
+                            {val.top_two_categories}
+                          </div>
                         </div>
-                        <div className="category-value">
+                      </div>
+                      <div className="pending-Predictions-section">
+                        <div className="pending-Predictions-title">
+                          Pending Predictions
+                        </div>
+                        <div className="pending-Predictions-value">
+                          {val.all_pending_predictions}
+                        </div>
+                      </div>
+                      <div className="settle-section">
+                        <div className="settle-section-title">
+                          Due to Settle in 2023
+                        </div>
+                        <div className="settle-section-value">
+                          {val.predictions_due_to_settle}
+                        </div>
+                      </div>
+                      <div className="markets-section">
+                        <div className="markets-section-title ">
+                          Have Open Markets
+                        </div>
+                        <div className="markets-section-value">
+                          {val.open_markets}
+                        </div>
+                      </div>
+                      <div className="streak-section">
+                        <div className="streak-section-title">
+                          Current Streak
+                        </div>
+                        <div className="streak-section-value">
+                          {val.current_streak}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mobile-clickable-section">
+                      <div className="mob-clickable-headings">
+                        <div className="heading">Area of Accuracy</div>
+                        <div className="mob-category-value">
                           {val.top_two_categories}
                         </div>
                       </div>
+                      <div className="mob-clickable-content">
+                        <div className="block">
+                          <div className="icon">
+                            <LuCalendarDays />
+                          </div>
+                          <div className="text">
+                            <span style={{ color: "#AEAEAE" }}>
+                              Pending Predictions
+                            </span>
+                            <div className="value">
+                              {val.all_pending_predictions}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="block">
+                          <div className="icon">
+                            <LuCalendarDays />
+                          </div>
+                          <div className="text">
+                            <span style={{ color: "#AEAEAE" }}>
+                              Due to Settle
+                            </span>
+                            <div className="value">
+                              {val.predictions_due_to_settle}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="block">
+                          <div className="icon">
+                            <LuCalendarDays />
+                          </div>
+                          <div className="text">
+                            <span style={{ color: "#AEAEAE" }}>
+                              Have Open Markets
+                            </span>
+                            <div className="value">{val.open_markets}</div>
+                          </div>
+                        </div>
+                        <div className="block">
+                          <div className="icon">
+                            <LuCalendarDays />
+                          </div>
+                          <div className="text">
+                            <span style={{ color: "#AEAEAE" }}>
+                              Current Streak
+                            </span>
+                            <div className="value">{val.current_streak}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="pending-Predictions-section">
-                      <div className="pending-Predictions-title">
-                        Pending Predictions
-                      </div>
-                      <div className="pending-Predictions-value">
-                        {val.all_pending_predictions}
-                      </div>
-                    </div>
-                    <div className="settle-section">
-                      <div className="settle-section-title">
-                        Due to Settle in 2023
-                      </div>
-                      <div className="settle-section-value">
-                        {val.predictions_due_to_settle}
-                      </div>
-                    </div>
-                    <div className="markets-section">
-                      <div className="markets-section-title ">
-                        Have Open Markets
-                      </div>
-                      <div className="markets-section-value">
-                        {val.open_markets}
-                      </div>
-                    </div>
-                    <div className="streak-section">
-                      <div className="streak-section-title">Current Streak</div>
-                      <div className="streak-section-value">
-                        {val.current_streak}
-                      </div>
-                    </div>
-                  </div>
+                  </>
                 ) : null}
 
                 {/* clickable section ends */}

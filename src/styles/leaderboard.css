@@ -162,7 +162,7 @@
   justify-content: flex-start;
 }
 
-.clickable-section {
+.desktop-clickable-section {
   background-color: #181818;
   width: 100%;
   height: max-content;
@@ -298,10 +298,16 @@
 .mobile-row-section {
   display: none;
 }
+.mobile-clickable-section {
+  display: none;
+}
 /* DESKTOP CSS ENDS */
 /* MOBILE CSS START */
 @media (max-width: 768px) {
   .desktop-row-section {
+    display: none;
+  }
+  .desktop-clickable-section {
     display: none;
   }
   .mobile-row-section {
@@ -322,8 +328,8 @@
   .mobile-row-section > .mob-row-section-1 > .row-img > img {
     border-radius: 50%;
     object-fit: cover;
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     overflow: hidden;
     border: 1px solid #4b6cc2;
     padding: 4px;
@@ -336,8 +342,50 @@
   }
   .mob-row-section-1 > .row-header > .row-heading {
     display: flex;
+    font-size: 16px;
     gap: 4px;
     color: #fff;
     font-weight: 600;
+  }
+  .mobile-clickable-section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .mobile-clickable-section > .mob-clickable-headings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 16px;
+  }
+  .mobile-clickable-section > .mob-clickable-headings > .heading {
+    font-size: 14px;
+    color: #aeaeae;
+  }
+  .mobile-clickable-section > .mob-clickable-headings > .mob-category-value {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .mobile-clickable-section > .mob-clickable-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .mob-clickable-content > .block {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mob-clickable-content > .block > .icon {
+    font-size: 20px;
+    color: #aeaeae;
+  }
+  .mob-clickable-content > .block > .text {
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    color: #fff;
   }
 }
