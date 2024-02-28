@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "../styles/summaries.css";
+import "../styles/summaries.css";
 // import "../styles/summariesSubSection.css";
 import {
   allSummarySources,
@@ -224,340 +224,85 @@ function Summaries() {
       });
   };
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "90vh",
-        overflowY: "scroll",
-        overflowX: "auto",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-        gap: "2px",
-        fontSize: "14px",
-      }}
-    >
+    <div className="summaries">
       {/* Column Starts */}
       {data.map((val, index) => {
         return (
           <>
-            <div
-              style={{
-                backgroundColor: "#282828",
-                height: "max-content",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "grid",
-                gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr 1fr 1fr",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "7px 22px",
-                boxSizing: "border-box",
-                width: "100%",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  color: "#4B6CC2",
-                }}
-              >
-                <img
-                  style={{
-                    position: "relative",
-                    left: 0,
-                    width: "27px",
-                    height: "18px",
-                    paddingRight: "12px",
-                  }}
-                  alt=""
-                  src="/youtube.svg"
-                />
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
+            {/* Column Starts */}
+            <div className="summaries-col">
+              <div className="summaries-col-1">
+                <img alt="" src="/youtube.svg" />
+                <div className="sub-col-1">
+                  <div className="sub-col-text-1">
                     {val.source_title.slice(0, 30)}..
                   </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      color: "#aeaeae",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
+                  <div className="sub-col-text-2">
                     Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
                     {convertMinsToHrsMins(val.duration)}
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  position: "relative",
-                  color: "#aeaeae",
-                }}
-              >
-                <div
-                  style={{
-                    height: "40px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
-                    # of Predictions
-                  </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      color: "#4B6CC2",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
+              <div className="summaries-col-2">
+                <div className="sub-col-2">
+                  <div className="sub-col-text-1"># of Predictions</div>
+                  <div className="sub-col-text-2">
                     {val.number_of_predictions}
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                  color: "#aeaeae",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    flexShrink: "0",
-                  }}
-                >
-                  Publish Date
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    color: "#4B6CC2",
-                    display: "flex",
-                    alignItems: "center",
-                    flexShrink: "0",
-                  }}
-                >
+              <div className="summaries-col-3">
+                <div className="sub-col-text-1">Publish Date</div>
+                <div className="sub-col-text-2">
                   {val.publication_date.toString().slice(0, 10)}
                 </div>
               </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: "9px",
-                  cursor: "pointer",
-                  padding: "6px",
-                }}
+                className="summaries-col-4"
                 onClick={() => onClickSummaries(index)}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    flexShrink: "0",
-                  }}
-                >
-                  Summaries
-                </div>
+                <div className="sub-col-text-1">Summaries</div>
                 {val?.summariesActive ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
+                  <img alt="" src="/vector-1433.svg" />
                 ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
+                  <img alt="" src="/vector-278.svg" />
                 )}
               </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: "9px",
-                  padding: "6px",
-                  cursor: "pointer",
-                }}
+                className="summaries-col-5"
                 onClick={() => onClickPrediction(index)}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    flexShrink: "0",
-                  }}
-                >
-                  Predictions
-                </div>
+                <div className="sub-col-text-1">Predictions</div>
                 {val?.predictionActive ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
+                  <img alt="" src="/vector-1433.svg" />
                 ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
+                  <img alt="" src="/vector-278.svg" />
                 )}
               </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: "9px",
-                  padding: "6px",
-                  cursor: "pointer",
-                }}
+                className="summaries-col-6"
                 onClick={() => {
                   onClickPeople(index);
                 }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    flexShrink: "0",
-                  }}
-                >
-                  People
-                </div>
+                <div className="sub-col-text-1">People</div>
                 {val?.peopleActive ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
+                  <img alt="" src="/vector-1433.svg" />
                 ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
+                  <img alt="" src="/vector-278.svg" />
                 )}
               </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  padding: "6px",
-                  gap: "9px",
-                  cursor: "pointer",
-                }}
+                className="summaries-col-7"
                 onClick={() => {
                   onClickFullTranscript(index);
                 }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    height: "20px",
-                    flexShrink: "0",
-                  }}
-                >
-                  Full Transcript
-                </div>
+                <div className="sub-col-text-1">Full Transcript</div>
                 {val?.fullTranscriptActive ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
+                  <img alt="" src="/vector-1433.svg" />
                 ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
+                  <img alt="" src="/vector-278.svg" />
                 )}
               </div>
             </div>
@@ -567,275 +312,77 @@ function Summaries() {
               <>
                 {peopleData.map((val, index) => {
                   return (
-                    <div
-                      style={{
-                        backgroundColor: "#181818",
-                        width: "100%",
-                        height: "112px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        padding: "10px 22px",
-                        boxSizing: "border-box",
-                        gap: "16px",
-                        fontSize: "24px",
-                        color: "#4B6CC2",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          borderRadius: "8px",
-                          width: "87px",
-                          height: "86px",
-                          overflow: "hidden",
-                          flexShrink: "0",
-                        }}
-                      >
-                        <img
-                          style={{
-                            position: "absolute",
-                            top: "0px",
-                            left: "0px",
-                            width: "87px",
-                            height: "86px",
-                            objectFit: "cover",
-                          }}
-                          alt=""
-                          src={val?.image_url}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          width: "978px",
-                          height: "82px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-start",
-                          justifyContent: "center",
-                          gap: "14px",
-                        }}
-                      >
-                        <b
-                          style={{
-                            position: "relative",
-                            lineHeight: "80px",
-                            display: "flex",
-                            alignItems: "center",
-                            width: "1015px",
-                            height: "20px",
-                            flexShrink: "0",
-                            fontSize: "19px",
-                          }}
-                        >
-                          {val?.first_name.startsWith("Unknown")
-                            ? "Unknown"
-                            : val?.first_name + " " + val?.last_name}
-                        </b>
-                        <div
-                          style={{
-                            width: "978px",
-                            height: "48px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            gap: "60px",
-                            fontSize: "17px",
-                            color: "#fff",
-                          }}
-                        >
+                    <div className="people-section">
+                      <div className="ps-col-1">
+                        <img alt="" src={val?.image_url} />
+                        <div>
                           <div
                             style={{
-                              width: "116px",
-                              height: "40px",
+                              fontWeight: "800",
                               display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "flex-start",
+                              alignItems: "center",
+                              flexShrink: "0",
+                              fontSize: "19px",
                             }}
                           >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              #85
-                            </div>
-                            <div
-                              style={{
-                                position: "relative",
-                                fontSize: "16px",
-                                color: "#aeaeae",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              Ranked
-                            </div>
+                            {val?.first_name.startsWith("Unknown")
+                              ? "Unknown"
+                              : val?.first_name + " " + val?.last_name}
                           </div>
                           <div
                             style={{
-                              width: "116px",
-                              height: "40px",
+                              position: "relative",
+                              fontWeight: "400",
                               display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "flex-start",
+                              alignItems: "center",
+                              flexShrink: "0",
                             }}
                           >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              {Math.floor(val?.accuracy_score)}%
-                            </div>
-                            <div
-                              style={{
-                                position: "relative",
-                                fontSize: "16px",
-                                color: "#aeaeae",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              Score
-                            </div>
+                            #85
                           </div>
                           <div
                             style={{
+                              position: "relative",
+                              fontSize: "16px",
+                              color: "#aeaeae",
+                              display: "flex",
+                              alignItems: "center",
                               width: "116px",
-                              height: "40px",
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "flex-start",
+                              height: "20px",
+                              flexShrink: "0",
                             }}
                           >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "160px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              {val?.total_predictions}
-                            </div>
-                            <div
-                              style={{
-                                position: "relative",
-                                fontSize: "16px",
-                                color: "#aeaeae",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              Predictions
-                            </div>
-                          </div>
-                          <div
-                            style={{
-                              width: "116px",
-                              height: "40px",
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "flex-start",
-                            }}
-                          >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "160px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              {val?.pending_predictions}
-                            </div>
-                            <div
-                              style={{
-                                position: "relative",
-                                fontSize: "16px",
-                                color: "#aeaeae",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              Pending
-                            </div>
-                          </div>
-                          <div
-                            style={{
-                              width: "164px",
-                              height: "40px",
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "flex-start",
-                            }}
-                          >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "116px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >
-                              {val?.episode_predictions}
-                            </div>
-                            <div
-                              style={{
-                                position: "relative",
-                                fontSize: "16px",
-                                color: "#aeaeae",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "164px",
-                                height: "20px",
-                                flexShrink: "0",
-                              }}
-                            >{`Episode Predictions `}</div>
+                            Ranked
                           </div>
                         </div>
                       </div>
+                      <div className="ps-col-2">
+                        <div className="sub-col-2">
+                          <div className="sub-col-text-1">
+                            {Math.floor(val?.accuracy_score)}%
+                          </div>
+                          <div className="sub-col-text-2">Score</div>
+                        </div>
+                        <div className="sub-col-2">
+                          <div className="sub-col-text-1">
+                            {val?.total_predictions}
+                          </div>
+                          <div className="sub-col-text-2">Predictions</div>
+                        </div>
+                        <div className="sub-col-2">
+                          <div className="sub-col-text-1">
+                            {val?.pending_predictions}
+                          </div>
+                          <div className="sub-col-text-2">Pending</div>
+                        </div>
+                        <div className="sub-col-2">
+                          <div className="sub-col-text-1">
+                            {val?.episode_predictions}
+                          </div>
+                          <div className="sub-col-text-2">{`Episode Predictions `}</div>
+                        </div>
+                      </div>
+
                       <div
                         style={{
                           borderRadius: "8px",
