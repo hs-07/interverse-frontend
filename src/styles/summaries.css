@@ -234,3 +234,57 @@
   color: #aeaeae;
 }
 /* People section ends */
+/* Active Summaries Section starts */
+.active-summaries-section {
+  background-color: #181818;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-self: flex-start;
+  padding: 18px 22px;
+  gap: 22px;
+  font-size: 16px;
+}
+.active-summaries-section > .as-col-1 {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 4px;
+  overflow-y: auto;
+}
+.as-col-1 > .as-col-1-row {
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  grid-template-columns: 16fr 1fr;
+  padding: 8px 22px 8px 0;
+}
+.as-col-1-row-inner {
+  position: relative;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-family: inter;
+  padding-right: 20px;
+}
+.as-col-2 {
+  position: relative;
+  border-radius: 14px;
+  background-color: #141c23;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 40%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+/* Active Summaries Section ends */

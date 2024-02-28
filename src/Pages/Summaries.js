@@ -601,108 +601,47 @@ function Summaries() {
               </div>
             ) : null}
             {!loading && val?.summariesActive ? (
-              <div
-                style={{
-                  backgroundColor: "#181818",
-                  width: "100%",
-                  height: "332px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "flex-start",
-                  justifyContent: "flex-start",
-                  padding: "18px 22px",
-                  boxSizing: "border-box",
-                  gap: "26px",
-                  fontSize: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "314px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                    gap: "4px",
-                    overflowY: "scroll",
-                  }}
-                >
+              <div className="active-summaries-section">
+                <div className="as-col-1">
                   {summariesData.map((val, index) => {
                     return (
                       <>
-                        <div
-                          style={{
-                            width: "687px",
-                            height: "auto",
-                            minHeight: "40px",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            padding: "24px 0px",
-                            boxSizing: "border-box",
-                            cursor: "pointer",
-                          }}
-                        >
+                        <div className="as-col-1-row">
+                          <div className="as-col-1-row-inner">
+                            <span style={{ color: "#6495ED" }}>
+                              {"["}
+                              {val?.time}
+                              {"]"}&nbsp;
+                            </span>
+                            {val?.summary_title.slice(0, 50)}...
+                          </div>
                           <div
-                            style={{
-                              display: "flex",
-                              flexDirection: "row",
-                              alignItems: "center",
-                              justifyContent: "flex-start",
+                            onClick={() => {
+                              // setSubSectionIndex((prev) => !prev);
+                              setSubSectionIndex(index);
                             }}
                           >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "500",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "664px",
-                                height: "30px",
-                                flexShrink: "0",
-                                fontSize: "16px",
-                                fontFamily: "inter",
-                              }}
-                            >
-                              <span style={{ color: "#6495ED" }}>
-                                {"["}
-                                {val?.time}
-                                {"]"}&nbsp;
-                              </span>
-                              {val?.summary_title.slice(0, 60)}...
-                            </div>
-                            <div
-                              onClick={() => {
-                                // setSubSection((prev) => !prev);
-                                setSubSectionIndex(index);
-                              }}
-                            >
-                              {subSectionIndex === index ? (
-                                <img
-                                  style={{
-                                    position: "relative",
-                                    width: "21.5px",
-                                    height: "21.5px",
-                                  }}
-                                  alt=""
-                                  src="/vector-1433.svg"
-                                />
-                              ) : (
-                                <img
-                                  style={{
-                                    position: "relative",
-                                    width: "21.5px",
-                                    height: "21.5px",
-                                  }}
-                                  alt=""
-                                  src="/vector-278.svg"
-                                />
-                              )}
-                            </div>
+                            {subSectionIndex === index ? (
+                              <img
+                                style={{
+                                  position: "relative",
+                                  width: "21.5px",
+                                  height: "21.5px",
+                                }}
+                                alt=""
+                                src="/vector-1433.svg"
+                              />
+                            ) : (
+                              <img
+                                style={{
+                                  position: "relative",
+                                  width: "21.5px",
+                                  height: "21.5px",
+                                }}
+                                alt=""
+                                src="/vector-278.svg"
+                              />
+                            )}
                           </div>
                         </div>
                         {subSectionIndex === index ? (
@@ -723,24 +662,11 @@ function Summaries() {
                   })}
                 </div>
 
-                <div
-                  style={{
-                    position: "relative",
-                    borderRadius: "14px",
-                    backgroundColor: "#141c23",
-                    width: "492px",
-                    height: "262px",
-                    overflow: "hidden",
-                    flexShrink: "0",
-                  }}
-                >
+                <div className="as-col-2">
                   <iframe
                     style={{
-                      position: "absolute",
-                      top: "0px",
-                      left: "0px",
-                      width: "493px",
-                      height: "262px",
+                      width: "100%",
+                      height: "100%",
                       objectFit: "cover",
                     }}
                     alt=""
