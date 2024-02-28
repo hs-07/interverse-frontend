@@ -181,6 +181,7 @@
 .summaries-col-7 > img {
   position: relative;
 }
+/* People Section Starts */
 .people-section {
   display: flex;
   width: 100%;
@@ -232,3 +233,4 @@
   flex-shrink: 0;
   color: #aeaeae;
 }
+/* People section ends */
