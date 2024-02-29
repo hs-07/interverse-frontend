@@ -199,3 +199,33 @@
   border-radius: 14px;
   overflow: hidden;
 }
+.predictionActive-row-2 {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #282828;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+  box-sizing: border-box;
+  gap: 16px;
+  font-size: 20px;
+}
+.predictionActive-row-2 > .heading {
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.predictionActive-row-2 > .content {
+  display: -webkit-inline-box;
+  color: #fff;
+  position: relative;
+  font-size: 16px;
+  font-family: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.predictionActive-row-3 {
+}

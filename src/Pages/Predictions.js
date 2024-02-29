@@ -439,31 +439,8 @@ const Predictions = () => {
                   </div>
                   {/* YouTube Video Ends */}
                 </div>
-                <div
-                  className="predictionActive-row-2"
-                  style={{
-                    borderRadius: "8px",
-                    backgroundColor: "#282828",
-                    height: "auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                    padding: "22px",
-                    boxSizing: "border-box",
-                    gap: "16px",
-                    fontSize: "20px",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      fontWeight: "600",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
+                <div className="predictionActive-row-2">
+                  <div className="heading">
                     Justification
                     <img
                       src={infoIcon}
@@ -478,14 +455,8 @@ const Predictions = () => {
                     />
                   </div>
                   <div
+                    className="content"
                     style={{
-                      position: "relative",
-                      fontSize: "inherit",
-                      fontFamily: "inherit",
-                      color: "#fff",
-                      display: "-webkit-inline-box",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
                       webkitLineClamp: justificationRead,
                       webkitBoxOrient: "vertical",
                     }}
@@ -504,6 +475,7 @@ const Predictions = () => {
                       display: "flex",
                       alignItems: "center",
                       flexShrink: "0",
+                      cursor: "pointer",
                       justifyContent: "flex-end",
                     }}
                     onClick={handleJustifications}
@@ -525,8 +497,6 @@ const Predictions = () => {
                     padding: "22px",
                     gap: "16px",
                     fontSize: "20px",
-                    // backgroundColor: "red",
-                    marginTop: "-50px",
                   }}
                 >
                   <div
@@ -606,7 +576,6 @@ const Predictions = () => {
                       display: "flex",
                       alignItems: "center",
                       flexShrink: "0",
-                      marginTop: "-50px",
                     }}
                   >
                     Sources
@@ -623,7 +592,6 @@ const Predictions = () => {
                           flexDirection: "row",
                           alignItems: "center",
                           justifyContent: "flex-start",
-                          padding: "17px 34px 17px 0px",
                           boxSizing: "border-box",
                         }}
                       >
@@ -648,16 +616,16 @@ const Predictions = () => {
                     backgroundColor: "#282828",
                     overflow: "hidden",
                     flexShrink: "0",
+                    width: "100%",
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
-                    justifyContent: "flex-start",
+                    justifyContent: "space-between",
                     padding: "10px 10px 10px 22px",
                     boxSizing: "border-box",
                     gap: "20px",
                     textAlign: "center",
                     color: "#fff",
-                    marginTop: "-40px",
                   }}
                 >
                   <div style={{ position: "relative" }}>
