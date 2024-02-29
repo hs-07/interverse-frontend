@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+
+import "../styles/predictions.css";
 import {
   getPredictions,
   getPredictionSingle,
 } from "../services/Predictions.service";
-import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
 
 const Predictions = () => {
@@ -21,9 +21,9 @@ const Predictions = () => {
   const [justificationRead, setJustificationRead] = useState("4");
 
   useEffect(() => {
-    console.log("userId::::::::", userid);
-    console.log("userId::::::::", typeof userid);
-    console.log("userId::::::::", userid);
+    // console.log("userId::::::::", userid);
+    // console.log("userId::::::::", typeof userid);
+    // console.log("userId::::::::", userid);
     if (userid == undefined) {
       getPredictions()
         .then((res) => {
@@ -109,64 +109,11 @@ const Predictions = () => {
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "90vh",
-        overflowY: "scroll",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-        gap: "2px",
-        fontSize: "20px",
-        color: "#4B6CC2",
-        marginBottom: "80px",
-        overflowStyle: "none",
-      }}
-    >
+    <div className="predictions">
       {/* Header Starts */}
-
-      <div
-        style={{
-          backgroundColor: "#282828",
-          width: "100%",
-          height: "54px",
-          overflow: "hidden",
-          flexShrink: "0",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          padding: "7px 22px",
-          boxSizing: "border-box",
-          gap: "26px",
-        }}
-      >
-        <div
-          style={{
-            width: "130px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "92px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Status
-          </div>
+      <div className="sub-header ">
+        <div className="column">
+          <div>Status</div>
           <img
             style={{
               position: "relative",
@@ -177,54 +124,11 @@ const Predictions = () => {
             src="/down-arrow.svg"
           />
         </div>
-        <div
-          style={{
-            width: "240px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "214px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Forecaster
-          </div>
+        <div className="column">
+          <div>Forecaster</div>
         </div>
-        <div
-          style={{
-            width: "140px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            gap: "16px",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "101px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Topic
-          </div>
+        <div className="column">
+          <div>Topic</div>
           <img
             style={{
               position: "relative",
@@ -235,53 +139,14 @@ const Predictions = () => {
             src="/down-arrow.svg"
           />
         </div>
-        <div
-          style={{
-            width: "457px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "135px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Prediction
-          </div>
+        <div className="column">
+          <div>Prediction</div>
         </div>
-        <div
-          style={{
-            width: "185px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "135px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Market
-          </div>
+        <div className="column">
+          <div>Market</div>
+        </div>
+        <div className="column">
+          <div>Expand</div>
         </div>
       </div>
 
@@ -291,25 +156,11 @@ const Predictions = () => {
         return (
           <>
             <div
-              style={{
-                backgroundColor: "#282828",
-                width: "100%",
-                height: "84px",
-                overflow: "hidden",
-                flexShrink: "0",
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                padding: "7px 22px",
-                boxSizing: "border-box",
-                gap: "26px",
-                cursor: "pointer",
-                color: "#fff",
-              }}
+              className="prediction-row"
               onClick={() => onClickDescription(index)}
             >
               <div
+                className="column-1"
                 style={{
                   backgroundColor:
                     val?.prediction_validation === "PENDING"
@@ -321,13 +172,6 @@ const Predictions = () => {
                       : val?.prediction_validation === "PARTIALLY TRUE"
                       ? "#388E3C"
                       : "#E72E2E",
-                  width: "130px",
-                  height: "84px",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  textAlign: "center",
                   color:
                     val?.prediction_validation === "PARTIALLY TRUE"
                       ? "#FFFFFF"
@@ -336,14 +180,6 @@ const Predictions = () => {
               >
                 <p
                   style={{
-                    position: "relative",
-                    // fontWeight: "",
-                    display: "flex",
-                    // alignItems: "center",
-                    justifyContent: "center",
-                    width: "130px",
-                    height: "11px",
-                    // flexShrink: "0",
                     fontSize: "16px",
                     fontWeight: "500",
                   }}
@@ -351,57 +187,11 @@ const Predictions = () => {
                   {val?.prediction_validation}
                 </p>
               </div>
-              <div
-                style={{
-                  width: "240px",
-                  height: "40px",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: "15px",
-                  fontFamily: "Inter",
-                }}
-              >
-                {/* <div
-                  style={{
-                    position: "relative",
-                    borderRadius: "25px",
-                    border: "1px solid #4B6CC2",
-                    boxSizing: "border-box",
-                    width: "40px",
-                    height: "40px",
-                    overflow: "hidden",
-                    flexShrink: "0",
-                  }}
-                > */}
-                <img
-                  style={{
-                    position: "relative",
-                    borderRadius: "100%",
-                    width: "56px",
-                    height: "56px",
-                    overflow: "hidden",
-                    flexShrink: "0",
-                    border: "1px solid #4B6CC2",
-                    // position: "absolute",
-                    // top: "3px",
-                    // left: "3px",
-                    // // // borderRadius: "19.5px",
-                    // // width: "34px",
-                    // // height: "34px",
-                    objectFit: "cover",
-                    // border: "2px solid",
-                    padding: "4px",
-                  }}
-                  alt=""
-                  src={val?.image_url}
-                />
+              <div className="column-2">
+                <img alt="" src={val?.image_url} />
                 {/* </div> */}
                 <div
                   style={{
-                    width: "184px",
-                    height: "40px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
@@ -414,8 +204,6 @@ const Predictions = () => {
                       position: "relative",
                       display: "flex",
                       alignItems: "center",
-                      width: "184px",
-                      fontSize: "16px",
                     }}
                   >
                     {val?.first_name.startsWith("Unknown")
@@ -424,82 +212,12 @@ const Predictions = () => {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  width: "140px",
-                  height: "84px",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "140px",
-                    height: "39px",
-                    // flexShrink: "0",
-                    fontSize: "16px",
-                  }}
-                >
-                  {val?.category}
-                </div>
+              <div className="column-2">{val?.category}</div>
+              <div className="column-2">{val?.prediction}</div>
+              <div className="column-3">
+                <img alt="" src="/marketgraph.svg" />
               </div>
-              <div
-                style={{
-                  width: "457px",
-                  height: "84px",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    width: "457px",
-                    height: "84px",
-                    // flexShrink: "0",
-                    fontSize: "16px",
-                    paddingTop: "2px",
-                    fontStyle: "normal",
-                  }}
-                >
-                  {val?.prediction}
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "145px",
-                  height: "58px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-end",
-                  padding: "21px 1px",
-                  boxSizing: "border-box",
-                  gap: "85px",
-                }}
-              >
-                <img
-                  style={{
-                    position: "relative",
-                    width: "38px",
-                    height: "37px",
-                    overflow: "hidden",
-                    flexShrink: "0",
-                  }}
-                  alt=""
-                  src="/marketgraph.svg"
-                />
+              <div className="column-3">
                 <div>
                   {val?.predictionActive ? (
                     <img
