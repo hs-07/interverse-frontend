@@ -387,7 +387,6 @@ function Summaries() {
                         style={{
                           borderRadius: "8px",
                           backgroundColor: "#282828",
-                          width: "124px",
                           height: "41px",
                           overflow: "hidden",
                           flexShrink: "0",
@@ -407,7 +406,6 @@ function Summaries() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            width: "125px",
                             flexShrink: "0",
                             color: "#4B6CC2",
                             backgroundColor: "#282828",
