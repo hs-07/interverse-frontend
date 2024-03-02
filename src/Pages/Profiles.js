@@ -718,312 +718,37 @@ function Profiles() {
                     </div>
                   );
                 })}
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "auto",
-                    // overflowY: "scroll",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                    gap: "2px",
-                    color: "#4B6CC2",
-                  }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: "#282828",
-                      width: "100%",
-                      height: "74px",
-                      overflow: "hidden",
-                      flexShrink: "0",
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                      padding: "10px 25px",
-                      boxSizing: "border-box",
-                      gap: "36px",
-                      fontSize: "24px",
-                      color: "#fff",
-                    }}
-                  >
-                    <b
-                      style={{
-                        position: "relative",
-                        lineHeight: "80px",
-                        display: "flex",
-                        alignItems: "center",
-                        width: "745px",
-                        height: "43px",
-                        flexShrink: "0",
-                        // left: -25,
-                      }}
-                    >
-                      Predictions
-                    </b>
-
-                    <div>
-                      <input
-                        style={{
-                          borderRadius: "25px",
-                          border: "1px solid #6b7465",
-                          boxSizing: "border-box",
-                          width: "444px",
-                          height: "42px",
-                          overflow: "hidden",
-                          flexShrink: "0",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "flex-end",
-                          padding: "3px 20px",
-                          gap: "12px",
-                          fontSize: "16px",
-                          backgroundColor: "#282828",
-                          color: "#fff",
-                        }}
-                        placeholder="Search"
-                      />
-                      <img
-                        style={{
-                          position: "absolute",
-                          width: "18.85px",
-                          height: "18.85px",
-                          top: 27,
-                          right: 80,
-                        }}
-                        alt=""
-                        src="/vector.svg"
-                      />
-                    </div>
-                  </div>
-                  {/* hgjhgjhgjhgh */}
-                  <div
-                    style={{
-                      backgroundColor: "#282828",
-                      width: "100%",
-                      height: "84px",
-                      overflow: "hidden",
-                      flexShrink: "0",
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                      padding: "7px 22px",
-                      boxSizing: "border-box",
-                      gap: "26px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        backgroundColor: "#282828",
-                        width: "130px",
-                        height: "84px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        textAlign: "center",
-                        color: "#181818",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          fontWeight: "400",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          width: "130px",
-                          height: "25px",
-                          flexShrink: "0",
-                          fontSize: "15px",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "22px",
-                        }}
-                      >
-                        Status
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        width: "168px",
-                        height: "40px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        gap: "16px",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "158px",
-                          height: "40px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-start",
-                          justifyContent: "center",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "34px",
-                        }}
-                      >
-                        <div
+                <div className="profile-prediction-section">
+                  <div className="profile-prediction-header">
+                    <b>Predictions</b>
+                    <div className="prediction-search">
+                      <div className="search-bar">
+                        <input placeholder="Search" />
+                        <img
                           style={{
-                            position: "relative",
-                            fontWeight: "400",
-                            display: "flex",
-                            alignItems: "center",
-                            width: "142px",
-                            height: "20px",
-                            flexShrink: "0",
-                            fontSize: "22px",
+                            width: "18.85px",
+                            height: "18.85px",
+                            cursor: "pointer",
                           }}
-                        >
-                          Source
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        width: "142px",
-                        height: "84px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        color: "#fff",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "168px",
-                          height: "39px",
-                          flexShrink: "0",
-                          fontSize: "18px",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "22px",
-                        }}
-                      >
-                        Topic
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        width: "360px",
-                        height: "84px",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                        color: "#fff",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "360px",
-                          height: "84px",
-                          flexShrink: "0",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "22px",
-                        }}
-                      >
-                        Predictions
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        width: "150px",
-                        height: "40px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                        color: "#aeaeae",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "240px",
-                          height: "20px",
-                          flexShrink: "0",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "22px",
-                        }}
-                      >
-                        Date Made
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        width: "150px",
-                        height: "40px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          alignItems: "center",
-                          width: "120px",
-                          height: "20px",
-                          flexShrink: "0",
-                          color: "#4B6CC2",
-                          fontFamily: "inter",
-                          fontWeight: "500",
-                          fontSize: "22px",
-                        }}
-                      >
-                        Settles
+                          alt=""
+                          src="/vector.svg"
+                        />
                       </div>
                     </div>
                   </div>
-                  {/* jjkkjhjkhjkhjkhjkhjkhjk */}
+                  <div className="profile-prediction-subHeader">
+                    <div className="column">Status</div>
+                    <div className="column">Source</div>
+                    <div className="column">Topic</div>
+                    <div className="column">Predictions</div>
+                    <div className="column">Date Made</div>
+                    <div className="column">Settles</div>
+                  </div>
                   {predictionData.map((val, index) => {
                     return (
-                      <div
-                        style={{
-                          backgroundColor: "#282828",
-                          width: "100%",
-                          height: "84px",
-                          overflow: "hidden",
-                          flexShrink: "0",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "flex-start",
-                          padding: "7px 22px",
-                          boxSizing: "border-box",
-                          gap: "26px",
-                        }}
-                      >
+                      <div className="profile-prediction-data">
                         <div
+                          className="column-1"
                           style={{
                             backgroundColor:
                               val?.prediction_validation === "PENDING"
@@ -1036,58 +761,17 @@ function Profiles() {
                                   "PARTIALLY TRUE"
                                 ? "#388E3C"
                                 : "#E72E2E",
-                            width: "130px",
-                            height: "84px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            textAlign: "center",
                             color:
                               val?.prediction_validation === "PARTIALLY TRUE"
                                 ? "#FFFFFF"
                                 : "#fff",
                           }}
                         >
-                          <div
-                            style={{
-                              position: "relative",
-                              fontWeight: "400",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: "130px",
-                              height: "25px",
-                              fontSize: "13px",
-                              fontWeight: "500",
-                            }}
-                          >
+                          <div className="sub-column-1">
                             {val?.prediction_validation}
                           </div>
                         </div>
-                        <div
-                          style={{
-                            width: "168px",
-                            height: "40px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            gap: "16px",
-                          }}
-                        >
-                          {/* <img
-                            style={{
-                              position: "relative",
-                              borderRadius: "25px",
-                              width: "40px",
-                              height: "40px",
-                              overflow: "hidden",
-                              flexShrink: "0",
-                            }}
-                            alt=""
-                            src={val?.image_url}
-                          /> */}
+                        <div className="column-2">
                           <img
                             style={{
                               position: "relative",
@@ -1097,130 +781,26 @@ function Profiles() {
                             alt=""
                             src="/youtube.svg"
                           />
-                          <div
-                            style={{
-                              width: "158px",
-                              height: "40px",
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "flex-start",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <div
-                              style={{
-                                position: "relative",
-                                fontWeight: "400",
-                                display: "flex",
-                                alignItems: "center",
-                                width: "142px",
-                                height: "20px",
-                                flexShrink: "0",
-                                fontSize: "18px",
-                              }}
-                            >
-                              {val?.source_type}
-                            </div>
-                          </div>
+                          <div>{val?.source_type}</div>
                         </div>
-                        <div
-                          style={{
-                            width: "142px",
-                            height: "84px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            color: "#fff",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "168px",
-                              height: "39px",
-                              flexShrink: "0",
-                              fontSize: "12px",
-                            }}
-                          >
-                            {val?.category}
-                          </div>
+                        <div className="column-2">
+                          <div>{val?.category}</div>
                         </div>
-                        <div
-                          style={{
-                            width: "360px",
-                            height: "84px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            color: "#fff",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "360px",
-                              height: "84px",
-                              flexShrink: "0",
-                              fontSize: "12px",
-                            }}
-                          >
-                            {val?.prediction.slice(0, 150)}
-                          </div>
+                        <div className="column-2">
+                          {val?.prediction.slice(0, 150)}
                         </div>
-                        <div
-                          style={{
-                            width: "150px",
-                            height: "40px",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                            justifyContent: "center",
-                            color: "#aeaeae",
-                          }}
-                        >
+                        <div className="column-2">
                           <div
                             style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "120px",
-                              height: "20px",
-                              flexShrink: "0",
-                              fontSize: "18px",
+                              color: "#aeaeae",
+                              fontWeight: "500",
                             }}
                           >
                             {val?.publish_date}
                           </div>
                         </div>
-                        <div
-                          style={{
-                            width: "150px",
-                            height: "40px",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "120px",
-                              height: "20px",
-                              flexShrink: "0",
-                              fontSize: "18px",
-                            }}
-                          >
-                            {val?.fixed_date}
-                          </div>
+                        <div className="column-2">
+                          <div>{val?.fixed_date}</div>
                         </div>
                       </div>
                     );
