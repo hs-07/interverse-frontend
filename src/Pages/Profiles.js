@@ -129,37 +129,14 @@ function Profiles() {
                 <b className="custom-element">
                   {val?.first_name} {val?.last_name}
                 </b>
-                <div
-                  style={{
-                    width: "1015px",
-                    height: "48px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "flex-start",
-                    gap: "10px",
-                    fontSize: "16px",
-                    color: "#fff",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "116px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                    }}
-                  >
+                <div className="person-details">
+                  <div className="column">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "500",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
@@ -172,32 +149,19 @@ function Profiles() {
                         color: "#aeaeae",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
                       Ranked
                     </div>
                   </div>
-                  <div
-                    style={{
-                      width: "116px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                    }}
-                  >
+                  <div className="column">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "500",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
@@ -210,32 +174,19 @@ function Profiles() {
                         color: "#aeaeae",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
                       Accuracy
                     </div>
                   </div>
-                  <div
-                    style={{
-                      width: "116px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                    }}
-                  >
+                  <div className="column">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "500",
                         display: "flex",
                         alignItems: "center",
-                        width: "160px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
@@ -248,32 +199,19 @@ function Profiles() {
                         color: "#aeaeae",
                         display: "flex",
                         alignItems: "center",
-                        width: "171px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
                       Predictions
                     </div>
                   </div>
-                  <div
-                    style={{
-                      width: "116px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                    }}
-                  >
+                  <div className="column">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "500",
                         display: "flex",
                         alignItems: "center",
-                        width: "160px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
@@ -286,33 +224,19 @@ function Profiles() {
                         color: "#aeaeae",
                         display: "flex",
                         alignItems: "center",
-                        width: "160px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
                       Pending
                     </div>
                   </div>
-                  <div
-                    style={{
-                      width: "116px",
-                      height: "40px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "flex-start",
-                      fontSize: "16px",
-                    }}
-                  >
+                  <div className="column">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "600",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                         color:
                           val?.total_user_score < 0 ? "#e87d7d" : "inherit",
@@ -327,33 +251,19 @@ function Profiles() {
                         color: "#aeaeae",
                         display: "flex",
                         alignItems: "center",
-                        width: "116px",
-                        height: "20px",
                         flexShrink: "0",
                       }}
                     >
                       Points
                     </div>
                   </div>
-                  <div
-                    style={{
-                      width: "262px",
-                      height: "47px",
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                      gap: "28px",
-                    }}
-                  >
+                  <div className="column-2">
                     <div
                       style={{
                         position: "relative",
                         fontWeight: "500",
                         display: "flex",
                         alignItems: "center",
-                        width: "123px",
-                        height: "46px",
                         flexShrink: "0",
                         color: "#AEAEAE",
                       }}
@@ -382,17 +292,7 @@ function Profiles() {
                 </div>
               </div>
               <div
-                style={{
-                  borderRadius: "8px",
-                  height: "70px",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "35px 25px",
-                  boxSizing: "border-box",
-                }}
+                className="icon"
                 onClick={() => handleProfileToggle(index, val?.user_id)}
               >
                 {val?.profileActive ? (
@@ -1332,9 +1232,6 @@ function Profiles() {
               <div
                 style={{
                   display: "flex",
-
-                  // alignContent: "center",
-                  // backgroundColor: "red",
                   width: "100%",
                   justifyContent: "center",
                 }}
