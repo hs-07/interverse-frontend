@@ -322,77 +322,12 @@ function Profiles() {
               <>
                 {subjectData?.map((val, index) => {
                   return (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        width: "100%",
-                        // gap: "16px",
-                        // backgroundColor: "pink"
-                      }}
-                    >
+                    <div className="profile-graph-section">
                       {/* Bar Graph Section Starts */}
-                      <div
-                        style={{
-                          display: "flex",
-                          // flex: 1,
-                          backgroundColor: "#282828",
-                          width: "calc(100% - 382px)",
-                          flexDirection: "column",
-                          color: "#fff",
-                        }}
-                      >
-                        <div
-                          style={{
-                            borderRadius: "30px",
-                            width: "100%",
-                            height: "40px",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            padding: "5px 5px",
-                            boxSizing: "border-box",
-                            marginBottom: "25px",
-                            // gap: "150px",
-                            // backgroundColor: "pink",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              // justifyContent: "flex-start",
-                              fontWeight: "400",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "50%",
-                              height: "24px",
-                              flexShrink: "0",
-                              paddingLeft: "35px",
-                            }}
-                          >
-                            Predictions by Category
-                          </div>
-                          <div
-                            style={{
-                              borderRadius: "4px",
-                              // backdropFilter: "blur(30px)",
-                              width: "50%",
-                              height: "38px",
-                              overflow: "hidden",
-                              flexShrink: "0",
-                              display: "flex",
-                              flexDirection: "row",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              gap: "11px",
-                              textAlign: "center",
-                              fontSize: "12px",
-                              paddingTop: "10px",
-                              // paddingRight: "55px",
-                            }}
-                          >
+                      <div className="bar-graph-section">
+                        <div className="bar-header">
+                          <div>Predictions by Category</div>
+                          <div className="sub-part-2">
                             <div
                               style={{
                                 display: "flex",
@@ -536,25 +471,7 @@ function Profiles() {
                             </Button>
                           </div>
                         </div>
-                        {/* Lower Bar CHart Starts */}
-                        <div
-                          style={{
-                            width: "auto",
-                            height: "275px",
-                            // overflow: "hidden",
-                            // flexShrink: "0",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "flex-end",
-                            justifyContent: "flex-start",
-                            padding: "18px 16px",
-                            boxSizing: "border-box",
-                            gap: "79px",
-                            // marginRight: "2px",
-                            textAlign: "center",
-                            fontSize: "14px",
-                          }}
-                        >
+                        <div className="bar">
                           {/* <div
                           {/* // here */}
                           <Bar
@@ -630,47 +547,16 @@ function Profiles() {
                             }}
                           />
                         </div>
-                        {/* Lower Bar Chart Starts */}
                       </div>
                       {/* Bar Graph Section Starts */}
                       {/* Donught Graph Starts */}
-                      <div
-                        style={{
-                          backgroundColor: "#282828",
-                          width: "380px",
-                          height: "341px",
-                          overflow: "hidden",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          padding: "16px 36px",
-                          boxSizing: "border-box",
-                          gap: "16px",
-                          fontWeight: "400",
-                        }}
-                      >
-                        <div
-                          style={{
-                            position: "relative",
-                            top: -10,
-                            left: -65,
-                          }}
-                        >
+                      <div className="donught-graph-section">
+                        <div className="donught-header">
                           <p style={{ color: "#fff", textAlign: "start" }}>
                             Predictions by Plaform
                           </p>
                         </div>
-                        <div
-                          style={{
-                            display: "flex",
-                            height: "250px",
-                            width: "100%",
-                            // backgroundColor: "red",
-                            justifyContent: "center",
-                            // alignItems: "center",
-                          }}
-                        >
+                        <div className="donught">
                           <Doughnut
                             data={{
                               labels: subjectData[0]?.source_types.map(
