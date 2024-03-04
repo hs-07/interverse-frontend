@@ -136,7 +136,7 @@ function Profiles() {
                           flexDirection: "row",
                           alignItems: "center",
                           justifyContent: "flex-start",
-                          gap: "8px",
+                          gap: "2px",
                           textAlign: "left",
                           fontSize: "16px",
                           fontFamily: "Poppins",
@@ -166,7 +166,7 @@ function Profiles() {
                             position: "relative",
                             borderRadius: "9999px",
                             backgroundColor: "#e5fa78",
-                            width: "34px",
+                            width: "fit-content",
                             height: "20px",
                             overflow: "hidden",
                             flexShrink: "0",
@@ -177,7 +177,7 @@ function Profiles() {
                             style={{
                               position: "absolute",
                               height: "80%",
-                              width: "47.06%",
+                              width: "fit-content",
                               top: "10%",
                               right: "5.88%",
                               bottom: "10%",
@@ -194,7 +194,7 @@ function Profiles() {
                         style={{
                           borderRadius: "30px",
                           backgroundColor: "#4B6CC2",
-                          width: "60px",
+                          width: "fit-content",
                           height: "28px",
                           display: "flex",
                           flexDirection: "row",
@@ -215,7 +215,7 @@ function Profiles() {
                         style={{
                           borderRadius: "30px",
                           backgroundColor: "#181818",
-                          width: "60px",
+                          width: "fit-content",
                           height: "28px",
                           display: "flex",
                           flexDirection: "row",
@@ -235,7 +235,7 @@ function Profiles() {
                         style={{
                           borderRadius: "30px",
                           backgroundColor: "#181818",
-                          width: "60px",
+                          width: "fit-content",
                           height: "28px",
                           display: "flex",
                           flexDirection: "row",
@@ -255,7 +255,7 @@ function Profiles() {
                         style={{
                           borderRadius: "30px",
                           backgroundColor: "#181818",
-                          width: "85px",
+                          width: "fit-content",
                           height: "28px",
                           display: "flex",
                           flexDirection: "row",
@@ -274,8 +274,6 @@ function Profiles() {
                     </div>
                   </div>
                   <div className="bar">
-                    {/* <div
-            {/* // here */}
                     <Bar
                       style={{ width: "100%" }}
                       plugins={[ChartDataLabels]} // Use the datalabels plugin
@@ -691,7 +689,7 @@ function Profiles() {
                                   flexDirection: "row",
                                   alignItems: "center",
                                   justifyContent: "flex-start",
-                                  gap: "8px",
+                                  gap: "2px",
                                   textAlign: "left",
                                   fontSize: "16px",
                                   fontFamily: "Poppins",
@@ -721,7 +719,7 @@ function Profiles() {
                                     position: "relative",
                                     borderRadius: "9999px",
                                     backgroundColor: "#e5fa78",
-                                    width: "34px",
+                                    width: "fit-content",
                                     height: "20px",
                                     overflow: "hidden",
                                     flexShrink: "0",
@@ -732,7 +730,7 @@ function Profiles() {
                                     style={{
                                       position: "absolute",
                                       height: "80%",
-                                      width: "47.06%",
+                                      width: "fit-content",
                                       top: "10%",
                                       right: "5.88%",
                                       bottom: "10%",
@@ -749,7 +747,7 @@ function Profiles() {
                                 style={{
                                   borderRadius: "30px",
                                   backgroundColor: "#4B6CC2",
-                                  width: "60px",
+                                  width: "fit-content",
                                   height: "28px",
                                   display: "flex",
                                   flexDirection: "row",
@@ -770,7 +768,7 @@ function Profiles() {
                                 style={{
                                   borderRadius: "30px",
                                   backgroundColor: "#181818",
-                                  width: "60px",
+                                  width: "fit-content",
                                   height: "28px",
                                   display: "flex",
                                   flexDirection: "row",
@@ -790,7 +788,7 @@ function Profiles() {
                                 style={{
                                   borderRadius: "30px",
                                   backgroundColor: "#181818",
-                                  width: "60px",
+                                  width: "fit-content",
                                   height: "28px",
                                   display: "flex",
                                   flexDirection: "row",
@@ -810,7 +808,7 @@ function Profiles() {
                                 style={{
                                   borderRadius: "30px",
                                   backgroundColor: "#181818",
-                                  width: "85px",
+                                  width: "fit-content",
                                   height: "28px",
                                   display: "flex",
                                   flexDirection: "row",
