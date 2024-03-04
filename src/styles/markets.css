@@ -1,7 +1,5 @@
-.main-section {
-  position: fixed;
-  top: 76px;
-  left: 237px;
+.market-section {
+  position: relative;
   height: 90vh;
   overflow-y: scroll;
   display: flex;
@@ -10,23 +8,20 @@
   justify-content: flex-start;
   gap: 2px;
   font-size: 20px;
-  color: #fff;
-  min-width: calc(100% - 240px);
-  border-bottom: 2px solid red;
+  color: rgb(75, 108, 194);
+  margin-bottom: 80px;
 }
-.user-info-row {
+.desktop-user-info-row {
   background-color: #282828;
   width: 100%;
-  height: 130px;
-  display: flex;
+  display: grid;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 10px 22px;
   box-sizing: border-box;
-  gap: 16px;
-  /* margin-bottom: 2px;
-  border-bottom: 2px solid red; */
+  grid-template-columns: 0.8fr 4fr 1.5fr 0.3fr;
+  gap: 8px;
 }
 .image-section {
   position: relative;
@@ -37,16 +32,11 @@
   /* flex-shrink: 0; */
 }
 .user-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 104px;
-  height: 108px;
+  width: 95%;
+  height: 95%;
   object-fit: cover;
 }
 .title-section {
-  width: 748px;
-  height: 108px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -55,12 +45,53 @@
 }
 .title-section-text {
   position: relative;
-  line-height: 80px;
   display: flex;
   align-items: center;
-  width: 763px;
-  height: 43px;
   flex-shrink: 0;
   font-family: Inter;
   color: #fff;
+}
+.title-section-details {
+  width: 100%;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 18px;
+  color: rgb(75, 108, 194);
+}
+.title-section-details > .column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.title-images {
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: -22px;
+  color: rgb(38, 39, 44);
+}
+.title-images > .image-block {
+  position: relative;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+}
+.title-images > .blue-disc {
+  position: relative;
+  border-radius: 50%;
+  background-color: rgb(75, 108, 194);
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -22px;
 }
