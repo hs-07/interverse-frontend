@@ -225,24 +225,68 @@ function Markets() {
                 )}
               </div>
             </div>
+
+            <div className="mob-user-info-row">
+              <div className="info-section-1">
+                <div className="text-section">
+                  <div className="topic">
+                    <span style={{ color: "#aeaeae" }}>Topic :</span>{" "}
+                    {val?.metadata.category}
+                  </div>
+                  <div className="text">{val?.metadata.event_title}</div>
+                </div>
+                <div className="image-section">
+                  <img alt="user-image" src={val?.image_url} />
+                </div>
+              </div>
+              <div className="info-section-2">
+                <div className="images-block">
+                  <img className="image-block" alt="" src="/image-141@2x.png" />
+                  <img
+                    className="image-block"
+                    alt=""
+                    src="/image-141@2x.png"
+                    style={{ marginLeft: "-22px" }}
+                  />
+                  <div className="yellow-disc">5+</div>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onClick={() => onClickToggle(index)}
+                >
+                  {val?.peopleActive ? (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-1433.svg"
+                    />
+                  ) : (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-278.svg"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
             {/* Graph Section Starts */}
             {activeIndex == index && val?.peopleActive ? (
-              <div
-                style={{
-                  backgroundColor: "#181818",
-                  width: "100%",
-                  height: "486px",
-                  overflow: "hidden",
-                  flexShrink: "0",
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: "37px",
-                  fontSize: "18px",
-                  color: "#4B6CC2",
-                }}
-              >
+              <div className="graph-container">
                 <Line
                   style={{ width: "100%" }}
                   plugins={[ChartDataLabels]}
