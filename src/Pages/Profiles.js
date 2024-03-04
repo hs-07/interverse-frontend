@@ -671,6 +671,122 @@ function Profiles() {
                 )}
               </div>
             </div>
+            <div className="mob-custom-header">
+              <div className="header">
+                <div className="profile">
+                  <img className="" alt="" src={val?.image_url} />
+                  <div className="profile-column">
+                    <div>
+                      {val?.first_name} {val?.last_name}
+                    </div>
+                    <div>
+                      <span style={{ color: "#aeaeae" }}>Ranked</span> #
+                      {index + 1}
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="mob-icon"
+                  onClick={() => handleProfileToggle(index, val?.user_id)}
+                >
+                  {val?.profileActive ? (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-1433.svg"
+                    />
+                  ) : (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-278.svg"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="body">
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Accuracy</span>
+                    <div className="value">
+                      {Math.floor(val?.prediction_accuracy)}%
+                    </div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Predictions</span>
+                    <div className="value">{val?.total_predictions}</div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Pending</span>
+                    <div className="value">{val?.all_pending_predictions}</div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Points</span>
+                    <div className="value">
+                      {Math.floor(val?.total_user_score)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="footer">
+                <div
+                  style={{
+                    position: "relative",
+                    fontWeight: "500",
+                    display: "flex",
+                    alignItems: "center",
+                    flexShrink: "0",
+                    color: "#AEAEAE",
+                  }}
+                >
+                  Available on :
+                </div>
+                <img
+                  style={{
+                    position: "relative",
+                    width: "27px",
+                    height: "18px",
+                  }}
+                  alt=""
+                  src="/youtube.svg"
+                />
+                <img
+                  style={{
+                    position: "relative",
+                    width: "23px",
+                    height: "18px",
+                  }}
+                  alt=""
+                  src="/twitterlogo.svg"
+                />
+              </div>
+            </div>
 
             {!loading && val?.profileActive ? (
               <>

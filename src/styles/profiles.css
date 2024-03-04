@@ -27,6 +27,9 @@
   display: grid;
   grid-template-columns: 0.5fr 5fr 1fr;
 }
+.mob-custom-header {
+  display: none;
+}
 
 .custom-box {
   position: relative;
@@ -285,6 +288,71 @@
   }
 }
 @media (max-width: 768px) {
+  .custom-header {
+    display: none;
+  }
+  .mob-custom-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #282828;
+  }
+  .mob-custom-header > .header {
+    width: 100%;
+    padding: 0px;
+    height: fit-content;
+    display: flex;
+    color: #fff;
+    font-family: inter;
+    justify-content: space-between;
+  }
+  .mob-custom-header > .header > .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+  .mob-custom-header > .header > .profile > img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: fill;
+    padding: 0.3rem;
+    border: 2px solid #4b6cc2;
+  }
+  .mob-custom-header > .header > .profile > .profile-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .mob-custom-header > .header > .mob-icon {
+    display: flex;
+    align-items: end;
+  }
+  .mob-custom-header > .body {
+    display: grid;
+    width: 100%;
+    font-size: 12px;
+    padding-top: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .mob-custom-header > .body > .column {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+  }
+  .mob-custom-header > .footer {
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    gap: 12px;
+    padding-top: 12px;
+  }
   .desktop-profile-active {
     display: none;
   }

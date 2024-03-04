@@ -1,12 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-import { TabItems } from "../../utils/types";
 import "../../styles/tabs.css";
 
-interface TabsProps {
-  items?: TabItems[];
-}
-
-const Tabs: React.FC<TabsProps> = ({ items }) => {
+const Tabs = ({ items }) => {
   const firstBtnRef = useRef(null);
 
   const [selectedTab, setSelectedTab] = useState(0);
