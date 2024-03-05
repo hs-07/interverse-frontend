@@ -105,7 +105,7 @@
   color: #4b6cc2;
   justify-content: flex-start;
 }
-.mobPreditionActive {
+.mobPredictionActive {
   display: none;
 }
 .predictionActive > .predictionActive-row-1 {
