@@ -114,7 +114,7 @@
   color: #c2964b;
 }
 
-@media (max-width: 786px) {
+@media (max-width: 768px) {
   .desktop-user-info-row {
     display: none;
   }
