@@ -229,3 +229,12 @@
 }
 .predictionActive-row-3 {
 }
+
+@media (max-width: 1024px) {
+  .predictions > .sub-header {
+    gap: 8px;
+  }
+  .predictions > .sub-header > .column {
+    font-size: 14px;
+  }
+}
