@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { LuCalendarDays } from "react-icons/lu";
 
 import "../styles/predictions.css";
+import Tabs from "../components/common/tabs";
 import {
   getPredictions,
   getPredictionSingle,
@@ -10,11 +12,9 @@ import {
 import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
 
 const Predictions = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const a = location?.state?.id;
 
-  console.log("arr:::", a);
   const [data, setData] = useState([]);
   const [userid, setUserId] = useState(location?.state?.id);
   const [summariesRead, setSummariesRead] = useState("6");
@@ -27,7 +27,7 @@ const Predictions = () => {
     if (userid == undefined) {
       getPredictions()
         .then((res) => {
-          console.log("res:::00000::::::", res.data);
+          // console.log("res:::00000::::::", res.data);
           setData([...res.data]);
           setData(
             [...res.data].map((obj) => ({
@@ -42,7 +42,7 @@ const Predictions = () => {
     } else {
       getPredictionSingle(location?.state?.id)
         .then((res) => {
-          console.log("res:::123456::::::", res.data);
+          // console.log("res:::123456::::::", res.data);
           setData([...res.data]);
           setData(
             [...res.data].map((obj) => ({
@@ -107,6 +107,8 @@ const Predictions = () => {
       return interpolateColor(score, neutralColor, "#B32A2A"); // Interpolate between grey and red
     }
   };
+
+  // const items =
 
   return (
     <div className="predictions">
@@ -244,416 +246,625 @@ const Predictions = () => {
               </div>
             </div>
             {val?.predictionActive ? (
-              <div className="predictionActive">
-                <div className="predictionActive-row-1">
-                  <div className="row-section-1">
-                    <div className="analytics-row-1">
-                      <div className="block">
-                        <span>Made on</span>
-                        <div className="value">{val?.publish_date}</div>
-                      </div>
-                      <div className="block">
-                        <span>Resolves on</span>
-                        <div className="value">{val?.fixed_date}</div>
-                      </div>
-                      <div className="block">
-                        <span>Prediction Accuracy </span>
-                        <div className="value">{val?.prediction_accuracy}%</div>
-                      </div>
-                      <div className="block">
-                        <span>Status</span>
-                        <div
-                          style={{
-                            position: "relative",
-                            fontSize: "21px",
-                            fontWeight: "800",
-                            color:
-                              val?.prediction_validation == "TRUE"
-                                ? "#10d200"
-                                : val?.prediction_validation ===
-                                  "PARTIALLY TRUE"
-                                ? "#388E3C"
-                                : val?.prediction_validation === "PENDING"
-                                ? "#374C98"
-                                : "#f70000",
-                            display: "flex",
-                            alignItems: "center",
-                            width: "182px",
-                            height: "20px",
-                            flexShrink: "0",
-                          }}
-                          // "#10d200" : "#b32a2a"
-                        >
-                          {val?.prediction_validation}
+              <>
+                <div className="predictionActive">
+                  <div className="predictionActive-row-1">
+                    <div className="row-section-1">
+                      <div className="analytics-row-1">
+                        <div className="block">
+                          <span>Made on</span>
+                          <div className="value">{val?.publish_date}</div>
+                        </div>
+                        <div className="block">
+                          <span>Resolves on</span>
+                          <div className="value">{val?.fixed_date}</div>
+                        </div>
+                        <div className="block">
+                          <span>Prediction Accuracy </span>
+                          <div className="value">
+                            {val?.prediction_accuracy}%
+                          </div>
+                        </div>
+                        <div className="block">
+                          <span>Status</span>
+                          <div
+                            style={{
+                              position: "relative",
+                              fontSize: "21px",
+                              fontWeight: "800",
+                              color:
+                                val?.prediction_validation == "TRUE"
+                                  ? "#10d200"
+                                  : val?.prediction_validation ===
+                                    "PARTIALLY TRUE"
+                                  ? "#388E3C"
+                                  : val?.prediction_validation === "PENDING"
+                                  ? "#374C98"
+                                  : "#f70000",
+                              display: "flex",
+                              alignItems: "center",
+                              width: "182px",
+                              height: "20px",
+                              flexShrink: "0",
+                            }}
+                            // "#10d200" : "#b32a2a"
+                          >
+                            {val?.prediction_validation}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {/* Below Part starts */}
-                    <div className="details-row-2">
-                      <div className="block">
-                        <span className="topic">
-                          Points{" "}
-                          <img
-                            src={infoIcon}
-                            alt="Info"
-                            title="Point based on prediction accuracy & timeline (max gain +100 | max loss of -100) "
-                            style={{
-                              marginLeft: "5px",
-                              width: "16px", // Adjust as needed
-                              height: "16px", // Adjust as needed
-                              cursor: "pointer",
-                            }}
-                          />
-                        </span>
-                        <div
-                          className="value"
-                          style={{
-                            backgroundColor:
-                              val?.score < 0 ? "#B32A2A" : "#50D200",
-                          }}
-                        >
+                      {/* Below Part starts */}
+                      <div className="details-row-2">
+                        <div className="block">
+                          <span className="topic">
+                            Points{" "}
+                            <img
+                              src={infoIcon}
+                              alt="Info"
+                              title="Point based on prediction accuracy & timeline (max gain +100 | max loss of -100) "
+                              style={{
+                                marginLeft: "5px",
+                                width: "16px", // Adjust as needed
+                                height: "16px", // Adjust as needed
+                                cursor: "pointer",
+                              }}
+                            />
+                          </span>
                           <div
-                            style={{ position: "relative", fontWeight: "600" }}
+                            className="value"
+                            style={{
+                              backgroundColor:
+                                val?.score < 0 ? "#B32A2A" : "#50D200",
+                            }}
                           >
-                            {val?.score && Number(val?.score).toFixed(1)}
-                            <span
-                              style={{ fontSize: "16px", fontWeight: "500" }}
+                            <div
+                              style={{
+                                position: "relative",
+                                fontWeight: "600",
+                              }}
                             >
-                              {" "}
-                              Pts
-                            </span>
+                              {val?.score && Number(val?.score).toFixed(1)}
+                              <span
+                                style={{ fontSize: "16px", fontWeight: "500" }}
+                              >
+                                {" "}
+                                Pts
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="block">
-                        <span className="topic">
-                          Timeline
-                          <img
-                            src={infoIcon}
-                            alt="Info"
-                            title="The ammount of days in the future the prediction is made for"
-                            style={{
-                              marginLeft: "5px",
-                              width: "16px", // Adjust as needed
-                              height: "16px", // Adjust as needed
-                              cursor: "pointer",
-                            }}
-                          />
-                        </span>
-                        <div
-                          className="value"
-                          style={{
-                            backgroundColor:
-                              val?.days_since > 60 ? "#50D200" : "#B32A2A",
-                          }}
-                        >
+                        <div className="block">
+                          <span className="topic">
+                            Timeline
+                            <img
+                              src={infoIcon}
+                              alt="Info"
+                              title="The ammount of days in the future the prediction is made for"
+                              style={{
+                                marginLeft: "5px",
+                                width: "16px", // Adjust as needed
+                                height: "16px", // Adjust as needed
+                                cursor: "pointer",
+                              }}
+                            />
+                          </span>
                           <div
-                            style={{ position: "relative", fontWeight: "600" }}
+                            className="value"
+                            style={{
+                              backgroundColor:
+                                val?.days_since > 60 ? "#50D200" : "#B32A2A",
+                            }}
                           >
-                            {val?.days_since}{" "}
-                            <span
-                              style={{ fontSize: "16px", fontWeight: "500" }}
+                            <div
+                              style={{
+                                position: "relative",
+                                fontWeight: "600",
+                              }}
                             >
-                              Days
-                            </span>
+                              {val?.days_since}{" "}
+                              <span
+                                style={{ fontSize: "16px", fontWeight: "500" }}
+                              >
+                                Days
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="block">
-                        <span className="topic">
-                          Error %
-                          <img
-                            src={infoIcon}
-                            alt="Info"
-                            title="The error rate of the prediction compared to ground truth (only for continuous predictions)."
-                            style={{
-                              marginLeft: "5px",
-                              width: "16px", // Adjust as needed
-                              height: "16px", // Adjust as needed
-                              cursor: "pointer",
-                            }}
-                          />
-                        </span>
-                        <div
-                          className="value"
-                          style={{
-                            backgroundColor: "#fff",
-                            color: "#333",
-                          }}
-                        >
+                        <div className="block">
+                          <span className="topic">
+                            Error %
+                            <img
+                              src={infoIcon}
+                              alt="Info"
+                              title="The error rate of the prediction compared to ground truth (only for continuous predictions)."
+                              style={{
+                                marginLeft: "5px",
+                                width: "16px", // Adjust as needed
+                                height: "16px", // Adjust as needed
+                                cursor: "pointer",
+                              }}
+                            />
+                          </span>
                           <div
-                            style={{ position: "relative", fontWeight: "600" }}
-                          >
-                            {val?.prediction_type === "BINARY"
-                              ? "N/A"
-                              : val?.error}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="block">
-                        <span className="topic">
-                          Type
-                          <img
-                            src={infoIcon}
-                            alt="Info"
-                            title="Binary predictions are TRUE or FALSE statements. Continuous predictions are numerical, eg stock prices."
+                            className="value"
                             style={{
-                              marginLeft: "5px",
-                              width: "16px", // Adjust as needed
-                              height: "16px", // Adjust as needed
-                              cursor: "pointer",
+                              backgroundColor: "#fff",
+                              color: "#333",
                             }}
-                          />
-                        </span>
-                        <div
-                          className="value"
-                          style={{
-                            backgroundColor: "#9d43bd",
-                            fontSize:
-                              val?.prediction_type !== "BINARY"
-                                ? "13px"
-                                : "18px",
-                          }}
-                        >
-                          <div
-                            style={{ position: "relative", fontWeight: "600" }}
                           >
-                            {val?.prediction_type}
+                            <div
+                              style={{
+                                position: "relative",
+                                fontWeight: "600",
+                              }}
+                            >
+                              {val?.prediction_type === "BINARY"
+                                ? "N/A"
+                                : val?.error}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="block">
+                          <span className="topic">
+                            Type
+                            <img
+                              src={infoIcon}
+                              alt="Info"
+                              title="Binary predictions are TRUE or FALSE statements. Continuous predictions are numerical, eg stock prices."
+                              style={{
+                                marginLeft: "5px",
+                                width: "16px", // Adjust as needed
+                                height: "16px", // Adjust as needed
+                                cursor: "pointer",
+                              }}
+                            />
+                          </span>
+                          <div
+                            className="value"
+                            style={{
+                              backgroundColor: "#9d43bd",
+                              fontSize:
+                                val?.prediction_type !== "BINARY"
+                                  ? "13px"
+                                  : "18px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                position: "relative",
+                                fontWeight: "600",
+                              }}
+                            >
+                              {val?.prediction_type}
+                            </div>
                           </div>
                         </div>
                       </div>
+                      {/* Below Part Ends */}
                     </div>
-                    {/* Below Part Ends */}
-                  </div>
-                  {/* Youtube Video Starts */}
-                  <div className="row-section-2">
-                    <iframe
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                      alt=""
-                      src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
-                    />
-                  </div>
-                  {/* YouTube Video Ends */}
-                </div>
-                <div className="predictionActive-row-2">
-                  <div className="heading">
-                    Justification
-                    <img
-                      src={infoIcon}
-                      alt="Info"
-                      title="The reasoning behind what kind of prediction is made, as well as justification for the prediction result."
-                      style={{
-                        marginLeft: "5px",
-                        width: "16px", // Adjust as needed
-                        height: "16px", // Adjust as needed
-                        cursor: "pointer",
-                      }}
-                    />
-                  </div>
-                  <div
-                    className="content"
-                    style={{
-                      webkitLineClamp: justificationRead,
-                      webkitBoxOrient: "vertical",
-                    }}
-                  >
-                    <ul style={{ margin: "0", paddingLeft: "21px" }}>
-                      <li style={{ marginBottom: "0px" }}>
-                        {val?.justification}
-                      </li>
-                    </ul>
-                  </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      fontSize: "16px",
-                      textAlign: "right",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                      cursor: "pointer",
-                      justifyContent: "flex-end",
-                    }}
-                    onClick={handleJustifications}
-                  >
-                    {justificationRead == "4" ? "Read more" : "Read Less"}
-                  </div>
-                </div>
-                <div
-                  className="predictionActive-row-3"
-                  style={{
-                    borderRadius: "8px",
-                    border: "1.2px solid #282828",
-                    boxSizing: "border-box",
-                    height: "auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                    padding: "22px",
-                    gap: "16px",
-                    fontSize: "20px",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      fontWeight: "600",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
-                    Summaries
-                    <img
-                      src={infoIcon}
-                      alt="Info"
-                      title="Evidential summary of the most relevant articles from the best ranked sources, determined by our AI."
-                      style={{
-                        marginLeft: "5px",
-                        width: "16px", // Adjust as needed
-                        height: "16px", // Adjust as needed
-                        cursor: "pointer",
-                      }}
-                    />
-                  </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      fontSize: "inherit",
-                      fontFamily: "inherit",
-                      color: "#fff",
-                      display: "-webkit-inline-box",
-                      alignItems: "center",
-                      overflow: "hidden",
-                      textOverflow: "inherit",
-                      webkitLineClamp: summariesRead,
-                      webkitBoxOrient: "vertical",
-                    }}
-                  >
-                    <ul style={{ margin: "0", paddingLeft: "21px" }}>
-                      <li style={{ marginBottom: "0px" }}>{val?.summaries}</li>
-                    </ul>
-                  </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      fontSize: "16px",
-                      textAlign: "right",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                      justifyContent: "flex-end",
-                    }}
-                    onClick={handleSummaries}
-                  >
-                    {summariesRead == "6" ? "Read more" : "Read Less"}
-                  </div>
-                </div>
-                <div
-                  className="predictionActive-row-4"
-                  style={{
-                    height: "auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                    gap: "8px",
-                    fontSize: "14px",
-                    color: "#1664da",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      fontSize: "20px",
-                      fontWeight: "600",
-                      color: "#4B6CC2",
-                      display: "flex",
-                      alignItems: "center",
-                      flexShrink: "0",
-                    }}
-                  >
-                    Sources
-                  </div>
-
-                  {val?.sources.map((val, index) => {
-                    return (
-                      <div
+                    {/* Youtube Video Starts */}
+                    <div className="row-section-2">
+                      <iframe
                         style={{
-                          borderRadius: "8px",
-                          overflow: "hidden",
-                          flexShrink: "0",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "flex-start",
-                          boxSizing: "border-box",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
                         }}
-                      >
-                        <div
-                          style={{
-                            position: "relative",
-                            display: "flex",
-                            alignItems: "center",
-                            flexShrink: "0",
-                          }}
-                        >
-                          {val}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div
-                  className="predictionActive-row-5"
-                  style={{
-                    borderRadius: "8px",
-                    backgroundColor: "#282828",
-                    overflow: "hidden",
-                    flexShrink: "0",
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "10px 10px 10px 22px",
-                    boxSizing: "border-box",
-                    gap: "20px",
-                    textAlign: "center",
-                    color: "#fff",
-                  }}
-                >
-                  <div style={{ position: "relative" }}>
-                    Did we get it wrong? Add context and evidence if you think
-                    you see an error.
+                        alt=""
+                        src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
+                      />
+                    </div>
+                    {/* YouTube Video Ends */}
                   </div>
-                  <Button
+                  <div className="predictionActive-row-2">
+                    <div className="heading">
+                      Justification
+                      <img
+                        src={infoIcon}
+                        alt="Info"
+                        title="The reasoning behind what kind of prediction is made, as well as justification for the prediction result."
+                        style={{
+                          marginLeft: "5px",
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
+                          cursor: "pointer",
+                        }}
+                      />
+                    </div>
+                    <div
+                      className="content"
+                      style={{
+                        webkitLineClamp: justificationRead,
+                        webkitBoxOrient: "vertical",
+                      }}
+                    >
+                      <ul style={{ margin: "0", paddingLeft: "21px" }}>
+                        <li style={{ marginBottom: "0px" }}>
+                          {val?.justification}
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "16px",
+                        textAlign: "right",
+                        display: "flex",
+                        alignItems: "center",
+                        flexShrink: "0",
+                        cursor: "pointer",
+                        justifyContent: "flex-end",
+                      }}
+                      onClick={handleJustifications}
+                    >
+                      {justificationRead == "4" ? "Read more" : "Read Less"}
+                    </div>
+                  </div>
+                  <div
+                    className="predictionActive-row-3"
                     style={{
                       borderRadius: "8px",
-                      backgroundColor: "#4B6CC2",
+                      border: "1.2px solid #282828",
+                      boxSizing: "border-box",
+                      height: "auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "flex-start",
+                      padding: "22px",
+                      gap: "16px",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        fontWeight: "600",
+                        display: "flex",
+                        alignItems: "center",
+                        flexShrink: "0",
+                      }}
+                    >
+                      Summaries
+                      <img
+                        src={infoIcon}
+                        alt="Info"
+                        title="Evidential summary of the most relevant articles from the best ranked sources, determined by our AI."
+                        style={{
+                          marginLeft: "5px",
+                          width: "16px", // Adjust as needed
+                          height: "16px", // Adjust as needed
+                          cursor: "pointer",
+                        }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "inherit",
+                        fontFamily: "inherit",
+                        color: "#fff",
+                        display: "-webkit-inline-box",
+                        alignItems: "center",
+                        overflow: "hidden",
+                        textOverflow: "inherit",
+                        webkitLineClamp: summariesRead,
+                        webkitBoxOrient: "vertical",
+                      }}
+                    >
+                      <ul style={{ margin: "0", paddingLeft: "21px" }}>
+                        <li style={{ marginBottom: "0px" }}>
+                          {val?.summaries}
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "16px",
+                        textAlign: "right",
+                        display: "flex",
+                        alignItems: "center",
+                        flexShrink: "0",
+                        justifyContent: "flex-end",
+                      }}
+                      onClick={handleSummaries}
+                    >
+                      {summariesRead == "6" ? "Read more" : "Read Less"}
+                    </div>
+                  </div>
+                  <div
+                    className="predictionActive-row-4"
+                    style={{
+                      height: "auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "flex-start",
+                      gap: "8px",
+                      fontSize: "14px",
+                      color: "#1664da",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "20px",
+                        fontWeight: "600",
+                        color: "#4B6CC2",
+                        display: "flex",
+                        alignItems: "center",
+                        flexShrink: "0",
+                      }}
+                    >
+                      Sources
+                    </div>
+
+                    {val?.sources.map((val, index) => {
+                      return (
+                        <div
+                          style={{
+                            borderRadius: "8px",
+                            overflow: "hidden",
+                            flexShrink: "0",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "flex-start",
+                            boxSizing: "border-box",
+                          }}
+                        >
+                          <div
+                            style={{
+                              position: "relative",
+                              display: "flex",
+                              alignItems: "center",
+                              flexShrink: "0",
+                            }}
+                          >
+                            {val}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div
+                    className="predictionActive-row-5"
+                    style={{
+                      borderRadius: "8px",
+                      backgroundColor: "#282828",
                       overflow: "hidden",
                       flexShrink: "0",
+                      width: "100%",
                       display: "flex",
                       flexDirection: "row",
                       alignItems: "center",
-                      justifyContent: "center",
-                      padding: "17px 34px",
+                      justifyContent: "space-between",
+                      padding: "10px 10px 10px 22px",
                       boxSizing: "border-box",
-                      fontSize: "14px",
-                      color: "#282828",
-                      // move to the right:
-                      marginLeft: "65px",
+                      gap: "20px",
+                      textAlign: "center",
+                      color: "#fff",
                     }}
                   >
-                    Feedback
-                  </Button>
+                    <div style={{ position: "relative" }}>
+                      Did we get it wrong? Add context and evidence if you think
+                      you see an error.
+                    </div>
+                    <Button
+                      style={{
+                        borderRadius: "8px",
+                        backgroundColor: "#4B6CC2",
+                        overflow: "hidden",
+                        flexShrink: "0",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "17px 34px",
+                        boxSizing: "border-box",
+                        fontSize: "14px",
+                        color: "#282828",
+                        // move to the right:
+                        marginLeft: "65px",
+                      }}
+                    >
+                      Feedback
+                    </Button>
+                  </div>
                 </div>
-              </div>
+
+                <div className="mobPredictionActive">
+                  <Tabs
+                    items={[
+                      {
+                        title: "Status",
+                        content: (
+                          <>
+                            <div className="status-section" key={index}>
+                              <div className="analytics-body">
+                                <div className="column">
+                                  <div className="body-icon">
+                                    <LuCalendarDays
+                                      style={{ width: "30px", height: "30px" }}
+                                    />
+                                  </div>
+                                  <div className="text">
+                                    <span style={{ color: "#AEAEAE" }}>
+                                      Made On
+                                    </span>
+                                    <div className="value">
+                                      {val?.publish_date}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="column">
+                                  <div className="body-icon">
+                                    <LuCalendarDays
+                                      style={{ width: "30px", height: "30px" }}
+                                    />
+                                  </div>
+                                  <div className="text">
+                                    <span style={{ color: "#AEAEAE" }}>
+                                      Released On
+                                    </span>
+                                    <div className="value">
+                                      {val?.fixed_date}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="column">
+                                  <div className="body-icon">
+                                    <LuCalendarDays
+                                      style={{ width: "30px", height: "30px" }}
+                                    />
+                                  </div>
+                                  <div className="text">
+                                    <span style={{ color: "#AEAEAE" }}>
+                                      Prediction Accuracy
+                                    </span>
+                                    <div className="value">
+                                      {val?.prediction_accuracy}%
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="column">
+                                  <div className="body-icon">
+                                    <LuCalendarDays
+                                      style={{ width: "30px", height: "30px" }}
+                                    />
+                                  </div>
+                                  <div className="text">
+                                    <span style={{ color: "#AEAEAE" }}>
+                                      Status
+                                    </span>
+                                    <div className="value">
+                                      {val?.prediction_validation}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="detail-body">
+                                <div className="block">
+                                  <span className="topic">Points </span>
+                                  <div
+                                    className="value"
+                                    style={{
+                                      backgroundColor:
+                                        val?.score < 0 ? "#B32A2A" : "#50D200",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        fontWeight: "600",
+                                      }}
+                                    >
+                                      {val?.score &&
+                                        Number(val?.score).toFixed(1)}
+                                      <span
+                                        style={{
+                                          fontSize: "12px",
+                                          fontWeight: "500",
+                                        }}
+                                      >
+                                        {" "}
+                                        Pts
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="block">
+                                  <span className="topic">Timeline</span>
+                                  <div
+                                    className="value"
+                                    style={{
+                                      backgroundColor:
+                                        val?.days_since > 60
+                                          ? "#23B678"
+                                          : "#B32A2A",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        fontWeight: "600",
+                                      }}
+                                    >
+                                      {val?.days_since}{" "}
+                                      <span
+                                        style={{
+                                          fontSize: "12px",
+                                          fontWeight: "500",
+                                        }}
+                                      >
+                                        Days
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="block">
+                                  <span className="topic">Error %</span>
+                                  <div
+                                    className="value"
+                                    style={{
+                                      backgroundColor: "#fff",
+                                      color: "#333",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        fontWeight: "600",
+                                      }}
+                                    >
+                                      {val?.prediction_type === "BINARY"
+                                        ? "N/A"
+                                        : val?.error}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="block">
+                                  <span className="topic">Type</span>
+                                  <div
+                                    className="value"
+                                    style={{
+                                      backgroundColor: "#9d43bd",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        fontWeight: "600",
+                                      }}
+                                    >
+                                      {val?.prediction_type}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="row-section-2">
+                                <iframe
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                    borderRadius: "12px",
+                                  }}
+                                  alt=""
+                                  src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
+                                />
+                              </div>
+                            </div>
+                          </>
+                        ),
+                      },
+                      { title: "Full Information", content: "info" },
+                    ]}
+                  />
+                </div>
+              </>
             ) : null}
           </>
         );
