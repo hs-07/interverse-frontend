@@ -245,6 +245,106 @@ const Predictions = () => {
                 </div>
               </div>
             </div>
+
+            {/* mobile view starts */}
+            <div
+              className="mobile-predictions"
+              onClick={() => onClickDescription(index)}
+            >
+              <div className="mp-row">
+                <div className="block-1">
+                  <img alt="" src={val?.image_url} />
+                  <div className="name">
+                    <div>Forcaster</div>
+                    <span className="">
+                      {val?.first_name.startsWith("Unknown")
+                        ? "Unknown"
+                        : val?.first_name + " " + val?.last_name}
+                    </span>
+                  </div>
+                </div>
+                <div className="block-2">
+                  {val?.predictionActive ? (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-1433.svg"
+                    />
+                  ) : (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-278.svg"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="mp-row">
+                <div className="block-1">
+                  <div
+                    style={{
+                      backgroundColor:
+                        val?.prediction_validation === "PENDING"
+                          ? "#374C98"
+                          : val?.prediction_validation === "TRUE"
+                          ? "#23B678"
+                          : val?.prediction_validation === "UNDETERMINED"
+                          ? "#D29D15"
+                          : val?.prediction_validation === "PARTIALLY TRUE"
+                          ? "#388E3C"
+                          : "#E72E2E",
+                      width: "1.5rem",
+                      height: "1.5rem",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <div className="">
+                    Status :{" "}
+                    <span
+                      style={{
+                        color:
+                          val?.prediction_validation === "PENDING"
+                            ? "#374C98"
+                            : val?.prediction_validation === "TRUE"
+                            ? "#23B678"
+                            : val?.prediction_validation === "UNDETERMINED"
+                            ? "#D29D15"
+                            : val?.prediction_validation === "PARTIALLY TRUE"
+                            ? "#388E3C"
+                            : "#E72E2E",
+                      }}
+                    >
+                      {val?.prediction_validation}
+                    </span>
+                  </div>
+                </div>
+                <div className="block-2">
+                  <img
+                    alt=""
+                    src="/marketgraph.svg"
+                    style={{ width: "1.7rem" }}
+                  />
+                </div>
+              </div>
+
+              <div className="mp-row">
+                <div className="name">
+                  Prediction - <span>{val?.category}</span>
+                  <div className="" style={{ paddingTop: "12px" }}>
+                    {val?.prediction}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* mobile view ends */}
             {val?.predictionActive ? (
               <>
                 <div className="predictionActive">

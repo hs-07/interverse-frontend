@@ -232,6 +232,9 @@
 }
 .predictionActive-row-3 {
 }
+.mobile-predictions {
+  display: none;
+}
 
 @media (max-width: 1024px) {
   .predictions > .sub-header {
@@ -245,12 +248,59 @@
   }
 }
 @media (max-width: 768px) {
+  .predictions > .prediction-row {
+    display: none;
+  }
+  .mobile-predictions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    font-family: Inter;
+    padding: 12px;
+    background-color: #282828;
+    margin-top: 2px;
+    margin-bottom: -2px;
+  }
+  .mobile-predictions > .mp-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    color: #aeaeae;
+    font-size: 14px;
+  }
+  .mobile-predictions > .mp-row > .block-1 {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+  }
+  .mobile-predictions > .mp-row > .block-1 > img {
+    position: relative;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border: 1px solid #4b6cc2;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    padding: 4px;
+  }
+  .name > span {
+    font-size: 16px;
+    color: #fff;
+  }
   .predictionActive {
     display: none;
   }
   .mobPredictionActive {
     display: flex;
     width: 100%;
+  }
+  .predictions > .sub-header {
+    display: none;
   }
   .status-section {
     display: flex;
