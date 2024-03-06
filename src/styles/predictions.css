@@ -298,4 +298,46 @@
     padding: 20px 0;
     border-radius: 0px 0px 16px 16px;
   }
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding-top: 16px;
+    font-size: 12px;
+    font-family: Inter;
+    color: #fff;
+  }
+  .info-section > .justification > span {
+    color: #aeaeae;
+    font-size: 18px;
+  }
+  .info-section > .mob-summaries > span {
+    color: #aeaeae;
+    font-size: 18px;
+    padding-bottom: 12px;
+  }
+  .info-section > .sources > span {
+    color: #aeaeae;
+    font-size: 18px;
+    padding-bottom: 12px;
+  }
+  .mob-feedback {
+    width: 100%;
+    padding: 12px;
+    background-color: #282828;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .mob-feedback > button {
+    padding: 12px;
+    color: #fff;
+    border: none;
+    background-color: #4b6cc2;
+    border-radius: 12px;
+    width: 16rem;
+  }
 }

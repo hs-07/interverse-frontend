@@ -860,7 +860,54 @@ const Predictions = () => {
                           </>
                         ),
                       },
-                      { title: "Full Information", content: "info" },
+                      {
+                        title: "Full Information",
+                        content: (
+                          <>
+                            <div className="info-section">
+                              <div className="justification">
+                                <span>Justification</span>
+                                <div
+                                  className=""
+                                  style={{ paddingTop: "12px" }}
+                                >
+                                  {val?.justification}
+                                </div>
+                              </div>
+                              <div className="mob-summaries">
+                                <span>Summaries</span>
+                                <div className="">{val?.summaries}</div>
+                              </div>
+                              <div className="sources">
+                                <span>Source</span>
+                                {val?.sources.map((val, index) => {
+                                  return (
+                                    <div
+                                      key={index}
+                                      style={{ paddingTop: "12px" }}
+                                    >
+                                      <a
+                                        href={val}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {val}
+                                      </a>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              <div className="mob-feedback">
+                                <div className="">
+                                  Did we get it wrong? Add context and evidence
+                                  if you think you see an error.
+                                </div>
+                                <button>Feedback</button>
+                              </div>
+                            </div>
+                          </>
+                        ),
+                      },
                     ]}
                   />
                 </div>
