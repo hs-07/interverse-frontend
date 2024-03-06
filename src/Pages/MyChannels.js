@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { channelsData } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
+import "../styles/mychannels.css";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
@@ -9,7 +10,7 @@ function MyChannels() {
   const navigate = useNavigate();
 
   const handleSubSection = (index) => {
-    if (index == activeIndex) {
+    if (index === activeIndex) {
       setActiveIndex(-1);
       return;
     }
@@ -18,7 +19,7 @@ function MyChannels() {
   useEffect(() => {
     channelsData()
       .then((res) => {
-        console.log("res chaneel:::", res.data);
+        // console.log("res chaneel:::", res.data);
         setChannelData([...res.data]);
       })
       .catch((err) => {
@@ -26,119 +27,13 @@ function MyChannels() {
       });
   }, []);
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "90vh",
-        overflowY: "scroll",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-        gap: "2px",
-        fontSize: "20px",
-        color: "#4B6CC2",
-        marginBottom: "80px",
-        overflowStyle: "none",
-      }}
-    >
+    <div className="myChannel">
       {/* Add Channel div Starts */}
-      <div
-        style={{
-          backgroundColor: "#282828",
-          width: "100%",
-          height: "103px",
-          overflow: "hidden",
-          flexShrink: "0",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          padding: "7px 22px",
-          boxSizing: "border-box",
-          gap: "26px",
-          fontSize: "20px",
-        }}
-      >
-        <div
-          style={{
-            width: "354px",
-            height: "40px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              fontWeight: "600",
-              display: "flex",
-              alignItems: "center",
-              width: "200px",
-              height: "20px",
-              flexShrink: "0",
-            }}
-          >
-            Add Channel
-          </div>
-        </div>
-        <div
-          style={{
-            borderRadius: "10px",
-            backgroundColor: "#181818",
-            backdropFilter: "blur(40px)",
-            border: "1px solid rgba(174, 174, 174, 0.5)",
-            boxSizing: "border-box",
-            width: "834px",
-            height: "60px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            padding: "2px 7px 2px 20px",
-            gap: "32px",
-            fontFamily: "Lato",
-          }}
-        >
-          <input
-            style={{
-              position: "relative",
-              lineHeight: "40px",
-              display: "flex",
-              alignItems: "center",
-              width: "607px",
-              height: "38px",
-              backgroundColor: "#181818",
-              backdropFilter: "blur(40px)",
-              border: 0,
-              color: "#fff",
-              fontFamily: "inter",
-            }}
-            placeholder="Enter Channel Url"
-          />
-          <Button
-            style={{
-              borderRadius: "10px",
-              backgroundColor: "#282828",
-              width: "170px",
-              height: "50px",
-              overflow: "hidden",
-              flexShrink: "0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              // padding: "28px 25px",
-              boxSizing: "border-box",
-              position: "relative",
-              textAlign: "center",
-              color: "#4B6CC2",
-              // margin: "2px",
-            }}
-            onClick={() => alert("In Progress...")}
-          >
+      <div className="addChannel-section">
+        <div className="block-1">Add Channel</div>
+        <div className="block-2">
+          <input placeholder="Enter Channel Url" />
+          <Button className="btn" onClick={() => alert("In Progress...")}>
             ADD
           </Button>
         </div>
