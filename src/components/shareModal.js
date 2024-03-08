@@ -28,6 +28,7 @@ const shareModal = ({ showModal, setShowModal }) => {
         isOpen={showModal}
         centered={true}
         cancelModalHandler={handleCancel}
+        className={"share-modal"}
       >
         <div className="share-modal-content">
           {iconsGridData.map((item, index) => (

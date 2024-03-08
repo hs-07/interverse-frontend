@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import { channelsData } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
 import "../styles/mychannels.css";
+import AddChannelModal from "../components/addChannelModal";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
+  const [openAddChannel, setOpenAddChannel] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const navigate = useNavigate();
 
@@ -30,14 +32,28 @@ function MyChannels() {
     <div className="myChannel">
       {/* Add Channel div Starts */}
       <div className="addChannel-section">
-        <div className="block-1">Add Channel</div>
+        <div className="block-1">Add New Channel</div>
         <div className="block-2">
           <input placeholder="Enter Channel Url" />
           <Button className="btn" onClick={() => alert("In Progress...")}>
             ADD
           </Button>
         </div>
+        <div className="mob-block-2">
+          <div onClick={() => setOpenAddChannel(true)}>
+            <img
+              style={{
+                position: "relative",
+                width: "21.5px",
+                height: "21.5px",
+              }}
+              alt=""
+              src="/vector-278.svg"
+            />
+          </div>
+        </div>
       </div>
+      {/* Add Channel div Ends */}
       <div className="channel-header">
         <div>Channel Name</div>
         <div>Summaries</div>
@@ -198,6 +214,10 @@ function MyChannels() {
         );
       })}
       {/* Row Data Ends */}
+      <AddChannelModal
+        setShowModal={setOpenAddChannel}
+        showModal={openAddChannel}
+      />
     </div>
   );
 }

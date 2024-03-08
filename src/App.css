@@ -58,8 +58,8 @@
 
 /* SideNav Styles Ends */
 
-/* Ant design Modal Styles Starts*/
-.ant-modal .ant-modal-content {
+/*Share Modal Ant design Modal Styles Starts*/
+.share-modal .ant-modal .ant-modal-content {
   background-color: #262626;
   padding: 50px;
 }
@@ -77,11 +77,11 @@
 .ant-modal .ant-modal-footer {
   display: none;
 }
-.ant-modal .ant-modal-close {
+.share-modal .ant-modal .ant-modal-close {
   top: 48px;
   right: 50px;
 }
-.anticon {
+.share-modal .anticon {
   padding: 4px;
   border-radius: 10px;
   border: 2px solid white;
@@ -90,4 +90,9 @@
   display: inline-block;
   font-size: 20px;
   color: white;
+}
+
+/* Add Channel Modal Style Starts */
+.ant-modal .ant-modal-content {
+  background-color: #262626 !important;
 }

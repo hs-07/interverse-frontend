@@ -45,6 +45,9 @@
   padding: 6px 12px;
   min-width: 65%;
 }
+.addChannel-section > .mob-block-2 {
+  display: none;
+}
 .addChannel-section > .block-2 > input {
   position: relative;
   width: 100%;
@@ -142,4 +145,26 @@
   justify-content: space-between;
   gap: 16px;
   font-size: 16px;
+}
+@media (max-width: 768px) {
+  .addChannel-section > .block-2 {
+    display: none;
+  }
+  .addChannel-section {
+    background-color: #181818;
+    color: #fff;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-size: 14px;
+    margin-top: 0;
+  }
+  .addChannel-section > .mob-block-2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .channel-header {
+    display: none;
+  }
 }
