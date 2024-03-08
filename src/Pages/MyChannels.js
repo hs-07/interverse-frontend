@@ -93,7 +93,7 @@ function MyChannels() {
               </div>
             </div>
             {/* Hidden Data Starts */}
-            {index == activeIndex ? (
+            {index === activeIndex ? (
               <div className="channelData-active">
                 <div className="section-1">
                   <div className="column-1">People</div>

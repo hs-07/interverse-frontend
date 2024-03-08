@@ -301,8 +301,8 @@ const Predictions = () => {
                           : val?.prediction_validation === "PARTIALLY TRUE"
                           ? "#388E3C"
                           : "#E72E2E",
-                      width: "1.5rem",
-                      height: "1.5rem",
+                      width: "1rem",
+                      height: "1rem",
                       borderRadius: "50%",
                     }}
                   />
