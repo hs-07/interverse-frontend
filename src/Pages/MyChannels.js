@@ -4,6 +4,7 @@ import { channelsData } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
 import "../styles/mychannels.css";
 import AddChannelModal from "../components/addChannelModal";
+import { LuCalendarDays } from "react-icons/lu";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
@@ -106,6 +107,92 @@ function MyChannels() {
                     src="/vector-278.svg"
                   />
                 )}
+              </div>
+            </div>
+
+            {/* Mobile View Starts */}
+            <div className="mob-channelData-row">
+              <div className="header">
+                <div className="part-1">
+                  <img
+                    src={val?.ChannelImageUrl}
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <div className="column-1">
+                    <span style={{ color: "#aeaeae" }}>Channel Name</span>
+                    <div className="">{val?.ChannelName.slice(0, 20)}</div>
+                  </div>
+                </div>
+                <div className="part-2" onClick={() => handleSubSection(index)}>
+                  {activeIndex === index ? (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-1433.svg"
+                    />
+                  ) : (
+                    <img
+                      style={{
+                        position: "relative",
+                        width: "21.5px",
+                        height: "21.5px",
+                      }}
+                      alt=""
+                      src="/vector-278.svg"
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="body">
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Summaries</span>
+                    <div className="value">{Math.floor(val?.Summaries)}</div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Predictions</span>
+                    <div className="value">{val?.Predictions}</div>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>
+                      Prediction Accuracy
+                    </span>
+                    <div className="value">{val?.PredictionAccuracy}</div>
+                  </div>
+                </div>
+                {/* <div className="column">
+                  <div className="body-icon">
+                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                  </div>
+                  <div className="text">
+                    <span style={{ color: "#AEAEAE" }}>Points</span>
+                    <div className="value">
+                      {Math.floor(val?.total_user_score)}
+                    </div>
+                  </div>
+                </div> */}
               </div>
             </div>
             {/* Hidden Data Starts */}
