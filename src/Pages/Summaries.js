@@ -66,7 +66,7 @@ function Summaries() {
     }
     setData(
       [...data].map((obj, ind) => {
-        if (ind == index) {
+        if (ind === index) {
           return {
             ...obj,
             predictionActive: true,
@@ -107,7 +107,7 @@ function Summaries() {
     }
     setData(
       [...data].map((obj, ind) => {
-        if (ind == index) {
+        if (ind === index) {
           return {
             ...obj,
             predictionActive: false,
@@ -305,6 +305,21 @@ function Summaries() {
                   <img alt="" src="/vector-278.svg" />
                 )}
               </div>
+            </div>
+            <div className="mob-summaries-col">
+              <div className="summaries-header">
+                <div className="summaries-header-img">
+                  <img alt="" src="/youtube.svg" />
+                </div>
+                <div className="summaries-header-content">
+                  <h6 className=""> {val.source_title.slice(0, 30)}..</h6>
+                  <span style={{ color: "#aeaeae" }}>
+                    Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
+                    {convertMinsToHrsMins(val.duration)}
+                  </span>
+                </div>
+              </div>
+              <div className=""></div>
             </div>
             {/* Column Ends */}
             {/* Column Description Starts */}
@@ -740,7 +755,7 @@ function Summaries() {
               </>
             ) : null}
 
-            {activeIndex == index && loading ? (
+            {activeIndex === index && loading ? (
               <div
                 style={{
                   display: "flex",

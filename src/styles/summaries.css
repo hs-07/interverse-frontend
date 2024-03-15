@@ -9,6 +9,7 @@
   justify-content: flex-start;
   gap: 2px;
   font-size: 14px;
+  padding-top: 2px;
 }
 .summaries > .summaries-col {
   background-color: #282828;
@@ -333,4 +334,32 @@
   display: flex;
   justify-content: center;
 }
+.summaries > .mob-summaries-col {
+  display: none;
+}
+
 /* Active Predictions Section ends */
+
+@media (max-width: 768px) {
+  .summaries > .summaries-col {
+    display: none;
+  }
+  .summaries > .mob-summaries-col {
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    background-color: #282828;
+  }
+  .mob-summaries-col > .summaries-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    color: #4b6cc2;
+  }
+  .summaries-header > .summaries-header-content {
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+  }
+}
