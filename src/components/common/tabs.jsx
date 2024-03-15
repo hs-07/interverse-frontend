@@ -11,6 +11,7 @@ const Tabs = ({ items }) => {
       firstBtnRef.current.focus();
     }
   }, []);
+
   return (
     <div className="tabs-container">
       <div className="tabs-switches">

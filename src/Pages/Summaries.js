@@ -12,6 +12,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Tabs from "../components/common/tabs";
 
 const myComponentStyle = {
   fontFamily: "Roboto, sans-serif", // Use the font name specified in Google Fonts
@@ -27,7 +28,6 @@ function Summaries() {
   const [fullTranscriptData, setFullTranscriptData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState("");
-  const [subSection, setSubSection] = useState(false);
   const [subSectionIndex, setSubSectionIndex] = useState(false);
 
   useEffect(() => {
@@ -228,6 +228,20 @@ function Summaries() {
     arr[index].Active = !arr[index].Active;
     setData([...arr]);
   };
+  const items = [
+    {
+      title: "Summaries",
+      content: (
+        <div className="mob-summaries-active">
+          <div className=""></div>
+          <div className="">Full Transcript</div>
+        </div>
+      ),
+    },
+    { title: "Predictions", content: "content2" },
+    { title: "People", content: "content3" },
+  ];
+
   return (
     <div className="summaries">
       {/* Column Starts */}
@@ -656,18 +670,8 @@ function Summaries() {
                       style={{
                         backgroundColor:
                           index % 2 === 0 ? "#282828" : "#202020",
-                        width: "100%",
-                        // Removed overflow: "hidden" to allow the container to grow with the content
-                        flexShrink: "0",
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center", // This will vertically center the items in the container
-                        justifyContent: "flex-start",
-                        padding: "15px 15px", // Adjust the top and bottom padding as needed for buffer
-                        boxSizing: "border-box", // Makes sure the padding is included in the width
-                        gap: "26px",
-                        color: "#4B6CC2",
                       }}
+                      className="active-transcript-section"
                     >
                       <div
                         style={{
@@ -776,7 +780,11 @@ function Summaries() {
                 })}
               </>
             ) : null}
-            {!loading && val?.Active ? <>hello</> : null}
+            {!loading && val?.Active ? (
+              <div className="mob-active-col">
+                <Tabs items={items} />
+              </div>
+            ) : null}
 
             {activeIndex === index && loading ? (
               <div
