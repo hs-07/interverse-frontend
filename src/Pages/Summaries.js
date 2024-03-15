@@ -185,12 +185,12 @@ function Summaries() {
     const arr = [...data];
     arr[index].fullTranscriptActive = !arr[index].fullTranscriptActive;
     setData([...arr]);
-    if (data[index].fullTranscriptActive == false) {
+    if (data[index].fullTranscriptActive === false) {
       return;
     }
     setData(
       [...data].map((obj, ind) => {
-        if (ind == index) {
+        if (ind === index) {
           return {
             ...obj,
             predictionActive: false,
@@ -222,6 +222,11 @@ function Summaries() {
       .catch((err) => {
         console.log("err:::::", err);
       });
+  };
+  const onClickSummariesCol = (index) => {
+    const arr = [...data];
+    arr[index].Active = !arr[index].Active;
+    setData([...arr]);
   };
   return (
     <div className="summaries">
@@ -306,7 +311,14 @@ function Summaries() {
                 )}
               </div>
             </div>
-            <div className="mob-summaries-col">
+
+            {/* Mobile View Starts */}
+            <div
+              className="mob-summaries-col"
+              onClick={() => {
+                onClickSummariesCol(index);
+              }}
+            >
               <div className="summaries-header">
                 <div className="summaries-header-img">
                   <img alt="" src="/youtube.svg" />
@@ -319,8 +331,18 @@ function Summaries() {
                   </span>
                 </div>
               </div>
-              <div className=""></div>
+              <div className="summaries-body">
+                <div className="col">
+                  <span>No. of Predictions</span>
+                  <h6>{val.number_of_predictions}</h6>
+                </div>
+                <div className="col">
+                  <span>Publish Date</span>
+                  <h6>{val.publication_date.toString().slice(0, 10)}</h6>
+                </div>
+              </div>
             </div>
+
             {/* Column Ends */}
             {/* Column Description Starts */}
             {!loading && val?.peopleActive ? (
@@ -754,6 +776,7 @@ function Summaries() {
                 })}
               </>
             ) : null}
+            {!loading && val?.Active ? <>hello</> : null}
 
             {activeIndex === index && loading ? (
               <div

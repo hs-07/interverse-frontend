@@ -346,6 +346,8 @@
   }
   .summaries > .mob-summaries-col {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
     padding: 12px;
     background-color: #282828;
@@ -361,5 +363,17 @@
     display: flex;
     flex-direction: column;
     line-height: 10px;
+  }
+  .mob-summaries-col > .summaries-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #fff;
+  }
+  .summaries-body > .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .summaries-body > .col > span {
+    color: #aeaeae;
   }
 }

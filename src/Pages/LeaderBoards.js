@@ -30,7 +30,7 @@ const LeaderBoards = () => {
     setData([...arr]);
   };
 
-  console.log(window.innerWidth, "window.innerWidth");
+  // console.log(window.innerWidth, "window.innerWidth");
   return (
     <div className="custom-container">
       {loader ? (
