@@ -33,7 +33,7 @@ function Summaries() {
   useEffect(() => {
     allSummarySources()
       .then((res) => {
-        console.log("res::::", res.data);
+        // console.log("res::::", res.data);
         setData([...res.data]);
         setData(
           [...res.data].map((obj) => ({
@@ -61,7 +61,7 @@ function Summaries() {
     const arr = [...data];
     arr[index].predictionActive = !arr[index].predictionActive;
     setData([...arr]);
-    if (data[index].predictionActive == false) {
+    if (data[index].predictionActive === false) {
       return;
     }
     setData(
@@ -102,7 +102,7 @@ function Summaries() {
     const arr = [...data];
     arr[index].peopleActive = !arr[index].peopleActive;
     setData([...arr]);
-    if (data[index].peopleActive == false) {
+    if (data[index].peopleActive === false) {
       return;
     }
     setData(
@@ -144,7 +144,7 @@ function Summaries() {
     const arr = [...data];
     arr[index].summariesActive = !arr[index].summariesActive;
     setData([...arr]);
-    if (data[index].summariesActive == false) {
+    if (data[index].summariesActive === false) {
       return;
     }
     setData(
@@ -227,20 +227,11 @@ function Summaries() {
     const arr = [...data];
     arr[index].Active = !arr[index].Active;
     setData([...arr]);
+    onClickPrediction(index);
+    onClickPeople(index);
+    onClickSummaries(index);
+    onClickFullTranscript(index);
   };
-  const items = [
-    {
-      title: "Summaries",
-      content: (
-        <div className="mob-summaries-active">
-          <div className=""></div>
-          <div className="">Full Transcript</div>
-        </div>
-      ),
-    },
-    { title: "Predictions", content: "content2" },
-    { title: "People", content: "content3" },
-  ];
 
   return (
     <div className="summaries">
@@ -782,7 +773,180 @@ function Summaries() {
             ) : null}
             {!loading && val?.Active ? (
               <div className="mob-active-col">
-                <Tabs items={items} />
+                <Tabs
+                  items={[
+                    {
+                      title: "Summaries",
+                      content: (
+                        <div className="mob-summaries-active">
+                          <div className="mob-summaries">
+                            {summariesData.map((val, index) => {
+                              return (
+                                <>
+                                  <div className="as-col-1-row" key={index}>
+                                    <div className="">
+                                      {val?.summary_title.slice(0, 50)}...
+                                    </div>
+                                    <div
+                                      onClick={() => {
+                                        // setSubSectionIndex((prev) => !prev);
+                                        setSubSectionIndex(index);
+                                      }}
+                                    >
+                                      {subSectionIndex === index ? (
+                                        <img
+                                          style={{
+                                            position: "relative",
+                                            width: "21.5px",
+                                            height: "21.5px",
+                                          }}
+                                          alt=""
+                                          src="/vector-1433.svg"
+                                        />
+                                      ) : (
+                                        <img
+                                          style={{
+                                            position: "relative",
+                                            width: "21.5px",
+                                            height: "21.5px",
+                                          }}
+                                          alt=""
+                                          src="/vector-278.svg"
+                                        />
+                                      )}
+                                    </div>
+                                  </div>
+                                  {subSectionIndex === index ? (
+                                    <div
+                                      style={{
+                                        paddingRight: "20px",
+                                        marginTop: "10px",
+                                        color: "#AEAEAE",
+                                        fontFamily: "inter",
+                                        fontSize: "16px",
+                                      }}
+                                    >
+                                      {val?.summary_text}
+                                    </div>
+                                  ) : null}
+                                </>
+                              );
+                            })}
+                          </div>
+                          <div className="mob-full-transcript">
+                            <div className="head">Full Transcript</div>
+                            {fullTranscriptData.map((val, index) => (
+                              <div className="body" key={index}>
+                                <div className="">
+                                  Duration:{" "}
+                                  <span style={{ color: "#aeaeae" }}>
+                                    {val?.time_range}
+                                  </span>
+                                </div>
+                                <div className="">
+                                  {" "}
+                                  {val.user_name.startsWith("Unknown")
+                                    ? ""
+                                    : val.user_name}
+                                </div>
+                                <div className="">{val?.labelled_segments}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ),
+                    },
+                    {
+                      title: "Predictions",
+                      content: (
+                        <div className="mob-predictions-active">
+                          {predictionData.map((val, index) => {
+                            return (
+                              <div className="body">
+                                <div className="ap-col-1-row">
+                                  <div
+                                    style={{
+                                      position: "relative",
+                                      fontWeight: "500",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      flexShrink: "0",
+                                    }}
+                                  >
+                                    {val?.prediction.slice(0, 40)}...
+                                  </div>
+                                  <div
+                                    onClick={() => {
+                                      // setSubSection((prev) => !prev);
+                                      console.log(index);
+                                      setSubSectionIndex(index);
+                                    }}
+                                  >
+                                    {subSectionIndex === index ? (
+                                      <img alt="" src="/vector-1433.svg" />
+                                    ) : (
+                                      <img alt="" src="/vector-278.svg" />
+                                    )}
+                                  </div>
+                                </div>
+                                {subSectionIndex === index ? (
+                                  <div
+                                    style={{
+                                      paddingRight: "20px",
+                                      marginTop: "10px",
+                                      color: "#AEAEAE",
+                                      fontFamily: "inter",
+                                      fontSize: "14px",
+                                    }}
+                                  >
+                                    {val?.prediction}
+                                    <p style={{ color: "#4B6CC2" }}>
+                                      Status :
+                                      <span
+                                        style={{
+                                          color:
+                                            val?.prediction_validation == "TRUE"
+                                              ? "green"
+                                              : val?.prediction_validation ==
+                                                "FALSE"
+                                              ? "#E72E2E"
+                                              : val?.prediction_validation ==
+                                                "PARTIALLY TRUE"
+                                              ? "#2DD22A"
+                                              : val?.prediction_validation ==
+                                                "PENDING"
+                                              ? "#374C98"
+                                              : "#D29D15",
+                                          fontFamily: "inter",
+                                          fontSize: "14px",
+                                        }}
+                                      >
+                                        {" "}
+                                        {val?.prediction_validation}
+                                      </span>
+                                    </p>
+                                    <p style={{ color: "#4B6CC2" }}>
+                                      Settled Date :{" "}
+                                      <span
+                                        style={{
+                                          fontSize: "14px",
+                                          color: "#AEAEAE",
+                                        }}
+                                      >
+                                        {val?.fixed_date}
+                                      </span>
+                                    </p>
+                                  </div>
+                                ) : null}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ),
+                    },
+                    { title: "People", content: "content3" },
+                  ]}
+                />
               </div>
             ) : null}
 
