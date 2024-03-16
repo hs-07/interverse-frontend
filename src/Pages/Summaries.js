@@ -8,6 +8,7 @@ import {
   getSummarySummaries,
   getFullTranscript,
 } from "../services/summaries.services";
+import { LuCalendarDays } from "react-icons/lu";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -988,7 +989,46 @@ function Summaries() {
                                     Full Profile
                                   </div>
                                 </div>
-                                <div className="body"></div>
+                                <div className="ps-body">
+                                  <div className="col">
+                                    <LuCalendarDays
+                                      style={{ fontSize: "24px" }}
+                                    />
+                                    <div className="detail">
+                                      <h6>Score</h6>
+                                      <span>
+                                        {Math.floor(val?.accuracy_score)}%
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div className="col">
+                                    <LuCalendarDays
+                                      style={{ fontSize: "24px" }}
+                                    />
+                                    <div className="detail">
+                                      <h6>Predictions</h6>
+                                      <span>{val?.total_predictions}</span>
+                                    </div>
+                                  </div>
+                                  <div className="col">
+                                    <LuCalendarDays
+                                      style={{ fontSize: "24px" }}
+                                    />
+                                    <div className="detail">
+                                      <h6>Pending</h6>
+                                      <span>{val?.pending_predictions}</span>
+                                    </div>
+                                  </div>
+                                  <div className="col">
+                                    <LuCalendarDays
+                                      style={{ fontSize: "24px" }}
+                                    />
+                                    <div className="detail">
+                                      <h6>EP-Predictions</h6>
+                                      <span>{val?.episode_predictions}</span>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             );
                           })}

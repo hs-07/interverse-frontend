@@ -501,7 +501,7 @@
     width: fit-content;
     height: fit-content;
     padding: 2px;
-    border: 2px solid #9f9f9f;
+    border: 1px solid #9f9f9f;
     border-radius: 50%;
     aspect-ratio: 1/1;
   }
@@ -513,5 +513,23 @@
     justify-content: flex-end;
     width: fit-content;
     color: #4b6cc2;
+  }
+  .ps-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  .ps-body > .col {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .ps-body > .col > .detail {
+    line-height: 10px;
+  }
+  .ps-body > .col > .detail > h6 {
+    color: #aeaeae;
   }
 }
