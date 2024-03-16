@@ -298,6 +298,7 @@
   .mobPredictionActive {
     display: flex;
     width: 100%;
+    padding: 12px;
   }
   .predictions > .sub-header {
     display: none;

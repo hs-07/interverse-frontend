@@ -406,6 +406,7 @@
   .mob-active-col {
     display: flex;
     width: 100%;
+    padding-top: 12px;
   }
   .mob-summaries-active {
     display: flex;
@@ -420,7 +421,6 @@
     background-color: #282828;
     gap: 12px;
     padding: 16px 10px;
-    border-radius: 0 0 10px 10px;
   }
   .mob-summaries > .as-col-1-row {
     display: flex;
@@ -471,5 +471,47 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+  .mob-people-active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+  }
+  .mob-people-active > .mob-people-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #282828;
+    padding: 8px;
+  }
+  .mob-people-section > .ps-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ps-header > .col-1 {
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+    align-items: center;
+  }
+  .ps-header > .col-1 > .col-img {
+    width: fit-content;
+    height: fit-content;
+    padding: 2px;
+    border: 2px solid #9f9f9f;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+  .ps-header > .col-1 > .col-content {
+    line-height: 12px;
+  }
+  .ps-header > .col-2 {
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+    color: #4b6cc2;
   }
 }

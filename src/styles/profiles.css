@@ -359,6 +359,7 @@
   .mobile-profile-active {
     display: flex;
     width: 100%;
+    padding: 12px;
   }
   .profile-graph-section {
     display: flex;

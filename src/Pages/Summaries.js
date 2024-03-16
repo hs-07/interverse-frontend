@@ -870,7 +870,6 @@ function Summaries() {
                                       fontWeight: "500",
                                       display: "flex",
                                       alignItems: "center",
-                                      flexShrink: "0",
                                     }}
                                   >
                                     {val?.prediction.slice(0, 40)}...
@@ -944,7 +943,58 @@ function Summaries() {
                         </div>
                       ),
                     },
-                    { title: "People", content: "content3" },
+                    {
+                      title: "People",
+                      content: (
+                        <div className="mob-people-active">
+                          {peopleData.map((val, index) => {
+                            return (
+                              <div className="mob-people-section">
+                                <div className="ps-header">
+                                  <div className="col-1">
+                                    <div className="col-img">
+                                      <img
+                                        alt=""
+                                        src={val?.image_url}
+                                        style={{
+                                          width: "40px",
+                                          height: "40px",
+                                          objectFit: "cover",
+                                          borderRadius: "50%",
+                                        }}
+                                      />
+                                    </div>
+                                    <div className="col-content">
+                                      <h6>
+                                        {val?.first_name.startsWith("Unknown")
+                                          ? "Unknown"
+                                          : val?.first_name +
+                                            " " +
+                                            val?.last_name}
+                                      </h6>
+                                      <span style={{ color: "#aeaeae" }}>
+                                        #85
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div
+                                    className="col-2"
+                                    onClick={() =>
+                                      navigate("/Profiles", {
+                                        state: { id: val?.user_id },
+                                      })
+                                    }
+                                  >
+                                    Full Profile
+                                  </div>
+                                </div>
+                                <div className="body"></div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ),
+                    },
                   ]}
                 />
               </div>
