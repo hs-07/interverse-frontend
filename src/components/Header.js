@@ -13,7 +13,6 @@ function Header() {
   };
   useEffect(() => {
     let data = localStorage.getItem("userdata");
-    console.log("data:::::::", JSON.parse(data));
     setUserData(JSON.parse(data));
   }, []);
 
