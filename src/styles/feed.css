@@ -13,6 +13,7 @@ a {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2px;
+  padding: 12px 0;
   font-size: 20px;
 }
 .feed-container {

@@ -74,7 +74,7 @@ const Feed = () => {
                 <TopPredictorsCard />
               </div>
             </div>
-            <div className="trending-predictions">
+            {/* <div className="trending-predictions">
               <div className="trending-predictions-header">
                 <label>Trending predictions</label>
               </div>
@@ -93,7 +93,7 @@ const Feed = () => {
                 <TrendingPredictionCard />
                 <TrendingPredictionCard />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="feed-part2">
             <FeedRightSection />
