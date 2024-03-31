@@ -50,10 +50,10 @@ const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
           Accuracy{" "}
           <span
             style={{
-              color: "#388E3C",
+              color: accuracy > 35 ? "#388E3C" : "#FF0000",
             }}
           >
-            {Math.floor(accuracy)} %
+            {Math.floor(accuracy)}%
           </span>
         </h6>
       </div>
