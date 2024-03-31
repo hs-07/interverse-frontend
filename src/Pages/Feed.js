@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import TopPredictorsCard from "../components/top-predictors-card";
 import TrendingPredictionCard from "../components/trending-prediction-card";
@@ -6,6 +7,7 @@ import FeedRightSection from "../components/feed-right-section";
 import ShareModal from "../components/shareModal";
 import CircularProgress from "@mui/material/CircularProgress";
 import { getFeedDetails } from "../services/Feed.service";
+import { leaderBoardData } from "../services/Leaderboards.service";
 
 import "../styles/feed.css";
 import FeedCard from "../components/feed-card";
@@ -13,12 +15,16 @@ import FeedCard from "../components/feed-card";
 const Feed = () => {
   const [openShare, setOpenShare] = useState(false);
   const [feedData, setFeedData] = useState([]);
+  const [topPredictors, setTopPredictors] = useState([{}]);
   const [loading, setLoading] = useState(false);
+
   const getFeed = async () => {
     setLoading(true);
     try {
-      const response = await getFeedDetails();
-      setFeedData(response.data);
+      const response1 = await getFeedDetails();
+      const response2 = await leaderBoardData();
+      setFeedData(response1.data);
+      setTopPredictors(response2.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -45,7 +51,13 @@ const Feed = () => {
               </div>
               {feedData.map((feed, index) => (
                 <div className="" key={index}>
-                  <TrendingPredictionCard news={feed.headline} />
+                  <TrendingPredictionCard
+                    news={feed.headline}
+                    source={feed.source}
+                    category={feed.category}
+                    date={feed.date}
+                    imgUrl={feed.img_url}
+                  />
                   <div className="rp-cards">
                     {feed.matches.map((card, index) => (
                       <FeedCard
@@ -64,39 +76,9 @@ const Feed = () => {
                 </div>
               ))}
             </div>
-            <div className="top-predictors">
-              <div className="top-predictors-header">
-                <label>Top predictors</label>
-                <a href="">View All</a>
-              </div>
-              <div className="tp-cards">
-                <TopPredictorsCard />
-                <TopPredictorsCard />
-              </div>
-            </div>
-            {/* <div className="trending-predictions">
-              <div className="trending-predictions-header">
-                <label>Trending predictions</label>
-              </div>
-              <div
-                className="trending-cards"
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                  flexDirection: "column",
-                }}
-              >
-                <TrendingPredictionCard />
-                <TrendingPredictionCard />
-                <TrendingPredictionCard />
-                <TrendingPredictionCard />
-                <TrendingPredictionCard />
-              </div>
-            </div> */}
           </div>
           <div className="feed-part2">
-            <FeedRightSection />
+            <FeedRightSection topPredictorsData={topPredictors} />
           </div>
         </div>
         <ShareModal showModal={openShare} setShowModal={setOpenShare} />

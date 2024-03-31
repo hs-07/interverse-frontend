@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 
-const feedRightSectionColumns = () => {
+const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
   return (
     <div
       className="right-columns"
@@ -18,11 +18,21 @@ const feedRightSectionColumns = () => {
           borderRadius: "50%",
           border: "1px solid #4B6CC2",
           padding: "2px",
-          height: "fit-content",
-          width: "fit-content",
+          height: "48px",
+          width: "48px",
         }}
       >
-        <Image src="/ray.svg" alt="profile-image" />
+        <Image
+          src={imgUrl}
+          alt="N/A"
+          style={{
+            width: "42px",
+            height: "42px",
+            borderRadius: "50%",
+            aspectRatio: "1 / 1",
+            objectFit: "cover",
+          }}
+        />
       </div>
       <div
         className="profile-name"
@@ -34,7 +44,7 @@ const feedRightSectionColumns = () => {
         }}
       >
         <h5>
-          <span>#1</span> Ray Dalio
+          <span>#{rank}</span> {name}
         </h5>
         <h6>
           Accuracy{" "}
@@ -43,7 +53,7 @@ const feedRightSectionColumns = () => {
               color: "#388E3C",
             }}
           >
-            78%
+            {Math.floor(accuracy)} %
           </span>
         </h6>
       </div>

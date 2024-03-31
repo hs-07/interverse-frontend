@@ -71,7 +71,6 @@ a {
 /* Top Predictors CSS Ends */
 @media (max-width: 1023px) {
   .feed-section {
-    height: 100%;
     width: 100%;
   }
   .feed-container {

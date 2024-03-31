@@ -26,7 +26,7 @@ const FeedCard = ({
           }}
         >
           <div className="card-header-img">
-            <Image src={imgUrl} alt="profile-image" />
+            <Image src={imgUrl} alt="N/A" style={{ fontSize: "12px" }} />
           </div>
           <div className="profile-name">
             <h5>{user}</h5>
@@ -36,9 +36,24 @@ const FeedCard = ({
         <button className="card-header-btn">Proof</button>
       </div>
       <div className="card-status">
-        <Image src="/status.svg" />
+        <div
+          style={{
+            width: "14px",
+            height: "14px",
+            backgroundColor: resolvedOn !== null ? "#23B678" : "#c2964b",
+            borderRadius: "50%",
+          }}
+        />
         <p>
-          Status : <span> {resolvedOn !== null ? "Done" : "Pending"}</span>
+          Status :{" "}
+          <span
+            style={
+              resolvedOn !== null ? { color: "#23B678" } : { color: "#c2964b" }
+            }
+          >
+            {" "}
+            {resolvedOn !== null ? "Done" : "Pending"}
+          </span>
         </p>
       </div>
       <div className="card-dates">
@@ -58,22 +73,23 @@ const FeedCard = ({
           <ImArrowUp
             style={{
               cursor: "pointer",
+              color: "gray",
             }}
           />
-          <span>30</span>
         </div>
         <div className="dislikes">
           <ImArrowDown
             style={{
               cursor: "pointer",
+              color: "gray",
             }}
           />
-          <span>13</span>
         </div>
         <div className="comment">
           <IoChatbubbleEllipses
             style={{
               cursor: "pointer",
+              color: "gray",
             }}
           />
         </div>
@@ -81,6 +97,7 @@ const FeedCard = ({
           <RiSendPlaneFill
             style={{
               cursor: "pointer",
+              color: "gray",
             }}
             onClick={() => setOpenShare(true)}
           />

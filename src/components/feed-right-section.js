@@ -2,7 +2,7 @@ import React from "react";
 
 import FeedRightSectionColumns from "./feed-right-section-columns";
 
-const feedrightSection = () => {
+const feedrightSection = ({ topPredictorsData }) => {
   return (
     <div
       className="right-section"
@@ -29,19 +29,15 @@ const feedrightSection = () => {
       >
         <h4>Top Predictors</h4>
       </div>
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
-      <FeedRightSectionColumns />
+      {topPredictorsData.map((predictor, index) => (
+        <FeedRightSectionColumns
+          key={index}
+          rank={index + 1}
+          name={predictor.first_name + predictor.last_name}
+          accuracy={predictor.prediction_accuracy}
+          imgUrl={predictor.image_url}
+        />
+      ))}
     </div>
   );
 };

@@ -57,9 +57,6 @@
   color: #aeaeae;
   font-size: 14px;
 }
-.card-status span {
-  color: #c2964b;
-}
 .card-dates {
   display: flex;
   padding-top: 12px;
@@ -106,4 +103,17 @@
 .dislikes span,
 .likes span {
   font-size: 14px;
+}
+@media (max-width: 768px) {
+  .card-footer {
+    width: 100%;
+  }
+  .feed-card {
+    padding: 16px;
+  }
+  .card-header > .card-header-btn {
+    border-radius: 22px;
+    font-size: 14px;
+    padding: 8px 28px;
+  }
 }

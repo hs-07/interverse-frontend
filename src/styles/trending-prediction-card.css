@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-  gap: 6px;
+  gap: 12px;
   background-color: #262626;
   margin: 8px 0px;
 }
@@ -32,4 +32,20 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 4rem;
+  color: #4b6cc2;
+}
+.trending-card .trending-card-body > h5 {
+  font-size: 24px;
+}
+.trending-card-body > img {
+  width: 12%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  height: 100%;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .trending-card .trending-card-body > h5 {
+    font-size: 16px;
+  }
 }
