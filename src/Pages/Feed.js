@@ -70,6 +70,7 @@ const Feed = () => {
                         key={index}
                         prediction={card.prediction}
                         setOpenShare={setOpenShare}
+                        status={card.status}
                       />
                     ))}
                   </div>

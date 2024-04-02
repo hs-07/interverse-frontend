@@ -12,6 +12,7 @@ const FeedCard = ({
   prediction,
   madeOn,
   user,
+  status,
   predictionId,
   setOpenShare,
 }) => {
@@ -40,7 +41,12 @@ const FeedCard = ({
           style={{
             width: "14px",
             height: "14px",
-            backgroundColor: resolvedOn !== null ? "#23B678" : "#c2964b",
+            backgroundColor:
+              status === "PENDING"
+                ? "#c2964b"
+                : status === "TRUE"
+                ? "#23B678"
+                : "#E72E2E",
             borderRadius: "50%",
           }}
         />
@@ -48,11 +54,15 @@ const FeedCard = ({
           Status :{" "}
           <span
             style={
-              resolvedOn !== null ? { color: "#23B678" } : { color: "#c2964b" }
+              status === "PENDING"
+                ? { color: "#c2964b" }
+                : status === "TRUE"
+                ? { color: "#23B678" }
+                : { color: "#E72E2E" }
             }
           >
             {" "}
-            {resolvedOn !== null ? "Done" : "Pending"}
+            {status}
           </span>
         </p>
       </div>
