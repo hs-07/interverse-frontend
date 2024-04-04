@@ -1,0 +1,7 @@
+.summaries-subheader {
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr 1fr;
+  width: 100%;
+  gap: 12px;
+  padding: 12px 16px;
+}
