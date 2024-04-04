@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { leaderBoardData } from "../services/Leaderboards.service";
 import CircularProgress from "@mui/material/CircularProgress";
 import { LuCalendarDays } from "react-icons/lu";
+import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
+import { FaPlus, FaMinus, FaAngleRight } from "react-icons/fa6";
 import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
-import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
+import SubHeader from "../components/leaderboard/subheader";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
@@ -15,7 +17,6 @@ const LeaderBoards = () => {
   useEffect(() => {
     leaderBoardData()
       .then((res) => {
-        // console.log("res:::::::::", res.data);
         setLoader(true);
         setData([...res.data].map((obj) => ({ ...obj, Active: false })));
       })
@@ -35,24 +36,23 @@ const LeaderBoards = () => {
     <div className="custom-container">
       {loader ? (
         <>
+          <SubHeader />
           {data?.map((val, index) => {
             return (
               <div className="" style={{ width: "100%" }}>
                 <div className="desktop-row-section ">
-                  <div className="row-section-inner1">
-                    <div className="row-section-inner2">
-                      <div className="row-section-inner3">
-                        {index == 0 ? (
-                          <img alt="rank-1" src="/goldmedal-1.svg" />
-                        ) : index == 1 ? (
-                          <img alt="rank-2" src="/goldmedal-2.svg" />
-                        ) : index == 2 ? (
-                          <img alt="rank-3" src="/goldmedal-3.svg" />
-                        ) : (
-                          index + 1
-                        )}
-                      </div>
-                    </div>
+                  <div className="block1">
+                    {index === 0 ? (
+                      <img alt="rank-1" src="/goldmedal-1.svg" />
+                    ) : index === 1 ? (
+                      <img alt="rank-2" src="/goldmedal-2.svg" />
+                    ) : index === 2 ? (
+                      <img alt="rank-3" src="/goldmedal-3.svg" />
+                    ) : (
+                      index + 1
+                    )}
+                  </div>
+                  <div className="block1">
                     <img
                       style={{
                         position: "relative",
@@ -90,70 +90,38 @@ const LeaderBoards = () => {
                             state: { id: val?.user_id },
                           })
                         }
-                        className="prediction-section "
+                        className="prediction-section"
                       >
-                        {val.total_predictions} Predictions{" "}
-                        <img src="/Moreviewicon.svg" width={30} height={30} />
+                        {val.total_predictions} Predictions <FaAngleRight />
                       </div>
                     </div>
                   </div>
-                  <div className="prediction-accuracy">
-                    <div
-                      style={{ color: "#aeaeae" }}
-                      className="prediction-accuracy-title"
-                    >
-                      Prediction Accuracy
-                      <img
-                        src={infoIcon}
-                        alt="Info"
-                        title="Overall prediction accuracy for the forecaster across all predictions."
-                        style={{
-                          marginLeft: "5px",
-                          width: "16px", // Adjust as needed
-                          height: "16px", // Adjust as needed
-                          cursor: "pointer",
-                        }}
-                      />
-                    </div>
-                    <div className="prediction-accuracy-title">
-                      {Math.floor(val.prediction_accuracy)}%
-                    </div>
+                  <div className="block1">
+                    {Math.floor(val.prediction_accuracy)}%
                   </div>
-                  <div className="bankroll-section ">
-                    <div className="bankroll-section-title">
-                      Points
-                      <img
-                        src={infoIcon}
-                        alt="Info"
-                        title="Point based on prediction accuracy & timeline (max gain +100 per predictiom | max loss of -100 per prediction) "
-                        style={{
-                          marginLeft: "5px",
-                          width: "16px",
-                          height: "16px",
-                          cursor: "pointer",
-                        }}
-                      />
-                    </div>
-
-                    <div
-                      className="bankroll-section-value"
-                      style={{
-                        color: val.total_user_score < 0 ? "#e87d7d" : "#4B6CC2",
-                      }}
-                    >
-                      {/* ${Math.floor(val.bankroll)} */}
-                      {/* {new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "USD",
-                        maximumFractionDigits: 0,
-                      }).format(val.total_user_score*10)} */}
-                      {new Intl.NumberFormat("en-IN", {
-                        maximumFractionDigits: 0,
-                        minimumFractionDigits: 0,
-                      }).format(val.total_user_score)}
-                    </div>
+                  <div
+                    className="block1"
+                    style={{
+                      color: val.total_user_score < 0 ? "#e87d7d" : "#fff",
+                    }}
+                  >
+                    {new Intl.NumberFormat("en-IN", {
+                      maximumFractionDigits: 0,
+                      minimumFractionDigits: 0,
+                    }).format(val.total_user_score)}
                   </div>
-                  <button
+                  <div
+                    className="block1"
+                    style={{
+                      color: val.bankroll < 0 ? "#e87d7d" : "#fff",
+                    }}
+                  >
+                    {`${val.bankroll.toString().substring(0, 1)}$${val.bankroll
+                      .toString()
+                      .substring(1)}`}
+                  </div>
+                  <div className="block1">{<HiOutlineHeart />}</div>
+                  {/* <button
                     className="view-profile-btn"
                     onClick={() =>
                       navigate("/Profiles", {
@@ -162,7 +130,7 @@ const LeaderBoards = () => {
                     }
                   >
                     View Profile
-                  </button>
+                  </button> */}
                   <div
                     onClick={() => {
                       onClickDetails(index);
@@ -170,17 +138,15 @@ const LeaderBoards = () => {
                     style={{ backgroundColor: "#282828", textAlign: "center" }}
                   >
                     {val.Active ? (
-                      <img
-                        className="click-icon"
-                        alt="plus-icon"
-                        src="/vector-1433.svg"
-                      />
+                      <button className="more-info-button">
+                        Less info
+                        <FaMinus />
+                      </button>
                     ) : (
-                      <img
-                        className="click-icon"
-                        alt="minus-icon"
-                        src="/vector-278.svg"
-                      />
+                      <button className="more-info-button">
+                        More info
+                        <FaPlus />
+                      </button>
                     )}
                   </div>
                 </div>

@@ -1,0 +1,16 @@
+.leaderboard-subheader {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 16px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+  gap: 12px;
+}
+.subheader-block {
+  color: #aeaeae;
+  font-size: 16px;
+}
