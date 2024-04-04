@@ -128,8 +128,8 @@ const LeaderBoards = () => {
                         title="Point based on prediction accuracy & timeline (max gain +100 per predictiom | max loss of -100 per prediction) "
                         style={{
                           marginLeft: "5px",
-                          width: "16px", // Adjust as needed
-                          height: "16px", // Adjust as needed
+                          width: "16px",
+                          height: "16px",
                           cursor: "pointer",
                         }}
                       />
