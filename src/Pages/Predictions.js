@@ -9,7 +9,8 @@ import {
   getPredictions,
   getPredictionSingle,
 } from "../services/Predictions.service";
-import infoIcon from "../assests/hover_info6.png"; // Replace with the actual path to your icon
+import infoIcon from "../assests/hover_info6.png";
+import SubHeader from "../components/predictions/subheader";
 
 const Predictions = () => {
   const location = useLocation();
@@ -113,45 +114,7 @@ const Predictions = () => {
   return (
     <div className="predictions">
       {/* Header Starts */}
-      <div className="sub-header ">
-        <div className="column">
-          <div>Status</div>
-          <img
-            style={{
-              position: "relative",
-              width: "21.5px",
-              height: "10.01px",
-            }}
-            alt=""
-            src="/down-arrow.svg"
-          />
-        </div>
-        <div className="column">
-          <div>Forecaster</div>
-        </div>
-        <div className="column">
-          <div>Topic</div>
-          <img
-            style={{
-              position: "relative",
-              width: "21.5px",
-              height: "10.01px",
-            }}
-            alt=""
-            src="/down-arrow.svg"
-          />
-        </div>
-        <div className="column">
-          <div>Prediction</div>
-        </div>
-        <div className="column">
-          <div>Market</div>
-        </div>
-        <div className="column">
-          <div>Expand</div>
-        </div>
-      </div>
-
+      <SubHeader />
       {/* Header ENds */}
       {/* Array Data Starts */}
       {data.map((val, index) => {
