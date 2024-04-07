@@ -2,9 +2,11 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { channelsData } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa6";
 import "../styles/mychannels.css";
 import AddChannelModal from "../components/addChannelModal";
 import { LuCalendarDays } from "react-icons/lu";
+import ChannelSubHeader from "../components/channels/subheader";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
@@ -22,7 +24,7 @@ function MyChannels() {
   useEffect(() => {
     channelsData()
       .then((res) => {
-        // console.log("res chaneel:::", res.data);
+        console.log("res chaneel:::", res.data);
         setChannelData([...res.data]);
       })
       .catch((err) => {
@@ -34,34 +36,14 @@ function MyChannels() {
       {/* Add Channel div Starts */}
       <div className="addChannel-section">
         <div className="block-1">Add New Channel</div>
-        <div className="block-2">
-          <input placeholder="Enter Channel Url" />
-          <Button className="btn" onClick={() => alert("In Progress...")}>
-            ADD
-          </Button>
-        </div>
         <div className="mob-block-2">
           <div onClick={() => setOpenAddChannel(true)}>
-            <img
-              style={{
-                position: "relative",
-                width: "21.5px",
-                height: "21.5px",
-              }}
-              alt=""
-              src="/vector-278.svg"
-            />
+            <FaPlus />
           </div>
         </div>
       </div>
       {/* Add Channel div Ends */}
-      <div className="channel-header">
-        <div>Channel Name</div>
-        <div>Summaries</div>
-        <div>Predictions</div>
-        <div>Prediction Accuracy</div>
-        <div>View More</div>
-      </div>
+      <ChannelSubHeader />
       {/* Add Channel div Ends */}
       {/* Row Data Starts */}
       {channelData.map((val, index) => {
@@ -86,7 +68,7 @@ function MyChannels() {
               <div className="block">{val?.Predictions}</div>
               <div className="block">{val?.PredictionAccuracy}</div>
               <div className="block" onClick={() => handleSubSection(index)}>
-                {activeIndex == index ? (
+                {activeIndex === index ? (
                   <img
                     style={{
                       position: "relative",

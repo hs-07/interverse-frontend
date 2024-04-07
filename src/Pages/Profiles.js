@@ -68,12 +68,12 @@ function Profiles() {
     const arr = [...profilesData];
     arr[index].profileActive = !arr[index].profileActive;
     setProfilesData([...arr]);
-    if (profilesData[index].profileActive == false) {
+    if (profilesData[index].profileActive === false) {
       return;
     }
     setProfilesData(
       [...profilesData].map((obj, ind) => {
-        if (ind == index) {
+        if (ind === index) {
           return {
             ...obj,
             profileActive: true,
