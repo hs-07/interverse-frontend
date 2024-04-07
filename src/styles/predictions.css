@@ -22,7 +22,7 @@
 .predictions > .prediction-row {
   display: grid;
   background-color: #282828;
-  grid-template-columns: 1.2fr 1.8fr 1fr 3.5fr 1fr 0.5fr;
+  grid-template-columns: 1fr 2fr 1fr 3.2fr 0.5fr 1fr;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
@@ -67,16 +67,27 @@
 .prediction-row > .column-3 {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
-.prediction-row > .column-3 > img {
-  position: relative;
-  width: 45%;
-  height: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  flex-shrink: 0;
+.more-info-button {
+  font-size: 16px;
+  background-color: #181818;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 24px;
+  color: #4b6cc2;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.more-info-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.more-info-button:active {
+  transform: scale(0.95);
 }
 .predictionActive {
   width: 100%;

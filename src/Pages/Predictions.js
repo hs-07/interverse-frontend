@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { LuCalendarDays } from "react-icons/lu";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 
 import "../styles/predictions.css";
 import Tabs from "../components/common/tabs";
@@ -22,13 +23,10 @@ const Predictions = () => {
   const [justificationRead, setJustificationRead] = useState("4");
 
   useEffect(() => {
-    // console.log("userId::::::::", userid);
-    // console.log("userId::::::::", typeof userid);
-    // console.log("userId::::::::", userid);
     if (userid == undefined) {
       getPredictions()
         .then((res) => {
-          // console.log("res:::00000::::::", res.data);
+          console.log("res:::00000::::::", res.data);
           setData([...res.data]);
           setData(
             [...res.data].map((obj) => ({
@@ -180,30 +178,29 @@ const Predictions = () => {
               <div className="column-2">{val?.category}</div>
               <div className="column-2">{val?.prediction}</div>
               <div className="column-3">
-                <img alt="" src="/marketgraph.svg" />
+                <img
+                  alt=""
+                  src="/marketgraph.svg"
+                  style={{
+                    filter:
+                      Math.round(val?.error) === 0
+                        ? "grayscale(0%)"
+                        : "grayscale(100%)",
+                  }}
+                />
               </div>
               <div className="column-3">
                 <div>
                   {val?.predictionActive ? (
-                    <img
-                      style={{
-                        position: "relative",
-                        width: "21.5px",
-                        height: "21.5px",
-                      }}
-                      alt=""
-                      src="/vector-1433.svg"
-                    />
+                    <button className="more-info-button">
+                      Less info
+                      <FaMinus />
+                    </button>
                   ) : (
-                    <img
-                      style={{
-                        position: "relative",
-                        width: "21.5px",
-                        height: "21.5px",
-                      }}
-                      alt=""
-                      src="/vector-278.svg"
-                    />
+                    <button className="more-info-button">
+                      More info
+                      <FaPlus />
+                    </button>
                   )}
                 </div>
               </div>
