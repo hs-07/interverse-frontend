@@ -12,7 +12,7 @@ const subheader = () => {
       ),
     },
     {
-      block: <div>Name</div>,
+      block: <div className="name">Name</div>,
     },
     {
       block: (
@@ -23,20 +23,20 @@ const subheader = () => {
     },
     {
       block: (
-        <div>
+        <div className="points">
           Points <TbArrowsUpDown />
         </div>
       ),
     },
     {
       block: (
-        <div>
+        <div className="bankroll">
           Bankroll <TbArrowsUpDown />
         </div>
       ),
     },
     {
-      block: <div>Favorite</div>,
+      block: <div className="fav">Favorite</div>,
     },
   ];
   return (

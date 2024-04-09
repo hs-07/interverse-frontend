@@ -197,24 +197,13 @@ const LeaderBoards = () => {
                     </div>
                   </div>
                   <div className="mob-row-section-2">
+                    <HiOutlineHeart style={{ color: "white" }} />
                     <div
                       onClick={() => {
                         onClickDetails(index);
                       }}
                     >
-                      {val.Active ? (
-                        <img
-                          className="click-icon"
-                          alt="plus-icon"
-                          src="/vector-1433.svg"
-                        />
-                      ) : (
-                        <img
-                          className="click-icon"
-                          alt="minus-icon"
-                          src="/vector-278.svg"
-                        />
-                      )}
+                      {val.Active ? <FaMinus /> : <FaPlus />}
                     </div>
                   </div>
                 </div>

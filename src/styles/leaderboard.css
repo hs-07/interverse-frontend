@@ -300,6 +300,13 @@
     align-items: flex-start;
     justify-content: center;
   }
+  .mobile-row-section > .mob-row-section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    gap: 8px;
+  }
   .mob-row-section-1 > .row-header > .row-heading {
     display: flex;
     font-size: 16px;
