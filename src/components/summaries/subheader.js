@@ -4,17 +4,17 @@ import "../../styles/summaries/subheader.css";
 
 const subheader = () => {
   const subheaderBlocks = [
-    { block: <div>Source</div> },
+    { block: <div className="source">Source</div> },
     {
       block: (
-        <div>
+        <div className="predictions-block">
           Predictions <TbArrowsUpDown />{" "}
         </div>
       ),
     },
     {
       block: (
-        <div>
+        <div className="publish_date">
           Publish date <TbArrowsUpDown />{" "}
         </div>
       ),
@@ -23,7 +23,7 @@ const subheader = () => {
   return (
     <div className="summaries-subheader">
       {subheaderBlocks.map((item, index) => (
-        <div key={index} className="subheader-block">
+        <div key={index} className="block">
           {item.block}
         </div>
       ))}

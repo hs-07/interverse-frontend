@@ -26,8 +26,8 @@
 @media (max-width: 768px) {
   .leaderboard-subheader {
     display: flex !important;
+    grid-template-columns: none;
     width: 100%;
-    display: flex;
     padding: 16px;
     background-color: black;
     position: sticky;

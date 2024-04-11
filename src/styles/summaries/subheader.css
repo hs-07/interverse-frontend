@@ -9,3 +9,16 @@
   background-color: black;
   z-index: 10;
 }
+.source {
+  display: block;
+}
+@media (max-width: 768px) {
+  .summaries-subheader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .source {
+    display: none;
+  }
+}

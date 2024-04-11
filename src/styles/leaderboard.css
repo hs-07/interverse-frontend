@@ -346,8 +346,10 @@
     gap: 6px;
   }
   .mob-clickable-content > .block > .icon {
-    font-size: 20px;
+    font-size: 22px;
     color: #aeaeae;
+    width: 22px;
+    height: 22px;
   }
   .mob-clickable-content > .block > .text {
     display: flex;

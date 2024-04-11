@@ -264,7 +264,12 @@ const LeaderBoards = () => {
                       <div className="mob-clickable-content">
                         <div className="block">
                           <div className="icon">
-                            <LuCalendarDays />
+                            <img
+                              src="/pending.png"
+                              alt={"pending"}
+                              width={20}
+                              height={20}
+                            />
                           </div>
                           <div className="text">
                             <span style={{ color: "#AEAEAE" }}>
@@ -290,7 +295,12 @@ const LeaderBoards = () => {
                         </div>
                         <div className="block">
                           <div className="icon">
-                            <LuCalendarDays />
+                            <img
+                              src="/status-up.png"
+                              alt={"pending"}
+                              width={22}
+                              height={22}
+                            />
                           </div>
                           <div className="text">
                             <span style={{ color: "#AEAEAE" }}>
@@ -301,7 +311,12 @@ const LeaderBoards = () => {
                         </div>
                         <div className="block">
                           <div className="icon">
-                            <LuCalendarDays />
+                            <img
+                              src="/streak.png"
+                              alt={"pending"}
+                              width={22}
+                              height={22}
+                            />
                           </div>
                           <div className="text">
                             <span style={{ color: "#AEAEAE" }}>
