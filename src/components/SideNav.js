@@ -54,13 +54,13 @@ function Sidenav() {
 
             <p style={{ marginTop: "13px" }}>Markets</p>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/Profiles"
             className={({ isActive }) => (isActive ? "active-link" : "link")}
           >
             <img alt="" src="/vuesaxtwotoneprofile.svg" />
             <p style={{ marginTop: "13px" }}>Profiles</p>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/MyChannels"
             className={({ isActive }) => (isActive ? "active-link" : "link")}
