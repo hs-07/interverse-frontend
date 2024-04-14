@@ -315,6 +315,7 @@
     font-weight: 600;
   }
   .mobile-clickable-section {
+    background-color: #26262698;
     display: flex;
     flex-direction: column;
     padding: 16px;

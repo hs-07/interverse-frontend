@@ -8,11 +8,7 @@ import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
 import UserSubjectData from "../components/leaderboard/user-subject-data";
-import {
-  getAllProfiles,
-  getProfilesBySubjects,
-  getProfilesPredictions,
-} from "../services/Profiles.service";
+import { getProfilesBySubjects } from "../services/Profiles.service";
 import SubHeader from "../components/leaderboard/subheader";
 
 const LeaderBoards = () => {
@@ -20,8 +16,6 @@ const LeaderBoards = () => {
   const [data, setData] = useState([]);
   const [profilesData, setProfilesData] = useState([]);
   const [subjectData, setSubjectData] = useState([]);
-  const [activeIndex, setActiveIndex] = useState("");
-  const [loading, setLoading] = useState(false);
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
@@ -39,9 +33,6 @@ const LeaderBoards = () => {
     getProfilesBySubjects(id)
       .then((res) => {
         setSubjectData([...res.data]);
-        setLoading(false);
-        setActiveIndex("");
-        console.log("res getProfileSubject::::", res.data);
       })
       .catch((err) => {
         console.log("err::::", err);
@@ -71,8 +62,6 @@ const LeaderBoards = () => {
         }
       })
     );
-    setActiveIndex(index);
-    setLoading(true);
     Promise.all([getUserSubject(id)]).then((res) => {
       console.log("res get data:::::", res);
     });
@@ -247,7 +236,7 @@ const LeaderBoards = () => {
                     <HiOutlineHeart style={{ color: "white" }} />
                     <div
                       onClick={() => {
-                        onClickDetails(index);
+                        onClickDetails(index, val?.user_id);
                       }}
                     >
                       {val.Active ? <FaMinus /> : <FaPlus />}
@@ -258,6 +247,7 @@ const LeaderBoards = () => {
                 {val.Active ? (
                   <>
                     <UserSubjectData subjectData={subjectData} />
+
                     <div className="desktop-clickable-section">
                       <div className="collapsable-section">
                         <div className="clickable-section-inner1">
