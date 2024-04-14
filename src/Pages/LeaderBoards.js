@@ -7,11 +7,21 @@ import { FaPlus, FaMinus, FaAngleRight } from "react-icons/fa6";
 import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 import { useNavigate } from "react-router-dom";
+import UserSubjectData from "../components/leaderboard/user-subject-data";
+import {
+  getAllProfiles,
+  getProfilesBySubjects,
+  getProfilesPredictions,
+} from "../services/Profiles.service";
 import SubHeader from "../components/leaderboard/subheader";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [profilesData, setProfilesData] = useState([]);
+  const [subjectData, setSubjectData] = useState([]);
+  const [activeIndex, setActiveIndex] = useState("");
+  const [loading, setLoading] = useState(false);
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
@@ -25,10 +35,47 @@ const LeaderBoards = () => {
       });
   }, []);
 
-  const onClickDetails = (index) => {
+  const getUserSubject = async (id) => {
+    getProfilesBySubjects(id)
+      .then((res) => {
+        setSubjectData([...res.data]);
+        setLoading(false);
+        setActiveIndex("");
+        console.log("res getProfileSubject::::", res.data);
+      })
+      .catch((err) => {
+        console.log("err::::", err);
+      });
+  };
+
+  const onClickDetails = (index, id) => {
     const arr = [...data];
     arr[index].Active = !arr[index].Active;
     setData([...arr]);
+    setProfilesData([...arr]);
+    if (data[index].Active === false) {
+      return;
+    }
+    setProfilesData(
+      [...data].map((obj, ind) => {
+        if (ind === index) {
+          return {
+            ...obj,
+            Active: true,
+          };
+        } else {
+          return {
+            ...obj,
+            Active: false,
+          };
+        }
+      })
+    );
+    setActiveIndex(index);
+    setLoading(true);
+    Promise.all([getUserSubject(id)]).then((res) => {
+      console.log("res get data:::::", res);
+    });
   };
 
   // console.log(window.innerWidth, "window.innerWidth");
@@ -133,7 +180,7 @@ const LeaderBoards = () => {
                   </button> */}
                   <div
                     onClick={() => {
-                      onClickDetails(index);
+                      onClickDetails(index, val?.user_id);
                     }}
                     style={{ backgroundColor: "#282828", textAlign: "center" }}
                   >
@@ -210,6 +257,7 @@ const LeaderBoards = () => {
                 {/* clickable section start */}
                 {val.Active ? (
                   <>
+                    <UserSubjectData subjectData={subjectData} />
                     <div className="desktop-clickable-section">
                       <div className="collapsable-section">
                         <div className="clickable-section-inner1">
