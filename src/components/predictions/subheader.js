@@ -1,5 +1,8 @@
 import React from "react";
 import "../../styles/predictions/subheader.css";
+import Popper from "../common/popover";
+import StatusPopper from "./status-popper/index";
+import TopicPopper from "./topics-popper/index";
 
 const subheader = () => {
   const subheaderBlocks = [
@@ -7,7 +10,7 @@ const subheader = () => {
       block: (
         <div className="item">
           <span className="">Status</span>
-          <img src={"/Filter.png"} alt="fliter" height={100} width={100} />
+          <StatusPopper />
         </div>
       ),
     },
@@ -22,7 +25,7 @@ const subheader = () => {
       block: (
         <div className="item">
           <span className="">Topic</span>
-          <img src={"/Filter.png"} alt="fliter" height={100} width={100} />
+          <TopicPopper />
         </div>
       ),
     },

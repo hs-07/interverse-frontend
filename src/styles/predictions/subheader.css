@@ -14,12 +14,3 @@
   gap: 6px;
   align-items: center;
 }
-
-.item > img {
-  padding: 4px;
-  width: 24px;
-  height: 24px;
-  background-color: #282828;
-  border-radius: 4px;
-  cursor: pointer;
-}

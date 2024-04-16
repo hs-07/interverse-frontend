@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TbArrowsUpDown } from "react-icons/tb";
+
 import "../../styles/summaries/subheader.css";
 
 const Subheader = ({ sortByPublicationDate, sortByNumberOfPredictions }) => {

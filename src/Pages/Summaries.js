@@ -278,6 +278,7 @@ function Summaries() {
         sortByPublicationDate={sortByPublicationDate}
         sortByNumberOfPredictions={sortByNumberOfPredictions}
       />
+
       {/* Column Starts */}
       {data.map((val, index) => {
         return (
