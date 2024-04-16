@@ -26,7 +26,7 @@ function Login() {
           console.log("User Information:", typeof userInfo);
           console.log("User Information:", userInfo);
           localStorage.setItem("userdata", JSON.stringify(userInfo));
-          window.location.reload();
+          // window.location.reload();
           // Now, you have access to user information in the userInfo object
         })
         .catch((error) => {

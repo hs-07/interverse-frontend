@@ -3,6 +3,8 @@ import "../styles/summaries.css";
 // import "../styles/summariesSubSection.css";
 import {
   allSummarySources,
+  sortPublicationDate,
+  sortNumberOfPredictions,
   getSummaryPeople,
   getSummaryPrediction,
   getSummarySummaries,
@@ -51,6 +53,41 @@ function Summaries() {
         console.log("err:::::::", err);
       });
   }, []);
+
+  const sortByPublicationDate = async (order) => {
+    try {
+      const res = await sortPublicationDate(order);
+      setData([...res.data]);
+      setData(
+        [...res.data].map((obj) => ({
+          ...obj,
+          predictionActive: false,
+          peopleActive: false,
+          summariesActive: false,
+          fullTranscriptActive: false,
+        }))
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const sortByNumberOfPredictions = async (order) => {
+    try {
+      const res = await sortNumberOfPredictions(order);
+      setData([...res.data]);
+      setData(
+        [...res.data].map((obj) => ({
+          ...obj,
+          predictionActive: false,
+          peopleActive: false,
+          summariesActive: false,
+          fullTranscriptActive: false,
+        }))
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const convertMinsToHrsMins = (minutes) => {
     let h = Math.floor(minutes / 60);
     let m = minutes % 60;
@@ -237,7 +274,10 @@ function Summaries() {
 
   return (
     <div className="summaries">
-      <SummariesSubheader />
+      <SummariesSubheader
+        sortByPublicationDate={sortByPublicationDate}
+        sortByNumberOfPredictions={sortByNumberOfPredictions}
+      />
       {/* Column Starts */}
       {data.map((val, index) => {
         return (

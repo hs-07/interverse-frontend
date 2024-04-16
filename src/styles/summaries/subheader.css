@@ -12,6 +12,12 @@
 .source {
   display: block;
 }
+
+.publish-date-icon,
+.predictions-icon {
+  cursor: pointer;
+  margin-left: 4px;
+}
 @media (max-width: 768px) {
   .summaries-subheader {
     display: flex;

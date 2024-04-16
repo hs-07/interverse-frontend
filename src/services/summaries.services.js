@@ -3,6 +3,13 @@ import Axios from "../utils/axios";
 export const allSummarySources = async () => {
   return await Axios.get("all-sources");
 };
+export const sortPublicationDate = async (order) => {
+  return await Axios.get(`all-sources?sortPublicationDate=${order}`);
+};
+
+export const sortNumberOfPredictions = async (order) => {
+  return await Axios.get(`all-sources?sortNumberOfPredictions=${order}`);
+};
 
 export const getSummaryPeople = async (id) => {
   return await Axios.get(`summaries_people?sourceId=${id}`);
