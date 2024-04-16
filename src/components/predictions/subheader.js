@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/predictions/subheader.css";
-import Popper from "../common/popover";
 import StatusPopper from "./status-popper/index";
 import TopicPopper from "./topics-popper/index";
 
