@@ -24,11 +24,23 @@ const LeaderBoards = () => {
   const [subjectData, setSubjectData] = useState([]);
   const [loader, setLoader] = useState(false);
 
+  const toggleFavourite = (index) => {
+    const newData = [...data];
+    newData[index].is_favourite = !newData[index].is_favourite;
+    setData(newData);
+  };
+
   useEffect(() => {
     leaderBoardData()
       .then((res) => {
         setLoader(true);
-        setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+        setData(
+          [...res.data].map((obj) => ({
+            ...obj,
+            Active: false,
+            is_favourite: obj.is_favourite || false,
+          }))
+        );
       })
       .catch((err) => {
         console.log("err::::::", err);
@@ -184,17 +196,19 @@ const LeaderBoards = () => {
                       .toString()
                       .substring(1)}`}
                   </div>
-                  <div className="block1">{<HiOutlineHeart />}</div>
-                  {/* <button
-                    className="view-profile-btn"
-                    onClick={() =>
-                      navigate("/Profiles", {
-                        state: { id: val?.user_id },
-                      })
-                    }
-                  >
-                    View Profile
-                  </button> */}
+                  <div className="block1">
+                    {val.is_favourite ? (
+                      <HiHeart
+                        onClick={() => toggleFavourite(index)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <HiOutlineHeart
+                        onClick={() => toggleFavourite(index)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    )}
+                  </div>
                   <div
                     onClick={() => {
                       onClickDetails(index, val?.user_id);
