@@ -106,14 +106,14 @@ const LeaderBoards = () => {
               <div className="" style={{ width: "100%" }}>
                 <div className="desktop-row-section ">
                   <div className="block1">
-                    {index === 0 ? (
+                    {val?.rank === 1 ? (
                       <img alt="rank-1" src="/goldmedal-1.svg" />
-                    ) : index === 1 ? (
+                    ) : val?.rank === 2 ? (
                       <img alt="rank-2" src="/goldmedal-2.svg" />
-                    ) : index === 2 ? (
+                    ) : val?.rank === 3 ? (
                       <img alt="rank-3" src="/goldmedal-3.svg" />
                     ) : (
-                      index + 1
+                      val?.rank
                     )}
                   </div>
                   <div className="block1">
