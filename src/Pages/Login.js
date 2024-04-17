@@ -1,39 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Button } from "@mui/material";
-import { useGoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
 import "../styles/login.css";
+import { Button } from "@mui/material";
+import { useAppContext } from "../utils/appContext";
 import { useNavigate } from "react-router-dom";
 import logo1 from "../assests/logo1.png";
 
 function Login() {
-  const navigate = useNavigate();
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      console.log(tokenResponse); // This will log the token information
-      localStorage.setItem(
-        "token",
-        JSON.stringify("token", tokenResponse.access_token)
-      );
-      // To get user information, you can make an API request to the Google API
-      fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
-        headers: {
-          Authorization: `Bearer ${tokenResponse.access_token}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((userInfo) => {
-          console.log("User Information:", typeof userInfo);
-          console.log("User Information:", userInfo);
-          localStorage.setItem("userdata", JSON.stringify(userInfo));
-          // window.location.reload();
-          // Now, you have access to user information in the userInfo object
-        })
-        .catch((error) => {
-          console.error("Error fetching user information:", error);
-        });
-    },
-  });
+  const { login } = useAppContext();
 
   return (
     <div

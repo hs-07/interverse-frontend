@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import LandingPage from "./Pages/LandingPage";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [token, setToken] = useState("");
