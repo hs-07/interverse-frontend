@@ -7,7 +7,7 @@ const subheader = () => {
   const subheaderBlocks = [
     {
       block: (
-        <div className="item">
+        <div className="prediction-status">
           <span className="">Status</span>
           <StatusPopper />
         </div>
@@ -15,14 +15,14 @@ const subheader = () => {
     },
     {
       block: (
-        <div>
+        <div className="prediction-forecater">
           <span className="">Forecaster</span>
         </div>
       ),
     },
     {
       block: (
-        <div className="item">
+        <div className="prediction-topic">
           <span className="">Topic</span>
           <TopicPopper />
         </div>
@@ -31,14 +31,14 @@ const subheader = () => {
     {
       block: (
         <div>
-          <span className="">Prediction</span>
+          <span className="prediction-span">Prediction</span>
         </div>
       ),
     },
     {
       block: (
         <div>
-          <span className="">Market</span>
+          <span className="prediction-market">Market</span>
         </div>
       ),
     },
