@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import {
-  leaderBoardData,
-  sortByAccuracy,
-  sortByScore,
-} from "../services/Leaderboards.service";
+import { useNavigate } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import { LuCalendarDays } from "react-icons/lu";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { FaPlus, FaMinus, FaAngleRight } from "react-icons/fa6";
 import { Image } from "react-bootstrap";
+
 import "../styles/leaderboard.css";
-import { useNavigate } from "react-router-dom";
+
 import UserSubjectData from "../components/leaderboard/user-subject-data";
 import { getProfilesBySubjects } from "../services/Profiles.service";
 import SubHeader from "../components/leaderboard/subheader";
+import {
+  leaderBoardData,
+  sortByAccuracy,
+  sortByScore,
+} from "../services/Leaderboards.service";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
@@ -389,6 +391,17 @@ const LeaderBoards = () => {
                             <div className="value">{val.current_streak}</div>
                           </div>
                         </div>
+                      </div>
+                      <div className="view-prediction-btn">
+                        <button
+                          onClick={() =>
+                            navigate("/Predictions", {
+                              state: { id: val?.user_id },
+                            })
+                          }
+                        >
+                          View {val.total_predictions} Predictions
+                        </button>
                       </div>
                     </div>
                   </>

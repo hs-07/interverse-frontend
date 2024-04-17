@@ -358,4 +358,20 @@
     flex-direction: column;
     color: #fff;
   }
+  .view-prediction-btn {
+    width: 100%;
+    padding-top: 12px;
+    display: flex;
+  }
+  .view-prediction-btn > button {
+    width: 100%;
+    background-color: #4b6cc2;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 24px;
+    color: white;
+    font-size: 14px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+  }
 }

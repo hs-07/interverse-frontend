@@ -15,7 +15,7 @@
   font-size: 16px;
   font-weight: 600;
 }
-.name,
+.leader-name,
 .points,
 .rank,
 .bankroll,
@@ -37,7 +37,7 @@
     flex-shrink: 0;
     gap: 12px;
   }
-  .name,
+  .leader-name,
   .points,
   .rank,
   .bankroll,

@@ -22,7 +22,7 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
       block: <div>Rank</div>,
     },
     {
-      block: <div className="name">Name</div>,
+      block: <div className="leader-name">Name</div>,
     },
     {
       block: (
@@ -47,11 +47,7 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
       ),
     },
     {
-      block: (
-        <div className="bankroll">
-          Bankroll <TbArrowsUpDown />
-        </div>
-      ),
+      block: <div className="bankroll">Bankroll</div>,
     },
     {
       block: <div className="fav">Favorite</div>,
