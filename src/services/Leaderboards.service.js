@@ -10,3 +10,8 @@ export const sortByAccuracy = async (order) => {
 export const sortByScore = async (order) => {
   return await Axios.get(`prediction-leaderboard?sortByScore=${order}`);
 };
+export const addRemoveFavourite = async (params) => {
+  const res = await Axios.post("toggle-favorite-predictor", params);
+  console.log(res.data);
+  return res.data;
+};

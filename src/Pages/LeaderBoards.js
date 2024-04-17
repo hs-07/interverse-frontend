@@ -15,6 +15,7 @@ import {
   leaderBoardData,
   sortByAccuracy,
   sortByScore,
+  addRemoveFavourite,
 } from "../services/Leaderboards.service";
 
 const LeaderBoards = () => {
@@ -23,10 +24,16 @@ const LeaderBoards = () => {
   const [profilesData, setProfilesData] = useState([]);
   const [subjectData, setSubjectData] = useState([]);
   const [loader, setLoader] = useState(false);
+  const accountId = localStorage.getItem("accountId");
 
-  const toggleFavourite = (index) => {
+  const toggleFavourite = (index, id) => {
+    const params = {
+      accountId: String(accountId),
+      predictorId: id,
+    };
     const newData = [...data];
     newData[index].is_favourite = !newData[index].is_favourite;
+    addRemoveFavourite(params);
     setData(newData);
   };
 
@@ -38,7 +45,6 @@ const LeaderBoards = () => {
           [...res.data].map((obj) => ({
             ...obj,
             Active: false,
-            is_favourite: obj.is_favourite || false,
           }))
         );
       })
@@ -104,7 +110,6 @@ const LeaderBoards = () => {
     });
   };
 
-  // console.log(window.innerWidth, "window.innerWidth");
   return (
     <div className="custom-container">
       {loader ? (
@@ -115,7 +120,7 @@ const LeaderBoards = () => {
           />
           {data?.map((val, index) => {
             return (
-              <div className="" style={{ width: "100%" }}>
+              <div className="" style={{ width: "100%" }} key={index}>
                 <div className="desktop-row-section ">
                   <div className="block1">
                     {val?.rank === 1 ? (
@@ -204,7 +209,7 @@ const LeaderBoards = () => {
                       />
                     ) : (
                       <HiOutlineHeart
-                        onClick={() => toggleFavourite(index)}
+                        onClick={() => toggleFavourite(index, val?.user_id)}
                         style={{ cursor: "pointer" }}
                       />
                     )}

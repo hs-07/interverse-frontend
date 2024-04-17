@@ -1,6 +1,7 @@
-import React, { createContext, useContext } from "react";
+import React, { useEffect, createContext, useContext } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { userLogin } from "../services/login.service";
+import { useNavigate } from "react-router-dom";
 
 // Correctly initializing the context
 const AppContext = createContext();
@@ -14,12 +15,11 @@ const useAppContext = () => {
 };
 
 const AppContextProvider = ({ children }) => {
-  const [userData, setUserData] = React.useState(null);
-
   const userCheckOrCreation = async (userInfo) => {
     try {
       const res = await userLogin(userInfo);
-      setUserData(res.data);
+      localStorage.setItem("accountId", res.data.account_id);
+      window.location.reload();
     } catch (error) {
       console.log("Error", error);
     }
@@ -46,7 +46,6 @@ const AppContextProvider = ({ children }) => {
           };
 
           userCheckOrCreation(params);
-          window.location.reload();
         })
         .catch((error) => {
           console.error("Error fetching user information:", error);
@@ -54,7 +53,7 @@ const AppContextProvider = ({ children }) => {
     },
   });
 
-  const contextValue = { login, userData };
+  const contextValue = { login };
 
   return (
     <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
