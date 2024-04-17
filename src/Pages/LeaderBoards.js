@@ -280,7 +280,17 @@ const LeaderBoards = () => {
                     </div>
                   </div>
                   <div className="mob-row-section-2">
-                    <HiOutlineHeart style={{ color: "white" }} />
+                    {val.is_favourite ? (
+                      <HiHeart
+                        onClick={() => toggleFavourite(index)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <HiOutlineHeart
+                        onClick={() => toggleFavourite(index, val?.user_id)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    )}
                     <div
                       onClick={() => {
                         onClickDetails(index, val?.user_id);
