@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { leaderBoardData } from "../services/Leaderboards.service";
+import {
+  leaderBoardData,
+  sortByAccuracy,
+  sortByScore,
+} from "../services/Leaderboards.service";
 import CircularProgress from "@mui/material/CircularProgress";
 import { LuCalendarDays } from "react-icons/lu";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
@@ -28,6 +32,25 @@ const LeaderBoards = () => {
         console.log("err::::::", err);
       });
   }, []);
+
+  const sortLeaderboardByAccuracy = async (order) => {
+    try {
+      const res = await sortByAccuracy(order);
+      setLoader(true);
+      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const sortLeaderboardByScore = async (order) => {
+    try {
+      const res = await sortByScore(order);
+      setLoader(true);
+      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getUserSubject = async (id) => {
     getProfilesBySubjects(id)
@@ -72,7 +95,10 @@ const LeaderBoards = () => {
     <div className="custom-container">
       {loader ? (
         <>
-          <SubHeader />
+          <SubHeader
+            sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
+            sortLeaderboardByScore={sortLeaderboardByScore}
+          />
           {data?.map((val, index) => {
             return (
               <div className="" style={{ width: "100%" }}>

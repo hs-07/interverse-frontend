@@ -10,7 +10,7 @@ const Subheader = ({ sortByPublicationDate, sortByNumberOfPredictions }) => {
   const handlePublicationDate = () => {
     const newOrder = orderDate === "asc" ? "desc" : "asc";
     setOrderDate(newOrder);
-    sortByPublicationDate(orderDate);
+    sortByPublicationDate(newOrder);
   };
 
   const handlePredictionSort = () => {

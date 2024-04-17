@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import "../../styles/leaderboard/subheader.css";
 
-const subheader = () => {
+const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
+  const [accuracyOrder, setAccuracyOrder] = useState("desc");
+  const [scoreOrder, setScoreOrder] = useState("score_desc");
+
+  const handleAccuracySort = () => {
+    const newOrder = accuracyOrder === "desc" ? "accuracy_asc" : "desc";
+    setAccuracyOrder(newOrder);
+    sortLeaderboardByAccuracy(newOrder);
+  };
+  const handleScoreSort = () => {
+    const newOrder = scoreOrder === "score_desc" ? "score_asc" : "score_desc";
+    setScoreOrder(newOrder);
+    sortLeaderboardByScore(newOrder);
+  };
+
   const subheaderBlocks = [
     {
-      block: (
-        <div>
-          Rank <TbArrowsUpDown />
-        </div>
-      ),
+      block: <div>Rank</div>,
     },
     {
       block: <div className="name">Name</div>,
@@ -17,14 +27,22 @@ const subheader = () => {
     {
       block: (
         <div>
-          Accuracy <TbArrowsUpDown />
+          Accuracy{" "}
+          <TbArrowsUpDown
+            onClick={() => handleAccuracySort()}
+            style={{ cursor: "pointer" }}
+          />
         </div>
       ),
     },
     {
       block: (
         <div className="points">
-          Points <TbArrowsUpDown />
+          Points{" "}
+          <TbArrowsUpDown
+            onClick={() => handleScoreSort()}
+            style={{ cursor: "pointer" }}
+          />
         </div>
       ),
     },
@@ -50,4 +68,4 @@ const subheader = () => {
   );
 };
 
-export default subheader;
+export default Subheader;
