@@ -251,7 +251,6 @@ function MyChannels() {
                         {val.category}
                       </div>
                     ))}
-                    {/* {val?.Categories?.category.toString().split(",").join(", ")} */}
                   </div>
                 </div>
                 <div className="section-1">
