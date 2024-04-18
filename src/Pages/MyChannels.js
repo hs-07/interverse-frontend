@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { channelsData } from "../services/channels.service";
+import { channelsData, addRemoveFavourite } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { FaPlus, FaMinus } from "react-icons/fa6";
@@ -14,6 +14,18 @@ function MyChannels() {
   const [openAddChannel, setOpenAddChannel] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const navigate = useNavigate();
+  const accountId = localStorage.getItem("accountId");
+
+  const toggleFavourite = (index, id) => {
+    const params = {
+      accountId: String(accountId),
+      channelId: id,
+    };
+    const newData = [...channelData];
+    newData[index].is_favourite = !newData[index].is_favourite;
+    addRemoveFavourite(params);
+    setChannelData(newData);
+  };
 
   const handleSubSection = (index) => {
     if (index === activeIndex) {
@@ -25,7 +37,6 @@ function MyChannels() {
   useEffect(() => {
     channelsData()
       .then((res) => {
-        console.log("res chaneel:::", res.data);
         setChannelData([...res.data]);
       })
       .catch((err) => {
@@ -69,10 +80,17 @@ function MyChannels() {
               <div className="block">{val?.Predictions}</div>
               <div className="block">{val?.PredictionAccuracyPercent}%</div>
               <div className="block">
-                <HiOutlineHeart
-                  // onClick={() => toggleFavourite(index, val?.user_id)}
-                  style={{ cursor: "pointer" }}
-                />
+                {val.is_favourite ? (
+                  <HiHeart
+                    onClick={() => toggleFavourite(index, val?.channel_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                ) : (
+                  <HiOutlineHeart
+                    onClick={() => toggleFavourite(index, val?.channel_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
               </div>
               <div className="block" onClick={() => handleSubSection(index)}>
                 {val.Active ? (
@@ -111,36 +129,24 @@ function MyChannels() {
                   className=""
                   style={{ display: "flex", alignItems: "center", gap: "16px" }}
                 >
-                  <HiOutlineHeart
-                    // onClick={() => toggleFavourite(index, val?.user_id)}
-                    style={{ cursor: "pointer" }}
-                  />
+                  {val.is_favourite ? (
+                    <HiHeart
+                      onClick={() => toggleFavourite(index, val?.user_id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  ) : (
+                    <HiOutlineHeart
+                      onClick={() => toggleFavourite(index, val?.user_id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  )}
 
                   <div
                     className="part-2"
                     onClick={() => handleSubSection(index)}
+                    style={{ color: "#4d90fe" }}
                   >
-                    {activeIndex === index ? (
-                      <img
-                        style={{
-                          position: "relative",
-                          width: "21.5px",
-                          height: "21.5px",
-                        }}
-                        alt=""
-                        src="/vector-1433.svg"
-                      />
-                    ) : (
-                      <img
-                        style={{
-                          position: "relative",
-                          width: "21.5px",
-                          height: "21.5px",
-                        }}
-                        alt=""
-                        src="/vector-278.svg"
-                      />
-                    )}
+                    {activeIndex === index ? <FaMinus /> : <FaPlus />}
                   </div>
                 </div>
               </div>

@@ -51,7 +51,7 @@
   font-size: 20px;
 }
 .channelData-active {
-  background-color: rgb(40, 40, 40);
+  background-color: black;
   width: 100%;
   height: auto;
   overflow: hidden;

@@ -204,7 +204,7 @@ const LeaderBoards = () => {
                   <div className="block1">
                     {val.is_favourite ? (
                       <HiHeart
-                        onClick={() => toggleFavourite(index)}
+                        onClick={() => toggleFavourite(index, val?.user_id)}
                         style={{ cursor: "pointer" }}
                       />
                     ) : (
@@ -282,7 +282,7 @@ const LeaderBoards = () => {
                   <div className="mob-row-section-2">
                     {val.is_favourite ? (
                       <HiHeart
-                        onClick={() => toggleFavourite(index)}
+                        onClick={() => toggleFavourite(index, val?.user_id)}
                         style={{ cursor: "pointer" }}
                       />
                     ) : (

@@ -12,6 +12,5 @@ export const sortByScore = async (order) => {
 };
 export const addRemoveFavourite = async (params) => {
   const res = await Axios.post("toggle-favorite-predictor", params);
-  console.log(res.data);
   return res.data;
 };
