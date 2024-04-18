@@ -93,18 +93,18 @@
   display: none;
 }
 @media (max-width: 768px) {
-  .addChannel-section > .block-2 {
-    display: none;
-  }
   .addChannel-section {
     background-color: #181818;
     color: #fff;
     padding: 12px;
     position: sticky;
     top: 0;
+    width: 100%;
+    justify-content: space-between;
     z-index: 100;
     font-size: 14px;
     margin-top: 0;
+    display: flex;
   }
   .addChannel-section > .mob-block-2 {
     display: flex;

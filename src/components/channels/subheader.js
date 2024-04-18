@@ -7,17 +7,13 @@ const Subheader = () => {
   const [openAddChannel, setOpenAddChannel] = useState(false);
 
   const subheaderBlocks = [
-    { block: <div>Name</div> },
+    { block: <div className="Ch-name">Name</div> },
     {
-      block: (
-        <div>
-          Summaries <TbArrowsUpDown />
-        </div>
-      ),
+      block: <div className="Ch-summaries">Summaries</div>,
     },
     {
       block: (
-        <div>
+        <div className="Ch-prediction">
           Predictions <TbArrowsUpDown />
         </div>
       ),
@@ -31,12 +27,13 @@ const Subheader = () => {
             gap: "4px",
             flexShrink: "0",
           }}
+          className="Ch-accuracy"
         >
-          Prediction Accuracy <TbArrowsUpDown />
+          Accuracy <TbArrowsUpDown />
         </div>
       ),
     },
-    { block: <div>Favourite</div> },
+    { block: <div className="Ch-fav">Favourite</div> },
     {
       block: (
         <div onClick={() => setOpenAddChannel(true)} className="addChannelBtn">

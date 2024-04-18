@@ -58,10 +58,10 @@ const TopicPopper = ({ fetchSortedPrediction }) => {
                 Social & Health
               </button>
               <button
-                className={`others ${
-                  activeButton === "others" ? "active" : ""
+                className={`Others ${
+                  activeButton === "Others" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("others")}
+                onClick={() => handleButtonClick("Others")}
               >
                 Others
               </button>
