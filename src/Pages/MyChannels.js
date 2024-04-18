@@ -2,7 +2,8 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { channelsData } from "../services/channels.service";
 import { useNavigate } from "react-router-dom";
-import { FaPlus } from "react-icons/fa6";
+import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 import "../styles/mychannels.css";
 import AddChannelModal from "../components/addChannelModal";
 import { LuCalendarDays } from "react-icons/lu";
@@ -66,28 +67,24 @@ function MyChannels() {
               </div>
               <div className="block">{val?.Summaries}</div>
               <div className="block">{val?.Predictions}</div>
-              <div className="block">{val?.PredictionAccuracy}</div>
+              <div className="block">{val?.PredictionAccuracyPercent}%</div>
+              <div className="block">
+                <HiOutlineHeart
+                  // onClick={() => toggleFavourite(index, val?.user_id)}
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
               <div className="block" onClick={() => handleSubSection(index)}>
-                {activeIndex === index ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
+                {val.Active ? (
+                  <button className="more-info-button">
+                    Less info
+                    <FaMinus />
+                  </button>
                 ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
+                  <button className="more-info-button">
+                    More info
+                    <FaPlus />
+                  </button>
                 )}
               </div>
             </div>
@@ -110,28 +107,41 @@ function MyChannels() {
                     <div className="">{val?.ChannelName.slice(0, 20)}</div>
                   </div>
                 </div>
-                <div className="part-2" onClick={() => handleSubSection(index)}>
-                  {activeIndex === index ? (
-                    <img
-                      style={{
-                        position: "relative",
-                        width: "21.5px",
-                        height: "21.5px",
-                      }}
-                      alt=""
-                      src="/vector-1433.svg"
-                    />
-                  ) : (
-                    <img
-                      style={{
-                        position: "relative",
-                        width: "21.5px",
-                        height: "21.5px",
-                      }}
-                      alt=""
-                      src="/vector-278.svg"
-                    />
-                  )}
+                <div
+                  className=""
+                  style={{ display: "flex", alignItems: "center", gap: "16px" }}
+                >
+                  <HiOutlineHeart
+                    // onClick={() => toggleFavourite(index, val?.user_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+
+                  <div
+                    className="part-2"
+                    onClick={() => handleSubSection(index)}
+                  >
+                    {activeIndex === index ? (
+                      <img
+                        style={{
+                          position: "relative",
+                          width: "21.5px",
+                          height: "21.5px",
+                        }}
+                        alt=""
+                        src="/vector-1433.svg"
+                      />
+                    ) : (
+                      <img
+                        style={{
+                          position: "relative",
+                          width: "21.5px",
+                          height: "21.5px",
+                        }}
+                        alt=""
+                        src="/vector-278.svg"
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="body">
@@ -183,7 +193,7 @@ function MyChannels() {
                 <div className="section-1">
                   <div className="column-1">People</div>
                   <div className="column-2">
-                    {val?.People.map((val, index) => {
+                    {val?.Users.map((val, index) => {
                       return (
                         <>
                           <div
@@ -235,7 +245,13 @@ function MyChannels() {
                 <div className="section-1">
                   <div className="column-1">Topics</div>
                   <div className="column-2">
-                    {val?.Topics?.toString().split(",").join(", ")}
+                    {val?.Categories.map((val, index) => (
+                      <div className="" key={index}>
+                        {" "}
+                        {val.category}
+                      </div>
+                    ))}
+                    {/* {val?.Categories?.category.toString().split(",").join(", ")} */}
                   </div>
                 </div>
                 <div className="section-1">
