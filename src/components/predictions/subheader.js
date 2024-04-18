@@ -3,13 +3,13 @@ import "../../styles/predictions/subheader.css";
 import StatusPopper from "./status-popper/index";
 import TopicPopper from "./topics-popper/index";
 
-const subheader = () => {
+const subheader = ({ fetchSortedPrediction, fetchSortedCategory }) => {
   const subheaderBlocks = [
     {
       block: (
         <div className="prediction-status">
           <span className="">Status</span>
-          <StatusPopper />
+          <StatusPopper fetchSortedCategory={fetchSortedCategory} />
         </div>
       ),
     },
@@ -24,7 +24,7 @@ const subheader = () => {
       block: (
         <div className="prediction-topic">
           <span className="">Topic</span>
-          <TopicPopper />
+          <TopicPopper fetchSortedPrediction={fetchSortedPrediction} />
         </div>
       ),
     },

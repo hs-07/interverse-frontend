@@ -6,11 +6,11 @@
   background-color: #282828;
 }
 
-.button-grp > .economy,
-.finance,
-.politics,
-.sci,
-.social,
+.button-grp > .Economy,
+.Finance,
+.Politics,
+.Sci,
+.Social,
 .others {
   padding: 8px;
   background-color: black;

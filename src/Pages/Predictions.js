@@ -9,6 +9,8 @@ import Tabs from "../components/common/tabs";
 import {
   getPredictions,
   getPredictionSingle,
+  getSortedPrediction,
+  getSortedCategory,
 } from "../services/Predictions.service";
 import infoIcon from "../assests/hover_info6.png";
 import SubHeader from "../components/predictions/subheader";
@@ -23,7 +25,7 @@ const Predictions = () => {
   const [justificationRead, setJustificationRead] = useState("4");
 
   useEffect(() => {
-    if (userid == undefined) {
+    if (userid === undefined) {
       getPredictions()
         .then((res) => {
           console.log("res:::00000::::::", res.data);
@@ -55,6 +57,39 @@ const Predictions = () => {
         });
     }
   }, []);
+
+  const fetchSortedPrediction = async (prediction) => {
+    await getSortedPrediction(prediction)
+      .then((res) => {
+        console.log("res:::123456::::::", res.data);
+        setData([...res.data]);
+        setData(
+          [...res.data].map((obj) => ({
+            ...obj,
+            predictionActive: false,
+          }))
+        );
+      })
+      .catch((err) => {
+        console.log("err::::::", err);
+      });
+  };
+  const fetchSortedCategory = async (category) => {
+    await getSortedCategory(category)
+      .then((res) => {
+        console.log("res:::123456::::::", res.data);
+        setData([...res.data]);
+        setData(
+          [...res.data].map((obj) => ({
+            ...obj,
+            predictionActive: false,
+          }))
+        );
+      })
+      .catch((err) => {
+        console.log("err::::::", err);
+      });
+  };
 
   const onClickDescription = (index) => {
     const arr = [...data];
@@ -112,7 +147,10 @@ const Predictions = () => {
   return (
     <div className="predictions">
       {/* Header Starts */}
-      <SubHeader />
+      <SubHeader
+        fetchSortedPrediction={fetchSortedPrediction}
+        fetchSortedCategory={fetchSortedCategory}
+      />
       {/* Header ENds */}
       {/* Array Data Starts */}
       {data.map((val, index) => {

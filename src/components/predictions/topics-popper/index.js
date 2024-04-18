@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import Popper from "../../common/popover";
 import "./style.css";
 
-const TopicPopper = () => {
+const TopicPopper = ({ fetchSortedPrediction }) => {
   const [activeButton, setActiveButton] = useState("");
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
+
+  const handleApply = () => {
+    fetchSortedPrediction(activeButton);
+  };
+
   return (
     <div>
       <Popper
@@ -15,42 +20,42 @@ const TopicPopper = () => {
           <div className="topic-popper">
             <div className="button-grp">
               <button
-                className={`economy ${
-                  activeButton === "economy" ? "active" : ""
+                className={`Economy ${
+                  activeButton === "Economy" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("economy")}
+                onClick={() => handleButtonClick("Economy")}
               >
                 Economy
               </button>
               <button
-                className={`finance ${
-                  activeButton === "finance" ? "active" : ""
+                className={`Finance ${
+                  activeButton === "Finance" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("finance")}
+                onClick={() => handleButtonClick("Finance")}
               >
                 Finance
               </button>
               <button
-                className={`politics ${
-                  activeButton === "politics" ? "active" : ""
+                className={`Politics ${
+                  activeButton === "Politics" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("politics")}
+                onClick={() => handleButtonClick("Politics")}
               >
                 Politics
               </button>
               <button
-                className={`sci ${activeButton === "sci" ? "active" : ""}`}
-                onClick={() => handleButtonClick("sci")}
+                className={`Sci ${activeButton === "Sci" ? "active" : ""}`}
+                onClick={() => handleButtonClick("Sci")}
               >
                 Sci & Tech
               </button>
               <button
-                className={`social ${
-                  activeButton === "social" ? "active" : ""
+                className={`Social ${
+                  activeButton === "Social" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("social")}
+                onClick={() => handleButtonClick("Social")}
               >
-                Socail & Health
+                Social & Health
               </button>
               <button
                 className={`others ${
@@ -61,7 +66,7 @@ const TopicPopper = () => {
                 Others
               </button>
             </div>
-            <div className="apply">
+            <div className="apply" onClick={() => handleApply()}>
               <button className="apply-btn">Apply</button>
             </div>
           </div>

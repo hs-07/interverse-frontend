@@ -13,7 +13,7 @@
 .button-grp button.active {
   border-color: white;
 }
-.button-grp > .true {
+.button-grp > .True {
   background-color: #23b678;
   border: 2px solid #23b678;
   border-radius: 6px;
@@ -21,7 +21,7 @@
   color: #fff;
   font-weight: 500;
 }
-.button-grp > .false {
+.button-grp > .False {
   background-color: #e72e2e;
   border: 2px solid #e72e2e;
   padding: 8px;
@@ -30,7 +30,7 @@
   color: #fff;
   font-weight: 500;
 }
-.button-grp > .p-true {
+.button-grp > .ParticallyTrue {
   background-color: #b5752a;
   border: 2px solid #b5752a;
   padding: 8px;
@@ -39,7 +39,7 @@
   color: #fff;
   font-weight: 500;
 }
-.button-grp > .pending {
+.button-grp > .Pending {
   background-color: #374c98;
   border: 2px solid #374c98;
   padding: 8px;
