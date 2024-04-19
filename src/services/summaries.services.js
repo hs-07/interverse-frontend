@@ -26,3 +26,7 @@ export const getSummarySummaries = async (id) => {
 export const getFullTranscript = async (id) => {
   return await Axios.get(`summaries_transcript?sourceId=${id}`);
 };
+
+export const searchTerm = async (item) => {
+  return await Axios.get(`all-sources?searchTerm=${item}`);
+};

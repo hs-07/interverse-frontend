@@ -9,6 +9,7 @@ import {
   getSummaryPrediction,
   getSummarySummaries,
   getFullTranscript,
+  searchTerm,
 } from "../services/summaries.services";
 import { LuCalendarDays } from "react-icons/lu";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -88,6 +89,21 @@ function Summaries() {
     } catch (error) {
       console.log(error);
     }
+  };
+  const searchLeaderboard = async (term) => {
+    try {
+      const res = await searchTerm(term);
+      setData([...res.data]);
+      setData(
+        [...res.data].map((obj) => ({
+          ...obj,
+          predictionActive: false,
+          peopleActive: false,
+          summariesActive: false,
+          fullTranscriptActive: false,
+        }))
+      );
+    } catch (error) {}
   };
   const convertMinsToHrsMins = (minutes) => {
     let h = Math.floor(minutes / 60);
@@ -275,7 +291,7 @@ function Summaries() {
 
   return (
     <div className="summaries">
-      <Header />
+      <Header searchLeaderboard={searchLeaderboard} />
       <SummariesSubheader
         sortByPublicationDate={sortByPublicationDate}
         sortByNumberOfPredictions={sortByNumberOfPredictions}

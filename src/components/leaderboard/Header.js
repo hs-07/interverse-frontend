@@ -12,18 +12,17 @@ function Header({ searchLeaderboard }) {
     window.location.href = "http://localhost:3000";
     // window.location.href = "https://www.luckyorgenius.com/";
   };
+
   useEffect(() => {
     let data = localStorage.getItem("userdata");
     setUserData(JSON.parse(data));
   }, []);
 
-  useEffect(() => {
-    const delaySearch = setTimeout(() => {
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
       searchLeaderboard(searchTerm);
-    }, 100);
-
-    return () => clearTimeout(delaySearch);
-  }, [searchTerm, searchLeaderboard]);
+    }
+  };
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -32,17 +31,16 @@ function Header({ searchLeaderboard }) {
   return (
     <div className="lead-header">
       <b className="lead-page-name">{pathname.slice(1).toLocaleUpperCase()}</b>
-      {/* SearchBar Starts */}
       <div className="search-bar">
         <input
           className=""
           placeholder="Search"
           value={searchTerm}
           onChange={handleSearchChange}
+          onKeyPress={handleKeyPress} // Listen for key press events
         />
         <img className="search-icon" alt="" src="/vector.svg" />
       </div>
-      {/* SearchBar Ends */}
       <div className="lead-profile-info">
         <h4 className="user-name">{userData?.given_name}</h4>
         <img className="user-photo" alt="user-photo" src={userData?.picture} />
