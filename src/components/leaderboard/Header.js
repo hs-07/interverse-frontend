@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./header.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { googleLogout } from "@react-oauth/google";
 
-function Header() {
+function Header({ searchLeaderboard }) {
   const { pathname } = useLocation();
   const [userData, setUserData] = useState();
-  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleRedirect = () => {
     window.location.href = "http://localhost:3000";
     // window.location.href = "https://www.luckyorgenius.com/";
@@ -16,12 +17,29 @@ function Header() {
     setUserData(JSON.parse(data));
   }, []);
 
+  useEffect(() => {
+    const delaySearch = setTimeout(() => {
+      searchLeaderboard(searchTerm);
+    }, 100);
+
+    return () => clearTimeout(delaySearch);
+  }, [searchTerm, searchLeaderboard]);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="lead-header">
       <b className="lead-page-name">{pathname.slice(1).toLocaleUpperCase()}</b>
       {/* SearchBar Starts */}
       <div className="search-bar">
-        <input className="" placeholder="Search" />
+        <input
+          className=""
+          placeholder="Search"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
         <img className="search-icon" alt="" src="/vector.svg" />
       </div>
       {/* SearchBar Ends */}

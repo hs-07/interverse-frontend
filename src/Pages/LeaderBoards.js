@@ -16,6 +16,7 @@ import {
   sortByAccuracy,
   sortByScore,
   addRemoveFavourite,
+  searchTerm,
 } from "../services/Leaderboards.service";
 import Header from "../components/leaderboard/Header";
 
@@ -72,6 +73,12 @@ const LeaderBoards = () => {
       console.log(error);
     }
   };
+  const searchLeaderboard = async (term) => {
+    try {
+      const res = await searchTerm(term);
+      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+    } catch (error) {}
+  };
 
   const getUserSubject = async (id) => {
     getProfilesBySubjects(id)
@@ -115,7 +122,7 @@ const LeaderBoards = () => {
     <div className="custom-container">
       {loader ? (
         <>
-          <Header />
+          <Header searchLeaderboard={searchLeaderboard} />
           <SubHeader
             sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
             sortLeaderboardByScore={sortLeaderboardByScore}
