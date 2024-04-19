@@ -1,6 +1,6 @@
 .market-section {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;

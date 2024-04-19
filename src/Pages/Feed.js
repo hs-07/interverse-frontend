@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-import TopPredictorsCard from "../components/top-predictors-card";
 import TrendingPredictionCard from "../components/trending-prediction-card";
 import FeedRightSection from "../components/feed-right-section";
 import ShareModal from "../components/shareModal";
 import CircularProgress from "@mui/material/CircularProgress";
 import { getFeedDetails } from "../services/Feed.service";
 import { leaderBoardData } from "../services/Leaderboards.service";
-
+import Header from "../components/Header";
 import "../styles/feed.css";
 import FeedCard from "../components/feed-card";
 
@@ -43,6 +40,7 @@ const Feed = () => {
   else
     return (
       <div className="feed-section">
+        <Header />
         <div className="feed-container">
           <div className="feed-part1">
             <div className="recent-predictions">

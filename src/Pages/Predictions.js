@@ -5,6 +5,8 @@ import { LuCalendarDays } from "react-icons/lu";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
 import "../styles/predictions.css";
+
+import Header from "../components/Header";
 import Tabs from "../components/common/tabs";
 import {
   getPredictions,
@@ -146,6 +148,7 @@ const Predictions = () => {
 
   return (
     <div className="predictions">
+      <Header />
       {/* Header Starts */}
       <SubHeader
         fetchSortedPrediction={fetchSortedPrediction}

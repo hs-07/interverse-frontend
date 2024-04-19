@@ -1,7 +1,7 @@
 .custom-container {
   width: 100%;
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;

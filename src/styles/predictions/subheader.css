@@ -5,7 +5,7 @@
   padding: 16px 22px;
   gap: 12px;
   position: sticky;
-  top: 0;
+  top: 4rem;
   background-color: black;
   z-index: 10;
 }
@@ -19,6 +19,12 @@
 .prediction-span,
 .prediction-market {
   display: flex;
+}
+
+@media (max-width: 1024px) {
+  .predictions-subheader {
+    top: 0;
+  }
 }
 
 @media (max-width: 768px) {

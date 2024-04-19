@@ -1,6 +1,6 @@
 .summaries {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow-y: auto;
   overflow-x: auto;
   display: flex;

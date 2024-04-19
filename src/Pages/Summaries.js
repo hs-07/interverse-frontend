@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Tabs from "../components/common/tabs";
 import SummariesSubheader from "../components/summaries/subheader";
+import Header from "../components/summaries/Header";
 
 const myComponentStyle = {
   fontFamily: "Roboto, sans-serif", // Use the font name specified in Google Fonts
@@ -274,6 +275,7 @@ function Summaries() {
 
   return (
     <div className="summaries">
+      <Header />
       <SummariesSubheader
         sortByPublicationDate={sortByPublicationDate}
         sortByNumberOfPredictions={sortByNumberOfPredictions}

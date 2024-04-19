@@ -6,8 +6,8 @@ import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import "../styles/mychannels.css";
 import AddChannelModal from "../components/addChannelModal";
-import { LuCalendarDays } from "react-icons/lu";
 import ChannelSubHeader from "../components/channels/subheader";
+import Header from "../components/Header";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
@@ -43,8 +43,10 @@ function MyChannels() {
         console.log("err:::::", err);
       });
   }, []);
+
   return (
     <div className="myChannel">
+      <Header />
       {/* Add Channel div Starts */}
       <div className="addChannel-section">
         <div className="block-1">Add New Channel</div>

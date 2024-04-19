@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -12,7 +13,6 @@ import {
   Legend,
 } from "chart.js";
 import { getMarket, getMarketGraph } from "../services/Markets.service";
-import { useLocation } from "react-router-dom";
 import Chart from "chart.js/auto";
 import annotationPlugin from "chartjs-plugin-annotation";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -29,29 +29,11 @@ ChartJS.register(
 );
 Chart.register(annotationPlugin);
 function Markets() {
-  const location = useLocation();
-
-  // Generate a gradient for the background color
   const [marketData, setMarketData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState("");
   const [currentGraph, setCurrentGraph] = useState({});
-  const backgroundColor = (context) => {
-    const index = context.dataIndex || 0;
-    const value = context.dataset.data[index];
 
-    // Use the value to determine the gradient color
-    return gradientColors[index];
-  };
-  const gradientColors = [
-    "rgba(186, 255, 42, 0.03)",
-    // "rgba(186, 255, 42, 0.05)",
-    "rgba(75, 192, 192, 0.00)",
-    "rgba(75, 192, 192, 0.00)",
-  ];
-  // fill: linear-gradient(180deg, rgba(186, 255, 42, 0.13) 0%, rgba(186, 255, 42, 0.00) 100%);
-  // stroke-width: 1px;
-  // stroke: #4B6CC2;
   useEffect(() => {
     getMarket()
       .then((res) => {
@@ -82,7 +64,6 @@ function Markets() {
         label: "Area Chart Example",
         fill: true,
         lineTension: 0.1,
-        backgroundColor: backgroundColor, // Use the custom function
         borderColor: "#4B6CC2",
         borderWidth: 1,
         data: currentGraph?.values,
@@ -127,6 +108,7 @@ function Markets() {
 
   return (
     <div className="market-section">
+      <Header />
       {/* User Info Row Starts */}
       {marketData?.map((val, index) => {
         return (

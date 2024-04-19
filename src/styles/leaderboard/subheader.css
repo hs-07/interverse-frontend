@@ -5,7 +5,7 @@
   padding: 16px 22px;
   background-color: black;
   position: sticky;
-  top: 0;
+  top: 4rem;
   z-index: 10;
   flex-shrink: 0;
   gap: 12px;
@@ -21,6 +21,12 @@
 .bankroll,
 .fav {
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .leaderboard-subheader {
+    top: 0;
+  }
 }
 
 @media (max-width: 768px) {

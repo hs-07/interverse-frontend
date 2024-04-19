@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
+import React from "react";
+
 import RouterData from "../Routes";
 import Sidenav from "../components/SideNav";
 import TopNav from "../components/TopNav";
@@ -15,7 +15,7 @@ function Dashboard() {
           <TopNav />
         </div>
         <div className="main-content-div">
-          <Header />
+          {/* <Header /> */}
           <RouterData />
         </div>
       </div>

@@ -17,6 +17,7 @@ import {
   sortByScore,
   addRemoveFavourite,
 } from "../services/Leaderboards.service";
+import Header from "../components/leaderboard/Header";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
@@ -114,6 +115,7 @@ const LeaderBoards = () => {
     <div className="custom-container">
       {loader ? (
         <>
+          <Header />
           <SubHeader
             sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
             sortLeaderboardByScore={sortLeaderboardByScore}

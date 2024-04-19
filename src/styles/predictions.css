@@ -1,6 +1,6 @@
 .predictions {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
