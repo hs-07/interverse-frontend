@@ -12,11 +12,7 @@ const Subheader = () => {
       block: <div className="Ch-summaries">Summaries</div>,
     },
     {
-      block: (
-        <div className="Ch-prediction">
-          Predictions <TbArrowsUpDown />
-        </div>
-      ),
+      block: <div className="Ch-prediction">Predictions</div>,
     },
     {
       block: (
@@ -29,7 +25,7 @@ const Subheader = () => {
           }}
           className="Ch-accuracy"
         >
-          Accuracy <TbArrowsUpDown />
+          Accuracy
         </div>
       ),
     },

@@ -177,7 +177,9 @@ function MyChannels() {
                     <span style={{ color: "#AEAEAE" }}>
                       Prediction Accuracy
                     </span>
-                    <div className="value">{val?.PredictionAccuracy}</div>
+                    <div className="value">
+                      {val?.PredictionAccuracyPercent}%
+                    </div>
                   </div>
                 </div>
                 {/* <div className="column">
