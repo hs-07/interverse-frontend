@@ -153,7 +153,12 @@ function MyChannels() {
               <div className="body">
                 <div className="column">
                   <div className="body-icon">
-                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                    <img
+                      src="/summaries.png"
+                      alt={"summaries"}
+                      width={30}
+                      height={30}
+                    />
                   </div>
                   <div className="text">
                     <span style={{ color: "#AEAEAE" }}>Summaries</span>
@@ -162,7 +167,12 @@ function MyChannels() {
                 </div>
                 <div className="column">
                   <div className="body-icon">
-                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                    <img
+                      src="/predictions.png"
+                      alt={"prediction"}
+                      width={30}
+                      height={30}
+                    />
                   </div>
                   <div className="text">
                     <span style={{ color: "#AEAEAE" }}>Predictions</span>
@@ -171,7 +181,12 @@ function MyChannels() {
                 </div>
                 <div className="column">
                   <div className="body-icon">
-                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                    <img
+                      src="/points.png"
+                      alt={"accuracy"}
+                      width={30}
+                      height={30}
+                    />
                   </div>
                   <div className="text">
                     <span style={{ color: "#AEAEAE" }}>
@@ -182,17 +197,22 @@ function MyChannels() {
                     </div>
                   </div>
                 </div>
-                {/* <div className="column">
+                <div className="column">
                   <div className="body-icon">
-                    <LuCalendarDays style={{ width: "30px", height: "30px" }} />
+                    <img
+                      src="/pending.png"
+                      alt={"pending"}
+                      width={30}
+                      height={30}
+                    />
                   </div>
                   <div className="text">
-                    <span style={{ color: "#AEAEAE" }}>Points</span>
+                    <span style={{ color: "#AEAEAE" }}>Pending</span>
                     <div className="value">
-                      {Math.floor(val?.total_user_score)}
+                      {Math.floor(val?.TotalPendingPredictions)}
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
             {/* Hidden Data Starts */}
