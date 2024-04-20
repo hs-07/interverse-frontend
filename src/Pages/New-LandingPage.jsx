@@ -16,7 +16,9 @@ export default function LandingPage() {
       <div className="overflow-hidden bg-[#0B0B0F] w-full">
         <MacbookScroll
           title={
-            <h1 className="text-[64px]">Finance is finally effortless.</h1>
+            <h1 className="md:text-[64px] text-[140px] leading-[6rem]">
+              Finance is finally effortless.
+            </h1>
           }
           src={`/wallpaper.jpg`}
           showGradient={false}

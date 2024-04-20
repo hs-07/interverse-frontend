@@ -80,7 +80,8 @@
 }
 
 .signup-btn.active {
-  background-color: #545454;
+  background-color: #4b6cc2;
+  border: 2px solid #4b6cc2;
   color: #ffffff;
 }
 
