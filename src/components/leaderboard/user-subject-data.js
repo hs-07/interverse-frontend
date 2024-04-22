@@ -10,10 +10,10 @@ const UserSubjectData = ({ subjectData }) => {
         return (
           <div className="profile-graph-section">
             {/* Bar Graph Section Starts */}
-            <div className="bar-graph-section">
+            <div className="bar-graph-section border-2 border-[#181818]">
               <div className="bar-header">
-                <div>Predictions by Category</div>
-                <div className="sub-part-2">
+                <div className="text-sm">Predictions by Category</div>
+                <div className="sub-part-2 text-base">
                   <div
                     style={{
                       display: "flex",
@@ -22,8 +22,6 @@ const UserSubjectData = ({ subjectData }) => {
                       justifyContent: "flex-start",
                       gap: "2px",
                       textAlign: "left",
-                      fontSize: "16px",
-                      fontFamily: "Poppins",
                     }}
                   >
                     <div
@@ -203,7 +201,7 @@ const UserSubjectData = ({ subjectData }) => {
                     },
                     elements: {
                       bar: {
-                        borderRadius: 7,
+                        borderRadius: 10,
                         barThickness: 5,
                         barPercentage: 0.1,
                       },
@@ -216,12 +214,12 @@ const UserSubjectData = ({ subjectData }) => {
                         label: "",
                         data: subjectData[0]?.categories?.map((i) => i.count),
                         backgroundColor: [
-                          "#FFB085",
+                          "#FFFFFF",
                           "#9467DC",
                           "#4172D0",
+                          "#20AE48",
                           "#3D42C3",
                           "#316DE3",
-                          "#FF6B7C",
                           "#2AE6CC",
                         ],
                       },
@@ -232,9 +230,15 @@ const UserSubjectData = ({ subjectData }) => {
             </div>
             {/* Bar Graph Section Starts */}
             {/* Donught Graph Starts */}
-            <div className="donught-graph-section">
+            <div className="donught-graph-section border-2 border-[#181818]">
               <div className="donught-header">
-                <p style={{ color: "#fff", textAlign: "start" }}>
+                <p
+                  style={{
+                    color: "#fff",
+                    textAlign: "center",
+                    fontSize: "13px",
+                  }}
+                >
                   Predictions by Plaform
                 </p>
               </div>

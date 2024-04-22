@@ -27,7 +27,7 @@
   width: 38px;
   height: 38px;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  object-fit: cover !important;
   border-radius: 50%;
 }
 .profile-name {
