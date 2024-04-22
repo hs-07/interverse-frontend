@@ -12,12 +12,12 @@
 }
 .summaries > .summaries-col {
   background-color: #282828;
-  gap: 2px;
+  gap: 16px;
   height: max-content;
   overflow: hidden;
   flex-shrink: 0;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 5fr 1.5fr 1.5fr 1fr;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -82,7 +82,6 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  color: #4b6cc2;
 }
 /* Column 3 Starts */
 .summaries-col-3 {
@@ -103,7 +102,6 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  color: #4b6cc2;
 }
 /* Column 4 Starts */
 .summaries-col-4 {

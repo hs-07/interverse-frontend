@@ -9,11 +9,10 @@ const feedrightSection = ({ topPredictorsData }) => {
       style={{
         width: "30%",
         overflowY: "auto",
-        backgroundColor: "#262626",
-        padding: "0px 16px 16px 16px",
         height: "100%",
         width: "100%",
         borderRadius: "10px",
+        padding: "0 16px 0 0",
         display: "flex",
         flexDirection: "column",
       }}
@@ -21,23 +20,23 @@ const feedrightSection = ({ topPredictorsData }) => {
       <div
         className="right-heading"
         style={{
-          position: "sticky",
-          backgroundColor: "#262626",
-          padding: "16px 0px 0px 0px",
+          padding: "16px 0px ",
           top: "0",
         }}
       >
         <h4>Top Predictors</h4>
       </div>
-      {topPredictorsData.map((predictor, index) => (
-        <FeedRightSectionColumns
-          key={index}
-          rank={index + 1}
-          name={predictor.first_name + predictor.last_name}
-          accuracy={predictor.prediction_accuracy}
-          imgUrl={predictor.image_url}
-        />
-      ))}
+      <div className="bg-[#282828] flex flex-col rounded-lg">
+        {topPredictorsData.map((predictor, index) => (
+          <FeedRightSectionColumns
+            key={index}
+            rank={index + 1}
+            name={predictor.first_name + predictor.last_name}
+            accuracy={predictor.prediction_accuracy}
+            imgUrl={predictor.image_url}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -9,9 +9,9 @@
 .button-grp > .Economy,
 .Finance,
 .Politics,
-.Sci,
+.SciTech,
 .Social,
-.Others {
+.Other {
   padding: 8px;
   background-color: black;
   border: 2px solid black;

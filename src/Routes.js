@@ -7,6 +7,7 @@ import Predictions from "./Pages/Predictions";
 import Markets from "./Pages/Markets";
 import Profiles from "./Pages/Profiles";
 import MyChannels from "./Pages/MyChannels";
+import Favourites from "./Pages/Favourites";
 import { AppContextProvider } from "./utils/appContext";
 
 const RouterData = () => {
@@ -21,6 +22,7 @@ const RouterData = () => {
         <Route path="/Markets" element={<Markets />} />
         <Route path="/Profiles" element={<Profiles />} />
         <Route path="/MyChannels" element={<MyChannels />} />
+        <Route path="/Favourites" element={<Favourites />} />
       </Routes>
     </AppContextProvider>
   );

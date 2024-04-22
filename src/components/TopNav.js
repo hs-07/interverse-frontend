@@ -58,14 +58,6 @@ const TopNav = () => {
         >
           <p style={{ marginTop: "13px" }}>Markets</p>
         </NavLink>
-        {/* <NavLink
-          to="/Profiles"
-          className={({ isActive }) =>
-            isActive ? "active-link navlink" : "navlink"
-          }
-        >
-          <p style={{ marginTop: "13px" }}>Profiles</p>
-        </NavLink> */}
         <NavLink
           to="/MyChannels"
           className={({ isActive }) =>
@@ -73,6 +65,14 @@ const TopNav = () => {
           }
         >
           <p style={{ marginTop: "13px" }}> My Channels</p>
+        </NavLink>
+        <NavLink
+          to="/Favourites"
+          className={({ isActive }) =>
+            isActive ? "active-link navlink" : "navlink"
+          }
+        >
+          <p style={{ marginTop: "13px" }}> Favourites</p>
         </NavLink>
       </div>
     </div>

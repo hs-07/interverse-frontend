@@ -20,7 +20,7 @@
 .rank,
 .bankroll,
 .fav {
-  display: block;
+  display: flex;
 }
 
 @media (max-width: 1024px) {

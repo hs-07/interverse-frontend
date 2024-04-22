@@ -5,6 +5,7 @@
   gap: 12px;
   background-color: #262626;
   margin: 8px 0px;
+  border-radius: 8px;
 }
 .trending-card .trending-card-header {
   display: flex;

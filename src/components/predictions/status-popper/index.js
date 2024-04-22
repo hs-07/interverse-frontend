@@ -33,11 +33,11 @@ const StatusPopper = ({ fetchSortedCategory }) => {
               </button>
               <button
                 className={`ParticallyTrue ${
-                  activeButton === "ParticallyTrue" ? "active" : ""
+                  activeButton === "PARTIALLY TRUE" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("ParticallyTrue")}
+                onClick={() => handleButtonClick("PARTIALLY TRUE")}
               >
-                Partially True
+                Part True
               </button>
               <button
                 className={`Pending ${

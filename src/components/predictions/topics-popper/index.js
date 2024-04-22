@@ -44,24 +44,24 @@ const TopicPopper = ({ fetchSortedPrediction }) => {
                 Politics
               </button>
               <button
-                className={`Sci ${activeButton === "Sci" ? "active" : ""}`}
-                onClick={() => handleButtonClick("Sci")}
+                className={`SciTech ${
+                  activeButton === "Sci %26 Tech" ? "active" : ""
+                }`}
+                onClick={() => handleButtonClick("Sci %26 Tech")}
               >
                 Sci & Tech
               </button>
               <button
                 className={`Social ${
-                  activeButton === "Social" ? "active" : ""
+                  activeButton === "Social %26 Health" ? "active" : ""
                 }`}
-                onClick={() => handleButtonClick("Social")}
+                onClick={() => handleButtonClick("Social %26 Health")}
               >
                 Social & Health
               </button>
               <button
-                className={`Others ${
-                  activeButton === "Others" ? "active" : ""
-                }`}
-                onClick={() => handleButtonClick("Others")}
+                className={`Other ${activeButton === "Other" ? "active" : ""}`}
+                onClick={() => handleButtonClick("Other")}
               >
                 Others
               </button>

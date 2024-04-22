@@ -22,7 +22,7 @@ const Subheader = ({ sortByPublicationDate, sortByNumberOfPredictions }) => {
     { block: <div className="source">Source</div> },
     {
       block: (
-        <div className="predictions-block">
+        <div className="predictions-block flex items-center gap-2">
           Predictions{" "}
           <TbArrowsUpDown
             className="predictions-icon"
@@ -33,7 +33,7 @@ const Subheader = ({ sortByPublicationDate, sortByNumberOfPredictions }) => {
     },
     {
       block: (
-        <div className="publish_date">
+        <div className="publish_date flex items-center gap-2">
           Publish date{" "}
           <TbArrowsUpDown
             onClick={() => handlePublicationDate()}

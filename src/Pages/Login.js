@@ -15,8 +15,9 @@ const Login = () => {
     <div className="h-[90vh] bg-[#0B0B0F] w-full flex justify-center py-16">
       <div className="w-full md:w-1/3 flex flex-col md:border-2 md:border-[#181818] p-8 rounded-2xl justify-around">
         <div className="flex w-full justify-center">
-          <img src={logoicon} alt="" className="w-12" />
-          <img src={logotext} alt="" className="w-48" />
+          <h1 className="text-3xl text-white font-bold ">Login</h1>
+          {/* <img src={logoicon} alt="" className="w-12" /> */}
+          {/* <img src={logotext} alt="" className="w-48" /> */}
         </div>
         <div className="w-full flex flex-col gap-8">
           <button

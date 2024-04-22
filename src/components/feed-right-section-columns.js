@@ -8,8 +8,8 @@ const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
       style={{
         display: "flex",
         alignItems: "center",
-        padding: "10px 0px",
-        borderBottom: "1px solid #AEAEAE",
+        padding: "10px 16px",
+        borderBottom: "3px solid #181818",
       }}
     >
       <div

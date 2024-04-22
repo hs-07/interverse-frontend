@@ -3,6 +3,7 @@ import "../styles/sidenav.css";
 import { NavLink } from "react-router-dom";
 import logoIcon from "../assests/logo-icon.svg";
 import logoText from "../assests/logo-text.svg";
+import { HiOutlineHeart } from "react-icons/hi2";
 function Sidenav() {
   return (
     <div>
@@ -54,13 +55,6 @@ function Sidenav() {
 
             <p style={{ marginTop: "13px" }}>Markets</p>
           </NavLink>
-          {/* <NavLink
-            to="/Profiles"
-            className={({ isActive }) => (isActive ? "active-link" : "link")}
-          >
-            <img alt="" src="/vuesaxtwotoneprofile.svg" />
-            <p style={{ marginTop: "13px" }}>Profiles</p>
-          </NavLink> */}
           <NavLink
             to="/MyChannels"
             className={({ isActive }) => (isActive ? "active-link" : "link")}
@@ -68,6 +62,17 @@ function Sidenav() {
             <img alt="" src="/vuesaxtwotonenotificationcircle.svg" />
 
             <p style={{ marginTop: "13px" }}> My Channels</p>
+          </NavLink>
+          <NavLink
+            to="/Favourites"
+            className={({ isActive }) => (isActive ? "active-link" : "link")}
+          >
+            <HiOutlineHeart className="pl-2 w-14 h-7" />
+
+            <p style={{ marginTop: "13px" }} className="pl-3">
+              {" "}
+              Favourites{" "}
+            </p>
           </NavLink>
         </div>
       </div>

@@ -26,7 +26,7 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
     },
     {
       block: (
-        <div>
+        <div className="flex items-center gap-2">
           Accuracy{" "}
           <TbArrowsUpDown
             onClick={() => handleAccuracySort()}
@@ -37,8 +37,8 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
     },
     {
       block: (
-        <div className="points">
-          Points{" "}
+        <div className="points flex items-center gap-2">
+          Points
           <TbArrowsUpDown
             onClick={() => handleScoreSort()}
             style={{ cursor: "pointer" }}

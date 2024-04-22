@@ -11,6 +11,7 @@ import {
   getFullTranscript,
   searchTerm,
 } from "../services/summaries.services";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 import { LuCalendarDays } from "react-icons/lu";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
@@ -306,8 +307,8 @@ function Summaries() {
               <div className="summaries-col-1">
                 <img alt="" src="/youtube.svg" />
                 <div className="sub-col-1">
-                  <div className="sub-col-text-1">
-                    {val.source_title.slice(0, 30)}..
+                  <div className="sub-col-text-1 flex flex-warp w-full">
+                    {val.source_title.slice(0, 90)}...
                   </div>
                   <div className="sub-col-text-2">
                     Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
@@ -317,19 +318,17 @@ function Summaries() {
               </div>
               <div className="summaries-col-2">
                 <div className="sub-col-2">
-                  <div className="sub-col-text-1"># of Predictions</div>
-                  <div className="sub-col-text-2">
+                  <div className="sub-col-text-2 text-white">
                     {val.number_of_predictions}
                   </div>
                 </div>
               </div>
               <div className="summaries-col-3">
-                <div className="sub-col-text-1">Publish Date</div>
-                <div className="sub-col-text-2">
+                <div className="sub-col-text-2 text-white">
                   {val.publication_date.toString().slice(0, 10)}
                 </div>
               </div>
-              <div
+              {/* <div
                 className="summaries-col-4"
                 onClick={() => onClickSummaries(index)}
               >
@@ -376,6 +375,24 @@ function Summaries() {
                 ) : (
                   <img alt="" src="/vector-278.svg" />
                 )}
+              </div> */}
+              <div
+                className="summaries-col-4"
+                onClick={() => {
+                  onClickSummariesCol(index);
+                }}
+              >
+                {val.Active ? (
+                  <button className="more-info-button">
+                    Less info
+                    <FaMinus />
+                  </button>
+                ) : (
+                  <button className="more-info-button">
+                    More info
+                    <FaPlus />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -390,7 +407,7 @@ function Summaries() {
                 <div className="summaries-header-img">
                   <img alt="" src="/youtube.svg" />
                 </div>
-                <div className="summaries-header-content">
+                <div className="summaries-header-content flex flex-col gap-2">
                   <h6 className=""> {val.source_title.slice(0, 30)}..</h6>
                   <span style={{ color: "#aeaeae" }}>
                     Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
@@ -409,472 +426,123 @@ function Summaries() {
                 </div>
               </div>
             </div>
-
-            {/* Column Ends */}
-            {/* Column Description Starts */}
-            {!loading && val?.peopleActive ? (
-              <>
-                {peopleData.map((val, index) => {
-                  return (
-                    <div className="people-section">
-                      <div className="ps-col-1">
-                        <img alt="" src={val?.image_url} />
-                        <div>
-                          <div
-                            style={{
-                              fontWeight: "800",
-                              display: "flex",
-                              alignItems: "center",
-                              flexShrink: "0",
-                              fontSize: "19px",
-                            }}
-                          >
-                            {val?.first_name.startsWith("Unknown")
-                              ? "Unknown"
-                              : val?.first_name + " " + val?.last_name}
-                          </div>
-                          <div
-                            style={{
-                              position: "relative",
-                              fontWeight: "400",
-                              display: "flex",
-                              alignItems: "center",
-                              flexShrink: "0",
-                            }}
-                          >
-                            #85
-                          </div>
-                          <div
-                            style={{
-                              position: "relative",
-                              fontSize: "16px",
-                              color: "#aeaeae",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "116px",
-                              height: "20px",
-                              flexShrink: "0",
-                            }}
-                          >
-                            Ranked
-                          </div>
-                        </div>
-                      </div>
-                      <div className="ps-col-2">
-                        <div className="sub-col-2">
-                          <div className="sub-col-text-1">
-                            {Math.floor(val?.accuracy_score)}%
-                          </div>
-                          <div className="sub-col-text-2">Score</div>
-                        </div>
-                        <div className="sub-col-2">
-                          <div className="sub-col-text-1">
-                            {val?.total_predictions}
-                          </div>
-                          <div className="sub-col-text-2">Predictions</div>
-                        </div>
-                        <div className="sub-col-2">
-                          <div className="sub-col-text-1">
-                            {val?.pending_predictions}
-                          </div>
-                          <div className="sub-col-text-2">Pending</div>
-                        </div>
-                        <div className="sub-col-2">
-                          <div className="sub-col-text-1">
-                            {val?.episode_predictions}
-                          </div>
-                          <div className="sub-col-text-2">{`Episode Predictions `}</div>
-                        </div>
-                      </div>
-
-                      <div
-                        style={{
-                          borderRadius: "8px",
-                          backgroundColor: "#282828",
-                          height: "41px",
-                          overflow: "hidden",
-                          flexShrink: "0",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          padding: "17px 34px",
-                          boxSizing: "border-box",
-                          textAlign: "center",
-                          fontSize: "14px",
-                        }}
-                      >
-                        <Button
-                          style={{
-                            position: "relative",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            flexShrink: "0",
-                            color: "#4B6CC2",
-                            backgroundColor: "#282828",
-                          }}
-                          onClick={() =>
-                            navigate("/Profiles", {
-                              state: { id: val?.user_id },
-                            })
-                          }
-                        >
-                          Full Profile
-                        </Button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </>
-            ) : null}
-
-            {!loading && val?.predictionActive ? (
-              <div className="active-predictions-section">
-                <div className="ap-col-1">
-                  {predictionData.map((val, index) => {
-                    return (
-                      <>
-                        {" "}
-                        <div className="ap-col-1-row">
-                          <div
-                            style={{
-                              position: "relative",
-                              fontWeight: "500",
-                              display: "flex",
-                              alignItems: "center",
-                              flexShrink: "0",
-                            }}
-                          >
-                            {val?.prediction.slice(0, 50)}...
-                          </div>
-                          <div
-                            onClick={() => {
-                              // setSubSection((prev) => !prev);
-                              console.log(index);
-                              setSubSectionIndex(index);
-                            }}
-                          >
-                            {subSectionIndex === index ? (
-                              <img alt="" src="/vector-1433.svg" />
-                            ) : (
-                              <img alt="" src="/vector-278.svg" />
-                            )}
-                          </div>
-                        </div>
-                        {subSectionIndex === index ? (
-                          <div
-                            style={{
-                              paddingRight: "20px",
-                              marginTop: "10px",
-                              color: "#AEAEAE",
-                              fontFamily: "inter",
-                              fontSize: "14px",
-                            }}
-                          >
-                            {val?.prediction}
-                            <p style={{ color: "#4B6CC2" }}>
-                              Status :
-                              <span
-                                style={{
-                                  color:
-                                    val?.prediction_validation == "TRUE"
-                                      ? "green"
-                                      : val?.prediction_validation == "FALSE"
-                                      ? "#E72E2E"
-                                      : val?.prediction_validation ==
-                                        "PARTIALLY TRUE"
-                                      ? "#2DD22A"
-                                      : val?.prediction_validation == "PENDING"
-                                      ? "#374C98"
-                                      : "#D29D15",
-                                  fontFamily: "inter",
-                                  fontSize: "14px",
-                                }}
-                              >
-                                {" "}
-                                {val?.prediction_validation}
-                              </span>
-                            </p>
-                            <p style={{ color: "#4B6CC2" }}>
-                              Settled Date :{" "}
-                              <span
-                                style={{ fontSize: "14px", color: "#AEAEAE" }}
-                              >
-                                {val?.fixed_date}
-                              </span>
-                            </p>
-                          </div>
-                        ) : null}
-                      </>
-                    );
-                  })}
-                </div>
-
-                <div className="ap-col-2">
-                  <iframe
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    alt=""
-                    src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
-                  />
-                  {console.log(
-                    "Video ID:",
-                    predictionData[subSectionIndex]?.youtube_id
-                  )}
-                  {console.log(
-                    "Start time:",
-                    predictionData[subSectionIndex]?.youtube_start_time
-                  )}
-                </div>
-              </div>
-            ) : null}
-            {!loading && val?.summariesActive ? (
-              <div className="active-summaries-section">
-                <div className="as-col-1">
-                  {summariesData.map((val, index) => {
-                    return (
-                      <>
-                        <div className="as-col-1-row">
-                          <div className="as-col-1-row-inner">
-                            <span style={{ color: "#6495ED" }}>
-                              {"["}
-                              {val?.time}
-                              {"]"}&nbsp;
-                            </span>
-                            {val?.summary_title.slice(0, 50)}...
-                          </div>
-                          <div
-                            onClick={() => {
-                              // setSubSectionIndex((prev) => !prev);
-                              setSubSectionIndex(index);
-                            }}
-                          >
-                            {subSectionIndex === index ? (
-                              <img
-                                style={{
-                                  position: "relative",
-                                  width: "21.5px",
-                                  height: "21.5px",
-                                }}
-                                alt=""
-                                src="/vector-1433.svg"
-                              />
-                            ) : (
-                              <img
-                                style={{
-                                  position: "relative",
-                                  width: "21.5px",
-                                  height: "21.5px",
-                                }}
-                                alt=""
-                                src="/vector-278.svg"
-                              />
-                            )}
-                          </div>
-                        </div>
-                        {subSectionIndex === index ? (
-                          <div
-                            style={{
-                              paddingRight: "20px",
-                              marginTop: "10px",
-                              color: "#AEAEAE",
-                              fontFamily: "inter",
-                              fontSize: "16px",
-                            }}
-                          >
-                            {val?.summary_text}
-                          </div>
-                        ) : null}
-                      </>
-                    );
-                  })}
-                </div>
-
-                <div className="as-col-2">
-                  <iframe
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    alt=""
-                    src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
-                  />
-                  {console.log(
-                    "Video ID:",
-                    summariesData[subSectionIndex]?.youtube_id
-                  )}
-                  {console.log(
-                    "Start time:",
-                    summariesData[subSectionIndex]?.youtube_start_time
-                  )}
-                </div>
-              </div>
-            ) : null}
-            {!loading && val?.fullTranscriptActive ? (
-              <>
-                {fullTranscriptData.map((val, index) => {
-                  return (
-                    <div
-                      style={{
-                        backgroundColor:
-                          index % 2 === 0 ? "#282828" : "#202020",
-                      }}
-                      className="active-transcript-section"
-                    >
-                      <div
-                        style={{
-                          width: "60px",
-                          height: "40px",
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "flex-start",
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "259px",
-                            height: "40px",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              width: "259px",
-                              height: "20px",
-                              flexShrink: "0",
-                            }}
-                          >
-                            {val?.time_range}
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          position: "relative",
-                          width: "131px",
-                          height: "40px",
-                          color: "#aeaeae",
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: "90%",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontSize: "16px",
-                            color: "#fff",
-                          }}
-                        >
-                          {/* Profile Image with hover-over username */}
-                          {val?.image_url ? (
-                            <img
-                              src={val.image_url}
-                              alt={val.user_name}
-                              title={
-                                val.user_name.startsWith("Unknown")
-                                  ? ""
-                                  : val.user_name
-                              } // Tooltip on hover
-                              style={{
-                                width: "50px", // Smaller size
-                                height: "50px", // Ensure width and height are the same for a circle
-                                borderRadius: "50%", // Makes the image circular
-                                border: "2px solid #fff", // Thin white border, adjust color and width as needed
-                                objectFit: "cover", // Ensures the image covers the area without stretching
-                                marginBottom: "10px", // Space below the image
-                                cursor: "pointer", // Changes cursor to indicate hover effect
-                              }}
-                            />
-                          ) : null}
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          width: "90%",
-                          // height: "40px",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "left",
-                          justifyContent: "center",
-                          fontSize: "16px",
-                          color: "#fff",
-                        }}
-                      >
-                        <div
-                          style={{
-                            position: "relative",
-                            display: "flex",
-                            alignItems: "center",
-                            width: "90%",
-                            // height: "41px",
-                            flexShrink: "0",
-                            flexWrap: "wrap",
-                          }}
-                        >
-                          {val?.labelled_segments}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </>
-            ) : null}
             {!loading && val?.Active ? (
-              <div className="mob-active-col">
-                <Tabs
-                  items={[
-                    {
-                      title: "Summaries",
-                      content: (
-                        <div className="mob-summaries-active">
-                          <div className="mob-summaries">
-                            {summariesData.map((val, index) => {
+              <>
+                <div className="mob-active-col">
+                  <Tabs
+                    items={[
+                      {
+                        title: "Summaries",
+                        content: (
+                          <div className="mob-summaries-active">
+                            <div className="mob-summaries">
+                              {summariesData.map((val, index) => {
+                                return (
+                                  <>
+                                    <div className="as-col-1-row" key={index}>
+                                      <div className="">
+                                        {val?.summary_title.slice(0, 50)}...
+                                      </div>
+                                      <div
+                                        onClick={() => {
+                                          // setSubSectionIndex((prev) => !prev);
+                                          setSubSectionIndex(index);
+                                        }}
+                                      >
+                                        {subSectionIndex === index ? (
+                                          <img
+                                            style={{
+                                              position: "relative",
+                                              width: "21.5px",
+                                              height: "21.5px",
+                                            }}
+                                            alt=""
+                                            src="/vector-1433.svg"
+                                          />
+                                        ) : (
+                                          <img
+                                            style={{
+                                              position: "relative",
+                                              width: "21.5px",
+                                              height: "21.5px",
+                                            }}
+                                            alt=""
+                                            src="/vector-278.svg"
+                                          />
+                                        )}
+                                      </div>
+                                    </div>
+                                    {subSectionIndex === index ? (
+                                      <div
+                                        style={{
+                                          paddingRight: "20px",
+                                          marginTop: "10px",
+                                          color: "#AEAEAE",
+                                          fontFamily: "inter",
+                                          fontSize: "16px",
+                                        }}
+                                      >
+                                        {val?.summary_text}
+                                      </div>
+                                    ) : null}
+                                  </>
+                                );
+                              })}
+                            </div>
+                            <div className="mob-full-transcript">
+                              <div className="head">Full Transcript</div>
+                              {fullTranscriptData.map((val, index) => (
+                                <div className="body" key={index}>
+                                  <div className="">
+                                    Duration:{" "}
+                                    <span style={{ color: "#aeaeae" }}>
+                                      {val?.time_range}
+                                    </span>
+                                  </div>
+                                  <div className="">
+                                    {" "}
+                                    {val.user_name.startsWith("Unknown")
+                                      ? ""
+                                      : val.user_name}
+                                  </div>
+                                  <div className="">
+                                    {val?.labelled_segments}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ),
+                      },
+                      {
+                        title: "Predictions",
+                        content: (
+                          <div className="mob-predictions-active">
+                            {predictionData.map((val, index) => {
                               return (
-                                <>
-                                  <div className="as-col-1-row" key={index}>
-                                    <div className="">
-                                      {val?.summary_title.slice(0, 50)}...
+                                <div className="body">
+                                  <div className="ap-col-1-row">
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        fontWeight: "500",
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
+                                    >
+                                      {val?.prediction.slice(0, 40)}...
                                     </div>
                                     <div
                                       onClick={() => {
-                                        // setSubSectionIndex((prev) => !prev);
+                                        // setSubSection((prev) => !prev);
+                                        console.log(index);
                                         setSubSectionIndex(index);
                                       }}
                                     >
                                       {subSectionIndex === index ? (
-                                        <img
-                                          style={{
-                                            position: "relative",
-                                            width: "21.5px",
-                                            height: "21.5px",
-                                          }}
-                                          alt=""
-                                          src="/vector-1433.svg"
-                                        />
+                                        <img alt="" src="/vector-1433.svg" />
                                       ) : (
-                                        <img
-                                          style={{
-                                            position: "relative",
-                                            width: "21.5px",
-                                            height: "21.5px",
-                                          }}
-                                          alt=""
-                                          src="/vector-278.svg"
-                                        />
+                                        <img alt="" src="/vector-278.svg" />
                                       )}
                                     </div>
                                   </div>
@@ -885,220 +553,594 @@ function Summaries() {
                                         marginTop: "10px",
                                         color: "#AEAEAE",
                                         fontFamily: "inter",
-                                        fontSize: "16px",
+                                        fontSize: "14px",
                                       }}
                                     >
-                                      {val?.summary_text}
+                                      {val?.prediction}
+                                      <p style={{ color: "#4B6CC2" }}>
+                                        Status :
+                                        <span
+                                          style={{
+                                            color:
+                                              val?.prediction_validation ==
+                                              "TRUE"
+                                                ? "green"
+                                                : val?.prediction_validation ==
+                                                  "FALSE"
+                                                ? "#E72E2E"
+                                                : val?.prediction_validation ==
+                                                  "PARTIALLY TRUE"
+                                                ? "#2DD22A"
+                                                : val?.prediction_validation ==
+                                                  "PENDING"
+                                                ? "#374C98"
+                                                : "#D29D15",
+                                            fontFamily: "inter",
+                                            fontSize: "14px",
+                                          }}
+                                        >
+                                          {" "}
+                                          {val?.prediction_validation}
+                                        </span>
+                                      </p>
+                                      <p style={{ color: "#4B6CC2" }}>
+                                        Settled Date :{" "}
+                                        <span
+                                          style={{
+                                            fontSize: "14px",
+                                            color: "#AEAEAE",
+                                          }}
+                                        >
+                                          {val?.fixed_date}
+                                        </span>
+                                      </p>
                                     </div>
                                   ) : null}
-                                </>
+                                </div>
                               );
                             })}
                           </div>
-                          <div className="mob-full-transcript">
-                            <div className="head">Full Transcript</div>
-                            {fullTranscriptData.map((val, index) => (
-                              <div className="body" key={index}>
-                                <div className="">
-                                  Duration:{" "}
-                                  <span style={{ color: "#aeaeae" }}>
-                                    {val?.time_range}
-                                  </span>
+                        ),
+                      },
+                      {
+                        title: "People",
+                        content: (
+                          <div className="mob-people-active">
+                            {peopleData.map((val, index) => {
+                              return (
+                                <div className="mob-people-section">
+                                  <div className="ps-header">
+                                    <div className="col-1">
+                                      <div className="col-img">
+                                        <img
+                                          alt=""
+                                          src={val?.image_url}
+                                          style={{
+                                            width: "40px",
+                                            height: "40px",
+                                            objectFit: "cover",
+                                            borderRadius: "50%",
+                                          }}
+                                        />
+                                      </div>
+                                      <div className="col-content">
+                                        <h6>
+                                          {val?.first_name.startsWith("Unknown")
+                                            ? "Unknown"
+                                            : val?.first_name +
+                                              " " +
+                                              val?.last_name}
+                                        </h6>
+                                        <span style={{ color: "#aeaeae" }}>
+                                          #85
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div
+                                      className="col-2"
+                                      onClick={() =>
+                                        navigate("/Profiles", {
+                                          state: { id: val?.user_id },
+                                        })
+                                      }
+                                    >
+                                      Full Profile
+                                    </div>
+                                  </div>
+                                  <div className="ps-body">
+                                    <div className="col">
+                                      <LuCalendarDays
+                                        style={{ fontSize: "24px" }}
+                                      />
+                                      <div className="detail">
+                                        <h6>Score</h6>
+                                        <span>
+                                          {Math.floor(val?.accuracy_score)}%
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div className="col">
+                                      <LuCalendarDays
+                                        style={{ fontSize: "24px" }}
+                                      />
+                                      <div className="detail">
+                                        <h6>Predictions</h6>
+                                        <span>{val?.total_predictions}</span>
+                                      </div>
+                                    </div>
+                                    <div className="col">
+                                      <LuCalendarDays
+                                        style={{ fontSize: "24px" }}
+                                      />
+                                      <div className="detail">
+                                        <h6>Pending</h6>
+                                        <span>{val?.pending_predictions}</span>
+                                      </div>
+                                    </div>
+                                    <div className="col">
+                                      <LuCalendarDays
+                                        style={{ fontSize: "24px" }}
+                                      />
+                                      <div className="detail">
+                                        <h6>EP-Predictions</h6>
+                                        <span>{val?.episode_predictions}</span>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className="">
-                                  {" "}
-                                  {val.user_name.startsWith("Unknown")
-                                    ? ""
-                                    : val.user_name}
-                                </div>
-                                <div className="">{val?.labelled_segments}</div>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
-                        </div>
-                      ),
-                    },
-                    {
-                      title: "Predictions",
-                      content: (
-                        <div className="mob-predictions-active">
-                          {predictionData.map((val, index) => {
-                            return (
-                              <div className="body">
-                                <div className="ap-col-1-row">
-                                  <div
-                                    style={{
-                                      position: "relative",
-                                      fontWeight: "500",
-                                      display: "flex",
-                                      alignItems: "center",
-                                    }}
-                                  >
-                                    {val?.prediction.slice(0, 40)}...
-                                  </div>
-                                  <div
-                                    onClick={() => {
-                                      // setSubSection((prev) => !prev);
-                                      console.log(index);
-                                      setSubSectionIndex(index);
-                                    }}
-                                  >
+                        ),
+                      },
+                    ]}
+                  />
+                </div>
+                <div className="desktop-active-col">
+                  <Tabs
+                    items={[
+                      {
+                        title: "Summaries",
+                        content: (
+                          <div className="active-summaries-section">
+                            <div className="as-col-1">
+                              {summariesData.map((val, index) => {
+                                return (
+                                  <>
+                                    <div className="as-col-1-row">
+                                      <div className="as-col-1-row-inner">
+                                        <span style={{ color: "#6495ED" }}>
+                                          {"["}
+                                          {val?.time}
+                                          {"]"}&nbsp;
+                                        </span>
+                                        {val?.summary_title.slice(0, 50)}...
+                                      </div>
+                                      <div
+                                        onClick={() => {
+                                          // setSubSectionIndex((prev) => !prev);
+                                          setSubSectionIndex(index);
+                                        }}
+                                      >
+                                        {subSectionIndex === index ? (
+                                          <img
+                                            style={{
+                                              position: "relative",
+                                              width: "21.5px",
+                                              height: "21.5px",
+                                            }}
+                                            alt=""
+                                            src="/vector-1433.svg"
+                                          />
+                                        ) : (
+                                          <img
+                                            style={{
+                                              position: "relative",
+                                              width: "21.5px",
+                                              height: "21.5px",
+                                            }}
+                                            alt=""
+                                            src="/vector-278.svg"
+                                          />
+                                        )}
+                                      </div>
+                                    </div>
                                     {subSectionIndex === index ? (
-                                      <img alt="" src="/vector-1433.svg" />
-                                    ) : (
-                                      <img alt="" src="/vector-278.svg" />
-                                    )}
-                                  </div>
-                                </div>
-                                {subSectionIndex === index ? (
-                                  <div
-                                    style={{
-                                      paddingRight: "20px",
-                                      marginTop: "10px",
-                                      color: "#AEAEAE",
-                                      fontFamily: "inter",
-                                      fontSize: "14px",
-                                    }}
-                                  >
-                                    {val?.prediction}
-                                    <p style={{ color: "#4B6CC2" }}>
-                                      Status :
-                                      <span
+                                      <div
                                         style={{
-                                          color:
-                                            val?.prediction_validation == "TRUE"
-                                              ? "green"
-                                              : val?.prediction_validation ==
-                                                "FALSE"
-                                              ? "#E72E2E"
-                                              : val?.prediction_validation ==
-                                                "PARTIALLY TRUE"
-                                              ? "#2DD22A"
-                                              : val?.prediction_validation ==
-                                                "PENDING"
-                                              ? "#374C98"
-                                              : "#D29D15",
+                                          paddingRight: "20px",
+                                          marginTop: "10px",
+                                          color: "#AEAEAE",
+                                          fontFamily: "inter",
+                                          fontSize: "16px",
+                                        }}
+                                      >
+                                        {val?.summary_text}
+                                      </div>
+                                    ) : null}
+                                  </>
+                                );
+                              })}
+                            </div>
+
+                            <div className="as-col-2">
+                              <iframe
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  objectFit: "cover",
+                                }}
+                                alt=""
+                                src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
+                              />
+                              {console.log(
+                                "Video ID:",
+                                summariesData[subSectionIndex]?.youtube_id
+                              )}
+                              {console.log(
+                                "Start time:",
+                                summariesData[subSectionIndex]
+                                  ?.youtube_start_time
+                              )}
+                            </div>
+                          </div>
+                        ),
+                      },
+                      {
+                        title: "Predictions",
+                        content: (
+                          <div className="active-predictions-section w-full">
+                            <div className="ap-col-1">
+                              {predictionData.map((val, index) => {
+                                return (
+                                  <>
+                                    {" "}
+                                    <div className="ap-col-1-row">
+                                      <div
+                                        style={{
+                                          position: "relative",
+                                          fontWeight: "500",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          flexShrink: "0",
+                                        }}
+                                      >
+                                        {val?.prediction.slice(0, 50)}...
+                                      </div>
+                                      <div
+                                        onClick={() => {
+                                          // setSubSection((prev) => !prev);
+                                          console.log(index);
+                                          setSubSectionIndex(index);
+                                        }}
+                                      >
+                                        {subSectionIndex === index ? (
+                                          <img alt="" src="/vector-1433.svg" />
+                                        ) : (
+                                          <img alt="" src="/vector-278.svg" />
+                                        )}
+                                      </div>
+                                    </div>
+                                    {subSectionIndex === index ? (
+                                      <div
+                                        style={{
+                                          paddingRight: "20px",
+                                          marginTop: "10px",
+                                          color: "#AEAEAE",
                                           fontFamily: "inter",
                                           fontSize: "14px",
                                         }}
                                       >
-                                        {" "}
-                                        {val?.prediction_validation}
-                                      </span>
-                                    </p>
-                                    <p style={{ color: "#4B6CC2" }}>
-                                      Settled Date :{" "}
-                                      <span
+                                        {val?.prediction}
+                                        <p style={{ color: "#4B6CC2" }}>
+                                          Status :
+                                          <span
+                                            style={{
+                                              color:
+                                                val?.prediction_validation ==
+                                                "TRUE"
+                                                  ? "green"
+                                                  : val?.prediction_validation ==
+                                                    "FALSE"
+                                                  ? "#E72E2E"
+                                                  : val?.prediction_validation ==
+                                                    "PARTIALLY TRUE"
+                                                  ? "#2DD22A"
+                                                  : val?.prediction_validation ==
+                                                    "PENDING"
+                                                  ? "#374C98"
+                                                  : "#D29D15",
+                                              fontFamily: "inter",
+                                              fontSize: "14px",
+                                            }}
+                                          >
+                                            {" "}
+                                            {val?.prediction_validation}
+                                          </span>
+                                        </p>
+                                        <p style={{ color: "#4B6CC2" }}>
+                                          Settled Date :{" "}
+                                          <span
+                                            style={{
+                                              fontSize: "14px",
+                                              color: "#AEAEAE",
+                                            }}
+                                          >
+                                            {val?.fixed_date}
+                                          </span>
+                                        </p>
+                                      </div>
+                                    ) : null}
+                                  </>
+                                );
+                              })}
+                            </div>
+
+                            <div className="ap-col-2">
+                              <iframe
+                                allow="autoplay"
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  objectFit: "cover",
+                                }}
+                                alt=""
+                                src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}&autoplay=1`}
+                              />
+                            </div>
+                          </div>
+                        ),
+                      },
+                      {
+                        title: "People",
+                        content: (
+                          <>
+                            {peopleData.map((val, index) => {
+                              return (
+                                <div className="people-section">
+                                  <div className="ps-col-1">
+                                    <img alt="" src={val?.image_url} />
+                                    <div>
+                                      <div
                                         style={{
-                                          fontSize: "14px",
-                                          color: "#AEAEAE",
+                                          fontWeight: "800",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          flexShrink: "0",
+                                          fontSize: "19px",
                                         }}
                                       >
-                                        {val?.fixed_date}
-                                      </span>
-                                    </p>
-                                  </div>
-                                ) : null}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ),
-                    },
-                    {
-                      title: "People",
-                      content: (
-                        <div className="mob-people-active">
-                          {peopleData.map((val, index) => {
-                            return (
-                              <div className="mob-people-section">
-                                <div className="ps-header">
-                                  <div className="col-1">
-                                    <div className="col-img">
-                                      <img
-                                        alt=""
-                                        src={val?.image_url}
-                                        style={{
-                                          width: "40px",
-                                          height: "40px",
-                                          objectFit: "cover",
-                                          borderRadius: "50%",
-                                        }}
-                                      />
-                                    </div>
-                                    <div className="col-content">
-                                      <h6>
                                         {val?.first_name.startsWith("Unknown")
                                           ? "Unknown"
                                           : val?.first_name +
                                             " " +
                                             val?.last_name}
-                                      </h6>
-                                      <span style={{ color: "#aeaeae" }}>
+                                      </div>
+                                      <div
+                                        style={{
+                                          position: "relative",
+                                          fontWeight: "400",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          flexShrink: "0",
+                                        }}
+                                      >
                                         #85
-                                      </span>
+                                      </div>
+                                      <div
+                                        style={{
+                                          position: "relative",
+                                          fontSize: "16px",
+                                          color: "#aeaeae",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          width: "116px",
+                                          height: "20px",
+                                          flexShrink: "0",
+                                        }}
+                                      >
+                                        Ranked
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="ps-col-2">
+                                    <div className="sub-col-2">
+                                      <div className="sub-col-text-1">
+                                        {Math.floor(val?.accuracy_score)}%
+                                      </div>
+                                      <div className="sub-col-text-2">
+                                        Score
+                                      </div>
+                                    </div>
+                                    <div className="sub-col-2">
+                                      <div className="sub-col-text-1">
+                                        {val?.total_predictions}
+                                      </div>
+                                      <div className="sub-col-text-2">
+                                        Predictions
+                                      </div>
+                                    </div>
+                                    <div className="sub-col-2">
+                                      <div className="sub-col-text-1">
+                                        {val?.pending_predictions}
+                                      </div>
+                                      <div className="sub-col-text-2">
+                                        Pending
+                                      </div>
+                                    </div>
+                                    <div className="sub-col-2">
+                                      <div className="sub-col-text-1">
+                                        {val?.episode_predictions}
+                                      </div>
+                                      <div className="sub-col-text-2">{`Episode Predictions `}</div>
+                                    </div>
+                                  </div>
+
+                                  <div
+                                    style={{
+                                      borderRadius: "8px",
+                                      backgroundColor: "#282828",
+                                      height: "41px",
+                                      overflow: "hidden",
+                                      flexShrink: "0",
+                                      display: "flex",
+                                      flexDirection: "row",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      padding: "17px 34px",
+                                      boxSizing: "border-box",
+                                      textAlign: "center",
+                                      fontSize: "14px",
+                                    }}
+                                  >
+                                    <Button
+                                      style={{
+                                        position: "relative",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        flexShrink: "0",
+                                        color: "#4B6CC2",
+                                        backgroundColor: "#282828",
+                                      }}
+                                      onClick={() =>
+                                        navigate("/Profiles", {
+                                          state: { id: val?.user_id },
+                                        })
+                                      }
+                                    >
+                                      Full Profile
+                                    </Button>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </>
+                        ),
+                      },
+                      {
+                        title: "Full Transcript",
+                        content: (
+                          <div className="mob-people-active">
+                            <div className="head">Full Transcript</div>
+                            {fullTranscriptData.map((val, index) => {
+                              return (
+                                <div
+                                  style={{
+                                    backgroundColor:
+                                      index % 2 === 0 ? "#282828" : "#202020",
+                                  }}
+                                  className="active-transcript-section"
+                                >
+                                  <div
+                                    style={{
+                                      width: "60px",
+                                      height: "40px",
+                                      display: "flex",
+                                      flexDirection: "row",
+                                      alignItems: "center",
+                                      justifyContent: "flex-start",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        width: "259px",
+                                        height: "40px",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "flex-start",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <div
+                                        style={{
+                                          position: "relative",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          width: "259px",
+                                          height: "20px",
+                                          flexShrink: "0",
+                                        }}
+                                      >
+                                        {val?.time_range}
+                                      </div>
                                     </div>
                                   </div>
                                   <div
-                                    className="col-2"
-                                    onClick={() =>
-                                      navigate("/Profiles", {
-                                        state: { id: val?.user_id },
-                                      })
-                                    }
+                                    style={{
+                                      position: "relative",
+                                      width: "131px",
+                                      height: "40px",
+                                      color: "#aeaeae",
+                                    }}
                                   >
-                                    Full Profile
+                                    <div
+                                      style={{
+                                        width: "90%",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        fontSize: "16px",
+                                        color: "#fff",
+                                      }}
+                                    >
+                                      {val?.image_url ? (
+                                        <img
+                                          src={val.image_url}
+                                          alt={val.user_name}
+                                          title={
+                                            val.user_name.startsWith("Unknown")
+                                              ? ""
+                                              : val.user_name
+                                          } // Tooltip on hover
+                                          style={{
+                                            width: "50px", // Smaller size
+                                            height: "50px", // Ensure width and height are the same for a circle
+                                            borderRadius: "50%", // Makes the image circular
+                                            border: "2px solid #fff", // Thin white border, adjust color and width as needed
+                                            objectFit: "cover", // Ensures the image covers the area without stretching
+                                            marginBottom: "10px", // Space below the image
+                                            cursor: "pointer", // Changes cursor to indicate hover effect
+                                          }}
+                                        />
+                                      ) : null}
+                                    </div>
+                                  </div>
+                                  <div
+                                    style={{
+                                      width: "90%",
+                                      display: "flex",
+                                      flexDirection: "column",
+                                      alignItems: "left",
+                                      justifyContent: "center",
+                                      fontSize: "16px",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    <div
+                                      style={{
+                                        position: "relative",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        width: "90%",
+                                        flexShrink: "0",
+                                        flexWrap: "wrap",
+                                      }}
+                                    >
+                                      {val?.labelled_segments}
+                                    </div>
                                   </div>
                                 </div>
-                                <div className="ps-body">
-                                  <div className="col">
-                                    <LuCalendarDays
-                                      style={{ fontSize: "24px" }}
-                                    />
-                                    <div className="detail">
-                                      <h6>Score</h6>
-                                      <span>
-                                        {Math.floor(val?.accuracy_score)}%
-                                      </span>
-                                    </div>
-                                  </div>
-                                  <div className="col">
-                                    <LuCalendarDays
-                                      style={{ fontSize: "24px" }}
-                                    />
-                                    <div className="detail">
-                                      <h6>Predictions</h6>
-                                      <span>{val?.total_predictions}</span>
-                                    </div>
-                                  </div>
-                                  <div className="col">
-                                    <LuCalendarDays
-                                      style={{ fontSize: "24px" }}
-                                    />
-                                    <div className="detail">
-                                      <h6>Pending</h6>
-                                      <span>{val?.pending_predictions}</span>
-                                    </div>
-                                  </div>
-                                  <div className="col">
-                                    <LuCalendarDays
-                                      style={{ fontSize: "24px" }}
-                                    />
-                                    <div className="detail">
-                                      <h6>EP-Predictions</h6>
-                                      <span>{val?.episode_predictions}</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ),
-                    },
-                  ]}
-                />
-              </div>
+                              );
+                            })}
+                          </div>
+                        ),
+                      },
+                    ]}
+                  />
+                </div>
+              </>
             ) : null}
 
             {activeIndex === index && loading ? (

@@ -188,7 +188,15 @@ const Predictions = () => {
                     fontWeight: "500",
                   }}
                 >
-                  {val?.prediction_validation}
+                  {val?.prediction_validation === "PARTIALLY TRUE"
+                    ? "PART TRUE"
+                    : ""}{" "}
+                  {val?.prediction_validation === "UNDETERMINED"
+                    ? "UNDETERMINED"
+                    : ""}{" "}
+                  {val?.prediction_validation === "PENDING" ? "PENDING" : ""}{" "}
+                  {val?.prediction_validation === "TRUE" ? "TRUE" : ""}{" "}
+                  {val?.prediction_validation === "FALSE" ? "FALSE" : ""}
                 </p>
               </div>
               <div className="column-2">
