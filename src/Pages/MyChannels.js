@@ -35,7 +35,7 @@ function MyChannels() {
     setActiveIndex(index);
   };
   useEffect(() => {
-    channelsData()
+    channelsData(accountId)
       .then((res) => {
         setChannelData([...res.data]);
       })
