@@ -337,6 +337,9 @@
 .mob-active-col {
   display: none;
 }
+.desktop-active-col {
+  display: flex;
+}
 .active-transcript-section {
   width: 100%;
   flex-shrink: 0;
@@ -404,6 +407,9 @@
     display: flex;
     width: 100%;
     padding-top: 12px;
+  }
+  .desktop-active-col {
+    display: none;
   }
   .mob-summaries-active {
     display: flex;
