@@ -17,6 +17,7 @@ import {
   sortByScore,
   addRemoveFavourite,
   searchTerm,
+  sortByBankroll,
 } from "../services/Leaderboards.service";
 import Header from "../components/leaderboard/Header";
 
@@ -67,6 +68,15 @@ const LeaderBoards = () => {
   const sortLeaderboardByScore = async (order) => {
     try {
       const res = await sortByScore(order);
+      setLoader(true);
+      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const sortLeaderboardByBankroll = async (order) => {
+    try {
+      const res = await sortByBankroll(order);
       setLoader(true);
       setData([...res.data].map((obj) => ({ ...obj, Active: false })));
     } catch (error) {
@@ -126,6 +136,7 @@ const LeaderBoards = () => {
           <SubHeader
             sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
             sortLeaderboardByScore={sortLeaderboardByScore}
+            sortLeaderboardByBankroll={sortLeaderboardByBankroll}
           />
           {data?.map((val, index) => {
             return (
@@ -206,9 +217,7 @@ const LeaderBoards = () => {
                       color: val.bankroll < 0 ? "#e87d7d" : "#fff",
                     }}
                   >
-                    {`${val.bankroll.toString().substring(0, 1)}$${val.bankroll
-                      .toString()
-                      .substring(1)}`}
+                    ${val.bankroll}
                   </div>
                   <div className="block1">
                     {val.is_favourite ? (

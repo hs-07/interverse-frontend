@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import "../../styles/leaderboard/subheader.css";
 
-const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
+const Subheader = ({
+  sortLeaderboardByAccuracy,
+  sortLeaderboardByScore,
+  sortLeaderboardByBankroll,
+}) => {
   const [accuracyOrder, setAccuracyOrder] = useState("desc");
   const [scoreOrder, setScoreOrder] = useState("score_desc");
+  const [bankrollOrder, setBankrollOrder] = useState("bankroll_desc");
 
   const handleAccuracySort = () => {
     const newOrder = accuracyOrder === "desc" ? "accuracy_asc" : "desc";
@@ -15,6 +20,12 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
     const newOrder = scoreOrder === "score_desc" ? "score_asc" : "score_desc";
     setScoreOrder(newOrder);
     sortLeaderboardByScore(newOrder);
+  };
+  const handleBankrollSort = () => {
+    const newOrder =
+      bankrollOrder === "bankroll_desc" ? "bankroll_asc" : "bankroll_desc";
+    setBankrollOrder(newOrder);
+    sortLeaderboardByBankroll(newOrder);
   };
 
   const subheaderBlocks = [
@@ -47,7 +58,15 @@ const Subheader = ({ sortLeaderboardByAccuracy, sortLeaderboardByScore }) => {
       ),
     },
     {
-      block: <div className="bankroll">Bankroll</div>,
+      block: (
+        <div className="bankroll flex items-center gap-2">
+          Bankroll{" "}
+          <TbArrowsUpDown
+            onClick={() => handleBankrollSort()}
+            style={{ cursor: "pointer" }}
+          />
+        </div>
+      ),
     },
     {
       block: <div className="fav">Favorite</div>,

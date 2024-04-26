@@ -328,54 +328,6 @@ function Summaries() {
                   {val.publication_date.toString().slice(0, 10)}
                 </div>
               </div>
-              {/* <div
-                className="summaries-col-4"
-                onClick={() => onClickSummaries(index)}
-              >
-                <div className="sub-col-text-1">Summaries</div>
-                {val?.summariesActive ? (
-                  <img alt="" src="/vector-1433.svg" />
-                ) : (
-                  <img alt="" src="/vector-278.svg" />
-                )}
-              </div>
-              <div
-                className="summaries-col-5"
-                onClick={() => onClickPrediction(index)}
-              >
-                <div className="sub-col-text-1">Predictions</div>
-                {val?.predictionActive ? (
-                  <img alt="" src="/vector-1433.svg" />
-                ) : (
-                  <img alt="" src="/vector-278.svg" />
-                )}
-              </div>
-              <div
-                className="summaries-col-6"
-                onClick={() => {
-                  onClickPeople(index);
-                }}
-              >
-                <div className="sub-col-text-1">People</div>
-                {val?.peopleActive ? (
-                  <img alt="" src="/vector-1433.svg" />
-                ) : (
-                  <img alt="" src="/vector-278.svg" />
-                )}
-              </div>
-              <div
-                className="summaries-col-7"
-                onClick={() => {
-                  onClickFullTranscript(index);
-                }}
-              >
-                <div className="sub-col-text-1">Full Transcript</div>
-                {val?.fullTranscriptActive ? (
-                  <img alt="" src="/vector-1433.svg" />
-                ) : (
-                  <img alt="" src="/vector-278.svg" />
-                )}
-              </div> */}
               <div
                 className="summaries-col-4"
                 onClick={() => {
@@ -696,8 +648,9 @@ function Summaries() {
                     ]}
                   />
                 </div>
-                <div className="desktop-active-col">
+                <div className="desktop-active-col w-full">
                   <Tabs
+                    className={"px-6 pb-6 pt-2"}
                     items={[
                       {
                         title: "Summaries",
@@ -745,19 +698,6 @@ function Summaries() {
                                         )}
                                       </div>
                                     </div>
-                                    {subSectionIndex === index ? (
-                                      <div
-                                        style={{
-                                          paddingRight: "20px",
-                                          marginTop: "10px",
-                                          color: "#AEAEAE",
-                                          fontFamily: "inter",
-                                          fontSize: "16px",
-                                        }}
-                                      >
-                                        {val?.summary_text}
-                                      </div>
-                                    ) : null}
                                   </>
                                 );
                               })}
@@ -773,15 +713,6 @@ function Summaries() {
                                 alt=""
                                 src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
                               />
-                              {console.log(
-                                "Video ID:",
-                                summariesData[subSectionIndex]?.youtube_id
-                              )}
-                              {console.log(
-                                "Start time:",
-                                summariesData[subSectionIndex]
-                                  ?.youtube_start_time
-                              )}
                             </div>
                           </div>
                         ),
@@ -919,17 +850,6 @@ function Summaries() {
                                       <div
                                         style={{
                                           position: "relative",
-                                          fontWeight: "400",
-                                          display: "flex",
-                                          alignItems: "center",
-                                          flexShrink: "0",
-                                        }}
-                                      >
-                                        #85
-                                      </div>
-                                      <div
-                                        style={{
-                                          position: "relative",
                                           fontSize: "16px",
                                           color: "#aeaeae",
                                           display: "flex",
@@ -939,7 +859,7 @@ function Summaries() {
                                           flexShrink: "0",
                                         }}
                                       >
-                                        Ranked
+                                        Predictor
                                       </div>
                                     </div>
                                   </div>
@@ -1004,7 +924,7 @@ function Summaries() {
                                         backgroundColor: "#282828",
                                       }}
                                       onClick={() =>
-                                        navigate("/Profiles", {
+                                        navigate("/Leaderboards", {
                                           state: { id: val?.user_id },
                                         })
                                       }
@@ -1022,7 +942,6 @@ function Summaries() {
                         title: "Full Transcript",
                         content: (
                           <div className="mob-people-active">
-                            <div className="head">Full Transcript</div>
                             {fullTranscriptData.map((val, index) => {
                               return (
                                 <div

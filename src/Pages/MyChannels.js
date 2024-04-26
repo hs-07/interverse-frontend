@@ -37,6 +37,7 @@ function MyChannels() {
   useEffect(() => {
     channelsData(accountId)
       .then((res) => {
+        console.log(res.data);
         setChannelData([...res.data]);
       })
       .catch((err) => {
@@ -82,7 +83,7 @@ function MyChannels() {
               <div className="block">{val?.Predictions}</div>
               <div className="block">{val?.PredictionAccuracyPercent}%</div>
               <div className="block">
-                {val.is_favourite ? (
+                {val.is_favourite_channel ? (
                   <HiHeart
                     onClick={() => toggleFavourite(index, val?.channel_id)}
                     style={{ cursor: "pointer" }}

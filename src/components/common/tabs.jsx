@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../../styles/tabs.css";
 
-const Tabs = ({ items }) => {
+const Tabs = ({ items, className }) => {
   const firstBtnRef = useRef(null);
 
   const [selectedTab, setSelectedTab] = useState(0);
@@ -13,8 +13,8 @@ const Tabs = ({ items }) => {
   }, []);
 
   return (
-    <div className="tabs-container">
-      <div className="tabs-switches">
+    <div className={`tabs-container `}>
+      <div className={`tabs-switches ${className}`}>
         {items.map((item, index) => (
           <button
             key={index}
