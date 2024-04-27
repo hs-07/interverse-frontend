@@ -16,7 +16,7 @@ export default function LandingPage() {
       <div className="overflow-hidden bg-[#0B0B0F] w-full -mt-[10rem] md:mt-0">
         <MacbookScroll
           title={
-            <h1 className="md:text-[64px] text-[140px] leading-[6rem]">
+            <h1 className="md:text-[64px] text-[120px] leading-[6rem]">
               Finance is finally effortless.
             </h1>
           }

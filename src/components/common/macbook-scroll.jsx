@@ -1,28 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "../../utils/cn";
-import {
-  IconBrightnessDown,
-  IconBrightnessUp,
-  IconCaretRightFilled,
-  IconCaretUpFilled,
-  IconChevronUp,
-  IconMicrophone,
-  IconMoon,
-  IconPlayerSkipForward,
-  IconPlayerTrackNext,
-  IconPlayerTrackPrev,
-  IconTable,
-  IconVolume,
-  IconVolume2,
-  IconVolume3,
-} from "@tabler/icons-react";
+import { FaPlay } from "react-icons/fa";
 import logoIcon from "../../assests/logo-icon.svg";
-import { IconSearch } from "@tabler/icons-react";
-import { IconWorld } from "@tabler/icons-react";
-import { IconCommand } from "@tabler/icons-react";
-import { IconCaretLeftFilled } from "@tabler/icons-react";
-import { IconCaretDownFilled } from "@tabler/icons-react";
+import { Button } from "./moving-border-button";
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const ref = useRef(null);
@@ -61,13 +42,16 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   return (
     <div
       ref={ref}
-      className="min-h-[100vh] flex flex-col items-center py-0 md:pt-48 md:pb-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.35] sm:scale-50"
+      className="min-h-[100vh] flex flex-col items-center py-0 md:pt-48 md:pb-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.4] md:scale:50"
     >
-      <div className="w-full pb-4 flex justify-center ">
-        <span className="w-fit gap-6  flex px-6 py-3 text-white border border-[#3D3D3D] rounded-3xl">
+      <div className="w-full pb-4 flex justify-center">
+        <Button
+          borderRadius="1.75rem"
+          className="bg-[#0B0B0F] text-white border-neutral-200 dark:border-slate-800 font-semibold"
+        >
           Watch the guided tour
-          <img src="/play.png" alt="" className="" />
-        </span>
+          <FaPlay />
+        </Button>
       </div>
       <motion.h2
         style={{
