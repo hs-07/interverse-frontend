@@ -13,7 +13,7 @@ import Section9 from "../components/landing/section-9";
 export default function LandingPage() {
   return (
     <>
-      <div className="overflow-hidden bg-[#0B0B0F] w-full">
+      <div className="overflow-hidden bg-[#0B0B0F] w-full -mt-[10rem] md:mt-0">
         <MacbookScroll
           title={
             <h1 className="md:text-[64px] text-[140px] leading-[6rem]">
