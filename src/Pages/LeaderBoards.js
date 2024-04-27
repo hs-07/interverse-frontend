@@ -41,7 +41,7 @@ const LeaderBoards = () => {
   };
 
   useEffect(() => {
-    leaderBoardData()
+    leaderBoardData(accountId)
       .then((res) => {
         setLoader(true);
         setData(

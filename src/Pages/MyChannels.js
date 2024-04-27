@@ -22,7 +22,7 @@ function MyChannels() {
       channelId: id,
     };
     const newData = [...channelData];
-    newData[index].is_favourite = !newData[index].is_favourite;
+    newData[index].is_favourite_channel = !newData[index].is_favourite_channel;
     addRemoveFavourite(params);
     setChannelData(newData);
   };

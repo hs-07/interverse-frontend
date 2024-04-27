@@ -1,8 +1,8 @@
 import Axios from "../utils/axios";
 
 //
-export const leaderBoardData = async () => {
-  return await Axios.get("prediction-leaderboard");
+export const leaderBoardData = async (id) => {
+  return await Axios.get(`prediction-leaderboard?accountId=${id}`);
 };
 export const sortByAccuracy = async (order) => {
   return await Axios.get(`prediction-leaderboard?sortByAccuracy=${order}`);
