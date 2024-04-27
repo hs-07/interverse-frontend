@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Popper from "../../common/popover";
+import { IoReloadOutline } from "react-icons/io5";
 import "./style.css";
 
 const StatusPopper = ({ fetchSortedCategory }) => {
@@ -48,6 +49,17 @@ const StatusPopper = ({ fetchSortedCategory }) => {
                 Pending
               </button>
             </div>
+            <button
+              className={`w-full flex justify-center items-center gap-2 text-white cursor-pointer active:border-2 border-white rounded-lg p-2 ${
+                activeButton === " " ? "active" : ""
+              }`}
+              onClick={() => {
+                setActiveButton("");
+                fetchSortedCategory("");
+              }}
+            >
+              Reset <IoReloadOutline />
+            </button>
             <div className="apply">
               <button className="apply-btn" onClick={() => handleApply()}>
                 Apply

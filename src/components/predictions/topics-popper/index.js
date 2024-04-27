@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoReloadOutline } from "react-icons/io5";
 import Popper from "../../common/popover";
 import "./style.css";
 
@@ -66,6 +67,17 @@ const TopicPopper = ({ fetchSortedPrediction }) => {
                 Others
               </button>
             </div>
+            <button
+              className={`w-full flex justify-center items-center gap-2 text-white cursor-pointer active:border-2 border-white rounded-lg p-2 ${
+                activeButton === " " ? "active" : ""
+              }`}
+              onClick={() => {
+                setActiveButton("");
+                fetchSortedPrediction("");
+              }}
+            >
+              Reset <IoReloadOutline />
+            </button>
             <div className="apply" onClick={() => handleApply()}>
               <button className="apply-btn">Apply</button>
             </div>
