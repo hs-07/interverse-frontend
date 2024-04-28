@@ -33,7 +33,7 @@ function Summaries() {
   const [fullTranscriptData, setFullTranscriptData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [activeIndex, setActiveIndex] = useState("");
-  const [subSectionIndex, setSubSectionIndex] = useState(false);
+  const [subSectionIndex, setSubSectionIndex] = useState(0);
 
   useEffect(() => {
     allSummarySources()
@@ -658,42 +658,25 @@ function Summaries() {
                               {summariesData.map((val, index) => {
                                 return (
                                   <>
-                                    <div className="as-col-1-row">
-                                      <div className="as-col-1-row-inner">
-                                        <span style={{ color: "#6495ED" }}>
+                                    <div
+                                      className="as-col-1-row"
+                                      onClick={() => {
+                                        setSubSectionIndex(index);
+                                      }}
+                                    >
+                                      <div
+                                        className={`as-col-1-row-inner py-3 px-2 rounded-lg text-sm cursor-pointer ${
+                                          subSectionIndex === index
+                                            ? "bg-[#4b6cc2]"
+                                            : "bg-[#262626]"
+                                        }`}
+                                      >
+                                        <span style={{ color: "white" }}>
                                           {"["}
                                           {val?.time}
                                           {"]"}&nbsp;
                                         </span>
                                         {val?.summary_title.slice(0, 50)}...
-                                      </div>
-                                      <div
-                                        onClick={() => {
-                                          // setSubSectionIndex((prev) => !prev);
-                                          setSubSectionIndex(index);
-                                        }}
-                                      >
-                                        {subSectionIndex === index ? (
-                                          <img
-                                            style={{
-                                              position: "relative",
-                                              width: "21.5px",
-                                              height: "21.5px",
-                                            }}
-                                            alt=""
-                                            src="/vector-1433.svg"
-                                          />
-                                        ) : (
-                                          <img
-                                            style={{
-                                              position: "relative",
-                                              width: "21.5px",
-                                              height: "21.5px",
-                                            }}
-                                            alt=""
-                                            src="/vector-278.svg"
-                                          />
-                                        )}
                                       </div>
                                     </div>
                                   </>
@@ -701,16 +684,22 @@ function Summaries() {
                               })}
                             </div>
 
-                            <div className="as-col-2">
+                            <div className="h-full w-1/2 flex flex-col gap-6">
                               <iframe
                                 style={{
                                   width: "100%",
                                   height: "100%",
                                   objectFit: "cover",
+                                  borderRadius: "8px",
+                                  height: "100%",
                                 }}
                                 alt=""
                                 src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
                               />
+
+                              <div className="text-sm bg-[#000000] p-4 rounded-lg h-full">
+                                {summariesData[subSectionIndex]?.summary_text}
+                              </div>
                             </div>
                           </div>
                         ),
@@ -719,12 +708,21 @@ function Summaries() {
                         title: "Predictions",
                         content: (
                           <div className="active-predictions-section w-full">
-                            <div className="ap-col-1">
+                            <div className="ap-col-1 pr-4">
                               {predictionData.map((val, index) => {
                                 return (
                                   <>
-                                    {" "}
-                                    <div className="ap-col-1-row">
+                                    <div
+                                      className={`as-col-1-row-inner py-3 px-2 rounded-lg text-sm cursor-pointer ${
+                                        subSectionIndex === index
+                                          ? "bg-[#4b6cc2]"
+                                          : "bg-[#262626]"
+                                      }`}
+                                      onClick={() => {
+                                        console.log(index);
+                                        setSubSectionIndex(index);
+                                      }}
+                                    >
                                       <div
                                         style={{
                                           position: "relative",
@@ -736,70 +734,7 @@ function Summaries() {
                                       >
                                         {val?.prediction.slice(0, 50)}...
                                       </div>
-                                      <div
-                                        onClick={() => {
-                                          // setSubSection((prev) => !prev);
-                                          console.log(index);
-                                          setSubSectionIndex(index);
-                                        }}
-                                      >
-                                        {subSectionIndex === index ? (
-                                          <img alt="" src="/vector-1433.svg" />
-                                        ) : (
-                                          <img alt="" src="/vector-278.svg" />
-                                        )}
-                                      </div>
                                     </div>
-                                    {subSectionIndex === index ? (
-                                      <div
-                                        style={{
-                                          paddingRight: "20px",
-                                          marginTop: "10px",
-                                          color: "#AEAEAE",
-                                          fontFamily: "inter",
-                                          fontSize: "14px",
-                                        }}
-                                      >
-                                        {val?.prediction}
-                                        <p style={{ color: "#4B6CC2" }}>
-                                          Status :
-                                          <span
-                                            style={{
-                                              color:
-                                                val?.prediction_validation ==
-                                                "TRUE"
-                                                  ? "green"
-                                                  : val?.prediction_validation ==
-                                                    "FALSE"
-                                                  ? "#E72E2E"
-                                                  : val?.prediction_validation ==
-                                                    "PARTIALLY TRUE"
-                                                  ? "#2DD22A"
-                                                  : val?.prediction_validation ==
-                                                    "PENDING"
-                                                  ? "#374C98"
-                                                  : "#D29D15",
-                                              fontFamily: "inter",
-                                              fontSize: "14px",
-                                            }}
-                                          >
-                                            {" "}
-                                            {val?.prediction_validation}
-                                          </span>
-                                        </p>
-                                        <p style={{ color: "#4B6CC2" }}>
-                                          Settled Date :{" "}
-                                          <span
-                                            style={{
-                                              fontSize: "14px",
-                                              color: "#AEAEAE",
-                                            }}
-                                          >
-                                            {val?.fixed_date}
-                                          </span>
-                                        </p>
-                                      </div>
-                                    ) : null}
                                   </>
                                 );
                               })}
@@ -810,12 +745,65 @@ function Summaries() {
                                 allow="autoplay"
                                 style={{
                                   width: "100%",
-                                  height: "100%",
+                                  height: "50%",
                                   objectFit: "cover",
+                                  borderRadius: "14px",
                                 }}
                                 alt=""
                                 src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}&autoplay=1`}
                               />
+                              <div className="h-1/2 bg-[#000000] p-4 rounded-lg w-full flex flex-col gap-4 overflow-y-auto">
+                                <div className="flex gap-4">
+                                  <p style={{ color: "#4B6CC2" }}>
+                                    Status :
+                                    <span
+                                      style={{
+                                        color:
+                                          predictionData[subSectionIndex]
+                                            ?.prediction_validation === "TRUE"
+                                            ? "green"
+                                            : predictionData[subSectionIndex]
+                                                ?.prediction_validation ===
+                                              "FALSE"
+                                            ? "#E72E2E"
+                                            : predictionData[subSectionIndex]
+                                                ?.prediction_validation ===
+                                              "PARTIALLY TRUE"
+                                            ? "#2DD22A"
+                                            : predictionData[subSectionIndex]
+                                                ?.prediction_validation ===
+                                              "PENDING"
+                                            ? "#374C98"
+                                            : "#D29D15",
+                                        fontFamily: "inter",
+                                        fontSize: "14px",
+                                      }}
+                                    >
+                                      {" "}
+                                      {
+                                        predictionData[subSectionIndex]
+                                          ?.prediction_validation
+                                      }
+                                    </span>
+                                  </p>{" "}
+                                  |
+                                  <p style={{ color: "#4B6CC2" }}>
+                                    Settlement :{" "}
+                                    <span
+                                      style={{
+                                        fontSize: "14px",
+                                        color: "#AEAEAE",
+                                      }}
+                                    >
+                                      {
+                                        predictionData[subSectionIndex]
+                                          ?.fixed_date
+                                      }
+                                    </span>
+                                  </p>
+                                </div>
+                                {predictionData[subSectionIndex]?.prediction}
+                              </div>
                             </div>
                           </div>
                         ),

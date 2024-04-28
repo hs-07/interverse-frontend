@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { LuCalendarDays } from "react-icons/lu";
@@ -16,10 +16,10 @@ import {
 } from "../services/Predictions.service";
 import infoIcon from "../assests/hover_info6.png";
 import SubHeader from "../components/predictions/subheader";
+import PredictionVideo from "../components/predictions/video";
 
 const Predictions = () => {
   const location = useLocation();
-  const a = location?.state?.id;
 
   const [data, setData] = useState([]);
   const [userid, setUserId] = useState(location?.state?.id);
@@ -161,7 +161,9 @@ const Predictions = () => {
           <>
             <div
               className="prediction-row"
-              onClick={() => onClickDescription(index)}
+              onClick={() => {
+                onClickDescription(index);
+              }}
             >
               <div
                 className="column-1"
@@ -553,15 +555,7 @@ const Predictions = () => {
                     </div>
                     {/* Youtube Video Starts */}
                     <div className="row-section-2">
-                      <iframe
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                        alt=""
-                        src={`https://www.youtube.com/embed/${val?.youtube_id}?start=${val?.youtube_start_time}`}
-                      />
+                      <PredictionVideo val={val} />
                     </div>
                     {/* YouTube Video Ends */}
                   </div>
