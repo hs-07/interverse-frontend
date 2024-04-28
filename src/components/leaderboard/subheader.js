@@ -6,6 +6,7 @@ const Subheader = ({
   sortLeaderboardByAccuracy,
   sortLeaderboardByScore,
   sortLeaderboardByBankroll,
+  className,
 }) => {
   const [accuracyOrder, setAccuracyOrder] = useState("desc");
   const [scoreOrder, setScoreOrder] = useState("score_desc");
@@ -73,7 +74,7 @@ const Subheader = ({
     },
   ];
   return (
-    <div className="leaderboard-subheader">
+    <div className={`${className} leaderboard-subheader`}>
       {subheaderBlocks.map((item, index) => (
         <div key={index} className="subheader-block">
           {item.block}

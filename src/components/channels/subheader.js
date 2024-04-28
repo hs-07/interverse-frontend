@@ -3,7 +3,7 @@ import { TbArrowsUpDown } from "react-icons/tb";
 import "../../styles/channels/subheader.css";
 import AddChannelModal from "../addChannelModal";
 
-const Subheader = () => {
+const Subheader = ({ className }) => {
   const [openAddChannel, setOpenAddChannel] = useState(false);
 
   const subheaderBlocks = [
@@ -40,7 +40,7 @@ const Subheader = () => {
   ];
   return (
     <>
-      <div className="channels-subheader">
+      <div className={`${className} channels-subheader`}>
         {subheaderBlocks.map((item, index) => (
           <div key={index} className="subheader-block">
             {item.block}
