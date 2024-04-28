@@ -34,6 +34,7 @@ const feedrightSection = ({ topPredictorsData }) => {
             name={predictor.first_name + predictor.last_name}
             accuracy={predictor.prediction_accuracy}
             imgUrl={predictor.image_url}
+            userId={predictor.user_id}
           />
         ))}
       </div>

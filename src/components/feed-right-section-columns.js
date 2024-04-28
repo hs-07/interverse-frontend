@@ -1,7 +1,10 @@
 import React from "react";
 import { Image } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
+const FeedRightSectionColumns = ({ rank, name, accuracy, imgUrl, userId }) => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="right-columns"
@@ -31,7 +34,13 @@ const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
             borderRadius: "50%",
             aspectRatio: "1 / 1",
             objectFit: "cover",
+            cursor: "pointer",
           }}
+          onClick={() =>
+            navigate("/Leaderboards", {
+              state: { id: userId },
+            })
+          }
         />
       </div>
       <div
@@ -43,7 +52,14 @@ const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
           justifyContent: "center",
         }}
       >
-        <h5>
+        <h5
+          className="cursor-pointer"
+          onClick={() =>
+            navigate("/Leaderboards", {
+              state: { id: userId },
+            })
+          }
+        >
           <span>#{rank}</span> {name}
         </h5>
         <h6>
@@ -61,4 +77,4 @@ const feedRightSectionColumns = ({ rank, name, accuracy, imgUrl }) => {
   );
 };
 
-export default feedRightSectionColumns;
+export default FeedRightSectionColumns;

@@ -61,6 +61,7 @@ const Feed = () => {
                     {feed.matches.map((card, index) => (
                       <FeedCard
                         category={card.category}
+                        userId={card.user_id}
                         user={card.user}
                         madeOn={card.publish_date}
                         resolvedOn={card.fixed_date}

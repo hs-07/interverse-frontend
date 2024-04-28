@@ -6,6 +6,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import ProofModal from "./feed/proof-modal";
 import { getSinglePrediction } from "../services/Predictions.service";
 import "../styles/feedCard.css";
+import { useNavigate } from "react-router-dom";
 
 const FeedCard = ({
   category,
@@ -15,9 +16,12 @@ const FeedCard = ({
   madeOn,
   user,
   status,
+  userId,
   predictionId,
   setOpenShare,
 }) => {
+  const navigate = useNavigate();
+
   const [openProof, setOpenProof] = useState(false);
   const [val, setVal] = useState({});
   const [loading, setLoading] = useState(false);
@@ -43,10 +47,28 @@ const FeedCard = ({
           }}
         >
           <div className="card-header-img">
-            <Image src={imgUrl} alt="N/A" style={{ fontSize: "12px" }} />
+            <Image
+              src={imgUrl}
+              alt="N/A"
+              className="cursor-pointer"
+              onClick={() =>
+                navigate("/Leaderboards", {
+                  state: { id: userId },
+                })
+              }
+            />
           </div>
           <div className="profile-name">
-            <h5>{user}</h5>
+            <h5
+              className={"cursor-pointer"}
+              onClick={() =>
+                navigate("/Leaderboards", {
+                  state: { id: userId },
+                })
+              }
+            >
+              {user}
+            </h5>
             <span>{category}</span>
           </div>
         </div>

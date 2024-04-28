@@ -16,7 +16,6 @@ import { LuCalendarDays } from "react-icons/lu";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import Tabs from "../components/common/tabs";
 import SummariesSubheader from "../components/summaries/subheader";
 import Header from "../components/summaries/Header";
@@ -26,7 +25,6 @@ const myComponentStyle = {
 };
 function Summaries() {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [data, setData] = useState([]);
   const [peopleData, setPeopleData] = useState([]);
@@ -575,7 +573,7 @@ function Summaries() {
                                           }}
                                         />
                                       </div>
-                                      <div className="col-content">
+                                      <div className="col-content gap-2 flex flex-col">
                                         <h6>
                                           {val?.first_name.startsWith("Unknown")
                                             ? "Unknown"
@@ -584,7 +582,7 @@ function Summaries() {
                                               val?.last_name}
                                         </h6>
                                         <span style={{ color: "#aeaeae" }}>
-                                          #85
+                                          Predictor
                                         </span>
                                       </div>
                                     </div>
@@ -604,7 +602,7 @@ function Summaries() {
                                       <LuCalendarDays
                                         style={{ fontSize: "24px" }}
                                       />
-                                      <div className="detail">
+                                      <div className="detail gap-2 flex flex-col">
                                         <h6>Score</h6>
                                         <span>
                                           {Math.floor(val?.accuracy_score)}%
@@ -615,7 +613,7 @@ function Summaries() {
                                       <LuCalendarDays
                                         style={{ fontSize: "24px" }}
                                       />
-                                      <div className="detail">
+                                      <div className="detail gap-2 flex flex-col">
                                         <h6>Predictions</h6>
                                         <span>{val?.total_predictions}</span>
                                       </div>
@@ -624,7 +622,7 @@ function Summaries() {
                                       <LuCalendarDays
                                         style={{ fontSize: "24px" }}
                                       />
-                                      <div className="detail">
+                                      <div className="detail gap-2 flex flex-col">
                                         <h6>Pending</h6>
                                         <span>{val?.pending_predictions}</span>
                                       </div>
@@ -633,7 +631,7 @@ function Summaries() {
                                       <LuCalendarDays
                                         style={{ fontSize: "24px" }}
                                       />
-                                      <div className="detail">
+                                      <div className="detail gap-2 flex flex-col">
                                         <h6>EP-Predictions</h6>
                                         <span>{val?.episode_predictions}</span>
                                       </div>
@@ -830,7 +828,11 @@ function Summaries() {
                               return (
                                 <div className="people-section">
                                   <div className="ps-col-1">
-                                    <img alt="" src={val?.image_url} />
+                                    <img
+                                      alt=""
+                                      src={val?.image_url}
+                                      className="rounded-lg"
+                                    />
                                     <div>
                                       <div
                                         style={{
