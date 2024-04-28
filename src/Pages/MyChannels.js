@@ -228,20 +228,9 @@ function MyChannels() {
                       return (
                         <>
                           <div
-                            style={{
-                              borderRadius: "10px",
-                              border: "1px solid white",
-                              boxSizing: "border-box",
-                              display: "flex",
-                              flexDirection: "row",
-                              alignItems: "center",
-                              justifyContent: "flex-start",
-                              padding: "6px 12px",
-                              gap: "12px",
-                              flexWrap: "wrap",
-                            }}
+                            className="border-[2px] border-white rounded-lg flex items-center justify-center px-4 py-1 gap-2 cursor-pointer hover:scale-105 transition-all active:scale-95 ease-in-out"
                             onClick={() =>
-                              navigate("/Profiles", {
+                              navigate("/Leaderboards", {
                                 state: { id: val?.user_id },
                               })
                             }
@@ -277,9 +266,9 @@ function MyChannels() {
                   <div className="column-1">Topics</div>
                   <div className="column-2">
                     {val?.Categories.map((val, index) => (
-                      <div className="" key={index}>
+                      <div className="font-semibold text-sm" key={index}>
                         {" "}
-                        {val.category}
+                        {val.category} ,
                       </div>
                     ))}
                   </div>
@@ -290,7 +279,7 @@ function MyChannels() {
                 </div>
                 <div className="section-1">
                   <div className="column-1">Platforms</div>
-                  <div className="column-2">
+                  <div className="column-2 justify-between">
                     <img
                       style={{
                         position: "relative",

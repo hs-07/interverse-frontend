@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { Line } from "react-chartjs-2";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -173,38 +174,10 @@ function Markets() {
                 <div className="blue-disc">5+</div>
               </div>
               <div
-                style={{
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "35px 25px",
-                }}
+                className="w-full cursor-pointer"
                 onClick={() => onClickToggle(index)}
               >
-                {val?.peopleActive ? (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-1433.svg"
-                  />
-                ) : (
-                  <img
-                    style={{
-                      position: "relative",
-                      width: "21.5px",
-                      height: "21.5px",
-                    }}
-                    alt=""
-                    src="/vector-278.svg"
-                  />
-                )}
+                {val?.peopleActive ? <FaMinus /> : <FaPlus />}
               </div>
             </div>
 

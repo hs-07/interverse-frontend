@@ -19,6 +19,7 @@ const Feed = () => {
     setLoading(true);
     try {
       const response1 = await getFeedDetails();
+      console.log(response1.data);
       const response2 = await leaderBoardData();
       setFeedData(response1.data);
       setTopPredictors(response2.data);

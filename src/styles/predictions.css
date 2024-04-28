@@ -249,6 +249,34 @@
   .predictions > .prediction-row {
     display: none;
   }
+  .analytics-row-1 {
+    padding: 8px;
+  }
+  .analytics-row-1 > .block {
+    gap: 4px;
+    font-size: 16px;
+  }
+  .analytics-row-1 > .block > .value {
+    font-size: 13px;
+  }
+  .details-row-2 {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .details-row-2 > .block > .topic {
+    padding: 10px 0px;
+  }
+  .details-row-2 > .block > .value {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 6px;
+    border-radius: 0px 0px 8px 8px;
+    font-size: 20px;
+    color: #fff;
+  }
   .mobile-predictions {
     display: flex;
     flex-direction: column;

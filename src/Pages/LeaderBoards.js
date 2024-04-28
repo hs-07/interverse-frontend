@@ -19,10 +19,13 @@ import {
   searchTerm,
   sortByBankroll,
 } from "../services/Leaderboards.service";
+import { useLocation } from "react-router-dom";
 import Header from "../components/leaderboard/Header";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [data, setData] = useState([]);
   const [profilesData, setProfilesData] = useState([]);
   const [subjectData, setSubjectData] = useState([]);
@@ -50,6 +53,11 @@ const LeaderBoards = () => {
             Active: false,
           }))
         );
+        if (location?.state?.id !== undefined) {
+          setData(
+            [...res.data].filter((obj) => obj.user_id === location?.state?.id)
+          );
+        }
       })
       .catch((err) => {
         console.log("err::::::", err);

@@ -14,3 +14,6 @@ export const getSortedCategory = async (prediction) => {
 export const getPredictionSingle = async (id) => {
   return await Axios.get(`predictions?userId=${id}`);
 };
+export const getSinglePrediction = async (id) => {
+  return await Axios.get(`predictions?predictionId=${id}`);
+};

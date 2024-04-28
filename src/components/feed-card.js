@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import { ImArrowUp, ImArrowDown } from "react-icons/im";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import { RiSendPlaneFill } from "react-icons/ri";
+import ProofModal from "./feed/proof-modal";
+import { getSinglePrediction } from "../services/Predictions.service";
 import "../styles/feedCard.css";
 
 const FeedCard = ({
@@ -16,6 +18,20 @@ const FeedCard = ({
   predictionId,
   setOpenShare,
 }) => {
+  const [openProof, setOpenProof] = useState(false);
+  const [val, setVal] = useState({});
+  const [loading, setLoading] = useState(false);
+  const handleProof = async () => {
+    setLoading(true);
+    try {
+      const response = await getSinglePrediction(predictionId);
+      setVal(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="feed-card">
       <div className="card-header">
@@ -34,7 +50,15 @@ const FeedCard = ({
             <span>{category}</span>
           </div>
         </div>
-        <button className="card-header-btn">Proof</button>
+        <button
+          className="card-header-btn"
+          onClick={() => {
+            handleProof();
+            setOpenProof(true);
+          }}
+        >
+          Proof
+        </button>
       </div>
       <div className="card-status">
         <div
@@ -113,6 +137,12 @@ const FeedCard = ({
           />
         </div>
       </div>
+      <ProofModal
+        setShowModal={setOpenProof}
+        showModal={openProof}
+        val={val}
+        loading={loading}
+      />
     </div>
   );
 };
