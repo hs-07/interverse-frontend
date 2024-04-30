@@ -9,7 +9,10 @@ import { Image } from "react-bootstrap";
 import "../styles/leaderboard.css";
 
 import UserSubjectData from "../components/leaderboard/user-subject-data";
-import { getProfilesBySubjects } from "../services/Profiles.service";
+import {
+  getProfilesBySubjects,
+  getSortedProfilesBySubjects,
+} from "../services/Profiles.service";
 import SubHeader from "../components/leaderboard/subheader";
 import {
   leaderBoardData,
@@ -107,6 +110,16 @@ const LeaderBoards = () => {
         console.log("err::::", err);
       });
   };
+  const getSortedUserSubject = async (id, value) => {
+    getSortedProfilesBySubjects(id, value)
+      .then((res) => {
+        console.log(res);
+        setSubjectData([...res.data]);
+      })
+      .catch((err) => {
+        console.log("err::::", err);
+      });
+  };
 
   const onClickDetails = (index, id) => {
     const arr = [...data];
@@ -132,7 +145,7 @@ const LeaderBoards = () => {
       })
     );
     Promise.all([getUserSubject(id)]).then((res) => {
-      console.log("res get data:::::", res);
+      // console.log("res get data:::::", res);
     });
   };
 
@@ -329,7 +342,11 @@ const LeaderBoards = () => {
                 {/* clickable section start */}
                 {val.Active ? (
                   <>
-                    <UserSubjectData subjectData={subjectData} />
+                    <UserSubjectData
+                      subjectData={subjectData}
+                      id={val?.user_id}
+                      getSortedUserSubject={getSortedUserSubject}
+                    />
 
                     <div className="desktop-clickable-section">
                       <div className="collapsable-section">

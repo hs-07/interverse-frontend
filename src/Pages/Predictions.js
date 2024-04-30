@@ -63,7 +63,6 @@ const Predictions = () => {
   const fetchSortedPrediction = async (prediction) => {
     await getSortedPrediction(prediction)
       .then((res) => {
-        console.log("res:::123456::::::", res.data);
         setData([...res.data]);
         setData(
           [...res.data].map((obj) => ({
@@ -79,7 +78,6 @@ const Predictions = () => {
   const fetchSortedCategory = async (category) => {
     await getSortedCategory(category)
       .then((res) => {
-        console.log("res:::123456::::::", res.data);
         setData([...res.data]);
         setData(
           [...res.data].map((obj) => ({

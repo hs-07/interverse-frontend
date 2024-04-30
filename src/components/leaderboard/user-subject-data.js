@@ -1,9 +1,22 @@
-import React from "react";
-import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Doughnut, Bar } from "react-chartjs-2";
+import Select from "../common/select";
 
-const UserSubjectData = ({ subjectData }) => {
+const UserSubjectData = ({ subjectData, id, getSortedUserSubject }) => {
+  const [status, setStatus] = useState();
+  const values = ["TRUE", "FALSE", "PENDING", "PARTIALLY TRUE", "ALL"];
+
+  useEffect(() => {
+    const sortData = async () => {
+      try {
+        const res = await getSortedUserSubject(id, status);
+      } catch (error) {}
+    };
+
+    sortData();
+  }, [status]);
+
   return (
     <div>
       {subjectData?.map((val, index) => {
@@ -11,10 +24,18 @@ const UserSubjectData = ({ subjectData }) => {
           <div className="profile-graph-section">
             {/* Bar Graph Section Starts */}
             <div className="bar-graph-section border-2 border-[#181818]">
-              <div className="bar-header">
+              <div className="flex justify-between items-center w-full p-4">
                 <div className="text-sm">Predictions by Category</div>
-                <div className="sub-part-2 text-base">
-                  <div
+                <div className="flex items-center gap-6">
+                  <span className="text-sm">Sort By</span>
+                  <Select
+                    setStatus={setStatus}
+                    status={status}
+                    values={values}
+                  />
+                </div>
+                {/* <div className="sub-part-2 text-base">
+                  <div className="flex flex-row items-center justify-"
                     style={{
                       display: "flex",
                       flexDirection: "row",
@@ -153,7 +174,7 @@ const UserSubjectData = ({ subjectData }) => {
                   >
                     Pending
                   </Button>
-                </div>
+                </div> */}
               </div>
               <div className="bar">
                 {/* <div
