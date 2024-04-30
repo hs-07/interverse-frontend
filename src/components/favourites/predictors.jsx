@@ -16,6 +16,7 @@ import {
   sortByAccuracy,
   sortByScore,
   sortByBankroll,
+  addRemoveFavourite,
 } from "../../services/Leaderboards.service";
 import { useLocation } from "react-router-dom";
 
@@ -29,8 +30,18 @@ const LeaderBoards = () => {
   const [loader, setLoader] = useState(false);
   const accountId = localStorage.getItem("accountId");
 
-  useEffect(() => {
-    leaderBoardData(accountId)
+  const toggleFavourite = async (id) => {
+    const params = {
+      accountId: String(accountId),
+      predictorId: id,
+    };
+    const newData = data.filter((obj) => obj.user_id !== id);
+    setData(newData);
+    addRemoveFavourite(params);
+  };
+
+  const getLeaderBoardData = async () => {
+    await leaderBoardData(accountId)
       .then((res) => {
         setLoader(true);
         const filteredData = [...res.data]
@@ -47,13 +58,20 @@ const LeaderBoards = () => {
       .catch((err) => {
         console.log("err::::::", err);
       });
+  };
+
+  useEffect(() => {
+    getLeaderBoardData();
   }, []);
 
   const sortLeaderboardByAccuracy = async (order) => {
     try {
       const res = await sortByAccuracy(order);
       setLoader(true);
-      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+      const filteredData = [...res.data]
+        .filter((obj) => obj.is_favourite === true)
+        .map((obj) => ({ ...obj, Active: false }));
+      setData(filteredData);
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +80,10 @@ const LeaderBoards = () => {
     try {
       const res = await sortByScore(order);
       setLoader(true);
-      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+      const filteredData = [...res.data]
+        .filter((obj) => obj.is_favourite === true)
+        .map((obj) => ({ ...obj, Active: false }));
+      setData(filteredData);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +92,10 @@ const LeaderBoards = () => {
     try {
       const res = await sortByBankroll(order);
       setLoader(true);
-      setData([...res.data].map((obj) => ({ ...obj, Active: false })));
+      const filteredData = [...res.data]
+        .filter((obj) => obj.is_favourite === true)
+        .map((obj) => ({ ...obj, Active: false }));
+      setData(filteredData);
     } catch (error) {
       console.log(error);
     }
@@ -116,7 +140,7 @@ const LeaderBoards = () => {
   };
 
   return (
-    <div className="custom-container">
+    <div className="custom-container-2">
       {loader ? (
         <>
           <SubHeader
@@ -127,11 +151,7 @@ const LeaderBoards = () => {
           />
           {data?.map((val, index) => {
             return (
-              <div
-                className="overflow-y-auto"
-                style={{ width: "100%" }}
-                key={index}
-              >
+              <div style={{ width: "100%" }} key={index}>
                 <div className="desktop-row-section ">
                   <div className="block1">
                     {val?.rank === 1 ? (
@@ -211,13 +231,26 @@ const LeaderBoards = () => {
                     ${val.bankroll}
                   </div>
                   <div className="block1">
-                    <HiHeart />
+                    {val.is_favourite ? (
+                      <HiHeart
+                        onClick={() => toggleFavourite(val?.user_id)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <HiOutlineHeart
+                        onClick={() => toggleFavourite(val?.user_id)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    )}
                   </div>
                   <div
                     onClick={() => {
                       onClickDetails(index, val?.user_id);
                     }}
-                    style={{ backgroundColor: "#282828", textAlign: "center" }}
+                    style={{
+                      backgroundColor: "#282828",
+                      textAlign: "center",
+                    }}
                   >
                     {val.Active ? (
                       <button className="more-info-button">
@@ -279,7 +312,17 @@ const LeaderBoards = () => {
                     </div>
                   </div>
                   <div className="mob-row-section-2">
-                    <HiHeart style={{ cursor: "pointer" }} />
+                    {val.is_favourite ? (
+                      <HiHeart
+                        onClick={() => toggleFavourite(val?.user_id)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <HiOutlineHeart
+                        onClick={() => toggleFavourite(val?.user_id)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    )}
                     <div
                       onClick={() => {
                         onClickDetails(index, val?.user_id);

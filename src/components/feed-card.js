@@ -60,7 +60,7 @@ const FeedCard = ({
           </div>
           <div className="profile-name">
             <h5
-              className={"cursor-pointer"}
+              className={"cursor-pointer text-[#4b6cc2] font-semibold"}
               onClick={() =>
                 navigate("/Leaderboards", {
                   state: { id: userId },

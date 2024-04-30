@@ -7,8 +7,10 @@ import Channels from "../components/favourites/channels";
 const Favourites = () => {
   return (
     <div>
-      <Header />
-      <div className="pt-4">
+      <div className="md:h-[10vh]">
+        <Header />
+      </div>
+      <div className="pt-4 md:h-[90vh]">
         <Tabs
           className={"px-6"}
           items={[

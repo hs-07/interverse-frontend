@@ -597,10 +597,11 @@ const Predictions = () => {
                         flexShrink: "0",
                         cursor: "pointer",
                         justifyContent: "flex-end",
+                        cursor: "pointer",
                       }}
                       onClick={handleJustifications}
                     >
-                      {justificationRead == "4" ? "Read more" : "Read Less"}
+                      {justificationRead === "4" ? "Read more" : "Read Less"}
                     </div>
                   </div>
                   <div
@@ -669,11 +670,13 @@ const Predictions = () => {
                         display: "flex",
                         alignItems: "center",
                         flexShrink: "0",
+                        width: "100%",
                         justifyContent: "flex-end",
+                        cursor: "pointer",
                       }}
                       onClick={handleSummaries}
                     >
-                      {summariesRead == "6" ? "Read more" : "Read Less"}
+                      {summariesRead === "6" ? "Read more" : "Read Less"}
                     </div>
                   </div>
                   <div
@@ -788,8 +791,10 @@ const Predictions = () => {
                               <div className="analytics-body">
                                 <div className="column">
                                   <div className="body-icon">
-                                    <LuCalendarDays
-                                      style={{ width: "30px", height: "30px" }}
+                                    <img
+                                      src="/cal.png"
+                                      alt=""
+                                      className="w-10 h-10"
                                     />
                                   </div>
                                   <div className="text">
@@ -803,8 +808,10 @@ const Predictions = () => {
                                 </div>
                                 <div className="column">
                                   <div className="body-icon">
-                                    <LuCalendarDays
-                                      style={{ width: "30px", height: "30px" }}
+                                    <img
+                                      src="/r-cal.png"
+                                      alt=""
+                                      className="w-10 h-10"
                                     />
                                   </div>
                                   <div className="text">
@@ -818,8 +825,10 @@ const Predictions = () => {
                                 </div>
                                 <div className="column">
                                   <div className="body-icon">
-                                    <LuCalendarDays
-                                      style={{ width: "30px", height: "30px" }}
+                                    <img
+                                      src="/points.png"
+                                      alt=""
+                                      className="w-10 h-10"
                                     />
                                   </div>
                                   <div className="text">
@@ -833,8 +842,18 @@ const Predictions = () => {
                                 </div>
                                 <div className="column">
                                   <div className="body-icon">
-                                    <LuCalendarDays
-                                      style={{ width: "30px", height: "30px" }}
+                                    <div
+                                      className={`w-6 h-6 rounded-md m-2 ${
+                                        val?.prediction_validation === "TRUE"
+                                          ? "bg-[#10d200]"
+                                          : val?.prediction_validation ===
+                                            "PARTIALLY TRUE"
+                                          ? "bg-[#388E3C]"
+                                          : val?.prediction_validation ===
+                                            "PENDING"
+                                          ? "bg-[#374C98]"
+                                          : "bg-[#f70000]"
+                                      }`}
                                     />
                                   </div>
                                   <div className="text">

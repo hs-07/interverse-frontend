@@ -33,7 +33,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 4rem;
-  color: #4b6cc2;
+  color: white;
 }
 .trending-card .trending-card-body > h5 {
   font-size: 24px;

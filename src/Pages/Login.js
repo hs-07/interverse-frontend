@@ -27,13 +27,17 @@ const Login = () => {
             <FcGoogle className="text-3xl" />
             <span className="text-white font-semibold">Login with Google</span>
           </button>
-          <button className="rounded-3xl w-full bg-[#1C1C1C] p-2 md:p-3 items-center flex justify-center gap-4 hover:scale-105 transition duration-300 ease-in-out active:scale-95">
-            <AiOutlineApple className="text-3xl text-white" />
-            <span className="text-white font-semibold">Login with Apple</span>
+          <button className="rounded-3xl w-full bg-[#1C1C1C] p-2 md:p-3 items-center flex justify-center gap-4 ">
+            <AiOutlineApple className="text-3xl text-grey-300" />
+            <button className="text-grey-300 font-semibold" disabled>
+              Login with Apple
+            </button>
           </button>
-          <button className="rounded-3xl w-full bg-[#1C1C1C] p-2 md:p-3 items-center flex justify-center gap-4 hover:scale-105 transition duration-300 ease-in-out active:scale-95">
-            <RiTwitterLine className="text-3xl text-white" />
-            <span className="text-white font-semibold">Login with Twitter</span>
+          <button className="rounded-3xl w-full bg-[#1C1C1C] p-2 md:p-3 items-center flex justify-center gap-4">
+            <RiTwitterLine className="text-3xl text-grey-300" />
+            <button className="text-grey-300 font-semibold" disabled>
+              Login with Twitter
+            </button>
           </button>
         </div>
       </div>

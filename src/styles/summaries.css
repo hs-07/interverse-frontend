@@ -280,7 +280,7 @@
 .active-predictions-section {
   background-color: #181818;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
@@ -297,7 +297,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-self: flex-start;
-  gap: 4px;
+  gap: 16px;
   height: 100%;
   overflow-y: auto;
 }
@@ -371,7 +371,6 @@
   }
   .mob-summaries-col > .summaries-header {
     display: flex;
-    justify-content: flex-start;
     gap: 10px;
     align-items: center;
     color: #4b6cc2;

@@ -122,7 +122,7 @@
     background-color: #282828;
     padding: 12px;
   }
-  .mob-channelData-row > .header {
+  .mob-channelData-row > .channelHeader {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -130,7 +130,7 @@
     padding: 0;
     z-index: 0;
   }
-  .mob-channelData-row > .header > .part-1 {
+  .mob-channelData-row > .channelHeader > .part-1 {
     display: flex;
     font-size: 12px;
     gap: 8px;

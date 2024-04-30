@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Snackbar from "@mui/material/Snackbar";
 import Modal from "../components/common/modal";
 import "../styles/addChannelModal.css";
 import { addChannel } from "../services/channels.service";
@@ -6,6 +7,7 @@ import { addChannel } from "../services/channels.service";
 const AddChannelModal = ({ setShowModal, showModal }) => {
   const accountId = localStorage.getItem("accountId");
   const [videoUrl, setVideoUrl] = useState("");
+  const [open, setOpen] = React.useState(false);
 
   const handleAddChannel = async () => {
     const params = {
@@ -15,9 +17,9 @@ const AddChannelModal = ({ setShowModal, showModal }) => {
     try {
       const res = await addChannel(params);
       if (res) {
-        setShowModal(false);
-        window.location.reload();
-        alert("Channel Added Successfully");
+        // setShowModal(false);
+        setOpen(true);
+        setVideoUrl("");
       }
     } catch (error) {}
   };
@@ -53,6 +55,11 @@ const AddChannelModal = ({ setShowModal, showModal }) => {
             ADD
           </button>
         </div>
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          message="Channel Added Successfully"
+        />
       </Modal>
     </div>
   );

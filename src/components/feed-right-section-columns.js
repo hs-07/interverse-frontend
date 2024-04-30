@@ -53,7 +53,7 @@ const FeedRightSectionColumns = ({ rank, name, accuracy, imgUrl, userId }) => {
         }}
       >
         <h5
-          className="cursor-pointer"
+          className="cursor-pointer text-[#4b6cc2] font-semibold text-base"
           onClick={() =>
             navigate("/Leaderboards", {
               state: { id: userId },
@@ -62,7 +62,7 @@ const FeedRightSectionColumns = ({ rank, name, accuracy, imgUrl, userId }) => {
         >
           <span>#{rank}</span> {name}
         </h5>
-        <h6>
+        <h6 className="text-xs">
           Accuracy{" "}
           <span
             style={{

@@ -1,8 +1,8 @@
 /* DESKTOP CSS STARTS */
-.custom-container {
+.custom-container-2 {
   width: 100%;
   position: relative;
-  height: 100vh;
+  height: 50vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

@@ -353,16 +353,21 @@ function Summaries() {
                 onClickSummariesCol(index);
               }}
             >
-              <div className="summaries-header">
-                <div className="summaries-header-img">
-                  <img alt="" src="/youtube.svg" />
+              <div className="summaries-header flex !justify-between w-full">
+                <div className="flex gap-4 items-center">
+                  <div className="summaries-header-img">
+                    <img alt="" src="/youtube.svg" />
+                  </div>
+                  <div className="summaries-header-content flex flex-col">
+                    <h6 className=""> {val.source_title.slice(0, 43)}..</h6>
+                    <span style={{ color: "#aeaeae" }}>
+                      Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
+                      {convertMinsToHrsMins(val.duration)}
+                    </span>
+                  </div>
                 </div>
-                <div className="summaries-header-content flex flex-col gap-2">
-                  <h6 className=""> {val.source_title.slice(0, 30)}..</h6>
-                  <span style={{ color: "#aeaeae" }}>
-                    Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
-                    {convertMinsToHrsMins(val.duration)}
-                  </span>
+                <div className="text-lg">
+                  {val?.Active ? <FaMinus /> : <FaPlus />}
                 </div>
               </div>
               <div className="summaries-body">
@@ -438,28 +443,6 @@ function Summaries() {
                                   </>
                                 );
                               })}
-                            </div>
-                            <div className="mob-full-transcript">
-                              <div className="head">Full Transcript</div>
-                              {fullTranscriptData.map((val, index) => (
-                                <div className="body" key={index}>
-                                  <div className="">
-                                    Duration:{" "}
-                                    <span style={{ color: "#aeaeae" }}>
-                                      {val?.time_range}
-                                    </span>
-                                  </div>
-                                  <div className="">
-                                    {" "}
-                                    {val.user_name.startsWith("Unknown")
-                                      ? ""
-                                      : val.user_name}
-                                  </div>
-                                  <div className="">
-                                    {val?.labelled_segments}
-                                  </div>
-                                </div>
-                              ))}
                             </div>
                           </div>
                         ),
@@ -599,8 +582,11 @@ function Summaries() {
                                   </div>
                                   <div className="ps-body">
                                     <div className="col">
-                                      <LuCalendarDays
-                                        style={{ fontSize: "24px" }}
+                                      <img
+                                        src="/score.png"
+                                        alt="score"
+                                        width={30}
+                                        height={30}
                                       />
                                       <div className="detail gap-2 flex flex-col">
                                         <h6>Score</h6>
@@ -610,8 +596,11 @@ function Summaries() {
                                       </div>
                                     </div>
                                     <div className="col">
-                                      <LuCalendarDays
-                                        style={{ fontSize: "24px" }}
+                                      <img
+                                        src="/predictions.png"
+                                        alt="prediction"
+                                        width={30}
+                                        height={30}
                                       />
                                       <div className="detail gap-2 flex flex-col">
                                         <h6>Predictions</h6>
@@ -619,8 +608,11 @@ function Summaries() {
                                       </div>
                                     </div>
                                     <div className="col">
-                                      <LuCalendarDays
-                                        style={{ fontSize: "24px" }}
+                                      <img
+                                        src="/pending.png"
+                                        alt="pending"
+                                        width={30}
+                                        height={30}
                                       />
                                       <div className="detail gap-2 flex flex-col">
                                         <h6>Pending</h6>
@@ -628,8 +620,11 @@ function Summaries() {
                                       </div>
                                     </div>
                                     <div className="col">
-                                      <LuCalendarDays
-                                        style={{ fontSize: "24px" }}
+                                      <img
+                                        src="/ep.png"
+                                        alt="ep"
+                                        width={30}
+                                        height={30}
                                       />
                                       <div className="detail gap-2 flex flex-col">
                                         <h6>EP-Predictions</h6>
@@ -641,6 +636,35 @@ function Summaries() {
                               );
                             })}
                           </div>
+                        ),
+                      },
+                      {
+                        title: "Transcript",
+                        content: (
+                          <>
+                            <div className="mob-full-transcript">
+                              <div className="head">Full Transcript</div>
+                              {fullTranscriptData.map((val, index) => (
+                                <div className="body" key={index}>
+                                  <div className="">
+                                    Duration:{" "}
+                                    <span style={{ color: "#aeaeae" }}>
+                                      {val?.time_range}
+                                    </span>
+                                  </div>
+                                  <div className="">
+                                    {" "}
+                                    {val.user_name.startsWith("Unknown")
+                                      ? ""
+                                      : val.user_name}
+                                  </div>
+                                  <div className="">
+                                    {val?.labelled_segments}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </>
                         ),
                       },
                     ]}
@@ -724,6 +748,7 @@ function Summaries() {
                                       }}
                                     >
                                       <div
+                                        className="truncate w-full"
                                         style={{
                                           position: "relative",
                                           fontWeight: "500",
@@ -732,7 +757,7 @@ function Summaries() {
                                           flexShrink: "0",
                                         }}
                                       >
-                                        {val?.prediction.slice(0, 50)}...
+                                        {val?.prediction}
                                       </div>
                                     </div>
                                   </>
@@ -742,7 +767,6 @@ function Summaries() {
 
                             <div className="ap-col-2">
                               <iframe
-                                allow="autoplay"
                                 style={{
                                   width: "100%",
                                   height: "50%",
@@ -750,7 +774,7 @@ function Summaries() {
                                   borderRadius: "14px",
                                 }}
                                 alt=""
-                                src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}&autoplay=1`}
+                                src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
                               />
                               <div className="h-1/2 bg-[#000000] p-4 rounded-lg w-full flex flex-col gap-4 overflow-y-auto">
                                 <div className="flex gap-4">

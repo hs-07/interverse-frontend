@@ -25,9 +25,9 @@
 }
 @media (max-width: 768px) {
   .channels-subheader {
+    position: relative;
     grid-template-columns: 1fr 1fr;
     padding: 8px 16px;
-    top: 2.5rem;
   }
   .addChannelBtn,
   .Ch-name,

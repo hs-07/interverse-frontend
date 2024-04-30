@@ -29,7 +29,7 @@ const Tabs = ({ items, className }) => {
           </button>
         ))}
       </div>
-      <div className="tabs-content">
+      <div className="tabs-content h-full">
         {items.map((item, index) => (
           <div
             className="content"
@@ -38,7 +38,7 @@ const Tabs = ({ items, className }) => {
             }}
             key={index}
           >
-            <div className="">{item.content}</div>
+            <div className="h-full">{item.content}</div>
           </div>
         ))}
       </div>
