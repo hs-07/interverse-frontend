@@ -2,7 +2,7 @@
 .custom-container-2 {
   width: 100%;
   position: relative;
-  height: 50vh;
+  height: 80vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -264,6 +264,10 @@
 /* DESKTOP CSS ENDS */
 /* MOBILE CSS START */
 @media (max-width: 768px) {
+  .custom-container-2 {
+    height: 100%;
+    overflow: scroll;
+  }
   .desktop-row-section {
     display: none;
   }

@@ -678,7 +678,7 @@ function Summaries() {
                         title: "Summaries",
                         content: (
                           <div className="active-summaries-section">
-                            <div className="as-col-1">
+                            <div className="as-col-1 h-[40vh]">
                               {summariesData.map((val, index) => {
                                 return (
                                   <>
@@ -708,20 +708,22 @@ function Summaries() {
                               })}
                             </div>
 
-                            <div className="h-full w-1/2 flex flex-col gap-6">
-                              <iframe
-                                style={{
-                                  width: "100%",
-                                  height: "100%",
-                                  objectFit: "cover",
-                                  borderRadius: "8px",
-                                  height: "100%",
-                                }}
-                                alt=""
-                                src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
-                              />
+                            <div className="h-[40vh] w-1/2 flex flex-col gap-4 overflow-y-auto">
+                              <div className="h-1/2">
+                                <iframe
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                    borderRadius: "8px",
+                                    height: "100%",
+                                  }}
+                                  alt=""
+                                  src={`https://youtube.com/embed/${summariesData[subSectionIndex]?.youtube_id}?start=${summariesData[subSectionIndex]?.youtube_start_time}`}
+                                />
+                              </div>
 
-                              <div className="text-sm bg-[#000000] p-4 rounded-lg h-full">
+                              <div className="text-sm bg-[#000000] p-4 rounded-lg h-1/2">
                                 {summariesData[subSectionIndex]?.summary_text}
                               </div>
                             </div>

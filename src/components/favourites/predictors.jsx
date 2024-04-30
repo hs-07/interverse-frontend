@@ -140,7 +140,7 @@ const LeaderBoards = () => {
   };
 
   return (
-    <div className="custom-container-2">
+    <div className="flex flex-col h-[50vh] md:h-[80vh] overflow-auto">
       {loader ? (
         <>
           <SubHeader
@@ -152,7 +152,7 @@ const LeaderBoards = () => {
           {data?.map((val, index) => {
             return (
               <div style={{ width: "100%" }} key={index}>
-                <div className="desktop-row-section ">
+                <div className="desktop-row-section">
                   <div className="block1">
                     {val?.rank === 1 ? (
                       <img alt="rank-1" src="/goldmedal-1.svg" />

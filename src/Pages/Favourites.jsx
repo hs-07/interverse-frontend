@@ -10,9 +10,9 @@ const Favourites = () => {
       <div className="md:h-[10vh]">
         <Header />
       </div>
-      <div className="pt-4 md:h-[90vh]">
+      <div className="pt-4 md:h-[90vh] h-full">
         <Tabs
-          className={"px-6"}
+          className={"px-6 h-full"}
           items={[
             { id: 1, title: "Predictors", content: <Predictors /> },
             { id: 2, title: "Channels", content: <Channels /> },
