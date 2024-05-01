@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { TbArrowsUpDown } from "react-icons/tb";
 import "../../styles/channels/subheader.css";
 import AddChannelModal from "../addChannelModal";
 

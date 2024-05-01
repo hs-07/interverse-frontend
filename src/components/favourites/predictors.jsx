@@ -140,7 +140,7 @@ const LeaderBoards = () => {
   };
 
   return (
-    <div className="flex flex-col h-[50vh] md:h-[80vh] overflow-auto">
+    <div className="flex flex-col h-[80vh] overflow-auto gap-[2px] text-lg">
       {loader ? (
         <>
           <SubHeader

@@ -26,6 +26,7 @@ const AddChannelModal = ({ setShowModal, showModal }) => {
   async function handleCancel(event) {
     event.stopPropagation();
     setShowModal(false);
+    setOpen(false);
   }
   const handleInputChange = (event) => {
     setVideoUrl(event.target.value);

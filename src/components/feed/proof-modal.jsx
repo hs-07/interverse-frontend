@@ -165,7 +165,7 @@ const ProofModal = ({ setShowModal, showModal, val, loading }) => {
                         fontWeight: "600",
                       }}
                     >
-                      {val[0]?.prediction_type !== null ? val[0]?.error : "N/A"}
+                      {val[0]?.error !== null ? val[0]?.error : "N/A"}
                     </div>
                   </div>
                 </div>
@@ -189,7 +189,7 @@ const ProofModal = ({ setShowModal, showModal, val, loading }) => {
                     style={{
                       backgroundColor: "#9d43bd",
                       fontSize:
-                        val[0]?.prediction_type !== "BINARY" ? "20px" : "14px",
+                        val[0]?.prediction_type !== "BINARY" ? "20px" : "20px",
                     }}
                   >
                     <div

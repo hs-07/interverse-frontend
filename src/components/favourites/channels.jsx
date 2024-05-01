@@ -49,7 +49,7 @@ function MyChannels() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen overflow-y-scroll">
+    <div className="flex flex-col overflow-y-scroll">
       {/* Add Channel div Starts */}
       <div className="addChannel-section">
         <div className="block-1">Add New Channel</div>
@@ -60,10 +60,10 @@ function MyChannels() {
         </div>
       </div>
       {/* Add Channel div Ends */}
-      <ChannelSubHeader />
+      <ChannelSubHeader className={"!top-0 !relative"} />
       {/* Add Channel div Ends */}
       {/* Row Data Starts */}
-      <div className="md:h-[72vh] h-full overflow-y-auto flex flex-col gap-[2px]">
+      <div className=" h-full overflow-y-auto h-[72vh] flex flex-col gap-[2px]">
         {channelData.map((val, index) => {
           return (
             <>

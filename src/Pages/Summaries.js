@@ -678,7 +678,7 @@ function Summaries() {
                         title: "Summaries",
                         content: (
                           <div className="active-summaries-section">
-                            <div className="as-col-1 h-[40vh]">
+                            <div className="as-col-1 h-full">
                               {summariesData.map((val, index) => {
                                 return (
                                   <>
@@ -708,8 +708,8 @@ function Summaries() {
                               })}
                             </div>
 
-                            <div className="h-[40vh] w-1/2 flex flex-col gap-4 overflow-y-auto">
-                              <div className="h-1/2">
+                            <div className="h-full w-1/2 flex flex-col gap-4 ">
+                              <div className="h-3/5">
                                 <iframe
                                   style={{
                                     width: "100%",
@@ -723,7 +723,7 @@ function Summaries() {
                                 />
                               </div>
 
-                              <div className="text-sm bg-[#000000] p-4 rounded-lg h-1/2">
+                              <div className="text-sm bg-[#000000] p-4 rounded-lg h-2/5 overflow-y-auto">
                                 {summariesData[subSectionIndex]?.summary_text}
                               </div>
                             </div>
@@ -767,18 +767,18 @@ function Summaries() {
                               })}
                             </div>
 
-                            <div className="ap-col-2">
+                            <div className="ap-col-2 h-3/5">
                               <iframe
                                 style={{
                                   width: "100%",
-                                  height: "50%",
+                                  height: "100%",
                                   objectFit: "cover",
                                   borderRadius: "14px",
                                 }}
                                 alt=""
                                 src={`https://youtube.com/embed/${predictionData[subSectionIndex]?.youtube_id}?start=${predictionData[subSectionIndex]?.youtube_start_time}`}
                               />
-                              <div className="h-1/2 bg-[#000000] p-4 rounded-lg w-full flex flex-col gap-4 overflow-y-auto">
+                              <div className="h-2/5 bg-[#000000] p-4 rounded-lg w-full flex flex-col gap-4 overflow-y-auto">
                                 <div className="flex gap-4">
                                   <p style={{ color: "#4B6CC2" }}>
                                     Status :
