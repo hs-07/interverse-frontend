@@ -164,8 +164,8 @@ const ProofModal = ({ setShowModal, showModal, val, loading }) => {
                         position: "relative",
                         fontWeight: "600",
                       }}
-                    >
-                      {val[0]?.error !== null ? val[0]?.error : "N/A"}
+                    >N/A
+                      { /* {val[0]?.error !== null ? val[0]?.error : "N/A"} */}
                     </div>
                   </div>
                 </div>

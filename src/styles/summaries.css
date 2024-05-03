@@ -524,4 +524,14 @@
   .ps-body > .col > .detail > h6 {
     color: #aeaeae;
   }
-}
+  }
+  .channel-name {
+    color: #4b6cc2; /* Slightly darker than #4b6cc2 */
+    font-weight: bold;
+  }
+
+  .timestamp-style {
+    color: #4b6cc2;  /* The desired blue color */
+    font-weight: 600;
+  }
+

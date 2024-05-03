@@ -75,17 +75,17 @@ function MyChannels() {
             <>
               <div className="channelData-row">
                 <div className="block">
-                  <img
-                    style={{
-                      position: "relative",
-                      borderRadius: "50%",
-                      width: "48px",
-                      height: "48px",
-                      objectFit: "cover",
-                    }}
-                    alt=""
-                    src={val?.ChannelImageUrl}
-                  />
+                <img
+                  style={{
+                    position: "relative",
+                    borderRadius: "50%",
+                    width: "48px",
+                    height: "48px",
+                    objectFit: "cover",
+                  }}
+                  src={val && val.ChannelImageUrl ? val.ChannelImageUrl : 'https://i.ibb.co/Ry3bymp/youtube.png'}
+                  alt="Channel image not available"
+                />
                   <div className="">{val?.ChannelName.slice(0, 20)}</div>
                 </div>
                 <div className="block">{val?.Summaries}</div>
@@ -123,9 +123,9 @@ function MyChannels() {
               <div className="mob-channelData-row">
                 <div className="channelHeader">
                   <div className="part-1">
-                    <img
-                      src={val?.ChannelImageUrl}
-                      alt=""
+                  <img
+                      src={val && val.ChannelImageUrl ? val.ChannelImageUrl : 'https://i.ibb.co/Ry3bymp/youtube.png'}
+                      alt="Channel image"
                       style={{
                         width: "40px",
                         height: "40px",

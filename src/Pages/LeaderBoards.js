@@ -233,14 +233,13 @@ const LeaderBoards = () => {
                     }).format(val.total_user_score)}
                   </div>
                   <div
-                    className="block1"
-                    style={{
-                      color: val.bankroll < 0 ? "#e87d7d" : "#fff",
-                    }}
-                  >
-                    ${val.bankroll}
-                  </div>
-                  <div className="block1">
+                      className="block1"
+                      style={{
+                        color: val.bankroll < 0 ? "#e87d7d" : "#fff",
+                      }}
+                    >
+                      {val.bankroll < 0 ? `-$${Math.abs(val.bankroll)}` : `$${val.bankroll}`}
+                    </div>                  <div className="block1">
                     {val.is_favourite ? (
                       <HiHeart
                         onClick={() => toggleFavourite(index, val?.user_id)}
@@ -369,7 +368,7 @@ const LeaderBoards = () => {
                       </div>
                       <div className="settle-section">
                         <div className="settle-section-title">
-                          Due to Settle in 2023
+                          Due to Settle in 2024
                         </div>
                         <div className="settle-section-value">
                           {val.predictions_due_to_settle}

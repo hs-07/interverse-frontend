@@ -303,14 +303,17 @@ function Summaries() {
             {/* Column Starts */}
             <div className="summaries-col">
               <div className="summaries-col-1">
-                <img alt="" src="/youtube.svg" />
+              <img
+                  alt=""
+                  src={val.image_url || '/youtube.svg'}
+                  style={{ width: '7.5%', height: 'auto' }}
+              />
                 <div className="sub-col-1">
                   <div className="sub-col-text-1 flex flex-warp w-full">
-                    {val.source_title.slice(0, 90)}...
+                    <span className="channel-name">[{val.channel_name.slice(0, 14)}]</span>&nbsp;{val.source_title.slice(0, 70)}...
                   </div>
                   <div className="sub-col-text-2">
-                    Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
-                    {convertMinsToHrsMins(val.duration)}
+                    Views: {Math.round(val?.views / 1000000)}M | Length: {convertMinsToHrsMins(val.duration)}
                   </div>
                 </div>
               </div>
@@ -359,7 +362,7 @@ function Summaries() {
                     <img alt="" src="/youtube.svg" />
                   </div>
                   <div className="summaries-header-content flex flex-col">
-                    <h6 className=""> {val.source_title.slice(0, 43)}..</h6>
+                    <h6 className="">[{val.channel_name}] {val.source_title.slice(0, 43)}..</h6>
                     <span style={{ color: "#aeaeae" }}>
                       Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
                       {convertMinsToHrsMins(val.duration)}
@@ -491,7 +494,7 @@ function Summaries() {
                                     >
                                       {val?.prediction}
                                       <p style={{ color: "#4B6CC2" }}>
-                                        Status :
+                                        Status:
                                         <span
                                           style={{
                                             color:
@@ -517,7 +520,7 @@ function Summaries() {
                                         </span>
                                       </p>
                                       <p style={{ color: "#4B6CC2" }}>
-                                        Settled Date :{" "}
+                                        Settled Date:{" "}
                                         <span
                                           style={{
                                             fontSize: "14px",
@@ -695,12 +698,12 @@ function Summaries() {
                                             : "bg-[#262626]"
                                         }`}
                                       >
-                                        <span style={{ color: "white" }}>
+                                        <span className="timestamp-style">
                                           {"["}
                                           {val?.time}
-                                          {"]"}&nbsp;
+                                          {"]"}&nbsp;&nbsp;&nbsp;
                                         </span>
-                                        {val?.summary_title.slice(0, 50)}...
+                                        {val?.summary_title.slice(0, 60)}...
                                       </div>
                                     </div>
                                   </>
@@ -749,18 +752,31 @@ function Summaries() {
                                         setSubSectionIndex(index);
                                       }}
                                     >
-                                      <div
-                                        className="truncate w-full"
-                                        style={{
-                                          position: "relative",
-                                          fontWeight: "500",
-                                          display: "flex",
-                                          alignItems: "center",
-                                          flexShrink: "0",
-                                        }}
-                                      >
-                                        {val?.prediction}
-                                      </div>
+                                  <div className="truncate w-full"
+                                    style={{
+                                      position: "relative",
+                                      fontWeight: "500",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      flexShrink: "0",
+                                    }}
+                                  >
+                                    <span
+                                      style={{
+                                        color: val?.prediction_validation === "TRUE" ? "green"
+                                              : val?.prediction_validation === "FALSE" ? "#E72E2E"
+                                              : val?.prediction_validation === "PARTIALLY TRUE" ? "#2DD22A"
+                                              : val?.prediction_validation === "PENDING" ? "#374C98"
+                                              : "#D29D15",
+                                        fontFamily: "inter",
+                                        fontSize: "14px",
+                                        fontWeight: "650",
+                                      }}
+                                    >
+                                      [{val?.prediction_validation}]
+                                    </span> &nbsp;{val?.prediction}
+                                  </div>
+
                                     </div>
                                   </>
                                 );
@@ -781,7 +797,7 @@ function Summaries() {
                               <div className="h-2/5 bg-[#000000] p-4 rounded-lg w-full flex flex-col gap-4 overflow-y-auto">
                                 <div className="flex gap-4">
                                   <p style={{ color: "#4B6CC2" }}>
-                                    Status :
+                                    Status:
                                     <span
                                       style={{
                                         color:
