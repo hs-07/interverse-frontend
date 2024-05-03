@@ -31,7 +31,7 @@
   background: rgb(199, 199, 199);
   border-radius: 4px;
 }
-*/ .example::-webkit-scrollbar {
+.example::-webkit-scrollbar {
   display: none;
 }
 .App-header {
