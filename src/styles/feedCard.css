@@ -9,12 +9,15 @@
   align-items: center;
 }
 .card-header > .card-header-btn {
-  background-color: #4b6cc2;
+  color: #4b6cc2;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   border-radius: 25px;
   font-size: 16px;
-  padding: 12px 36px;
-  color: #fff;
+  padding: 8px 22px;
+  background-color: #181818;
 }
 .card-header-img {
   border-radius: 50%;

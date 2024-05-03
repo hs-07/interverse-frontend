@@ -45,11 +45,11 @@ const ProofModal = ({ setShowModal, showModal, val, loading }) => {
                       fontSize: "16px",
                       fontWeight: "800",
                       color:
-                        val?.prediction_validation === "TRUE"
+                        val[0]?.prediction_validation === "TRUE"
                           ? "#10d200"
-                          : val?.prediction_validation === "PARTIALLY TRUE"
+                          : val[0]?.prediction_validation === "PARTIALLY TRUE"
                           ? "#388E3C"
-                          : val?.prediction_validation === "PENDING"
+                          : val[0]?.prediction_validation === "PENDING"
                           ? "#374C98"
                           : "#f70000",
                       display: "flex",

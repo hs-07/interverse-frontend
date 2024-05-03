@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import { ImArrowUp, ImArrowDown } from "react-icons/im";
+import {FaPlus} from "react-icons/fa"
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import { RiSendPlaneFill } from "react-icons/ri";
 import ProofModal from "./feed/proof-modal";
@@ -79,7 +80,7 @@ const FeedCard = ({
             setOpenProof(true);
           }}
         >
-          Proof
+          More Info <FaPlus />
         </button>
       </div>
       <div className="card-status">
@@ -99,13 +100,14 @@ const FeedCard = ({
         <p>
           Status :{" "}
           <span
-            style={
+            style={{
+              color : 
               status === "PENDING"
-                ? { color: "#c2964b" }
+                ?  "#c2964b" 
                 : status === "TRUE"
-                ? { color: "#23B678" }
-                : { color: "#E72E2E" }
-            }
+                ? "#23B678" 
+                : "#E72E2E"
+            }}
           >
             {" "}
             {status}
