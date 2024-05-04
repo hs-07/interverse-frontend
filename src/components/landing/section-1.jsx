@@ -2,7 +2,7 @@ import React from "react";
 
 const Section1 = () => {
   return (
-    <div className="w-full md:h-screen flex bg-[#0B0B0F] items-center px-4 py-8 flex md:gap-8 gap-4 flex-col">
+    <div className="w-full flex bg-[#0B0B0F] items-center px-4 py-28 flex md:gap-8 gap-4 flex-col">
       <h1 className="text-white font-bold text-xl md:text-[64px]">
         See the big picture.
       </h1>

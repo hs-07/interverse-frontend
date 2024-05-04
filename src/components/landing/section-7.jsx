@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Section7 = () => {
+  const navigate = useNavigate();
   return (
-    <div className="w-full bg-[#0B0B0F] items-center px-4 py-8 md:py-12 md:px-20 flex gap-8 flex-col">
+    <div className="w-full bg-[#0B0B0F] items-center px-4 py-28 md:px-20 flex gap-8 flex-col">
       <h1 className="text-white font-bold text-xl md:text-[64px]">
         The Magic of clarity
       </h1>
@@ -13,7 +15,7 @@ const Section7 = () => {
       </span>
 
       <div className="">
-        <button className="bg-[#1C1C1C] rounded-3xl text-white py-2 w-48 px-6">
+        <button className="bg-[#1C1C1C] rounded-3xl text-white py-2 w-48 px-6" onClick={()=> navigate('/login')}>
           Signup
         </button>
       </div>

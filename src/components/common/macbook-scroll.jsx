@@ -28,21 +28,21 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [isMobile ? 0.5 : 0.6, isMobile ? 1 : 1.5]
+    [isMobile ? 1.55 : 0.6, isMobile ? 1 : 1.5]
   );
   const translate = useTransform(
     scrollYProgress,
     [0, 1],
-    [isMobile ? -150 : 0, 1500]
+    [isMobile ? -135 : 0, 1500]
   );
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
+  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [isMobile ? -50 : -28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div
       ref={ref}
-      className="min-h-[100vh] flex flex-col items-center py-0 md:pt-48 md:pb-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.4] md:scale:50"
+      className="scroll-smooth md:min-h-[200vh] min-h-[100vh] flex flex-col items-center py-52 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.8]"
     >
       <div className="w-full pb-4 flex justify-center">
         <Button
@@ -71,9 +71,9 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
         translate={translate}
       />
       {/* Base area */}
-      <div className="h-[22rem] w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
+      <div className="md:h-[22rem] h-[14rem] w-[22rem] md:w-[32rem] bg-gray-200 dark:bg-[#272729] rounded-2xl overflow-hidden relative -z-10">
         {/* above keyboard bar */}
-        <div className="h-10 w-full relative">
+        <div className="md:h-10 h-6 w-full relative">
           <div className="absolute inset-x-0 mx-auto w-[80%] h-4 bg-[#050505]" />
         </div>
         <div className="flex relative">
@@ -107,7 +107,7 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
           transformOrigin: "bottom",
           transformStyle: "preserve-3d",
         }}
-        className="h-[12rem] w-[32rem] bg-[#010101] rounded-2xl p-2 relative"
+        className="md:h-[12rem] h-[10rem] w-[22rem] md:w-[32rem] bg-[#010101] rounded-2xl p-2 relative"
       >
         <div
           style={{
@@ -129,7 +129,7 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
           transformStyle: "preserve-3d",
           transformOrigin: "top",
         }}
-        className="h-96 w-[32rem] absolute inset-0 bg-[#010101] rounded-2xl p-2"
+        className="md:h-96 h-[10rem] w-[22rem] md:w-[32rem] absolute inset-0 bg-[#010101] rounded-2xl p-2"
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
         <img
@@ -160,7 +160,7 @@ export const Keypad = () => {
       {/* First Row */}
       <Row>
         <KBtn
-          className="w-10 items-end justify-start pl-[4px] pb-[2px]"
+          className="md:w-10 w-[2rem] items-end justify-start pl-[4px] pb-[2px]"
           childrenClassName="items-start"
         ></KBtn>
         <KBtn></KBtn>
@@ -196,7 +196,7 @@ export const Keypad = () => {
         <KBtn></KBtn>
         <KBtn></KBtn>
         <KBtn
-          className="w-10 items-end justify-end pr-[4px] pb-[2px]"
+          className="md:w-10 w-[2rem] items-end justify-end pr-[4px] pb-[2px]"
           childrenClassName="items-end"
         ></KBtn>
       </Row>
@@ -204,7 +204,7 @@ export const Keypad = () => {
       {/* Third row */}
       <Row>
         <KBtn
-          className="w-10 items-end justify-start pl-[4px] pb-[2px]"
+          className="md:w-10 w-[2rem] items-end justify-start pl-[4px] pb-[2px]"
           childrenClassName="items-start"
         ></KBtn>
         <KBtn></KBtn>
@@ -226,7 +226,7 @@ export const Keypad = () => {
       {/* Fourth Row */}
       <Row>
         <KBtn
-          className="w-[2.8rem] items-end justify-start pl-[4px] pb-[2px]"
+          className="md:w-[2.8rem] w-[2.4rem] items-end justify-start pl-[4px] pb-[2px]"
           childrenClassName="items-start"
         ></KBtn>
         <KBtn></KBtn>
@@ -242,7 +242,7 @@ export const Keypad = () => {
         <KBtn></KBtn>
         <KBtn></KBtn>
         <KBtn
-          className="w-[2.85rem] items-end justify-end pr-[4px] pb-[2px]"
+          className="md:w-[2.85rem] w-[1.55rem] items-end justify-end pr-[4px] pb-[2px]"
           childrenClassName="items-end"
         ></KBtn>
       </Row>
@@ -250,7 +250,7 @@ export const Keypad = () => {
       {/* Fifth Row */}
       <Row>
         <KBtn
-          className="w-[3.65rem] items-end justify-start pl-[4px] pb-[2px]"
+          className="md:w-[3.65rem] w-[3rem] items-end justify-start pl-[4px] pb-[2px]"
           childrenClassName="items-start"
         ></KBtn>
         <KBtn></KBtn>
@@ -263,7 +263,7 @@ export const Keypad = () => {
         <KBtn></KBtn>
         <KBtn></KBtn> <KBtn></KBtn>
         <KBtn
-          className="w-[3.65rem] items-end justify-end pr-[4px] pb-[2px]"
+          className="md:w-[3.65rem] w-[2rem] items-end justify-end pr-[4px] pb-[2px]"
           childrenClassName="items-end"
         ></KBtn>
       </Row>
@@ -283,19 +283,19 @@ export const Keypad = () => {
           childrenClassName="h-full justify-between py-[4px]"
         ></KBtn>
         <KBtn
-          className="w-8"
+          className="md:w-8 w-[1.5rem]"
           childrenClassName="h-full justify-between py-[4px]"
         ></KBtn>
-        <KBtn className="w-[8.2rem]"></KBtn>
+        <KBtn className="md:w-[8.2rem] w-[4rem]"></KBtn>
         <KBtn
-          className="w-8"
+          className="md:w-8 w-[1.5rem]"
           childrenClassName="h-full justify-between py-[4px]"
         ></KBtn>
         <KBtn
           className=""
           childrenClassName="h-full justify-between py-[4px]"
         ></KBtn>
-        <div className="w-[4.9rem] mt-[2px] h-6 p-[0.5px] rounded-[4px] flex flex-col justify-end items-center">
+        <div className="md:w-[4.9rem] w-[3.9rem] mt-[2px] h-6 p-[0.5px] rounded-[4px] flex flex-col justify-end items-center">
           <KBtn className="w-6 h-3"></KBtn>
           <div className="flex">
             <KBtn className="w-6 h-3"></KBtn>
@@ -316,13 +316,13 @@ export const KBtn = ({
   return (
     <div
       className={cn(
-        "p-[0.5px] rounded-[4px]",
+        "md:p-[0.5px] p-0 rounded-[4px]",
         backlit && "bg-white/[0.2] shadow-xl shadow-white"
       )}
     >
       <div
         className={cn(
-          "h-6 w-6 bg-[#0A090D] rounded-[3.5px] flex items-center justify-center",
+          "md:h-6 h-[1rem] md:w-6 w-[1rem] bg-[#0A090D] rounded-[3.5px] flex items-center justify-center",
           className
         )}
         style={{
@@ -399,23 +399,3 @@ export const OptionKey = ({ className }) => {
   );
 };
 
-const AceternityLogo = () => {
-  return (
-    <svg
-      width="66"
-      height="65"
-      viewBox="0 0 66 65"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-3 w-3 text-white"
-    >
-      <path
-        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-        stroke="currentColor"
-        strokeWidth="15"
-        strokeMiterlimit="3.86874"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};

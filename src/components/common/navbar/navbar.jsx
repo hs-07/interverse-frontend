@@ -14,8 +14,8 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo flex">
-        <img className="logo-icon" alt="" src={logoIcon} />
-        <img className="logo-text" alt="" src={logoText} />
+      <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
+        <img className="md:w-48 w-32" alt="text" src={logoText} />
       </div>
       <button
         className={`navbar-toggle ${isSideNavOpen ? "open" : ""}`}
