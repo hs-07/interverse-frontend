@@ -13,7 +13,7 @@ const Contact = () => {
             height={200}
           />
         </div>
-        <div className="w-full md:w-2/5 flex flex-col gap-4 justify-between">
+        <div className="w-full md:w-2/5 flex flex-col gap-8 justify-center">
           <div className="text-white font-semibold">Contact Us</div>
           <span className="text-[#545454]">
             Complete the interest form, our team members will try to connect
