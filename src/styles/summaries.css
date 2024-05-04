@@ -535,3 +535,12 @@
     font-weight: 600;
   }
 
+  .image-container img {
+    width: 70%; /* Adjusts to the width of the container */
+    height: auto; /* Keeps the aspect ratio intact */
+    display: block; /* Removes any unwanted space around the image */
+    margin: auto; /* Centers the image horizontally */
+    max-width: 75px; /* Limits the size of the image */
+}
+
+

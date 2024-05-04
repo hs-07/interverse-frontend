@@ -310,7 +310,7 @@ function Summaries() {
               />
                 <div className="sub-col-1">
                   <div className="sub-col-text-1 flex flex-warp w-full">
-                    <span className="channel-name">[{val.channel_name.slice(0, 14)}]</span>&nbsp;{val.source_title.slice(0, 70)}...
+                    <span className="channel-name">[{val.channel_name.slice(0, 20)}]</span>&nbsp;{val.source_title.slice(0, 60)}...
                   </div>
                   <div className="sub-col-text-2">
                     Views: {Math.round(val?.views / 1000000)}M | Length: {convertMinsToHrsMins(val.duration)}
@@ -358,9 +358,10 @@ function Summaries() {
             >
               <div className="summaries-header flex !justify-between w-full">
                 <div className="flex gap-4 items-center">
-                  <div className="summaries-header-img">
-                    <img alt="" src="/youtube.svg" />
-                  </div>
+                <div class="image-container">
+                  <img alt="Custom Image" src={val.image_url || '/youtube.svg'} />
+                </div>
+
                   <div className="summaries-header-content flex flex-col">
                     <h6 className="">[{val.channel_name}] {val.source_title.slice(0, 43)}..</h6>
                     <span style={{ color: "#aeaeae" }}>
