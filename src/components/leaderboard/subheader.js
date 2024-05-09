@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import "../../styles/leaderboard/subheader.css";
+import infoIcon from "../../assests/hover_info6.png";
 
 const Subheader = ({
   sortLeaderboardByAccuracy,
@@ -39,7 +40,18 @@ const Subheader = ({
     {
       block: (
         <div className="flex items-center gap-2">
-          Accuracy{" "}
+          Accuracy
+          <img
+            src={infoIcon}
+            alt="Info"
+            title="What is accuracy?"
+            style={{
+              marginLeft: "5px",
+              width: "16px", // Adjust as needed
+              height: "16px", // Adjust as needed
+              cursor: "pointer",
+            }}
+          />
           <TbArrowsUpDown
             onClick={() => handleAccuracySort()}
             style={{ cursor: "pointer" }}
@@ -51,6 +63,17 @@ const Subheader = ({
       block: (
         <div className="points flex items-center gap-2">
           Points
+          <img
+            src={infoIcon}
+            alt="Info"
+            title="Point based on prediction accuracy & timeline (max gain +100 | max loss of -100) "
+            style={{
+              marginLeft: "5px",
+              width: "16px", // Adjust as needed
+              height: "16px", // Adjust as needed
+              cursor: "pointer",
+            }}
+          />
           <TbArrowsUpDown
             onClick={() => handleScoreSort()}
             style={{ cursor: "pointer" }}
@@ -61,7 +84,18 @@ const Subheader = ({
     {
       block: (
         <div className="bankroll flex items-center gap-2">
-          Bankroll{" "}
+          Bankroll
+          <img
+            src={infoIcon}
+            alt="Info"
+            title="What is bankroll?"
+            style={{
+              marginLeft: "5px",
+              width: "16px", // Adjust as needed
+              height: "16px", // Adjust as needed
+              cursor: "pointer",
+            }}
+          />
           <TbArrowsUpDown
             onClick={() => handleBankrollSort()}
             style={{ cursor: "pointer" }}
