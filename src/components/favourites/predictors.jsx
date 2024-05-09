@@ -18,6 +18,7 @@ import {
   sortByBankroll,
   addRemoveFavourite,
 } from "../../services/Leaderboards.service";
+import { getSortedProfilesBySubjects } from "../../services/Profiles.service";
 import { useLocation } from "react-router-dom";
 import Skeleton from "../common/skeleton";
 
@@ -105,6 +106,16 @@ const LeaderBoards = () => {
   const getUserSubject = async (id) => {
     getProfilesBySubjects(id)
       .then((res) => {
+        setSubjectData([...res.data]);
+      })
+      .catch((err) => {
+        console.log("err::::", err);
+      });
+  };
+  const getSortedUserSubject = async (id, value) => {
+    getSortedProfilesBySubjects(id, value)
+      .then((res) => {
+        console.log(res);
         setSubjectData([...res.data]);
       })
       .catch((err) => {
@@ -339,7 +350,12 @@ const LeaderBoards = () => {
             {/* clickable section start */}
             {val.Active ? (
               <>
-                <UserSubjectData subjectData={subjectData} />
+                <UserSubjectData
+                  subjectData={subjectData}
+                  getUserSubject={getUserSubject}
+                  id={val?.user_id}
+                  getSortedUserSubject={getSortedUserSubject}
+                />
 
                 <div className="desktop-clickable-section">
                   <div className="collapsable-section">

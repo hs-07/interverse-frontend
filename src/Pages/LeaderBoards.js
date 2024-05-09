@@ -350,6 +350,7 @@ const LeaderBoards = () => {
               <>
                 <UserSubjectData
                   subjectData={subjectData}
+                  getUserSubject={getUserSubject}
                   id={val?.user_id}
                   getSortedUserSubject={getSortedUserSubject}
                 />

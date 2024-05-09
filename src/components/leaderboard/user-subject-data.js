@@ -3,14 +3,23 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Doughnut, Bar } from "react-chartjs-2";
 import Select from "../common/select";
 
-const UserSubjectData = ({ subjectData, id, getSortedUserSubject }) => {
+const UserSubjectData = ({
+  subjectData,
+  id,
+  getSortedUserSubject,
+  getUserSubject,
+}) => {
   const [status, setStatus] = useState();
-  const values = ["TRUE", "FALSE", "PENDING", "PARTIALLY TRUE", "ALL"];
+  const values = ["ALL", "TRUE", "FALSE", "PENDING", "PARTIALLY TRUE"];
 
   useEffect(() => {
     const sortData = async () => {
       try {
-        const res = await getSortedUserSubject(id, status);
+        if (status === "ALL") {
+          const res = await getUserSubject(id);
+        } else {
+          const res = await getSortedUserSubject(id, status);
+        }
       } catch (error) {}
     };
 
