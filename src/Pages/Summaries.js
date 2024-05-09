@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../styles/summaries.css";
-// import "../styles/summariesSubSection.css";
 import {
   allSummarySources,
   sortPublicationDate,
@@ -415,7 +414,7 @@ function Summaries() {
                                 return (
                                   <>
                                     <div className="as-col-1-row" key={index}>
-                                      <div className="">
+                                      <div className="text-white">
                                         {val?.summary_title.slice(0, 50)}...
                                       </div>
                                       <div
@@ -715,7 +714,7 @@ function Summaries() {
                                             : "bg-[#262626]"
                                         }`}
                                       >
-                                        <span className="timestamp-style">
+                                        <span className="">
                                           {"["}
                                           {val?.time}
                                           {"]"}&nbsp;&nbsp;&nbsp;
@@ -1000,7 +999,7 @@ function Summaries() {
                       {
                         title: "Full Transcript",
                         content: (
-                          <div className="mob-people-active">
+                          <div className="mob-people-active h-[60vh] overflow-y-auto">
                             {fullTranscriptData.map((val, index) => {
                               return (
                                 <div
