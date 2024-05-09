@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TrendingPredictionCard from "../components/trending-prediction-card";
 import FeedRightSection from "../components/feed-right-section";
 import ShareModal from "../components/shareModal";
-import CircularProgress from "@mui/material/CircularProgress";
+import FeedSkeleton from "../components/common/feed-skeleton";
 import { getFeedDetails } from "../services/Feed.service";
 import { leaderBoardData } from "../services/Leaderboards.service";
 import Header from "../components/Header";
@@ -32,16 +32,17 @@ const Feed = () => {
     getFeed();
   }, []);
 
-  if (loading)
-    return (
-      <div className="loader">
-        <CircularProgress />
-      </div>
-    );
-  else
-    return (
-      <div className="feed-section">
-        <Header />
+  return (
+    <div className="feed-section">
+      <Header />
+
+      {loading && (
+        <div className="loader">
+          <FeedSkeleton />
+        </div>
+      )}
+
+      {!loading && (
         <div className="feed-container">
           <div className="feed-part1">
             <div className="recent-predictions">
@@ -82,9 +83,11 @@ const Feed = () => {
             <FeedRightSection topPredictorsData={topPredictors} />
           </div>
         </div>
-        <ShareModal showModal={openShare} setShowModal={setOpenShare} />
-      </div>
-    );
+      )}
+
+      <ShareModal showModal={openShare} setShowModal={setOpenShare} />
+    </div>
+  );
 };
 
 export default Feed;
