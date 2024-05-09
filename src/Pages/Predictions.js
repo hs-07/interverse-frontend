@@ -17,6 +17,7 @@ import {
 import infoIcon from "../assests/hover_info6.png";
 import SubHeader from "../components/predictions/subheader";
 import PredictionVideo from "../components/predictions/video";
+import Skeleton from "../components/common/skeleton";
 
 const Predictions = () => {
   const location = useLocation();
@@ -153,6 +154,11 @@ const Predictions = () => {
         fetchSortedCategory={fetchSortedCategory}
       />
       {/* Header ENds */}
+      {data.length === 0 && (
+        <div className="loader">
+          <Skeleton />
+        </div>
+      )}
       {/* Array Data Starts */}
       {data.map((val, index) => {
         return (

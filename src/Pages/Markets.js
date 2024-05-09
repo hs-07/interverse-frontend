@@ -18,6 +18,8 @@ import Chart from "chart.js/auto";
 import annotationPlugin from "chartjs-plugin-annotation";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import "../styles/markets.css";
+import Skeleton from "../components/common/skeleton";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -29,6 +31,7 @@ ChartJS.register(
   Legend
 );
 Chart.register(annotationPlugin);
+
 function Markets() {
   const [marketData, setMarketData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -76,12 +79,12 @@ function Markets() {
     const arr = [...marketData];
     arr[index].peopleActive = !arr[index].peopleActive;
     setMarketData([...arr]);
-    if (marketData[index].peopleActive == false) {
+    if (marketData[index].peopleActive === false) {
       return;
     }
     setMarketData(
       [...marketData].map((obj, ind) => {
-        if (ind == index) {
+        if (ind === index) {
           return {
             ...obj,
             peopleActive: true,
@@ -110,6 +113,12 @@ function Markets() {
   return (
     <div className="market-section">
       <Header />
+
+      {marketData.length === 0 && (
+        <div className="loader">
+          <Skeleton />
+        </div>
+      )}
       {/* User Info Row Starts */}
       {marketData?.map((val, index) => {
         return (
