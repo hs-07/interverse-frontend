@@ -730,6 +730,7 @@ function Summaries() {
                             <div className="h-full w-1/2 flex flex-col gap-4 ">
                               <div className="h-3/5">
                                 <iframe
+                                  allowFullScreen
                                   style={{
                                     width: "100%",
                                     height: "100%",
@@ -811,6 +812,7 @@ function Summaries() {
 
                             <div className="ap-col-2 h-3/5">
                               <iframe
+                                allowFullScreen
                                 style={{
                                   width: "100%",
                                   height: "100%",
