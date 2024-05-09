@@ -10,6 +10,7 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import "../../styles/mychannels.css";
 import AddChannelModal from "../../components/addChannelModal";
 import ChannelSubHeader from "../../components/channels/subheader";
+import Skeleton from "../common/skeleton";
 
 function MyChannels() {
   const [channelData, setChannelData] = useState([]);
@@ -62,6 +63,11 @@ function MyChannels() {
       {/* Add Channel div Ends */}
       <ChannelSubHeader className={"!top-0 !relative"} />
       {/* Add Channel div Ends */}
+      {channelData.length === 0 && (
+        <div className="loader">
+          <Skeleton />
+        </div>
+      )}
       {/* Row Data Starts */}
       <div className=" h-full overflow-y-auto h-[72vh] flex flex-col gap-[2px]">
         {channelData.map((val, index) => {
