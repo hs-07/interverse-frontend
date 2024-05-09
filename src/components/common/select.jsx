@@ -14,7 +14,7 @@ export default function BasicSelect({ setStatus, status, values }) {
     <Box sx={{ minWidth: 160 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label" className="!border-white">
-          Select Status
+          Status
         </InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -22,7 +22,7 @@ export default function BasicSelect({ setStatus, status, values }) {
           value={status}
           label="Status"
           onChange={handleChange}
-          className="!border-white"
+          className="!border-white !text-white"
         >
           {values.map((value) => (
             <MenuItem key={value} value={value} className="uppercase">
