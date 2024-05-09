@@ -24,6 +24,7 @@ import {
 } from "../services/Leaderboards.service";
 import { useLocation } from "react-router-dom";
 import Header from "../components/leaderboard/Header";
+import Skeleton from "../components/common/skeleton";
 
 const LeaderBoards = () => {
   const navigate = useNavigate();
@@ -151,343 +152,337 @@ const LeaderBoards = () => {
 
   return (
     <div className="custom-container">
-      {loader ? (
-        <>
-          <Header searchLeaderboard={searchLeaderboard} />
-          <SubHeader
-            sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
-            sortLeaderboardByScore={sortLeaderboardByScore}
-            sortLeaderboardByBankroll={sortLeaderboardByBankroll}
-          />
-          {data?.map((val, index) => {
-            return (
-              <div className="" style={{ width: "100%" }} key={index}>
-                <div className="desktop-row-section ">
-                  <div className="block1">
-                    {val?.rank === 1 ? (
-                      <img alt="rank-1" src="/goldmedal-1.svg" />
-                    ) : val?.rank === 2 ? (
-                      <img alt="rank-2" src="/goldmedal-2.svg" />
-                    ) : val?.rank === 3 ? (
-                      <img alt="rank-3" src="/goldmedal-3.svg" />
-                    ) : (
-                      val?.rank
-                    )}
-                  </div>
-                  <div className="block1">
-                    <img
-                      style={{
-                        position: "relative",
-                        borderRadius: "100%",
-                        width: "56px",
-                        height: "56px",
-                        padding: "4px",
-                        overflow: "hidden",
-                        flexShrink: "0",
-                        objectFit: "cover",
-                        border:
-                          index == 0
-                            ? "2px solid #FDBC4B"
-                            : index == 1
-                            ? "2px solid #A7A7A7"
-                            : index == 2
-                            ? "2px solid #846836"
-                            : "1px solid #4B6CC2",
-                      }}
-                      alt=""
-                      src={val?.image_url}
-                      onClick={() =>
-                        navigate("/Profiles", {
-                          state: { id: val?.user_id },
-                        })
-                      }
-                    />
-                    <div className="user-name-section">
-                      <div className="user-name-section1">
-                        {val?.first_name} {val?.last_name}
-                      </div>
-                      <div
-                        onClick={() =>
-                          navigate("/Predictions", {
-                            state: { id: val?.user_id },
-                          })
-                        }
-                        className="prediction-section"
-                      >
-                        {val.total_predictions} Predictions <FaAngleRight />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="block1">
-                    {Math.floor(val.prediction_accuracy)}%
+      <Header searchLeaderboard={searchLeaderboard} />
+      <SubHeader
+        sortLeaderboardByAccuracy={sortLeaderboardByAccuracy}
+        sortLeaderboardByScore={sortLeaderboardByScore}
+        sortLeaderboardByBankroll={sortLeaderboardByBankroll}
+      />
+      {data.length === 0 && (
+        <div className="loader">
+          <Skeleton />
+        </div>
+      )}
+      {data?.map((val, index) => {
+        return (
+          <div className="" style={{ width: "100%" }} key={index}>
+            <div className="desktop-row-section ">
+              <div className="block1">
+                {val?.rank === 1 ? (
+                  <img alt="rank-1" src="/goldmedal-1.svg" />
+                ) : val?.rank === 2 ? (
+                  <img alt="rank-2" src="/goldmedal-2.svg" />
+                ) : val?.rank === 3 ? (
+                  <img alt="rank-3" src="/goldmedal-3.svg" />
+                ) : (
+                  val?.rank
+                )}
+              </div>
+              <div className="block1">
+                <img
+                  style={{
+                    position: "relative",
+                    borderRadius: "100%",
+                    width: "56px",
+                    height: "56px",
+                    padding: "4px",
+                    overflow: "hidden",
+                    flexShrink: "0",
+                    objectFit: "cover",
+                    border:
+                      index == 0
+                        ? "2px solid #FDBC4B"
+                        : index == 1
+                        ? "2px solid #A7A7A7"
+                        : index == 2
+                        ? "2px solid #846836"
+                        : "1px solid #4B6CC2",
+                  }}
+                  alt=""
+                  src={val?.image_url}
+                  onClick={() =>
+                    navigate("/Profiles", {
+                      state: { id: val?.user_id },
+                    })
+                  }
+                />
+                <div className="user-name-section">
+                  <div className="user-name-section1">
+                    {val?.first_name} {val?.last_name}
                   </div>
                   <div
-                    className="block1"
-                    style={{
-                      color: val.total_user_score < 0 ? "#e87d7d" : "#fff",
-                    }}
+                    onClick={() =>
+                      navigate("/Predictions", {
+                        state: { id: val?.user_id },
+                      })
+                    }
+                    className="prediction-section"
                   >
-                    {new Intl.NumberFormat("en-IN", {
-                      maximumFractionDigits: 0,
-                      minimumFractionDigits: 0,
-                    }).format(val.total_user_score)}
-                  </div>
-                  <div
-                      className="block1"
-                      style={{
-                        color: val.bankroll < 0 ? "#e87d7d" : "#fff",
-                      }}
-                    >
-                      {val.bankroll < 0 ? `-$${Math.abs(val.bankroll)}` : `$${val.bankroll}`}
-                    </div>                  <div className="block1">
-                    {val.is_favourite ? (
-                      <HiHeart
-                        onClick={() => toggleFavourite(index, val?.user_id)}
-                        style={{ cursor: "pointer" }}
-                      />
-                    ) : (
-                      <HiOutlineHeart
-                        onClick={() => toggleFavourite(index, val?.user_id)}
-                        style={{ cursor: "pointer" }}
-                      />
-                    )}
-                  </div>
-                  <div
-                    onClick={() => {
-                      onClickDetails(index, val?.user_id);
-                    }}
-                    style={{ backgroundColor: "#282828", textAlign: "center" }}
-                  >
-                    {val.Active ? (
-                      <button className="more-info-button">
-                        Less info
-                        <FaMinus />
-                      </button>
-                    ) : (
-                      <button className="more-info-button">
-                        More info
-                        <FaPlus />
-                      </button>
-                    )}
+                    {val.total_predictions} Predictions <FaAngleRight />
                   </div>
                 </div>
-                <div className="mobile-row-section">
-                  <div className="mob-row-section-1">
-                    <div className="row-img">
-                      <Image
-                        alt=""
-                        src={val?.image_url}
-                        onClick={() =>
-                          navigate("/Profiles", {
-                            state: { id: val?.user_id },
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="row-header">
-                      <div className="row-heading">
-                        <span className="ranking" style={{ color: "#AEAEAE" }}>
-                          #{index + 1}
-                        </span>
-                        <div className="user_name">
-                          {val?.first_name} {val?.last_name}
-                        </div>
-                      </div>
-                      <div className="row-sub-heading">
-                        <label
-                          style={{
-                            color: "#aeaeae",
-                            fontSize: "12px",
-                          }}
-                        >
-                          Accuracy{" "}
-                          <span
-                            style={{
-                              color:
-                                val.prediction_accuracy > 70
-                                  ? "#23B678"
-                                  : val.prediction_accuracy > 50
-                                  ? "#FDBC4B"
-                                  : "#FF0000",
-                            }}
-                          >
-                            {Math.floor(val.prediction_accuracy)}%
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mob-row-section-2">
-                    {val.is_favourite ? (
-                      <HiHeart
-                        onClick={() => toggleFavourite(index, val?.user_id)}
-                        style={{ cursor: "pointer" }}
-                      />
-                    ) : (
-                      <HiOutlineHeart
-                        onClick={() => toggleFavourite(index, val?.user_id)}
-                        style={{ cursor: "pointer" }}
-                      />
-                    )}
-                    <div
-                      onClick={() => {
-                        onClickDetails(index, val?.user_id);
-                      }}
-                    >
-                      {val.Active ? <FaMinus /> : <FaPlus />}
-                    </div>
-                  </div>
-                </div>
-                {/* clickable section start */}
+              </div>
+              <div className="block1">
+                {Math.floor(val.prediction_accuracy)}%
+              </div>
+              <div
+                className="block1"
+                style={{
+                  color: val.total_user_score < 0 ? "#e87d7d" : "#fff",
+                }}
+              >
+                {new Intl.NumberFormat("en-IN", {
+                  maximumFractionDigits: 0,
+                  minimumFractionDigits: 0,
+                }).format(val.total_user_score)}
+              </div>
+              <div
+                className="block1"
+                style={{
+                  color: val.bankroll < 0 ? "#e87d7d" : "#fff",
+                }}
+              >
+                {val.bankroll < 0
+                  ? `-$${Math.abs(val.bankroll)}`
+                  : `$${val.bankroll}`}
+              </div>{" "}
+              <div className="block1">
+                {val.is_favourite ? (
+                  <HiHeart
+                    onClick={() => toggleFavourite(index, val?.user_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                ) : (
+                  <HiOutlineHeart
+                    onClick={() => toggleFavourite(index, val?.user_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
+              </div>
+              <div
+                onClick={() => {
+                  onClickDetails(index, val?.user_id);
+                }}
+                style={{ backgroundColor: "#282828", textAlign: "center" }}
+              >
                 {val.Active ? (
-                  <>
-                    <UserSubjectData
-                      subjectData={subjectData}
-                      id={val?.user_id}
-                      getSortedUserSubject={getSortedUserSubject}
-                    />
+                  <button className="more-info-button">
+                    Less info
+                    <FaMinus />
+                  </button>
+                ) : (
+                  <button className="more-info-button">
+                    More info
+                    <FaPlus />
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="mobile-row-section">
+              <div className="mob-row-section-1">
+                <div className="row-img">
+                  <Image
+                    alt=""
+                    src={val?.image_url}
+                    onClick={() =>
+                      navigate("/Profiles", {
+                        state: { id: val?.user_id },
+                      })
+                    }
+                  />
+                </div>
+                <div className="row-header">
+                  <div className="row-heading">
+                    <span className="ranking" style={{ color: "#AEAEAE" }}>
+                      #{index + 1}
+                    </span>
+                    <div className="user_name">
+                      {val?.first_name} {val?.last_name}
+                    </div>
+                  </div>
+                  <div className="row-sub-heading">
+                    <label
+                      style={{
+                        color: "#aeaeae",
+                        fontSize: "12px",
+                      }}
+                    >
+                      Accuracy{" "}
+                      <span
+                        style={{
+                          color:
+                            val.prediction_accuracy > 70
+                              ? "#23B678"
+                              : val.prediction_accuracy > 50
+                              ? "#FDBC4B"
+                              : "#FF0000",
+                        }}
+                      >
+                        {Math.floor(val.prediction_accuracy)}%
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="mob-row-section-2">
+                {val.is_favourite ? (
+                  <HiHeart
+                    onClick={() => toggleFavourite(index, val?.user_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                ) : (
+                  <HiOutlineHeart
+                    onClick={() => toggleFavourite(index, val?.user_id)}
+                    style={{ cursor: "pointer" }}
+                  />
+                )}
+                <div
+                  onClick={() => {
+                    onClickDetails(index, val?.user_id);
+                  }}
+                >
+                  {val.Active ? <FaMinus /> : <FaPlus />}
+                </div>
+              </div>
+            </div>
+            {/* clickable section start */}
+            {val.Active ? (
+              <>
+                <UserSubjectData
+                  subjectData={subjectData}
+                  id={val?.user_id}
+                  getSortedUserSubject={getSortedUserSubject}
+                />
 
-                    <div className="desktop-clickable-section">
-                      <div className="collapsable-section">
-                        <div className="clickable-section-inner1">
-                          <div className="clickable-section-inner2">
-                            Area of Accuracy
-                          </div>
-                          <div className="category-value">
-                            {val.top_two_categories}
-                          </div>
-                        </div>
+                <div className="desktop-clickable-section">
+                  <div className="collapsable-section">
+                    <div className="clickable-section-inner1">
+                      <div className="clickable-section-inner2">
+                        Area of Accuracy
                       </div>
-                      <div className="pending-Predictions-section">
-                        <div className="pending-Predictions-title">
+                      <div className="category-value">
+                        {val.top_two_categories}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pending-Predictions-section">
+                    <div className="pending-Predictions-title">
+                      Pending Predictions
+                    </div>
+                    <div className="pending-Predictions-value">
+                      {val.all_pending_predictions}
+                    </div>
+                  </div>
+                  <div className="settle-section">
+                    <div className="settle-section-title">
+                      Due to Settle in 2024
+                    </div>
+                    <div className="settle-section-value">
+                      {val.predictions_due_to_settle}
+                    </div>
+                  </div>
+                  <div className="markets-section">
+                    <div className="markets-section-title ">
+                      Have Open Markets
+                    </div>
+                    <div className="markets-section-value">
+                      {val.open_markets}
+                    </div>
+                  </div>
+                  <div className="streak-section">
+                    <div className="streak-section-title">Current Streak</div>
+                    <div className="streak-section-value">
+                      {val.current_streak}
+                    </div>
+                  </div>
+                </div>
+                <div className="mobile-clickable-section">
+                  <div className="mob-clickable-headings">
+                    <div className="heading">Area of Accuracy</div>
+                    <div className="mob-category-value">
+                      {val.top_two_categories}
+                    </div>
+                  </div>
+                  <div className="mob-clickable-content">
+                    <div className="block">
+                      <div className="icon">
+                        <img
+                          src="/pending.png"
+                          alt={"pending"}
+                          width={20}
+                          height={20}
+                        />
+                      </div>
+                      <div className="text">
+                        <span style={{ color: "#AEAEAE" }}>
                           Pending Predictions
-                        </div>
-                        <div className="pending-Predictions-value">
+                        </span>
+                        <div className="value">
                           {val.all_pending_predictions}
                         </div>
                       </div>
-                      <div className="settle-section">
-                        <div className="settle-section-title">
-                          Due to Settle in 2024
-                        </div>
-                        <div className="settle-section-value">
+                    </div>
+                    <div className="block">
+                      <div className="icon">
+                        <LuCalendarDays />
+                      </div>
+                      <div className="text">
+                        <span style={{ color: "#AEAEAE" }}>Due to Settle</span>
+                        <div className="value">
                           {val.predictions_due_to_settle}
                         </div>
                       </div>
-                      <div className="markets-section">
-                        <div className="markets-section-title ">
+                    </div>
+                    <div className="block">
+                      <div className="icon">
+                        <img
+                          src="/status-up.png"
+                          alt={"pending"}
+                          width={22}
+                          height={22}
+                        />
+                      </div>
+                      <div className="text">
+                        <span style={{ color: "#AEAEAE" }}>
                           Have Open Markets
-                        </div>
-                        <div className="markets-section-value">
-                          {val.open_markets}
-                        </div>
-                      </div>
-                      <div className="streak-section">
-                        <div className="streak-section-title">
-                          Current Streak
-                        </div>
-                        <div className="streak-section-value">
-                          {val.current_streak}
-                        </div>
+                        </span>
+                        <div className="value">{val.open_markets}</div>
                       </div>
                     </div>
-                    <div className="mobile-clickable-section">
-                      <div className="mob-clickable-headings">
-                        <div className="heading">Area of Accuracy</div>
-                        <div className="mob-category-value">
-                          {val.top_two_categories}
-                        </div>
+                    <div className="block">
+                      <div className="icon">
+                        <img
+                          src="/streak.png"
+                          alt={"pending"}
+                          width={22}
+                          height={22}
+                        />
                       </div>
-                      <div className="mob-clickable-content">
-                        <div className="block">
-                          <div className="icon">
-                            <img
-                              src="/pending.png"
-                              alt={"pending"}
-                              width={20}
-                              height={20}
-                            />
-                          </div>
-                          <div className="text">
-                            <span style={{ color: "#AEAEAE" }}>
-                              Pending Predictions
-                            </span>
-                            <div className="value">
-                              {val.all_pending_predictions}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="block">
-                          <div className="icon">
-                            <LuCalendarDays />
-                          </div>
-                          <div className="text">
-                            <span style={{ color: "#AEAEAE" }}>
-                              Due to Settle
-                            </span>
-                            <div className="value">
-                              {val.predictions_due_to_settle}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="block">
-                          <div className="icon">
-                            <img
-                              src="/status-up.png"
-                              alt={"pending"}
-                              width={22}
-                              height={22}
-                            />
-                          </div>
-                          <div className="text">
-                            <span style={{ color: "#AEAEAE" }}>
-                              Have Open Markets
-                            </span>
-                            <div className="value">{val.open_markets}</div>
-                          </div>
-                        </div>
-                        <div className="block">
-                          <div className="icon">
-                            <img
-                              src="/streak.png"
-                              alt={"pending"}
-                              width={22}
-                              height={22}
-                            />
-                          </div>
-                          <div className="text">
-                            <span style={{ color: "#AEAEAE" }}>
-                              Current Streak
-                            </span>
-                            <div className="value">{val.current_streak}</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="view-prediction-btn">
-                        <button
-                          onClick={() =>
-                            navigate("/Predictions", {
-                              state: { id: val?.user_id },
-                            })
-                          }
-                        >
-                          View {val.total_predictions} Predictions
-                        </button>
+                      <div className="text">
+                        <span style={{ color: "#AEAEAE" }}>Current Streak</span>
+                        <div className="value">{val.current_streak}</div>
                       </div>
                     </div>
-                  </>
-                ) : null}
+                  </div>
+                  <div className="view-prediction-btn">
+                    <button
+                      onClick={() =>
+                        navigate("/Predictions", {
+                          state: { id: val?.user_id },
+                        })
+                      }
+                    >
+                      View {val.total_predictions} Predictions
+                    </button>
+                  </div>
+                </div>
+              </>
+            ) : null}
 
-                {/* clickable section ends */}
-              </div>
-            );
-          })}
-        </>
-      ) : (
-        <div className="loader">
-          <CircularProgress />
-        </div>
-      )}
+            {/* clickable section ends */}
+          </div>
+        );
+      })}
     </div>
   );
 };

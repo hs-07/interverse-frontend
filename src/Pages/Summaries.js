@@ -19,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 import Tabs from "../components/common/tabs";
 import SummariesSubheader from "../components/summaries/subheader";
 import Header from "../components/summaries/Header";
+import Skeleton from "../components/common/skeleton";
 
 const myComponentStyle = {
   fontFamily: "Roboto, sans-serif", // Use the font name specified in Google Fonts
@@ -296,6 +297,12 @@ function Summaries() {
         sortByNumberOfPredictions={sortByNumberOfPredictions}
       />
 
+      {data.length === 0 && (
+        <div className="loader">
+          <Skeleton />
+        </div>
+      )}
+
       {/* Column Starts */}
       {data.map((val, index) => {
         return (
@@ -303,17 +310,21 @@ function Summaries() {
             {/* Column Starts */}
             <div className="summaries-col">
               <div className="summaries-col-1">
-              <img
+                <img
                   alt=""
-                  src={val.image_url || '/youtube.svg'}
-                  style={{ width: '7.5%', height: 'auto' }}
-              />
+                  src={val.image_url || "/youtube.svg"}
+                  style={{ width: "7.5%", height: "auto" }}
+                />
                 <div className="sub-col-1">
                   <div className="sub-col-text-1 flex flex-warp w-full">
-                    <span className="channel-name">[{val.channel_name.slice(0, 20)}]</span>&nbsp;{val.source_title.slice(0, 60)}...
+                    <span className="channel-name">
+                      [{val.channel_name.slice(0, 20)}]
+                    </span>
+                    &nbsp;{val.source_title.slice(0, 60)}...
                   </div>
                   <div className="sub-col-text-2">
-                    Views: {Math.round(val?.views / 1000000)}M | Length: {convertMinsToHrsMins(val.duration)}
+                    Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
+                    {convertMinsToHrsMins(val.duration)}
                   </div>
                 </div>
               </div>
@@ -358,12 +369,17 @@ function Summaries() {
             >
               <div className="summaries-header flex !justify-between w-full">
                 <div className="flex gap-4 items-center">
-                <div class="image-container">
-                  <img alt="Custom Image" src={val.image_url || '/youtube.svg'} />
-                </div>
+                  <div class="image-container">
+                    <img
+                      alt="Custom Image"
+                      src={val.image_url || "/youtube.svg"}
+                    />
+                  </div>
 
                   <div className="summaries-header-content flex flex-col">
-                    <h6 className="">[{val.channel_name}] {val.source_title.slice(0, 43)}..</h6>
+                    <h6 className="">
+                      [{val.channel_name}] {val.source_title.slice(0, 43)}..
+                    </h6>
                     <span style={{ color: "#aeaeae" }}>
                       Views: {Math.round(val?.views / 1000000)}M | Length:{" "}
                       {convertMinsToHrsMins(val.duration)}
@@ -753,31 +769,41 @@ function Summaries() {
                                         setSubSectionIndex(index);
                                       }}
                                     >
-                                  <div className="truncate w-full"
-                                    style={{
-                                      position: "relative",
-                                      fontWeight: "500",
-                                      display: "flex",
-                                      alignItems: "center",
-                                      flexShrink: "0",
-                                    }}
-                                  >
-                                    <span
-                                      style={{
-                                        color: val?.prediction_validation === "TRUE" ? "green"
-                                              : val?.prediction_validation === "FALSE" ? "#E72E2E"
-                                              : val?.prediction_validation === "PARTIALLY TRUE" ? "#2DD22A"
-                                              : val?.prediction_validation === "PENDING" ? "#374C98"
-                                              : "#D29D15",
-                                        fontFamily: "inter",
-                                        fontSize: "14px",
-                                        fontWeight: "650",
-                                      }}
-                                    >
-                                      [{val?.prediction_validation}]
-                                    </span> &nbsp;{val?.prediction}
-                                  </div>
-
+                                      <div
+                                        className="truncate w-full"
+                                        style={{
+                                          position: "relative",
+                                          fontWeight: "500",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          flexShrink: "0",
+                                        }}
+                                      >
+                                        <span
+                                          style={{
+                                            color:
+                                              val?.prediction_validation ===
+                                              "TRUE"
+                                                ? "green"
+                                                : val?.prediction_validation ===
+                                                  "FALSE"
+                                                ? "#E72E2E"
+                                                : val?.prediction_validation ===
+                                                  "PARTIALLY TRUE"
+                                                ? "#2DD22A"
+                                                : val?.prediction_validation ===
+                                                  "PENDING"
+                                                ? "#374C98"
+                                                : "#D29D15",
+                                            fontFamily: "inter",
+                                            fontSize: "14px",
+                                            fontWeight: "650",
+                                          }}
+                                        >
+                                          [{val?.prediction_validation}]
+                                        </span>{" "}
+                                        &nbsp;{val?.prediction}
+                                      </div>
                                     </div>
                                   </>
                                 );
