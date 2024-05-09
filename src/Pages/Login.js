@@ -1,19 +1,13 @@
-// import "../styles/login.css";
-import { Button } from "@mui/material";
 import { useAppContext } from "../utils/appContext";
-import { useNavigate } from "react-router-dom";
-import logo1 from "../assests/logo1.png";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineApple } from "react-icons/ai";
 import { RiTwitterLine } from "react-icons/ri";
-import logotext from "../assests/logo-text.svg";
-import logoicon from "../assests/logo-icon.svg";
 
 const Login = () => {
   const { login } = useAppContext();
   return (
-    <div className="h-[90vh] bg-[#0B0B0F] w-full flex justify-center py-16">
-      <div className="w-full md:w-1/3 flex flex-col md:border-2 md:border-[#181818] p-8 rounded-2xl justify-around">
+    <div className="h-screen bg-[#0B0B0F] w-full flex justify-center py-16">
+      <div className="w-full md:w-1/3 flex flex-col md:border-2 md:border-[#181818] p-8 rounded-2xl justify-around max-h-[32rem]">
         <div className="flex w-full justify-center">
           <h1 className="text-3xl text-white font-bold ">Login</h1>
           {/* <img src={logoicon} alt="" className="w-12" /> */}
