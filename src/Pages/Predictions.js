@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import { LuCalendarDays } from "react-icons/lu";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
 import "../styles/predictions.css";
@@ -25,6 +24,7 @@ const Predictions = () => {
   const [data, setData] = useState([]);
   const [userid, setUserId] = useState(location?.state?.id);
   const [summariesRead, setSummariesRead] = useState("6");
+  const [sourceRead, setSourceRead] = useState("6");
   const [justificationRead, setJustificationRead] = useState("4");
 
   useEffect(() => {
@@ -99,15 +99,22 @@ const Predictions = () => {
   };
 
   const handleSummaries = () => {
-    if (summariesRead == "6") {
+    if (summariesRead === "6") {
       setSummariesRead("1000");
     } else {
       setSummariesRead("6");
     }
   };
+  const handleSource = () => {
+    if (sourceRead === "6") {
+      setSourceRead("1000");
+    } else {
+      setSourceRead("6");
+    }
+  };
 
   const handleJustifications = () => {
-    if (justificationRead == "4") {
+    if (justificationRead === "4") {
       setJustificationRead("1000");
     } else {
       setJustificationRead("4");
@@ -132,6 +139,10 @@ const Predictions = () => {
     );
 
     return `rgb(${r}, ${g}, ${b})`;
+  };
+  const clearData = (rawData) => {
+    const cleanData = rawData.replace(/\\n/g, "\n").replace(/^\["|"\]$/g, "");
+    return cleanData.split("\n").filter((line) => line.trim() !== "");
   };
 
   const calculateBackgroundColor = (score) => {
@@ -660,11 +671,22 @@ const Predictions = () => {
                         webkitBoxOrient: "vertical",
                       }}
                     >
-                      <ul style={{ margin: "0", paddingLeft: "21px" }}>
-                        <li style={{ marginBottom: "0px" }}>
-                          {val?.summaries}
-                        </li>
-                      </ul>
+                      <article key={index}>
+                        <ul
+                          style={{
+                            margin: "0",
+                            paddingLeft: "21px",
+                            listStyleType: "none",
+                            fontSize: "14px",
+                          }}
+                        >
+                          {clearData(val.summaries).map((point, idx) => (
+                            <li key={idx} style={{ marginBottom: "10px" }}>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
                     </div>
                     <div
                       style={{
@@ -712,31 +734,39 @@ const Predictions = () => {
 
                     {val?.sources.map((val, index) => {
                       return (
-                        <div
-                          style={{
-                            borderRadius: "8px",
-                            overflow: "hidden",
-                            flexShrink: "0",
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            boxSizing: "border-box",
-                          }}
-                        >
-                          <div
-                            style={{
-                              position: "relative",
-                              display: "flex",
-                              alignItems: "center",
-                              flexShrink: "0",
-                            }}
-                          >
-                            {val}
-                          </div>
+                        <div>
+                          {clearData(val).map((point, idx) => (
+                            <li
+                              key={idx}
+                              className="line-clamp-6"
+                              style={{
+                                marginBottom: "12px",
+                                webkitLineClamp: sourceRead,
+                                webkitBoxOrient: "vertical",
+                              }}
+                            >
+                              {point}
+                            </li>
+                          ))}
                         </div>
                       );
                     })}
+                    <div
+                      style={{
+                        position: "relative",
+                        fontSize: "16px",
+                        textAlign: "right",
+                        display: "flex",
+                        alignItems: "center",
+                        flexShrink: "0",
+                        width: "100%",
+                        justifyContent: "flex-end",
+                        cursor: "pointer",
+                      }}
+                      onClick={handleSource}
+                    >
+                      {sourceRead === "6" ? "Read more" : "Read Less"}
+                    </div>
                   </div>
                   <div
                     className="predictionActive-row-5"
