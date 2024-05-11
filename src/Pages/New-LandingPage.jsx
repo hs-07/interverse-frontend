@@ -9,6 +9,7 @@ import Section6 from "../components/landing/section-6";
 import Section7 from "../components/landing/section-7";
 import Section8 from "../components/landing/section-8";
 import Section9 from "../components/landing/section-9";
+import { StickyScroll } from "../components/landing/sticky-scroll";
 
 export default function LandingPage() {
   return (

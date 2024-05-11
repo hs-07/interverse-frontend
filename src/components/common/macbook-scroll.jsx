@@ -35,7 +35,11 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
     [0, 1],
     [isMobile ? -135 : 0, 1500]
   );
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [isMobile ? -50 : -28, -28, 0]);
+  const rotate = useTransform(
+    scrollYProgress,
+    [0.1, 0.12, 0.3],
+    [isMobile ? -50 : -28, -28, 0]
+  );
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -44,7 +48,13 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
       ref={ref}
       className="scroll-smooth md:min-h-[200vh] min-h-[100vh] flex flex-col items-center py-52 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.8]"
     >
-      <div className="w-full pb-4 flex justify-center">
+      <motion.div
+        className="w-full pb-4 flex justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 3 }}
+      >
         <Button
           borderRadius="1.75rem"
           className="bg-[#0B0B0F] text-white border-neutral-200 dark:border-slate-800 font-semibold"
@@ -52,12 +62,17 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
           Watch the guided tour
           <FaPlay />
         </Button>
-      </div>
+      </motion.div>
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 3 }}
+        viewport={{ once: false }}
         className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center"
       >
         {title}
@@ -398,4 +413,3 @@ export const OptionKey = ({ className }) => {
     </svg>
   );
 };
-

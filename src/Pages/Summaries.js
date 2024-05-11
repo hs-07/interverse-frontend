@@ -1001,7 +1001,7 @@ function Summaries() {
                       {
                         title: "Full Transcript",
                         content: (
-                          <div className="mob-people-active h-[60vh] overflow-y-auto">
+                          <div className="mob-people-active h-[60vh] max-h-[40rem] overflow-y-auto">
                             {fullTranscriptData.map((val, index) => {
                               return (
                                 <div
