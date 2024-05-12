@@ -12,9 +12,9 @@ const TopNav = () => {
   const { pathname } = useLocation();
   const [userData, setUserData] = useState();
   const handleRedirect = () => {
-    window.location.href = "http://localhost:3000";
+    // window.location.href = "http://localhost:3000";
 
-    // window.location.href = "https://www.luckyorgenius.com/";
+    window.location.href = "https://www.luckyorgenius.com/";
   };
   useEffect(() => {
     let data = localStorage.getItem("userdata");
