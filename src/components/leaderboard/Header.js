@@ -10,7 +10,7 @@ function Header({ searchLeaderboard }) {
 
   const handleRedirect = () => {
     window.location.href = "http://localhost:3000";
-    // window.location.href = "https://www.luckyorgenius.com/";
+    // window.location.href = "https://www.luckyorgenius.com";
   };
 
   useEffect(() => {
