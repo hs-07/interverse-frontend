@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./style.css";
-import logoIcon from "../../../assests/logo-icon.svg";
-import logoText from "../../../assests/logo-text.svg";
 
 function Navbar() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -14,8 +12,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo flex">
-        {/* <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
-        <img className="md:w-48 w-32" alt="text" src={logoText} /> */}
         <img src="/inter-logo.svg" alt="" className="" />
       </div>
       <button
@@ -58,7 +54,7 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <NavLink
-            // to="/login"
+            to="/login"
             className="signup-btn"
             // activeClassName="active"
             onClick={toggleSideNav}
