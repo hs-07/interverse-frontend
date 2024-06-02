@@ -14,8 +14,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo flex">
-        <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
-        <img className="md:w-48 w-32" alt="text" src={logoText} />
+        {/* <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
+        <img className="md:w-48 w-32" alt="text" src={logoText} /> */}
+        <img src="/inter-logo.svg" alt="" className="" />
       </div>
       <button
         className={`navbar-toggle ${isSideNavOpen ? "open" : ""}`}
@@ -58,8 +59,8 @@ function Navbar() {
         <li className="nav-item">
           <NavLink
             // to="/login"
-            className="nav-link signup-btn"
-            activeClassName="active"
+            className="signup-btn"
+            // activeClassName="active"
             onClick={toggleSideNav}
           >
             Sign up

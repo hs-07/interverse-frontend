@@ -18,7 +18,7 @@ export default function LandingPage() {
         <MacbookScroll
           title={
             <h1 className="md:text-[64px] text-[32px] md:leading-[6rem] leading-[2rem]">
-              Finance is finally effortless.
+              Your Trusted Partner in Global Remittance
             </h1>
           }
           src={`/wallpaper.jpg`}

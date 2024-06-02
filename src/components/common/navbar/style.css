@@ -62,27 +62,30 @@
 
 .nav-link {
   text-decoration: none;
-  color: #545454;
+  color: white;
   font-weight: 500;
   font-size: 18px;
 }
 
 .nav-link.active {
-  color: white;
+  color: #f2c66d;
 }
-
+/* 
 .signup-btn {
   background-color: transparent;
   color: #ffffff;
   padding: 8px 24px;
   border-radius: 24px;
   border: 2px solid #545454;
-}
+} */
 
-.signup-btn.active {
-  background-color: #4b6cc2;
-  border: 2px solid #4b6cc2;
-  color: #ffffff;
+.signup-btn {
+  padding: 8px 24px;
+  border-radius: 24px;
+  background-color: #f2c66d;
+  border: 2px solid #f2c66d;
+  color: black;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
