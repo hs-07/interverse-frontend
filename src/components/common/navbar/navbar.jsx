@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo flex">
-      <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
+        <img className="md:w-16 w-10" alt="icon" src={logoIcon} />
         <img className="md:w-48 w-32" alt="text" src={logoText} />
       </div>
       <button
@@ -57,7 +57,7 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/login"
+            // to="/login"
             className="nav-link signup-btn"
             activeClassName="active"
             onClick={toggleSideNav}

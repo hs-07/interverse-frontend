@@ -31,7 +31,7 @@ const Section7 = () => {
       <div className="">
         <button
           className="bg-[#1C1C1C] rounded-3xl text-white py-2 w-48 px-6 transition-all ease-in-out animate-bounce"
-          onClick={() => navigate("/login")}
+          // onClick={() => navigate("/login")}
         >
           Signup
         </button>
