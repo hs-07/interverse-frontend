@@ -1,70 +1,85 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./style.css";
 
-function Navbar() {
-  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-
-  const toggleSideNav = () => {
-    setIsSideNavOpen(!isSideNavOpen);
-  };
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const Navlinks = [
+    { title: "Home", path: "/" },
+    { title: "About Us", path: "/about" },
+    { title: "Contact Us", path: "/contact" },
+  ];
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo flex">
-        <img src="/inter-logo.svg" alt="" className="" />
-      </div>
-      <button
-        className={`navbar-toggle ${isSideNavOpen ? "open" : ""}`}
-        onClick={toggleSideNav}
-      >
-        <span className="navbar-toggle-icon"></span>
-      </button>
-      <ul className={`navbar-nav ${isSideNavOpen ? "open" : ""}`}>
-        <li className="nav-item">
-          <NavLink
-            exact
-            to="/"
-            className="nav-link"
-            activeClassName="active"
-            onClick={toggleSideNav}
-          >
-            Home
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            to="/about"
-            className="nav-link"
-            activeClassName="active"
-            onClick={toggleSideNav}
-          >
-            About
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            to="/contact"
-            className="nav-link"
-            activeClassName="active"
-            onClick={toggleSideNav}
-          >
-            Contact Us
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            to="/login"
-            className="signup-btn"
-            // activeClassName="active"
-            onClick={toggleSideNav}
-          >
-            Sign up
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <div className="w-full landing">
+      <nav className="hidden lg:flex w-full h-[6rem] px-16 py-4 items-center justify-between bg-black ">
+        <div className="h-full">
+          <img src="/inter-logo.svg" alt="interverse" className="h-full" />
+        </div>
+        <div className="flex items-center gap-6">
+          <ul className="flex justify-end space-x-6">
+            {Navlinks.map((link, index) => (
+              <NavLink
+                exact
+                to={link.path}
+                key={index}
+                className={({ isActive }) =>
+                  `cursor-pointer font-[400] text-[20px] ${
+                    isActive ? "text-[#F2C66D]" : "text-[#545454]"
+                  }`
+                }
+              >
+                {link.title}
+              </NavLink>
+            ))}
+          </ul>
+          <div className="">
+            <button className="text-black bg-[#F2C66D] border-none text-[16px] h-[42px] px-8 font-[500] rounded-full ">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </nav>
+      <>
+        <nav className="flex lg:hidden w-full h-[4rem] bg-black md:px-8 px-4 justify-between items-center py-1">
+          <div className="h-full">
+            <img src="/inter-logo.svg" alt="remesa" className="h-full py-2" />
+          </div>
+          <div className="w-fit" onClick={() => setIsOpen((prev) => !prev)}>
+            {isOpen ? (
+              <div className="flex flex-col rounded-full bg-[#1C1C1C] w-8 h-8">
+                <div className="w-6 h-1 bg-white rounded-lg rotate-45 translate-y-4 translate-x-1"></div>
+                <div className="w-6 h-1 bg-white rounded-lg -rotate-45 translate-y-3 translate-x-1"></div>
+              </div>
+            ) : (
+              <div className="w-8 h-8 grid grid-cols-2 items-center cursor-pointer rounded-full bg-[#1C1C1C] p-1">
+                <div className="w-2 h-2 border-[2px] border-white rounded-full"></div>
+                <div className="w-2 h-2 border-[2px] border-white rounded-full"></div>
+                <div className="w-2 h-2 border-[2px] border-white rounded-full"></div>
+                <div className="w-2 h-2 border-[2px] border-white rounded-full"></div>
+              </div>
+            )}
+          </div>
+        </nav>
+        {isOpen && (
+          <div className="w-full h-[100vh] bg-black z-[99] absolute">
+            <ul className="flex flex-col justify-start items-center h-full space-y-6 py-12 font-semibold">
+              {Navlinks.map((link, index) => (
+                <li
+                  key={index}
+                  className="cursor-pointer font-normal text-[#545454] font-semibold"
+                >
+                  {link.title}
+                </li>
+              ))}
+              <button className="text-black bg-[#F2C66D] border-none py-3 px-8 rounded-full">
+                Sign Up
+              </button>
+            </ul>
+          </div>
+        )}
+      </>
+    </div>
   );
-}
+};
 
 export default Navbar;
