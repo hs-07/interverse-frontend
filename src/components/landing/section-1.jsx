@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Section1 = () => {
   return (
-    <div className="w-full flex bg-[#0B0B0F] items-center px-4 py-28 flex md:gap-8 gap-4 flex-col">
+    <div className="w-full flex bg-black items-center px-4 py-28 flex md:gap-12 gap-4 flex-col">
       <motion.h1
         className="text-white font-bold text-xl md:text-[64px]"
         initial={{ opacity: 0 }}
@@ -11,7 +11,7 @@ const Section1 = () => {
         transition={{ delay: 0.3, ease: "easeInOut", duration: 2 }}
         viewport={{ once: false }}
       >
-        See the big picture.
+        Interverse features
       </motion.h1>
 
       <motion.span
@@ -21,13 +21,13 @@ const Section1 = () => {
         transition={{ delay: 0.5, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        Fey offers a streamlined view of real-time market data, effortlessly
-        giving you the big picture on your favorite companies.
+        We offer a range of sophisticated products and functionality to ensure
+        that we can solve industry and company specific problems.
       </motion.span>
 
       <motion.img
-        src="/macbook.png"
-        alt=""
+        src="/images/big-img.svg"
+        alt="image"
         className=""
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

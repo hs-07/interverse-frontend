@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Section2 = () => {
   return (
-    <div className="w-full bg-[#0B0B0F] items-center px-4 py-28 md:px-20 flex gap-8 flex-col">
+    <div className="w-full bg-black items-center px-4 py-28 md:px-20 flex md:gap-12 gap-8 flex-col">
       <motion.h1
         className="text-white font-bold text-xl md:text-[64px]"
         initial={{ opacity: 0 }}
@@ -11,7 +11,7 @@ const Section2 = () => {
         transition={{ delay: 0.3, ease: "easeInOut", duration: 2 }}
         viewport={{ once: false }}
       >
-        Simplify the complex.
+        Multi-currency
       </motion.h1>
 
       <motion.span
@@ -21,21 +21,23 @@ const Section2 = () => {
         transition={{ delay: 0.5, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        Fey offers a streamlined view of real-time market data, effortlessly
-        giving you the big picture on your favorite companies.
+        Interverse Solutions supports transactions in multiple currencies,
+        making it easier for you to send and receive money globally. Whether you
+        need to transfer USD, EUR, GBP, or any other major currency, our
+        platform handles it seamlessly.
       </motion.span>
 
       <motion.div
-        className="grid md:grid-cols-4 grid-cols-2 text-[#4788E6] gap-4 text-lg"
+        className="grid md:grid-cols-4 grid-cols-2 text-[#F2C66D] gap-4 md:gap-12 text-lg"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        <span className="font-semibold">Brand 1</span>
-        <span className="font-semibold">Brand 2</span>
-        <span className="font-semibold">Brand 3</span>
-        <span className="font-semibold">Brand 4</span>
+        <span className="font-semibold">INR</span>
+        <span className="font-semibold">USD</span>
+        <span className="font-semibold">UAE</span>
+        <span className="font-semibold">AUD</span>
       </motion.div>
     </div>
   );
