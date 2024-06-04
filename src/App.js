@@ -8,6 +8,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Privacy from "./Pages/PrivacyPolicy";
 import CookiePolicy from "./Pages/CookiePolicy";
+import TermsAndConditions from "./Pages/TermsConditions";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/privacyPolicy" element={<Privacy />} />
         <Route path="/cookiePolicy" element={<CookiePolicy />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/termsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
     </div>
