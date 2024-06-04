@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="md:w-4/5 md:h-[90vh] md:max-h-[900px] w-full border-2 flex-col md:flex-row  rounded-3xl flex p-6 gap-6 border-[#181818]">
         <div className="w-3/5 hidden md:flex">
           <img
-            src="/contact-banner.png"
+            src="/images/contact-banner.svg"
             alt=""
             className="w-full h-full object-cover rounded-2xl"
             width={100}
@@ -45,7 +45,7 @@ const Contact = () => {
               className="rounded-lg p-2 bg-transparent border-2 border-[#AEAEAE80] bg-[#181818] text-white"
             />
           </form>
-          <button className="w-full text-white bg-[#4B6CC2] md:bg-[#181818] p-2 rounded-lg">
+          <button className="w-full md:text-white text-black font-[600] bg-[#F2C66D] md:bg-[#181818] p-2 rounded-lg">
             Submit Form
           </button>
         </div>

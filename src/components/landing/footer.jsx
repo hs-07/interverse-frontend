@@ -11,10 +11,10 @@ const footer = () => {
     { title: "Contact Us", link: "/contact" },
   ];
   const usefulLinks = [
-    { title: "Payments", link: "#" },
-    { title: "Partnerships", link: "#" },
-    { title: "POS", link: "#" },
-    { title: "API", link: "#" },
+    { title: "Payments", link: "/comingSoon" },
+    { title: "Partnerships", link: "/comingSoon" },
+    { title: "POS", link: "/comingSoon" },
+    { title: "API", link: "/comingSoon" },
   ];
   return (
     <div className="bg-[#F2C66D] px-4 lg:px-16">

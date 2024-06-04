@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact";
 import Privacy from "./Pages/PrivacyPolicy";
 import CookiePolicy from "./Pages/CookiePolicy";
 import TermsAndConditions from "./Pages/TermsConditions";
+import ComingSoon from "./Pages/ComingSoon";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/termsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/comingSoon" element={<ComingSoon />} />
       </Routes>
     </div>
   );

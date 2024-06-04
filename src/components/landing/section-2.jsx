@@ -28,7 +28,7 @@ const Section2 = () => {
       </motion.span>
 
       <motion.div
-        className="grid md:grid-cols-4 grid-cols-2 text-[#F2C66D] gap-4 md:gap-12 text-lg"
+        className="grid md:grid-cols-7 grid-cols-3 text-[#F2C66D] gap-4 md:gap-12 text-lg"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, ease: "easeInOut" }}
@@ -38,6 +38,9 @@ const Section2 = () => {
         <span className="font-semibold">USD</span>
         <span className="font-semibold">UAE</span>
         <span className="font-semibold">AUD</span>
+        <span className="font-semibold">CAD</span>
+        <span className="font-semibold">CHF</span>
+        <span className="font-semibold">GBP</span>
       </motion.div>
     </div>
   );
