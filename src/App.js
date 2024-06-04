@@ -6,6 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/common/navbar/navbar";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Privacy from "./Pages/PrivacyPolicy";
+import CookiePolicy from "./Pages/CookiePolicy";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacyPolicy" element={<Privacy />} />
+        <Route path="/cookiePolicy" element={<CookiePolicy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Login" element={<Login />} />
       </Routes>

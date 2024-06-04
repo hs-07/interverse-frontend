@@ -6,13 +6,16 @@ const Navbar = () => {
   const Navlinks = [
     { title: "Home", path: "/" },
     { title: "About Us", path: "/about" },
+    { title: "Privacy Policy", path: "/privacyPolicy" },
+    { title: "Terms and Conditions", path: "/termsAndConditions" },
+    { title: "Cookie Policy", path: "/cookiePolicy" },
     { title: "Contact Us", path: "/contact" },
   ];
 
   return (
     <div className="w-full landing">
-      <nav className="hidden lg:flex w-full h-[6rem] px-16 py-4 items-center justify-between bg-black ">
-        <div className="h-full">
+      <nav className="hidden lg:flex w-full h-[6rem] px-12 py-4 items-center justify-between bg-black ">
+        <div className="h-full pr-6">
           <img src="/inter-logo.svg" alt="interverse" className="h-full" />
         </div>
         <div className="flex items-center gap-6">
@@ -23,7 +26,7 @@ const Navbar = () => {
                 to={link.path}
                 key={index}
                 className={({ isActive }) =>
-                  `cursor-pointer font-[400] text-[20px] ${
+                  `cursor-pointer font-[400] text-[16px] ${
                     isActive ? "text-[#F2C66D]" : "text-[#545454]"
                   }`
                 }
@@ -33,7 +36,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="">
-            <button className="text-black bg-[#F2C66D] border-none text-[16px] h-[42px] px-8 font-[500] rounded-full ">
+            <button className="text-black bg-[#F2C66D] border-none text-[16px] h-[42px] w-32 font-[500] rounded-full items-center justify-center flex flex-wrap">
               Sign Up
             </button>
           </div>
@@ -64,12 +67,19 @@ const Navbar = () => {
           <div className="w-full h-[100vh] bg-black z-[99] absolute">
             <ul className="flex flex-col justify-start items-center h-full space-y-6 py-12 font-semibold">
               {Navlinks.map((link, index) => (
-                <li
+                <NavLink
+                  exact
+                  to={link.path}
                   key={index}
-                  className="cursor-pointer font-normal text-[#545454] font-semibold"
+                  className={({ isActive }) =>
+                    `cursor-pointer font-[400] text-[16px] ${
+                      isActive ? "text-[#F2C66D]" : "text-[#545454]"
+                    }`
+                  }
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.title}
-                </li>
+                </NavLink>
               ))}
               <button className="text-black bg-[#F2C66D] border-none py-3 px-8 rounded-full">
                 Sign Up
