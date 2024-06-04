@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 const footer = () => {
   const quickLinks = [
-    { title: "Home", link: "#" },
-    { title: "Privacy Policy", link: "#" },
-    { title: "Terms and Conditions", link: "#" },
-    { title: "Cookie Policy", link: "#" },
-    { title: "Contact Us", link: "#" },
+    { title: "Home", link: "/" },
+    { title: "About Us", link: "/about" },
+    { title: "Privacy Policy", link: "/privacyPolicy" },
+    { title: "Terms and Conditions", link: "termsAndConditions" },
+    { title: "Cookie Policy", link: "cookiePolicy" },
+    { title: "Contact Us", link: "/contact" },
   ];
   const usefulLinks = [
     { title: "Payments", link: "#" },
