@@ -21,9 +21,15 @@ const Section1 = () => {
         transition={{ delay: 0.6, ease: "easeInOut" }}
         viewport={{ once: false }}
       >
-        <button className="bg-[#F2C66D] rounded-3xl text-black font-[500] py-2 w-48 px-6">
-          Start now
-        </button>
+        <a
+          href="https://www.remesa.money/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="bg-[#F2C66D] rounded-3xl text-black font-[500] py-2 w-48 px-6">
+            Start now
+          </button>
+        </a>
       </motion.span>
 
       <motion.img

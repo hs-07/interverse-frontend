@@ -31,12 +31,15 @@ const Section7 = () => {
       </motion.span>
 
       <div className="">
-        <button
-          className="bg-[#F2C66D] rounded-3xl text-black py-2 w-48 px-6 transition-all ease-in-out animate-bounce"
-          // onClick={() => navigate("/login")}
+        <a
+          href="https://www.remesa.money/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Sign Up
-        </button>
+          <button className="bg-[#F2C66D] rounded-3xl text-black py-2 w-48 px-6 transition-all ease-in-out animate-bounce">
+            Sign Up
+          </button>
+        </a>
       </div>
       <div className="w-full flex justify-center">
         <motion.img

@@ -32,10 +32,17 @@ const Navbar = () => {
               </NavLink>
             ))}
           </ul>
+
           <div className="">
-            <button className="text-black bg-[#F2C66D] border-none text-[16px] h-[42px] w-32 font-[500] rounded-full items-center justify-center flex flex-wrap">
-              Sign Up
-            </button>
+            <a
+              href="https://www.remesa.money/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="text-black bg-[#F2C66D] border-none text-[16px] h-[42px] w-32 font-[500] rounded-full items-center justify-center flex flex-wrap">
+                Sign Up
+              </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -73,14 +80,20 @@ const Navbar = () => {
                       isActive ? "text-[#F2C66D]" : "text-[#545454]"
                     }`
                   }
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsOpen((prev) => !prev)}
                 >
                   {link.title}
                 </NavLink>
               ))}
-              <button className="text-black bg-[#F2C66D] border-none py-3 px-8 rounded-full">
-                Sign Up
-              </button>
+              <a
+                href="https://www.remesa.money/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="text-black bg-[#F2C66D] border-none py-3 px-8 rounded-full">
+                  Sign Up
+                </button>
+              </a>
             </ul>
           </div>
         )}
