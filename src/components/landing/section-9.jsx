@@ -25,9 +25,15 @@ const Section9 = () => {
         affordable global money transfers
       </motion.span>
       <div className="">
-        <button className="bg-[#F2C66D] rounded-3xl text-black font-[500] py-2 w-48 px-6 animate-bounce transition-all ease-in-out">
-          Join Now
-        </button>
+        <a
+          href="http://remesa.money/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="bg-[#F2C66D] rounded-3xl text-black font-[500] py-2 w-48 px-6 animate-bounce transition-all ease-in-out">
+            Join Now
+          </button>
+        </a>
       </div>
     </div>
   );
