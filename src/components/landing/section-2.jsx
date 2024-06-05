@@ -28,7 +28,7 @@ const Section2 = () => {
       </motion.span>
 
       <motion.div
-        className="grid md:grid-cols-7 grid-cols-3 text-[#F2C66D] gap-4 md:gap-12 text-lg"
+        className="grid lg:grid-cols-9 grid-cols-3 text-[#F2C66D] gap-4 md:gap-12 text-lg"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, ease: "easeInOut" }}
