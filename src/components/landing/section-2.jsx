@@ -36,7 +36,9 @@ const Section2 = () => {
       >
         <span className="font-semibold">INR</span>
         <span className="font-semibold">USD</span>
-        <span className="font-semibold">UAE</span>
+        <span className="font-semibold">SAR</span>
+        <span className="font-semibold">EUR</span>
+        <span className="font-semibold">AED</span>
         <span className="font-semibold">AUD</span>
         <span className="font-semibold">CAD</span>
         <span className="font-semibold">CHF</span>
