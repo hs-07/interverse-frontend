@@ -6,9 +6,6 @@ const Navbar = () => {
   const Navlinks = [
     { title: "Home", path: "/" },
     { title: "About Us", path: "/about" },
-    { title: "Privacy Policy", path: "/privacyPolicy" },
-    { title: "Terms and Conditions", path: "/termsAndConditions" },
-    { title: "Cookie Policy", path: "/cookiePolicy" },
     { title: "Contact Us", path: "/contact" },
   ];
 
